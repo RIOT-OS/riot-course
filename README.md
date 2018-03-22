@@ -6,7 +6,7 @@
 
 - General information
 
-  - What is RIOT and for what IoT is it for
+  - What is RIOT
   - A brief history of the project
   - RIOT's philosophy
   - RIOT, a community
@@ -15,20 +15,27 @@
 
 - Technical overview
 
-  - Supported architectures: 8/16/32 bit, ARM, AVR, MIPS, native
-    - native is interesting for prototyping without hardware
-    - all Nucleos supported, good Arduino support, Kinetis and Nordic
-  - Standard tooling: make, openocd, gdb, doxygen
-    - Some words on the build system
-  - Microkernel architecture, RTOS, IPC, threads
-  - High-level features: network stacks and protocols, filesystems, displays
-  - Extending RIOT with external packages
-  - Continuous integration
-  - Code review process
-  - Online documentation
+  - OS characteristics 
+    - Microkernel architecture, RTOS, IPC, threads
+    - external packages
+    - High-level features: filesystems, displays
+    - Network stacks and protocols
+
+  - Hardware support overview
+    - 8/16/32 bit, ARM, AVR, MIPS 
+    - and the other remarks you had about native, STM, Arduino...
+    - Sensors and actuators
+    - concept of "board" simplifying ports (reuse structure of RIOT paper section VI)?
+
+  - Ecosystem & community processes
+    - tooling & build system
+    - CI
+    - Code review
+    - documentation online
 
 ### Getting started
 
+- Setup your developement environment
 - What is a RIOT application
 - Building a RIOT application
   - Targets (BOARD)
