@@ -452,7 +452,7 @@ $ git clone https://gitlab.inria.fr/riot-workshop-samples.git
 First possibility: install a toolchains and development tools locally:
   - Build essential tools (make, gcc, etc):
 ```bash
-$ sudo apt-get install build-essential g++-multilib
+$ sudo apt-get install build-essential g++-multilib python-serial
 ```
   - Install toolchains (ARM):
 ```bash
@@ -493,7 +493,8 @@ $ vagrant ssh
 
 - More info on the Wiki:
 
-.right[&#x21d2; &nbsp;&nbsp;https://github.com/RIOT-OS/RIOT/wiki/Setup-a-Build-Environment]
+.right[&#x21d2; &nbsp;&nbsp;https://github.com/RIOT-OS/RIOT/wiki/Setup-a-Build-Environment
+]
 
 ---
 
@@ -505,9 +506,11 @@ A minimal RIOT application consists in:
 ```mk
 APPLICATION = example
 
-BOARD ?= native  # build a native application of RIOT by default
+BOARD ?= native
 
 RIOTBASE ?= $(CURDIR)/../../RIOT
+
+DEVELHELP ?= 1
 
 include $(RIOTBASE)/Makefile.include
 ```
@@ -526,9 +529,9 @@ int main(void)
 
 ---
 
-## Build the application
+## Build the application (native)
 
-- Simply run `make` from the application directory:
+Simply run **make** from the application directory:
 
 ```sh
 $ cd ~/riot-workshop-samples/getting-started
@@ -555,4 +558,137 @@ $ cd ~/riot-workshop-samples
 $ make -C getting-started
 ```
 
-## 
+---
+
+## Run the application (native)
+
+**native** target runs RIOT application as **Linux process**
+
+Use the **term** target of `make`:
+
+```sh
+$ make -C getting-started term
+/home/user/riot-workshop-sources/getting-started/bin/native/example.elf
+RIOT native interrupts/signals initialized.
+LED_RED_OFF
+LED_GREEN_ON
+RIOT native board initialized.
+RIOT native hardware initialization complete.
+
+main(): This is RIOT! (Version: vm-riot)
+My first RIOT application
+```
+_Tricks:_<br>
+**term** depends on **all** (build) target. Use the following command to force a rebuild:
+```sh
+$ make -C getting-started all term
+```
+**RIOTBASE** variable can be overriden to use a different RIOT location
+
+---
+
+## Build on hardware
+
+- Use the ST B-L072Z-LRWAN1 board
+
+- Use `BOARD` variable to select the target at build time
+
+```sh
+$ make BOARD=b-l072z-lrwan1 -C getting-started
+Building application "example" for "b-l072z-lrwan1" with MCU "stm32l0".
+
+"make" -C /home/user/RIOT/boards/b-l072z-lrwan1
+"make" -C /home/user/RIOT/core
+"make" -C /home/user/RIOT/cpu/stm32l0
+"make" -C /home/user/RIOT/cpu/cortexm_common
+"make" -C /home/user/RIOT/cpu/cortexm_common/periph
+"make" -C /home/user/RIOT/cpu/stm32_common
+"make" -C /home/user/RIOT/cpu/stm32_common/periph
+"make" -C /home/user/RIOT/cpu/stm32l0/periph
+"make" -C /home/user/RIOT/drivers
+"make" -C /home/user/RIOT/drivers/periph_common
+"make" -C /home/user/RIOT/sys
+"make" -C /home/user/RIOT/sys/auto_init
+"make" -C /home/user/RIOT/sys/isrpipe
+"make" -C /home/user/RIOT/sys/newlib_syscalls_default
+"make" -C /home/user/RIOT/sys/pm_layered
+"make" -C /home/user/RIOT/sys/tsrb
+"make" -C /home/user/RIOT/sys/uart_stdio
+ text   data    bss    dec    hex filename
+ 7596    140   2740  10476   28ec .../getting-started/bin/b-l072z-lrwan1/example.elf
+```
+
+---
+
+## Run on hardware
+
+Use the **flash** and **term** targets:
+- **flash** calls the flasher tool automatically (OpenOCD)
+- **term** opens a serial terminal on the board (using pyterm by default)
+
+```sh
+$ make BOARD=b-l072z-lrwan1 -C getting-started flash term
+[...]
+### Flashing Target ###
+Open On-Chip Debugger 0.10.0+dev-00290-g5a98ff78 (2018-01-31-14:50)
+[...]
+INFO # Connect to serial port /dev/ttyACM0
+Welcome to pyterm!
+Type '/exit' to exit.
+INFO # main(): This is RIOT! (Version: vm-riot)
+2018-03-23 18:28:48,474 - INFO # My first RIOT application
+```
+
+Useful variables:
+- **PORT**: specify a specific serial port (`/dev/ttyACM1`)
+- **TERMPROG**: specify another terminal application (`gtkterm`, etc)
+- **TERMFLAGS**: override terminal application parameters
+
+```sh
+make BOARD=b-l072z-lrwan1 TERMPROG=gtkterm \
+TERMFLAGS="-s 115200 -p /dev/ttyACM0 -e" flash term
+```
+---
+
+## Debugging an application
+
+Use **debug** targets
+
+**DEVELHELP**
+
+Useful `CFLAGS` options:<br>
+-DLOG_LEVEL=LOG_DEBUG : enable debug output globally
+-DDEBUG_ASSERT_VERBOSE : catch `FAILED ASSERTION` errors and give the line number
+
+---
+
+## Extending the application
+
+In the `Makefile` or from the command line:
+
+- Add extra modules with **USEMODULE**<br>
+    &#x21d2; `xtimer`, `fmt`, `shell`, `ps`, etc
+
+- Include packages with **USEPKG**<br>
+    &#x21d2; `lwip`, `semtech-loramac`, etc
+
+- Use MCU peripherals with **FEATURES_REQUIRED**:<br>
+    &#x21d2; `periph_gpio`, `periph_uart`, `periph_spi`, `periph_i2c`
+
+Example:
+```mk
+
+USEMODULE += xtimer shell
+
+USEPKG += semtech-loramac
+
+FEATURES_REQUIRED += periph_gpio
+```
+
+---
+
+## Writing an application with a shell
+
+
+
+---

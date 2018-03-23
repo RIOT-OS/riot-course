@@ -23,14 +23,14 @@ git clone git@gitlab.inria.fr:aabadie/riot-workshop.git
 
 - Technical overview
 
-  - OS characteristics 
+  - OS characteristics
     - Microkernel architecture, RTOS, IPC, threads
     - external packages
     - High-level features: filesystems, displays
     - Network stacks and protocols
 
   - Hardware support overview
-    - 8/16/32 bit, ARM, AVR, MIPS 
+    - 8/16/32 bit, ARM, AVR, MIPS
     - and the other remarks you had about native, STM, Arduino...
     - Sensors and actuators
     - concept of "board" simplifying ports (reuse structure of RIOT paper section VI)?
