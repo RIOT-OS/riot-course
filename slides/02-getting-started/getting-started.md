@@ -364,3 +364,8 @@ It works the same on hardware without modifications:
 ```c
 $ make BOARD=b-l072z-lrwan1 flash term
 ```
+
+---
+
+## Summary
+

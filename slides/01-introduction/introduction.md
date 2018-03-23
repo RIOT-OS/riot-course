@@ -332,3 +332,7 @@ shell
 - In-depth code reviews
 
 - One release every 3 month: **&lt;year&gt;.&lt;month&gt;** (ex: 2018.01, 2018.04, etc)
+
+---
+
+## Summary
