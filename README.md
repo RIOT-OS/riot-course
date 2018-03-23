@@ -1,5 +1,13 @@
 # Workshop agenda
 
+## Access the slides
+
+- Clone this repository:
+```
+git clone git@gitlab.inria.fr:aabadie/riot-workshop.git
+```
+- Open `riot-workshop/slides/riot-workshop.html` in a web browser
+
 ## Day 1
 
 ### Introduction

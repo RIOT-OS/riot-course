@@ -216,6 +216,8 @@ http://riot-os.org/files/RIOT-Summit-2017-slides/4-3-Virtualization-Session-Fuji
 
 - we-sens.com, mesotic
 
+- Eistec: http://www.eistec.se/projects/
+
 - Sleeping Beauty:  GPS tracking device with an integrated GSM modem
 
 ---
@@ -259,7 +261,7 @@ http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.pdf
 
 - the `idle` thread:
 
-  - lowest priority &#x21d2; fallback thread when all other threads are blocked
+  - lowest priority <br>&#x21d2; fallback thread when all other threads are blocked or terminated
   - switches the system to low-power mode
 
 The ISR context handles external events and notifies threads using IPC messages
@@ -408,6 +410,8 @@ shell
 
 - In-depth code reviews
 
+- One release every 3 month: **&lt;year&gt;.&lt;month&gt;** (ex: 2018.01, 2018.04, etc)
+
 ---
 
 class: center, middle
@@ -416,13 +420,139 @@ class: center, middle
 
 ---
 
-## Prerequisites: setup your environment
+## Optional prerequisites: setup a local environment
 
-- vagrant
-- install required toolchains: ARM, AVR, MIPS, etc
-- install flash tools: OpenOCD
-- Use the provided VMs
+1. Install and setup Git:
+```bash
+$ sudo apt-get install git
+$ git config --global user.name "Your name"
+$ git config --global user.email "Your email"
+```
+2. Get the code:
+
+  - Latest version:
+```bash
+$ git clone --depth=1 https://github.com/RIOT-OS/RIOT.git
+```
+
+  - Latest stable branch:
+```bash
+$ git clone -b 2018.01-branch https://github.com/RIOT-OS/RIOT.git
+```
+
+3. Getting the workshop code:
+```
+$ git clone https://gitlab.inria.fr/riot-workshop-samples.git
+```
 
 ---
+
+## Optional prerequisites: setup your build environment
+
+First possibility: install a toolchains and development tools locally:
+  - Build essential tools (make, gcc, etc):
+```bash
+$ sudo apt-get install build-essential g++-multilib
+```
+  - Install toolchains (ARM):
+```bash
+$ sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa
+$ sudo apt-get update
+$ sudo apt-get install gcc-arm-embedded
+```
+  - Install flasher tools, OpenOCD (version >= 0.10 required)
+```bash
+$ sudo apt-get install openocd
+```
+Otherwise, build OpenOCD from sources:<br>https://github.com/RIOT-OS/RIOT/wiki/OpenOCD
+
+---
+
+## Prerequisites: setup your build environment
+
+- Using Docker
+```bash
+$ docker pull riot/riotbuild
+$ cd <application directory>
+$ make BUILD_IN_DOCKER=1
+```
+
+- Using a VM, with vagrant
+```bash
+$ vagrant up
+$ vagrant ssh
+```
+
+- Using the provided VM in virtualbox &#x21d2; **our choice**
+
+  - Toolchains, debugger, flasher tools already installed
+
+  - RIOT code already downloaded
+
+  - Sample applications provided
+
+- More info on the Wiki:
+
+.right[&#x21d2; &nbsp;&nbsp;https://github.com/RIOT-OS/RIOT/wiki/Setup-a-Build-Environment]
+
+---
+
+## Writing your first application
+
+A minimal RIOT application consists in:
+- A `Makefile`
+
+```mk
+APPLICATION = example
+
+BOARD ?= native  # build a native application of RIOT by default
+
+RIOTBASE ?= $(CURDIR)/../../RIOT
+
+include $(RIOTBASE)/Makefile.include
+```
+
+- A C-file containing a main function:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    puts("My first RIOT application");
+    return 0;
+}
+```
+
+---
+
+## Build the application
+
+- Simply run `make` from the application directory:
+
+```sh
+$ cd ~/riot-workshop-samples/getting-started
+$ make
+Building application "example" for "native" with MCU "native".
+
+"make" -C /home/user/RIOT/boards/native
+"make" -C /home/user/RIOT/boards/native/drivers
+"make" -C /home/user/RIOT/core
+"make" -C /home/user/RIOT/cpu/native
+"make" -C /home/user/RIOT/cpu/native/periph
+"make" -C /home/user/RIOT/cpu/native/vfs
+"make" -C /home/user/RIOT/drivers
+"make" -C /home/user/RIOT/drivers/periph_common
+"make" -C /home/user/RIOT/sys
+"make" -C /home/user/RIOT/sys/auto_init
+ text   data  bss    dec    hex   filename
+ 20206  568   47652  68426  10b4a .../getting-started/bin/native/example.elf
+```
+
+_Trick:_ use `-C` option with `make`
+```
+$ cd ~/riot-workshop-samples
+$ make -C getting-started
+```
 
 ## 
