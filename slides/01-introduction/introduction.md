@@ -677,7 +677,6 @@ In the `Makefile` or from the command line:
 
 Example:
 ```mk
-
 USEMODULE += xtimer shell
 
 USEPKG += semtech-loramac
@@ -689,6 +688,95 @@ FEATURES_REQUIRED += periph_gpio
 
 ## Writing an application with a shell
 
+Modify the `getting-started` application:
 
+- Add the **shell** module to the `Makefile`
+
+```mk
+USEMODULE += shell
+```
+
+- Modify the `main.c`:
+
+```c
+#include "shell.h"
+```
+
+```c
+/* in main */
+char line_buf[SHELL_DEFAULT_BUFSIZE];
+shell_run(NULL, line_buf, SHELL_DEFAULT_BUFSIZE);
+return 0;
+```
+
+Build and run:
+```sh
+$ make all term
+> help
+help
+Command              Description
+---------------------------------------
+> 
+```
 
 ---
+
+## Adding commands to the shell
+
+- Add `shell_commands` module &#x21d2; add default commands (`reboot`)
+
+- Include extra modules with predefined commands: `ps`, `random`
+
+- Define your own handler:
+
+```c
+int cmd_handler(int argc, char **argv);
+```
+
+- Add it to the shell initialization:
+
+```c
+#include "shell.h"
+
+static int cmd_handler(int argc, char **argv)
+{
+    /* Your code */
+}
+
+static const shell_command_t shell_commands[] = {
+    { "command", "description", cmd_handler },
+    { NULL, NULL, NULL }
+};
+[...]
+shell_run(shell_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
+```
+
+---
+
+## An example of command handler
+
+```c
+static int cmd_handler(int argc, char **argv)
+{
+    if (argc < 3) {
+        printf("usage: %s <arg1> <arg2>\n", argv[0]);
+        return 1;
+    }
+
+    printf("Using arguments %s and %s\n", argv[1], argv[2]);
+    return 0;
+}
+```
+
+```c
+$ make all term
+> command
+usage: command <arg1> <arg2>
+> command arg1 arg2
+Using arguments arg1 and arg2
+```
+
+It works the same on hardware without modifications:
+```c
+$ make BOARD=b-l072z-lrwan1 flash term
+```
