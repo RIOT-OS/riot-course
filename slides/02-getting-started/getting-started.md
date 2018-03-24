@@ -395,5 +395,17 @@ $ make BOARD=b-l072z-lrwan1 -C getting-started/led-app/ flash term
 
 ---
 
+## Discovering the example applications
+
+- Go to the RIOT source directory
+
+- Build, flash and interact with the following applications:
+
+  - `examples/hello-world`
+
+  - `examples/default`
+
+---
+
 ## Summary
 
