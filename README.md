@@ -6,7 +6,16 @@
 ```
 git clone git@gitlab.inria.fr:aabadie/riot-workshop.git
 ```
-- Open `riot-workshop/slides/riot-workshop.html` in a web browser
+- Slides are divived in parts, open each part in a web browser:
+  - 01-Introduction: `slides/01-introduction/introduction.html`
+  - 02-Getting-Started: `slides/02-getting-started/getting-started.html`
+  - 03-RIOT-Advanced: `slides/03-riot-advanced/riot-advanced.html`
+  - 04-Networking-in-RIOT: `slides/04-networking-in-riot/networking-in-riot.html`
+  - 05-LoRaWAN-with-RIOT: `slides/05-lorawan-with-riot/lorawan-with-riot.html`
+
+=================
+
+**Agenda**
 
 ## Day 1
 
@@ -72,29 +81,30 @@ git clone git@gitlab.inria.fr:aabadie/riot-workshop.git
   - dist: external scripts and tools (ci)
   - makefiles: make build system files
 
-- Special things
-
+- The build system
+  - Makefile.include
+  - Makefile.base
   - Effects of modules inclusion to the code:
-    - preprocessor macro `MODULE_XX`
-    - what is built, `Makefile.base`
+  - preprocessor macro `MODULE_XX`
+  - what is built, `Makefile.base`
+
+- Special things
   - The standard output
   - Using `DEBUG` macros
+
+- The RIOT kernel
+
+  - The boot sequence: `board_init()` => `cpu_init()` => `kernel_init()` => `main()`
+  - `kernel_init()` => start idle and main threads, enable interrupts
+  - Dealing with threads : `thread_create`, stacks, scheduler (priorities)
+  - IPC: exchanging messages between threads
+
+=> Exercise: threads creation and communication
 
 - Main system modules
 
   - Managing delays with `xtimer`
   - Serial interaction with the `shell`
-
-=> Exercise: LED blink + xtimer + shell function
-
-- The RIOT kernel
-
-  - The boot sequence: `board_init()` => `cpu_init()` => `kernel_init()` => `main()`
-  - `kernel_init()` => start idle and main threads
-  - Dealing with threads : `thread_create`, stacks, scheduler (priorities)
-  - IPC: exchanging messages between threads
-
-=> Exercise: threads creation and communication
 
 - Overview of the hardware abstraction layer APIs
 
