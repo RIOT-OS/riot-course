@@ -13,7 +13,7 @@ git clone git@gitlab.inria.fr:aabadie/riot-workshop.git
   - 04-Networking-in-RIOT: `slides/04-networking-in-riot/networking-in-riot.html`
   - 05-LoRaWAN-with-RIOT: `slides/05-lorawan-with-riot/lorawan-with-riot.html`
 
-=================
+----------------------------
 
 **Agenda**
 
