@@ -92,14 +92,14 @@ APPLICATION = example
 
 BOARD ?= native
 
-RIOTBASE ?= $(CURDIR)/../../RIOT
+RIOTBASE ?= $(CURDIR)/../../../RIOT
 
 DEVELHELP ?= 1
 
 include $(RIOTBASE)/Makefile.include
 ```
 
-- A C-file containing a main function:
+- A C-file containing the main function:
 
 ```c
 #include <stdio.h>
@@ -118,7 +118,7 @@ int main(void)
 Simply run **make** from the application directory:
 
 ```sh
-$ cd ~/riot-workshop-samples/getting-started
+$ cd ~/riot-workshop-samples/getting-started/first-app
 $ make
 Building application "example" for "native" with MCU "native".
 
@@ -133,13 +133,13 @@ Building application "example" for "native" with MCU "native".
 "make" -C /home/user/RIOT/sys
 "make" -C /home/user/RIOT/sys/auto_init
  text   data  bss    dec    hex   filename
- 20206  568   47652  68426  10b4a .../getting-started/bin/native/example.elf
+ 20206  568   47652  68426  10b4a .../getting-started/first-app/bin/native/example.elf
 ```
 
 _Trick:_ use `-C` option with `make`
 ```
 $ cd ~/riot-workshop-samples
-$ make -C getting-started
+$ make -C getting-started/first-app
 ```
 
 ---
@@ -152,7 +152,7 @@ Use the **term** target of `make`:
 
 ```sh
 $ make -C getting-started term
-/home/user/riot-workshop-sources/getting-started/bin/native/example.elf
+.../getting-started/first-app/bin/native/example.elf
 RIOT native interrupts/signals initialized.
 LED_RED_OFF
 LED_GREEN_ON
@@ -178,7 +178,7 @@ $ make -C getting-started all term
 - Use `BOARD` variable to select the target at build time
 
 ```sh
-$ make BOARD=b-l072z-lrwan1 -C getting-started
+$ make BOARD=b-l072z-lrwan1 -C getting-started/first-app
 Building application "example" for "b-l072z-lrwan1" with MCU "stm32l0".
 
 "make" -C /home/user/RIOT/boards/b-l072z-lrwan1
@@ -199,7 +199,7 @@ Building application "example" for "b-l072z-lrwan1" with MCU "stm32l0".
 "make" -C /home/user/RIOT/sys/tsrb
 "make" -C /home/user/RIOT/sys/uart_stdio
  text   data    bss    dec    hex filename
- 7596    140   2740  10476   28ec .../getting-started/bin/b-l072z-lrwan1/example.elf
+ 7596    140   2740  10476   28ec .../getting-started/first-app/bin/b-l072z-lrwan1/example.elf
 ```
 
 ---
@@ -272,7 +272,7 @@ FEATURES_REQUIRED += periph_gpio
 
 ## Writing an application with a shell
 
-Modify the `getting-started` application:
+Go into the `getting-started/shell-app` application directory:
 
 - Add the **shell** module to the `Makefile`
 
@@ -363,6 +363,34 @@ Using arguments arg1 and arg2
 It works the same on hardware without modifications:
 ```c
 $ make BOARD=b-l072z-lrwan1 flash term
+```
+
+---
+
+## Basic interaction with the hardware
+
+- RIOT defines macros for interacting with LEDs:<br>
+  &#x21d2; **LEDi_ON**, **LEDi_OFF**, **LEDi_TOGGLE** with i in {0, 1, ..., N}
+
+- The _LEDi_ macros are defined in **board.h** files because they are specific to a board
+
+- Open `getting-started/led-app/main.c`
+
+- Add a shell command that toggles the on-board leds (_LEDi\_TOGGLE_):
+```sh
+$ make -C getting-started/led-app/ all term
+[...]
+> toggle
+Usage: toggle <led num>
+> toggle 0
+LED_RED_TOGGLE
+> toggle 1
+LED_GREEN_TOGGLE
+```
+
+- Run it on the B-L072Z-LRWAN1 board
+```sh
+$ make BOARD=b-l072z-lrwan1 -C getting-started/led-app/ flash term
 ```
 
 ---
