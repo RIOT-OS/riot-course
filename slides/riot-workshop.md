@@ -28,12 +28,14 @@ Alexandre Abadie, Inria
     - Using the native target
     - Debug your application
 
-3. RIOT internals
+3. Going further with RIOT
 
     - Structure and organization of the operating system
-    - Main modules of RIOT
+    - The build system
+    - Main system modules
+    - The kernel
     - Hardware abstraction layer and drivers
-    - External packages
+    - Using and writing external packages
 
 ---
 

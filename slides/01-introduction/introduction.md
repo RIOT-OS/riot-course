@@ -281,7 +281,7 @@ shell
 ]
   - **lwIP**: full-featured network stack designed for low memory consumption
 
-  - **emb6**: A fork of Contiki network stack that can be used without proto-thread
+  - **emb6**: A fork of Contiki network stack that can be used without proto-threads
 
 - In-house Controller Area Network (**CAN**)
 
@@ -299,7 +299,7 @@ shell
 
 - Integrated (and eventually patched) on-the-fly while building an application
 
-- Easy to add: just require 2 `Makefiles`
+- Easy to add: just requires 2 `Makefiles`
 
 - Example of packages: lwIP, Openthread, u8g2, loramac, etc
 
