@@ -6,7 +6,7 @@
 ```
 git clone git@gitlab.inria.fr:aabadie/riot-workshop.git
 ```
-- Slides are divived in parts, open each part in a web browser:
+- Slides are divided into section, open each section in a web browser:
   - 01-Introduction: `slides/01-introduction/introduction.html`
   - 02-Getting-Started: `slides/02-getting-started/getting-started.html`
   - 03-RIOT-Advanced: `slides/03-riot-advanced/riot-advanced.html`
