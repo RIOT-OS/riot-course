@@ -4,12 +4,12 @@ class: center, middle
 
 ---
 
-## Généralités sur LoRaWAN
+# Overview of LoRaWAN
 
 
 <br/>
 
-- Protocole IoT créé par Semtech et aujourd'hui soutenu par la LoRa Alliance
+- IoT protocol by Semtech and promoted by the LoRa Alliance
 
 <br/>
 .center[
@@ -20,28 +20,26 @@ class: center, middle
 <br/>
 
 
-- Version 1.0 de la spécification LoRaWAN parue en 2015
+- First release 1.0 of the LoRaWaN specification in 2015
 
 
-- Protocole de communication IoT longue portée
+- Based on long range radio communication modulation, LoRa
 
 
-- Topologie de réseau en étoile
+- Star network topology
 
 
 
 ---
 
-## Rappels sur LoRa
-
-<!-- <img src="images/lorawan-datarates.jpeg" alt="" style="width: 200px;"/><br/> -->
+## A few words on LoRa
 
 <table style="width:100%;margin-top:-40px">
 <tr>
   <td><ul>
-  <li>Technologie radio longue portée<br/><br/></li>
-  <li>Modulation à étalement de spectre: <br/><br/>&#x21d2; "Chirp Spread Spectrum"<br/><br/></li>
-  <li>Très robuste au bruit</li>
+  <li>Long range radio technology<br/><br/></li>
+  <li>Spread Spectrum modulation: <br/><br/>&#x21d2; "Chirp Spread Spectrum"<br/><br/></li>
+  <li>Very robust to noise</li>
   </ul></td>
   <td>.center[
       <img src="images/lora-chirp.jpg" alt="" style="width: 200px;"/><br/>
@@ -50,12 +48,12 @@ class: center, middle
 </tr>
 <tr>
   <td><ul>
-        <li>Quand le Spreading factor augmente:
+        <li>Raising the spreading factor:
         <br/><br/>
             <ul>
-                <li>la portée augmente (jusqu'à plusieurs kilomètres)</li>
-                <li>le débit diminue</li>
-                <li>le airtime augmente</li>
+                <li>increases the range (until several kilometers)</li>
+                <li>decreases the bandwidth</li>
+                <li>increases the time on air</li>
             </ul>
         </li>
     </ul>
@@ -66,26 +64,26 @@ class: center, middle
 
 ---
 
-## Le protocole LoRaWAN
+## The LoRaWAN protocol
 
 .center[<img src="images/lorawan-classes.jpg" alt="" style="width: 500px;"/><br/>]
 
 <br/>
 
-- Utilise des bandes de fréquences différentes en fonction des régions
+- Different frequency bands depending on the geographical regions
 
 
-- Utilisation de la modulation LoRa
+- Use LoRa modulation
 
 
-- 3 classes de device &#x21d2; A, B et C
+- 3 device classes &#x21d2; A, B & C
 
 
-- Couche application directement liée à la couche MAC
+- The application layer is directly on top of the MAC layer
 
 ---
 
-## Accès au support physique
+## Access to the physical layer
 
 .center[
     <img src="images/lorawan-frequency.png" alt="" style="width: 600px;"/>
@@ -93,45 +91,43 @@ class: center, middle
 
 <br/>
 
-- Utilisation dans la bande ISM : exemple EU868 (ETSI)
+- Public and free **ISM bands** used: EU868 (ETSI), US915, etc
 
 
-- Occupation du support physique contraint en temps &#x21d2; Duty Cycle (1%)
+- Bands are divided into **channels** of 3 different widths: 125kHz, 250kHz ou 500kHz
 
+- Time constrained access to the physical layer &#x21d2; **Duty Cycle** (1% / channel)
 
-- Canaux de largeurs 125kHz, 250kHz ou 500kHz
-
-
-- En europe, au moins 16 canaux utilisables dans la bande des 868MHz
+- Example: at least 16 channels can be used in EU868 band
 
 
 ---
 
-## Les classes de device A et C
+## Class A & C devices
 
 <table style="width:100%">
 <tr>
-  <td><b>Device de classe A</b>
+  <td><b>Class A device</b>
   <ul>
-  <li>Il faut envoyer pour recevoir</li>
-  <li>Classe la plus économe</li>
-  <li>Utilisable sur batterie</li>
+  <li>Can only receive after a send</li>
+  <li>Smallest power consumption</li>
+  <li>Can be used on battery</li>
   </ul>
   
   </td>
   <td><img src="images/lorawan-class-a.png" alt="" style="width: 350px;"/><br/>
   .center[<img src="images/lorawan-consumption.png" alt="" style="width: 250px;"/><br/>
-<span style="left-margin: 10px;font-style: italic;font-size:12px;text-align:right">Consommation énergétique d'un device de classe A</span>]</td>
+<span style="left-margin: 10px;font-style: italic;font-size:12px;text-align:right">Power consumption of a class A device</span>]</td>
 </tr>
 </table>
 
 <table style="width:100%">
 <tr>
-  <td><b>Device de classe C</b>
+  <td><b>Class C device</b>
   <ul>
-  <li>Latence faible</li>
-  <li>Plus gourmand en énergie</li>
-  <li>Pas utilisable sur batterie</li>
+  <li>Always listening: low latency</li>
+  <li>More power consumption</li>
+  <li>Cannot be used on battery</li>
   </ul>
   </td>
   <td><img src="images/lorawan-class-c.png" alt="" style="width: 350px;"/><br/></td>
@@ -140,23 +136,23 @@ class: center, middle
 
 ---
 
-## Architecture d'un réseau LoRaWAN
+## LoRaWAN network architecture
 
 .center[
     <img src="images/lorawan-system.png" alt="" style="width: 600px;"/><br/>
 ]
 
-- Les devices communiquent en LoRa avec les gateways
+- **Devices and gateways** exchange messages using LoRa communications
 
-- Les gateways communiquent par internet avec le serveur du réseau
+- **Gateway** are connected to the network server via regular Internet protocols
 
-- L'accès aux données se fait via une application qui intéragit avec le serveur
+- Users access their data via an application connected to the network server
 
-- La sécurité des données est assurée par l'algorithme de chiffrement par clés symétriques **AES**
+- Security of the data is garantueed by **AES** encryption (symmetric keys)
 
 ---
 
-## Schéma structurel des éléments du réseau
+## Structural overview of the network parts
 
 <br/>
 
@@ -166,7 +162,7 @@ class: center, middle
 
 ---
 
-## Communication d'un device avec le réseau
+## Device communication on the network
 
 .center[
     <img src="images/lorawan-encryption.png" alt="" style="width: 650px;"/><br/>
@@ -174,29 +170,40 @@ class: center, middle
 
 <br/>
 
-- Chaque device est identifié sur le réseau par une adresse sur 4 octets
+- Every device is identified by a 4 bytes address
 
-- "Network session key" &#x21d2; chiffrement des données propres au réseau (MAC)
+- "Network session key" &#x21d2; used to encrypt the network related data (MAC)
 
-- "Application session key" &#x21d2; chiffrement des données propres à l'application
+- "Application session key" &#x21d2; used to encrypt the application related data
 
 ---
 
-## Activation OTAA d'un device
+## Activation procedures
+
+2 type of activation procedures:
+
+- Over-The-Air Activation(OTAA)
+
+- Activation By Personnalization (ABP)
 
 .center[
     <img src="images/loraotaa.jpg" alt="" style="width: 600px;"/><br/>
 ]
 
-- Un challenge est effectué entre le serveur et un device pour obtenir son adresse
-et un "nonce"
-
-- Les 2 clés de session sont calculées à partir de la clé d'application et du nonce
-
-<div style="font-size:18px;background:lightgrey;padding:5px">
-<b>Remarque :</b> il existe aussi l'activation ABP (Activation By
-Personnalization) pour laquelle l'adresse du device et les clés d session sont
-connus à l'avance par le réseau et le device
-</div>
-
 ---
+
+## Activation procedures
+
+
+- in **OTAA**:
+  - Requires Device EUI, Application EUI and Application Key information
+
+  - The device initiates a handshake with the server to get its address and a "nonce" &#x21d2; the device address changes after each activation
+
+  - The 2 session keys are derived from the application key and the nonce
+
+- in **ABP**
+
+  - Requires Application session key, Network session key and device address
+
+  - No handshake required
