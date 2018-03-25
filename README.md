@@ -1,4 +1,4 @@
-# Workshop agenda
+# Workshop workshop
 
 ## Access the slides
 
