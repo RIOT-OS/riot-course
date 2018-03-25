@@ -70,7 +70,7 @@ $ make -C <application_dir> all
 
   - **list-ttys:** return the list of serial ports available with information on the board connected (useful when working with multiple boards)
 
-  - use `<tab>` (autocompletion) to get the full list
+  - use `<table>` (autocompletion) to get the full list
 
 - For every module `xx` imported, a **MODULE_XX** macro is created:
 ```c
@@ -163,6 +163,8 @@ static char stack[THREAD_STACKSIZE_MAIN];
 
 - **Exercise:** `~/riot-workshop-samples/riot-advanced/first-thread`
 
+- **Board:** native
+
 - In your application add a thread that prints "Hello from thread"<br><br>
 _Reminder:_
 ```c
@@ -186,7 +188,7 @@ kernel_pid_t pid = thread_create(stack,
 
 ---
 
-## Your first Thread
+## Thread: practice
 
 - Add `shell` and `ps` modules to your application
 
@@ -218,6 +220,8 @@ while (1) {}
 --
 
 - Set a lowest priority to the `thread` (e.g. higher value)
+
+- Test your final application on the ST `b-l072z-lrwan1` board
 
 ---
 
@@ -312,6 +316,8 @@ msg_init_queue(msg_queue, 8);
 
 - **Exercise:** `~/riot-workshop-samples/riot-advanced/thread-ipc`
 
+- **Board:** native and `b-l072z-lrwan1` board
+
 - **Objective:**
 
   - Write a shell command that sends a string to a thread
@@ -371,22 +377,54 @@ US_PER_MS   /* number of milliseconds per seconds */
 
 **Exercise:** `~/riot-workshop-samples/riot-advanced/timers`
 
+- **Board:** ST `b-l072z-lrwan1` board
+
 Reminder:
   - Use `LEDx_TOGGLE` macros from `board.h` to toggle the LEDs.
   - The ST board has 3 LEDs (LED1, LED2 and LED3)
 
 **Objective:**
 
-- Write an application 
+- Write an application with 3 extra threads:
 
+  - add the module `xtimer` in the application `Makefile`
+
+  - _thread\_1_ toggles the LED1 every half seconds
+
+  - _thread\_2_ toggles the LED2 every seconds
+
+  - _thread\_3_ prints the system time every 2 seconds
 
 ---
 
 ## Power management
 
-The principle
+**Principle:** <br>
+> _when all threads are blocked/terminated, the scheduler switches to the_
+> _idle thread._<br>
+> _The idle thread then goes to lowest possible power mode._
 
-Available APIs
+<table>
+<tr>
+  <td>
+  <ul>
+  <li>the desired low-power mode must be unblocked<br><br></li>
+  <li>the lowest possible power mode is selected ("Cascade")<br><br></li>
+  <li>API is defined in system `pm_layered` module</li>
+  </ul>
+  </td>
+  <td>
+.center[
+    <img src="images/riot-application.png" alt="" style="width:250px;"/>
+]
+</td>
+</tr>
+</table>
+
+**Important:**
+- The board MCU must import the `pm_layered` module
+- Still WIP, the design is subject to change in the future
+
 
 ---
 
