@@ -18,7 +18,7 @@ class: center, middle
 
 - **doc:** doxygen documentation
 
-- **drivers:** high-level devices drivers (sensors, actuators, radios), HAL API
+- **drivers:** high-level device drivers (sensors, actuators, radios), HAL API
 
 - **examples:** sample applications
 
@@ -94,15 +94,17 @@ $ make -C <application_dir> all
 
 - `cpu_unit()` is implemented in `cpu/<cpu model>/cpu.c` file
 
-- Example for for ARM Cortex-M:
+- `kernel_init()` is implemented in `core/kernel_init.c` file
+
+- Example for ARM Cortex-M:
 
  - the entry point is `reset_handler_default`
 
- - it is implemented in `cpu/cortexm_common/vectors_cortexm.c` file
+ - implemented in `cpu/cortexm_common/vectors_cortexm.c` file
 
 ---
 
-## The RIOT kernel: the scheduler and the threads
+## The scheduler and the threads
 
 - Tick-less scheduling policy (`O(1)`)
 
@@ -127,19 +129,184 @@ void *thread_handler(void *arg);
 
 ---
 
-## The RIOT kernel: dealing with Threads
+## Dealing with Threads
 
-detail kernel_init() function
+- Threads are created using the `thread_create()` function from `thread.h`:
+```c
+uint8_t pid = thread_create(stack,  /* stack array pointer */
+                                sizeof(stack), /* stack size */
+                                THREAD_PRIORITY_MAIN - 1, /* thread priority */
+                                flag, /* thread configuration flag, usually 0 */
+                                thread_handler, /* thread handler function */
+                                NULL, /* argument of thread_handler function */
+                                "thread name");
+```
+- By default, the thread starts immediately
 
-tickless scheduler
+- `stack` is a global static byte array:
+```c
+static char stack[THREAD_STACKSIZE_MAIN];
+```
 
-thread_create, stack
+- Priority is higher than `main` thread
+
+--
+
+<br>
+
+.center[&#x21d2; more usage in `tests/thread_*` test applications]
 
 ---
 
-## The RIOT kernel: exchanging messages
+## Your first Thread
 
-messages queue, send receive message
+- Go to `~/riot-workshop-samples/riot-advanced/first-thread`
+
+- In your application add a thread that prints "Hello from thread"<br><br>
+_Reminder:_
+```c
+#include "thread.h"
+static char stack[THREAD_STACKSIZE_MAIN];
+void *thread_handler(void *arg)
+{
+        /* thread code */
+        return NULL;
+}
+uint8_t pid = thread_create(stack,
+                                sizeof(stack),
+                                THREAD_PRIORITY_MAIN - 1,
+                                0,
+                                thread_handler,
+                                NULL,
+                                "thread name");
+```
+
+- Verify the message is displayed on your input (use native and the board)
+
+---
+
+## Your first Thread
+
+- Add `shell` and `ps` modules to your application
+
+- Rebuild, restart and run `ps` command
+
+- Display the list of threads. Comments?
+
+--
+
+.right[
+    &#x21d2; The thread has already returned!
+]
+
+--
+
+- Now add an infinite loop before the return:
+
+```c
+while (1) {}
+```
+- Reboot and run `ps` again. Comments ?
+
+--
+
+.right[
+    &#x21d2; Your thread has a higher priority, so the shell never starts!
+]
+
+--
+
+- Set a lowest priority to the `thread` (e.g. higher value)
+
+---
+
+## Managing thread concurrency
+
+- Threads have their own stack
+
+- But threads can also access to the globally shared memory of the application
+
+    &#x21d2; need for protection and synchronization mechanisms
+
+- RIOT provides:
+
+  - Mutexes in `mutex.h`:
+```c
+mutex_t lock;
+mutex_lock(&lock);
+mutex_unlock(&lock);
+```
+
+  - Semaphores in `sema.h` (also POSIX semaphores in `semaphores.h`)
+
+--
+
+<br>
+
+.center[&#x21d2; More usage examples in `tests/mutex_*` test applications]
+
+---
+
+## IPC
+
+- IPC messages can be exchanged between threads or between ISR and threads
+
+- IPC are **synchronous** by default or **asynchronous**
+
+- The messaging API is defined in `msg.h` (in `core`):
+  - The message type is:
+  - A message have a `type` and a `content`
+
+```c
+msg_t msg;
+msg.type = MSG_TYPE;
+msg.content.value = 42; /* content can be a value */
+msg.content.ptr = array; /* or content can be a pointer */
+```
+  - Sending a message:
+
+```c
+msg_send(&msg, pid); /* block except when called from an interrupt */
+msg_try_send(&msg, pid); /* non blocking send */
+msg_send_receive(&msg, &msg_reply, pid); /* block until a reply is received */
+msg_reply(&msg, &msg_reply); /* reply to a message */
+```
+
+---
+
+## IPC
+
+- Receiving messages:
+
+```c
+msg_receive(&msg); /* block */
+```
+
+---
+
+## Timers
+
+- High level timer provided by module `xtimer`
+
+- `xtimer` multiplex hardware timers
+
+- microseconds accuracy
+
+- Simple API:
+
+  - get current system time in microseconds
+```c
+xtimer_ticks32_t now = xtimer_now();
+```
+
+  - add a `sec` seconds delay
+```c
+xtimer_sleep(sec);
+
+  - add a `microsec` mircroseconds delay
+```c
+xtimer_usleep(microsec);
+```
 
 ---
 
@@ -151,23 +318,25 @@ Available APIs
 
 ---
 
-## Main system modules
+## The hardware abstraction layer
 
-xtimer
+Organization: boards, cpus peripherals
 
-shell
-
-auto_init
+APIs
 
 ---
 
-## The hardware abstraction layer
+## Boards abstraction layer
 
 ---
 
 ## Drivers and SAUL
 
 - "SAUL" : Sensor Actuator Uber Layer
+
+---
+
+## Auto initialization
 
 ---
 
