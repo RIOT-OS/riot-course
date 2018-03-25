@@ -9,7 +9,7 @@ git clone git@gitlab.inria.fr:aabadie/riot-workshop.git
 - Slides are divided into section, open each section in a web browser:
   - 01-Introduction: `slides/01-introduction/introduction.html`
   - 02-Getting-Started: `slides/02-getting-started/getting-started.html`
-  - 03-RIOT-Advanced: `slides/03-riot-basics/riot-basics.html`
+  - 03-RIOT-Basics: `slides/03-riot-basics/riot-basics.html`
   - 04-Networking-in-RIOT: `slides/04-networking-in-riot/networking-in-riot.html`
   - 05-LoRaWAN-with-RIOT: `slides/05-lorawan-with-riot/lorawan-with-riot.html`
 
