@@ -67,7 +67,7 @@ git clone git@gitlab.inria.fr:aabadie/riot-workshop.git
 - Adding extra modules to the application
   - USEMODULE, USEPKG, FEATURES_REQUIRED
 
-### Going further with RIOT
+### RIOT basics
 
 - Source code organization
   - core: threads, ipc
