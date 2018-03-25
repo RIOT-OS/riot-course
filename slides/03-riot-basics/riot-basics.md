@@ -159,9 +159,9 @@ static char stack[THREAD_STACKSIZE_MAIN];
 
 - Priority is higher than `main` thread
 
---
+- Useful: `thread_getpid()` return the current thread pid
 
-<br>
+--
 
 .center[&#x21d2; more usage in `tests/thread_*` test applications]
 
@@ -410,13 +410,12 @@ US_PER_MS   /* number of milliseconds per seconds */
 
 - **Board:** ST `b-l072z-lrwan1` board
 
-Reminder:
+- _Reminder_
+
   - Use `LEDx_TOGGLE` macros from `board.h` to toggle the LEDs.
   - The ST board has 3 LEDs (LED1, LED2 and LED3)
 
-**Objective:**
-
-- Write an application with 3 extra threads:
+- **Objective:** Write an application with 3 extra threads:
 
   - add the module `xtimer` in the application `Makefile`
 
@@ -550,7 +549,7 @@ static void gpio_cb(void *arg)
 
 int main()
 {
-    gpio_init(GPIO_PIN(PA, 0), GPIO_IN, GPIO_RISING, gpio_cb, NULL);
+    gpio_init_int(GPIO_PIN(PA, 0), GPIO_IN, GPIO_RISING, gpio_cb, NULL);
 }
 ```
 
@@ -564,17 +563,17 @@ int main()
 
 - **Note:** Use predefined `BTN_B1_PIN` and `LED1_PIN` macros and include `board.h`
 
-**Objective:**
+- **Objective:**
 
-- Write an application with one thread waiting for incoming messages
+  - Write an application with one thread waiting for incoming messages
 
-- For each message, the thread toggles the on-board LED1
+  - For each message, the thread toggles the on-board LED1
 
-- The on-board B1 user button and LED1 are initialied as follows in `main()`:
-  - LED1 is initialized in GPIO_OUT mode
-  - B1 is initialize in GPIO_IN mode with an interrupt callback function, `gpio_cb`: an interrupt is raised each time the button is pressed
+  - The on-board B1 user button and LED1 are initialied as follows in `main()`:
+    - LED1 is initialized in GPIO_OUT mode
+    - B1 is initialize in GPIO_IN mode with an interrupt callback function, `gpio_cb`: an interrupt is raised each time the button is pressed
 
-- For each interrupt, a message is sent from the ISR to the led management thread &#x21d2; it toggles the LED1 status
+  - For each interrupt, a message is sent from the ISR to the led management thread &#x21d2; it toggles the LED1 status
 
 _Note: we won't take of the debounce issue_
 
@@ -582,7 +581,46 @@ _Note: we won't take of the debounce issue_
 
 ## UART peripheral API
 
+- Allows to send and receive messages asynchronously from an UART
 
+- Module name is **periph_uart**, include from **periph/uart.h**
+
+- UART peripheral triggers an interrupt on each character received
+
+```c
+static void uart_cb(void *arg, uint8_t data)
+{
+    (void) arg;
+    /* manage interrupt */
+}
+
+int main()
+{
+    uart_init(UART_DEV(0), BAUDRATE, uart_cb, NULL);
+}
+```
+
+---
+
+## UART: practice
+
+- **Exercise:** `~/riot-workshop-samples/riot-basics/uart`
+
+- **Board:** ST `b-l072z-lrwan1` board
+
+- **Note:** Use first UART (USB), e.g `UART_DEV(0)`
+
+- **Objective:**
+
+  - Write an application with one thread, called `printer_thread`, waiting for incoming messages
+
+  - For each message, the thread prints "received &lt;c&gt;", with &lt;c&gt; the content of the message as a char
+
+  - Initialize `UART_DEV(0)` at 115200 bauds, with `uart_cb` as callback function
+
+  - For each character received on the UART (just press a key + return on your keyboard), send a message containing the character to the printer thread
+
+  - Experiment with long strings &#x21d2; you need a message queue or an external buffer
 
 ---
 
