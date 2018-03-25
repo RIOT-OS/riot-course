@@ -88,10 +88,6 @@ git clone git@gitlab.inria.fr:aabadie/riot-workshop.git
   - preprocessor macro `MODULE_XX`
   - what is built, `Makefile.base`
 
-- Special things
-  - The standard output
-  - Using `DEBUG` macros
-
 - The RIOT kernel
 
   - The boot sequence: `board_init()` => `cpu_init()` => `kernel_init()` => `main()`
