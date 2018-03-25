@@ -4,6 +4,14 @@ class: center, middle
 
 ---
 
+## System overview
+
+.center[
+    <img src="images/riot-apis.png" alt="" style="width:500px;"/>
+]
+
+---
+
 ## Source code organization
 
 - **boards:** board specific definitions, cpu model, clock, peripherals
@@ -161,7 +169,7 @@ static char stack[THREAD_STACKSIZE_MAIN];
 
 ## Thread: practice
 
-- **Exercise:** `~/riot-workshop-samples/riot-advanced/first-thread`
+- **Exercise:** `~/riot-workshop-samples/riot-basics/first-thread`
 
 - **Board:** native
 
@@ -314,7 +322,7 @@ msg_init_queue(msg_queue, 8);
 
 ## IPC: practice
 
-- **Exercise:** `~/riot-workshop-samples/riot-advanced/thread-ipc`
+- **Exercise:** `~/riot-workshop-samples/riot-basics/thread-ipc`
 
 - **Board:** native and `b-l072z-lrwan1` board
 
@@ -324,7 +332,7 @@ msg_init_queue(msg_queue, 8);
 
   - The receiver thread prints each received message
 
-- **Going further:** `~/riot-workshop-samples/riot-advanced/thread-safe-ipc`:
+- **Going further:** `~/riot-workshop-samples/riot-basics/thread-safe-ipc`:
 
   - Modify a global static buffer and send a message to the receiver thread
 
@@ -365,7 +373,30 @@ xtimer_sleep(sec);
 xtimer_usleep(microsec);
 ```
 
-- helper defines from `timex.h` to convert seconds to us, ms to us, etc:
+---
+
+## Timers (continued)
+
+- Use xtimer for periodic wakeups:
+
+```c
+void xtimer_periodic_wakeup(xtimer_ticks32_t *last_wakeup, uint32_t period);
+```
+
+  - Use an `xtimer_t` variable to send a message at a given time:
+
+```c
+void xtimer_set_msg(xtimer_t *timer, uint32_t offset, msg_t *msg,
+                    kernel_pid_t target_pid);
+```
+
+  - Use an `xtimer_t` variable to trigger a callback function at a given time:
+
+```c
+xtimer_set(xtimer_t *timer, uint32_t offset);
+```
+
+- helper defines are also provided by `timex.h` to convert seconds to us, ms to us, etc:
 ```c
 US_PER_SEC  /* number of microseconds per seconds */
 US_PER_MS   /* number of milliseconds per seconds */
@@ -375,7 +406,7 @@ US_PER_MS   /* number of milliseconds per seconds */
 
 ## Timers: practice
 
-**Exercise:** `~/riot-workshop-samples/riot-advanced/timers`
+- **Exercise:** `~/riot-workshop-samples/riot-basics/timers`
 
 - **Board:** ST `b-l072z-lrwan1` board
 
@@ -407,17 +438,17 @@ Reminder:
 <table>
 <tr>
   <td>
-  <ul>
-  <li>the desired low-power mode must be unblocked<br><br></li>
-  <li>the lowest possible power mode is selected ("Cascade")<br><br></li>
-  <li>API is defined in system `pm_layered` module</li>
-  </ul>
+    <ul>
+      <li>the desired low-power mode must be unblocked<br><br></li>
+      <li>the lowest possible power mode is selected ("Cascade")<br><br></li>
+      <li>API is defined in system `pm_layered` module</li>
+    </ul>
   </td>
   <td>
 .center[
     <img src="images/riot-application.png" alt="" style="width:250px;"/>
 ]
-</td>
+  </td>
 </tr>
 </table>
 
@@ -425,18 +456,137 @@ Reminder:
 - The board MCU must import the `pm_layered` module
 - Still WIP, the design is subject to change in the future
 
-
 ---
 
 ## The hardware abstraction layer
 
-Organization: boards, cpus peripherals
+- Hardware abstraction layer relies on 3 blocks: **cpus**, **boards** and **drivers**
 
-APIs
+.center[
+    <img src="images/riot-architecture.png" alt="" style="width:400px;"/>
+]
+
+- Reflects IoT devices targetted by RIOT<br><br>
+    &#x21d2; a microcontroller with devices connected on a board
+
+- One application is built for one board with one device and with potentially multiple devices (sensors, actuators, radios)
 
 ---
 
-## Boards abstraction layer
+## CPU abstraction
+
+CPUs classification follows a hierarchical approach:
+
+- **architecture** e.g ARM, AVR
+
+- **family** e.g stm32, sam
+
+- **type** e.g stm32l0, stm32l1, sam0, sam3
+
+- **model** e.g stm32l072cz, samd21g18a
+
+<table>
+<tr>
+  <td>
+    <ul>
+      <li>This organisation is not mandatory<br><br></li>
+      <li>`native` port is provided in a single module<br><br></li>
+    </ul>
+  </td>
+  <td>
+.center[
+    <img src="images/riot-cpus.png" alt="" style="width:400px;"/>
+]
+  </td>
+</tr>
+</table>
+
+---
+
+## Board abstraction
+
+---
+
+## Peripherals APIs
+
+- Uniform APIs built on top of heterogeneuous hardwares
+
+- The same code can run potentially on every hardware
+
+- APIs are defined in `drivers/include/periph` and implemented in each cpus `periph` subdirectory
+
+- Explicitely include a peripheral module in your Makefile with the **FEATURES_REQUIRED** variable
+
+- The peripheral drivers are implemented from scratch. This garantees:
+
+  - Memory efficiency
+
+  - Less code duplication
+
+  - Vendor independent implementations
+
+- See `tests/periph_*` application for usage examples
+
+- See APIs documentation: http://doc.riot-os.org/group__drivers__periph.html
+
+---
+
+## GPIO peripheral API
+
+- Module name is **periph_gpio**, include from **periph/gpio.h**
+
+- use GPIO_PIN(PORT, PIN) macro to get a gpio pin from port/pin
+
+- all GPIO usual mode could be used, but this depends on the hardware behind
+
+- Use a `gpio_init_int()` to use a gpio as external interrupt:
+
+```c
+static void gpio_cb(void *arg)
+{
+    (void) arg;
+    /* manage interrupt */
+}
+
+int main()
+{
+    gpio_init(GPIO_PIN(PA, 0), GPIO_IN, GPIO_RISING, gpio_cb, NULL);
+}
+```
+
+---
+
+## GPIO: practice
+
+- **Exercise:** `~/riot-workshop-samples/riot-basics/gpio`
+
+- **Board:** ST `b-l072z-lrwan1` board
+
+- **Note:** Use predefined `BTN_B1_PIN` and `LED1_PIN` macros and include `board.h`
+
+**Objective:**
+
+- Write an application with one thread waiting for incoming messages
+
+- For each message, the thread toggles the on-board LED1
+
+- The on-board B1 user button and LED1 are initialied as follows in `main()`:
+  - LED1 is initialized in GPIO_OUT mode
+  - B1 is initialize in GPIO_IN mode with an interrupt callback function, `gpio_cb`: an interrupt is raised each time the button is pressed
+
+- For each interrupt, a message is sent from the ISR to the led management thread &#x21d2; it toggles the LED1 status
+
+_Note: we won't take of the debounce issue_
+
+---
+
+## UART peripheral API
+
+
+
+---
+
+## Peripheral APIs: RTC
 
 ---
 
