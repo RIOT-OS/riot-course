@@ -1,6 +1,6 @@
 class: center, middle
 
-# RIOT advanced
+# RIOT basics
 
 ---
 
