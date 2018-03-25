@@ -174,7 +174,7 @@ http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.pdf
 
 ---
 
-## Scheduler & Multi-Threading
+## Multi-Threading
 
 2 threads by default:
 
@@ -199,7 +199,7 @@ The ISR context handles external events and notifies threads using IPC messages
 
 - `native` board: run RIOT as process on your computer
 
-- Vendors: Microchip, NXP, STMicroelectronics, Nordic, TI, etc
+- Supported vendors: Microchip, NXP, STMicroelectronics, Nordic, TI, etc
 
 - Large list of sensors and actuators supported (e.g drivers)
 
@@ -306,7 +306,7 @@ shell
 <br><br>
 
 .center[
-    <img src="images/packages.png" alt="" style="width:300px;"/>
+    <img src="images/packages.png" alt="" style="width:400px;"/>
 ]
 
 ---
