@@ -133,13 +133,14 @@ void *thread_handler(void *arg);
 
 - Threads are created using the `thread_create()` function from `thread.h`:
 ```c
-uint8_t pid = thread_create(stack,  /* stack array pointer */
-                                sizeof(stack), /* stack size */
-                                THREAD_PRIORITY_MAIN - 1, /* thread priority */
-                                flag, /* thread configuration flag, usually 0 */
-                                thread_handler, /* thread handler function */
-                                NULL, /* argument of thread_handler function */
-                                "thread name");
+kernel_pid_t pid;
+pid = thread_create(stack,  /* stack array pointer */
+                        sizeof(stack), /* stack size */
+                        THREAD_PRIORITY_MAIN - 1, /* thread priority*/
+                        flag, /* thread configuration flag, usually*/
+                        thread_handler, /* thread handler function */
+                        NULL, /* argument of thread_handler function*/
+                        "thread name");
 ```
 - By default, the thread starts immediately
 
@@ -158,9 +159,9 @@ static char stack[THREAD_STACKSIZE_MAIN];
 
 ---
 
-## Your first Thread
+## Thread: practice
 
-- Go to `~/riot-workshop-samples/riot-advanced/first-thread`
+- **Exercise:** `~/riot-workshop-samples/riot-advanced/first-thread`
 
 - In your application add a thread that prints "Hello from thread"<br><br>
 _Reminder:_
@@ -172,13 +173,13 @@ void *thread_handler(void *arg)
         /* thread code */
         return NULL;
 }
-uint8_t pid = thread_create(stack,
-                                sizeof(stack),
-                                THREAD_PRIORITY_MAIN - 1,
-                                0,
-                                thread_handler,
-                                NULL,
-                                "thread name");
+kernel_pid_t pid = thread_create(stack,
+                                     sizeof(stack),
+                                     THREAD_PRIORITY_MAIN - 1,
+                                     0,
+                                     thread_handler,
+                                     NULL,
+                                     "thread name");
 ```
 
 - Verify the message is displayed on your input (use native and the board)
@@ -279,8 +280,58 @@ msg_reply(&msg, &msg_reply); /* reply to a message */
 - Receiving messages:
 
 ```c
-msg_receive(&msg); /* block */
+msg_receive(&msg); /* block until a message is received */
+msg_try_receive(&msg); /* try to receive a message without blocking */
 ```
+
+- Typical use case: a listener thread waiting for messages coming from ISR
+
+```c
+void *thread_handler(void *arg)
+{
+    /* endless loop */
+    while (1) {
+        msg_t msg;
+        msg_receive(&msg);
+        printf("Message received: %s\n", (char *)msg.content.ptr);
+    }
+    return NULL;
+}
+```
+
+- With asynchronous messaging always initialize a thread message queue in the thread handler:
+
+```c
+msg_t msg_queue[8];
+msg_init_queue(msg_queue, 8);
+```
+
+---
+
+## IPC: practice
+
+- **Exercise:** `~/riot-workshop-samples/riot-advanced/thread-ipc`
+
+- **Objective:**
+
+  - Write a shell command that sends a string to a thread
+
+  - The receiver thread prints each received message
+
+- **Going further:** `~/riot-workshop-samples/riot-advanced/thread-safe-ipc`:
+
+  - Modify a global static buffer and send a message to the receiver thread
+
+  - Ensure thread safety using a mutex. You will have to define a struct:
+
+  ```c
+typedef struct {
+        char data[BUFFER_SIZE];
+        mutex_t lock;
+} data_buffer_t;
+  ```
+
+  - Ensure thread safety using a blocking message exchange (use `msg_send_receive`, the previous struct is not needed)
 
 ---
 
@@ -307,6 +358,27 @@ xtimer_sleep(sec);
 ```c
 xtimer_usleep(microsec);
 ```
+
+- helper defines from `timex.h` to convert seconds to us, ms to us, etc:
+```c
+US_PER_SEC  /* number of microseconds per seconds */
+US_PER_MS   /* number of milliseconds per seconds */
+```
+
+---
+
+## Timers: practice
+
+**Exercise:** `~/riot-workshop-samples/riot-advanced/timers`
+
+Reminder:
+  - Use `LEDx_TOGGLE` macros from `board.h` to toggle the LEDs.
+  - The ST board has 3 LEDs (LED1, LED2 and LED3)
+
+**Objective:**
+
+- Write an application 
+
 
 ---
 
