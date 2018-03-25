@@ -48,12 +48,15 @@ $ make -C <application_dir> all
 
 - Modules:
   - `module name = directory basename`
+
   - simply include _$(RIOTBASE)Makefile.base_ in the module _Makefile_
+
   - all `.c` are added to the module
 
-- in drivers/sys/pkg
-  - _Makefile.include_ add include specific directories to the build system
-  - _Makefile.dep_ manage dependencies between modules
+- in `drivers`, `sys`, `pkg`
+  - _Makefile.include_: add include specific directories to the build system
+
+  - _Makefile.dep_: manage dependencies between modules
 
 ---
 
@@ -81,15 +84,54 @@ $ make -C <application_dir> all
 
 ## The RIOT kernel
 
-boot sequence
+- Overview of the boot sequence:
 
-detail kernel_init() function
+.center[
+    <img src="images/riot-boot.png" alt="" style="width:600px;"/>
+]
 
-tickless scheduler
+- `board_init()` is implemented in `boards/<board name>/board.c` file
+
+- `cpu_unit()` is implemented in `cpu/<cpu model>/cpu.c` file
+
+- Example for for ARM Cortex-M:
+
+ - the entry point is `reset_handler_default`
+
+ - it is implemented in `cpu/cortexm_common/vectors_cortexm.c` file
+
+---
+
+## The RIOT kernel: the scheduler and the threads
+
+- Tick-less scheduling policy (`O(1)`)
+
+- Highest priority thread runs until finished or blocked:
+  - 16 priority levels
+  - the lower level the higher priority
+  - Idle thread has priority 15
+  - Main thread has priority 7
+
+- ISR can preempt any thread at any time
+
+- If all threads are blocked:
+  - Switch to special IDLE thread
+  - Goes into low-power mode
+
+- A Thread is just a function with signature:
+```c
+void *thread_handler(void *arg);
+```
+
+- Threads manage their own memory stack
 
 ---
 
 ## The RIOT kernel: dealing with Threads
+
+detail kernel_init() function
+
+tickless scheduler
 
 thread_create, stack
 
