@@ -412,6 +412,8 @@ $ make BOARD=b-l072z-lrwan1 -C getting-started/led-app/ flash term
 
   - `examples/default`
 
+- Test applications also provides good examples to start the RIOT
+
 ---
 
 ## Summary

@@ -76,3 +76,29 @@ Alexandre Abadie, Inria
 <br/><br/>
 
 .center[<img src="images/inria_logo.png" alt="" style="width:150px;">]
+
+---
+
+## About the hardware
+
+- ST B-L072Z-LRWAN1 LoRa discovery board
+
+  - STM32L0 microcontroller: 20kB RAM, 192kBROM
+
+  - A Semtech SX1276 LoRa radio transceiver, also compatible with SigFox
+
+  - http://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html
+
+  <br>
+
+- ST X-NUCLEO-IKS01A2 MEMs extension board:
+
+  - LSM6DSL 3D accelerometer
+
+  - LSM303AGR 3D accelerometer
+
+  - LPS22HB pressure sensor
+
+  - HTS221 relative humidity and temperature sensor
+
+  - http://www.st.com/en/ecosystems/x-nucleo-iks01a2.html
