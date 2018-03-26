@@ -22,13 +22,11 @@ class: center, middle
 
 - First release 1.0 of the LoRaWaN specification in 2015
 
+- Latest release 1.1 in 2018
 
 - Based on long range radio communication modulation, LoRa
 
-
-- Star network topology
-
-
+- Star network topology &#x21d2; devices talks to the network via gateways
 
 ---
 
@@ -58,7 +56,7 @@ class: center, middle
         </li>
     </ul>
   </td>
-  <td><img src="images/lorawan-datarate-sf.png" alt="" style="width: 400px;"/></td>
+  <td><img src="images/lorawan-datarate-sf.png" alt="" style="width: 300px;"/></td>
 </tr>
 </table>
 
@@ -180,7 +178,9 @@ class: center, middle
 
 ## Activation procedures
 
-2 type of activation procedures:
+.center[To exchange data, all devices must be activated by the network]
+
+&#x21d2; 2 type of activation procedures:
 
 - Over-The-Air Activation(OTAA)
 
@@ -207,3 +207,198 @@ class: center, middle
   - Requires Application session key, Network session key and device address
 
   - No handshake required
+
+---
+
+## Network operators
+
+Lots of public network operators:
+
+- Actility https://www.actility.com/
+
+- Loriot https://www.loriot.io/
+
+- Objenious (Bouygues Telecom) http://objenious.com/
+
+- Orbiwise  https://www.orbiwise.com/
+
+- TheThingsNetwork https://www.thethingsnetwork.org/
+
+.center[
+    <img src="images/ttn-logo.svg" alt="" style="width: 200px;"/><br/>
+]
+
+---
+
+## TheThingsNetwork (TTN)
+
+- The network deployment is **community based**
+
+- Software stack is open-source
+
+.center[
+    <img src="images/ttn-map.png" alt="" style="width: 650px;"/><br/>
+]
+
+- Unlimited access to the backend
+
+  - no device limit
+
+  - no message limit (with respect to the duty-cycle)
+
+  - friendly API (MQTT)
+
+---
+
+## First steps with TTN
+
+1. Create an account<br>
+  https://account.thethingsnetwork.org/register
+
+  Manage your gateways and application from your web console: https://console.thethingsnetwork.org/
+
+2. Managing your gateways (optional)<br>
+  https://www.thethingsnetwork.org/docs/gateways/registration.html
+
+3. Creating an application<br>
+  https://www.thethingsnetwork.org/docs/applications/add.html
+
+4. Register your device(s)<br>
+  https://www.thethingsnetwork.org/docs/devices/registration.html
+
+---
+
+## How to program the end-device
+
+Existing open-source implementations:
+
+- LoRaMAC-in-C (LMIC) https://github.com/mirakonta/lmic <br>
+  &#x21d2; seems abandonned
+
+- Arduino LMIC https://github.com/matthijskooijman/arduino-lmic
+  &#x21d2; nearly unmaintained
+
+- Arduino LoRa https://github.com/sandeepmistry/arduino-LoRa
+  &#x21d2; active
+
+- Loramac-node https://github.com/Lora-net/LoRaMac-node
+  &#x21d2; reference implementation, used for certification from LoRa Alliance
+
+<br>
+
+End-device OS support (generally based on Loramac-node):
+
+- ARM mbedOS: https://www.mbed.com/en/platform/mbed-os/
+
+- Mynewt: https://mynewt.apache.org/
+
+- RIOT: https://riot-os.org/
+
+---
+
+## Example: using RIOT
+
+- Loramac port documentation <br>
+http://doc.riot-os.org/group__pkg__semtech-loramac.html
+
+- Build and run the test/demo application provided by RIOT
+
+```sh
+make -C tests/pkg_semtech-loramac flash term
+```
+
+- Configure the device using the shell of RIOT
+
+```sh
+> loramac set deveui 0000000000000000
+> loramac set appeui 0000000000000000
+> loramac set appkey 00000000000000000000000000000000
+```
+
+- Join the network using OTAA activation procedure
+
+```sh
+> loramac join otaa
+Join procedure succeeded!
+```
+
+- Send (and eventually receive) messages to the network
+
+```sh
+> loramac tx HelloWorld!
+Tx done
+```
+
+---
+
+## The TTN MQTT API
+
+- MQTT protocol uses a publish/subscribe approach
+.center[
+    <img src="images/pub-sub-model.png" alt="" style="width: 350px;"/><br/>
+]
+
+- TTN MQTT API documentation<br>
+https://www.thethingsnetwork.org/docs/applications/mqtt/
+
+- Reference implementation provided by the Eclipse Mosquitto project<br>
+https://mosquitto.org/
+
+- Eclipse also provides a python library: _paho_<br>
+https://www.eclipse.org/paho/
+
+---
+
+## Using the MQTT API
+
+.center[
+    <img src="images/overview_application.png" alt="" style="width: 350px;"/><br/>
+]
+
+- Listening to upling messages (device to network):
+
+```sh
+$ mosquitto_sub -h eu.thethings.network -p 1883 -u <username> -P <password>
+-t '+/devices/+/up'
+```
+
+- Sending a downling message (network to device):
+
+```sh
+$ mosquitto_pub -h eu.thethings.network -p 1883 -u <username> -P <password>
+-t '<application id>/devices/<device id>/down'
+-m '{"port":2, "payload_raw":"dGVzdA=="}'
+```
+
+---
+
+## Integration with external services
+
+An example: Cayenne https://www.mydevices.com
+
+- Create only dashboards in a few clicks from your LoRaWAN data
+
+- Access your sensor data from anywhere
+
+- Payload format requirement: Low Power Payload (LPP)
+
+  - Library available for python/micropython:<br>
+  https://github.com/jojo-/py-cayenne-lpp
+
+  - Library available for Arduino (C++):<br>
+  https://github.com/sabas1080/CayenneLPP
+
+  - Generic library in C<br>
+  https://github.com/aabadie/cayenne-lpp
+
+---
+
+## Example with RIOT
+
+```c
+
+```
+
+---
+
+## Summary
