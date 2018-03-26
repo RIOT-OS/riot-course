@@ -808,3 +808,19 @@ driver_name_init(&dev, &driver_name_params[0]);
 ---
 
 ## Summary
+
+- Organization of the code
+
+- The build system
+
+- The RIOT kernel: boot sequence, threads, IPC
+
+- Timers
+
+- Power management
+
+- The hardware abstraction layer: board, cpu peripherals
+
+- Drivers
+
+- Packages
