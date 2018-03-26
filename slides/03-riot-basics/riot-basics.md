@@ -559,13 +559,13 @@ int main()
 
 - **Exercise:** `~/riot-workshop-samples/riot-basics/gpio`
 
-- **Board:** ST `b-l072z-lrwan1` board
+- **Board:** ST `b-l072z-lrwan1`
 
 - **Note:** Use predefined `BTN_B1_PIN` and `LED1_PIN` macros and include `board.h`
 
 - **Objective:**
 
-  - Write an application with one thread waiting for incoming messages
+  - Write an application with one thread that waits for incoming messages
 
   - For each message, the thread toggles the on-board LED1
 
@@ -575,7 +575,7 @@ int main()
 
   - For each interrupt, a message is sent from the ISR to the led management thread &#x21d2; it toggles the LED1 status
 
-_Note: we won't take of the debounce issue_
+_Note: we won't take care of the debounce issue_
 
 ---
 
@@ -606,13 +606,13 @@ int main()
 
 - **Exercise:** `~/riot-workshop-samples/riot-basics/uart`
 
-- **Board:** ST `b-l072z-lrwan1` board
+- **Board:** ST `b-l072z-lrwan1`
 
 - **Note:** Use first UART (USB), e.g `UART_DEV(0)`
 
 - **Objective:**
 
-  - Write an application with one thread, called `printer_thread`, waiting for incoming messages
+  - Write an application with one thread, called `printer_thread`, that waits for incoming messages
 
   - For each message, the thread prints "received &lt;c&gt;", with &lt;c&gt; the content of the message as a char
 
@@ -625,6 +625,55 @@ int main()
 ---
 
 ## Peripheral APIs: RTC
+
+- Provide an accurate and low power access to timings
+
+- Still running even when the CPU is in low-power mode
+
+- Use standard lib `tm` struct from `time.h`
+
+- Simple API:
+
+```c
+/* Set current time of the RTC */
+rtc_set_time(struct tm *time);
+
+/* Get current time */
+rtc_get_time(struct tm *time);
+```
+
+- Can be used to configure an alarm:
+
+```c
+static void rtc_alarm_cb(void *)
+{
+    /* manage the alarm */
+}
+
+[...]
+struct tm alarm;
+rtc_set_alarm(&alarm, rtc_alarm_cb, NULL);
+```
+
+---
+
+## RTC: practice
+
+- **Exercise:** `~/riot-workshop-samples/riot-basics/rtc`
+
+- **Board:** ST `b-l072z-lrwan1`
+
+- **Objective:**
+
+  1. Write an application that get the current RTC time and print it to stdout
+
+  2. Start one thread, called `blink_thread`, that waits for incoming messages. For each message, the thread switch on LED1 during 1 seconds, then switch it off
+
+  3. After switching the LED off, the thread get the current time and prints it
+
+  4. Finally, it sets an RTC alarm 5 seconds later
+
+  5. In the RTC alarm callback, send a message to the `blink_thread`
 
 ---
 
