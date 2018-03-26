@@ -466,7 +466,7 @@ US_PER_MS   /* number of milliseconds per seconds */
 ]
 
 - Reflects IoT devices targetted by RIOT<br><br>
-    &#x21d2; a microcontroller with devices connected on a board
+    &#x21d2; a microcontroller with devices connected together on a board
 
 - One application is built for one board with one device and with potentially multiple devices (sensors, actuators, radios)
 
@@ -503,6 +503,23 @@ CPUs classification follows a hierarchical approach:
 ---
 
 ## Board abstraction
+
+- Each directory in `boards` creates a board module<br>
+  &#x21d2; `BOARD=<board module name>`
+
+- Defines the MCU family and model used in `Makefile.include`
+
+- Defines the list of features provided (e.g MCU peripheral) and configured in `Makefile.features`
+
+- Defines the configurations of each MCU peripherals and clocks in `periph_conf.h`
+
+- `board.h` provides specific on-board defines for:
+
+  - Configurations for the `xtimer` module
+
+  - on-board LEDs and buttons pins
+
+  - on-board high-level device drivers (sensor, actuators)
 
 ---
 
@@ -677,15 +694,114 @@ rtc_set_alarm(&alarm, rtc_alarm_cb, NULL);
 
 ---
 
-## Drivers and SAUL
+## Other peripheral drivers available
 
-- "SAUL" : Sensor Actuator Uber Layer
+- **Timer**: module `periph_timer`, include from `periph/timer.h`
+
+- **I2C**: module `periph_i2c`, include from `periph/i2c.h`
+
+- **SPI**: module `periph_spi`, include from `periph/spi.h`
+
+- **PWN**: module `periph_pwm`, include from `periph/pwm.h`
+
+- **ADC**: module `periph_adc`, include from `periph/adc.h`
+
+- **DAC**: module `periph_dac`, include from `periph/dac.h`
+
+- **RTT**: real-time timer, module `periph_adc`, include from `periph/rtt.h`
+
+.center[etc]
 
 ---
 
-## Auto initialization
+## High-level drivers
+
+.center[
+    <img src="images/riot-architecture.png" alt="" style="width:400px;"/>
+]
+
+- Built on top of peripheral APIs &#x21d2; ensures portability
+
+- Current design allows multiple drivers of the same type to be used:<br>
+
+  &#x21d2; Concept of **device descriptors** containing runtime state
+
+- Drivers are defined in `drivers/include/<driver name>` and implemented in `drivers/<driver name>`
+
+- **SAUL** (Sensor Actuator Uber Layer) &#x21d2; high level abstraction built on top of the drivers
+
+---
+
+## High-level drivers: initialization
+
+- Drivers implementations provide default initialization parameters in `drivers/<driver name>/include/<driver name>_params.h`
+
+- Default params can be overriden:
+
+  - in application code: add your own `<driver name>_params.h` there
+
+  - board configuration `board.h`: predefine required macros
+
+- A typical driver `driver_name` initialization is:
+
+```c
+#include "driver_name.h"
+#include "driver_name_params.h"
+
+static driver_name_t dev;
+
+[...]
+
+/* in main */
+driver_name_init(&dev, &driver_name_params[0]);
+```
+
+---
+
+## High-level drivers: practice
+
+- **Exercise:** `~/riot-workshop-samples/riot-basics/drivers`
+
+- **Board:** ST `b-l072z-lrwan1` with X-Nucleo extension
+
+- **Objective:**
+
+  - Write an application that reads the HTS221 sensors values (temperature and humidity) and the LSM6DSL accelerometer values every 2 seconds
+
+- _Tip_: refer to the online documentation of the device drivers
+
+  - HTS221: http://doc.riot-os.org/group__drivers__hts221.html
+
+  - LSM6DSL: http://doc.riot-os.org/group__drivers__lsm6dsl.html
+
+  - Test applications are also helpful: <br>
+    &#x21d2; `~/RIOT/tests/drivers_hts221`<br>
+    &#x21d2; `~/RIOT/tests/drivers_lsm6dsl`
 
 ---
 
 ## Packages
 
+**Principle:** Integrate an external library from source to the final built firmware
+
+**Workflow:**
+
+1. Fetch the source either from local or using `git`
+
+2. Patch the source (optional)
+
+3. Copied the RIOT makefile to the fetched sources: creates one (or more) module
+
+**Simple to add:**
+
+- Packages are downloaded in the application `bin` directory
+
+- Only 3 files are required at minimum:
+
+  - `Makefile` defines the url, version and commands to build the package
+  - `Makefile.include` defines the inclusion directory
+  - `Makefile.<package_name>` the RIOT makefile copied to the fetched sources
+
+---
+
+## Summary
