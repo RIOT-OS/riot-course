@@ -764,9 +764,12 @@ driver_name_init(&dev, &driver_name_params[0]);
 
 - **Board:** ST `b-l072z-lrwan1` with X-Nucleo extension
 
-- **Objective:**
+- **Objective:** Write an application that starts 2 threads
 
-  - Write an application that reads the HTS221 sensors values (temperature and humidity) and the LSM6DSL accelerometer values every 2 seconds
+    - `thread1` reads the HTS221 sensors values (temperature and humidity) every 2 seconds and prints the values to stdout
+    - `thread2` reads the LSM6DSL accelerometer values every 100ms and prints the values to stdout
+
+    - The drivers are initialized in the `main` function after the threads creations
 
 - _Tip_: refer to the online documentation of the device drivers
 
