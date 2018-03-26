@@ -236,13 +236,20 @@ TERMFLAGS="-s 115200 -p /dev/ttyACM0 -e" flash term
 
 ## Debugging an application
 
-Use **debug** targets
+- Use **debug** target. For example with OpenOCD:
 
-**DEVELHELP**
+  - Starts a GDB server
 
-Useful `CFLAGS` options:<br>
--DLOG_LEVEL=LOG_DEBUG : enable debug output globally
--DDEBUG_ASSERT_VERBOSE : catch `FAILED ASSERTION` errors and give the line number
+  - Starts GDB client, connect to the GDB server and load the application<br><br>
+    &#x21d2; Ready to debug
+
+- **DEVELHELP:** make variable that enables safety checking (get thread names, etc)
+
+- Useful `CFLAGS` options:<br>
+
+  - -DLOG_LEVEL=LOG_DEBUG : enable debug output globally
+
+  - -DDEBUG_ASSERT_VERBOSE : catch `FAILED ASSERTION` errors and give the line number
 
 ---
 
@@ -307,7 +314,7 @@ Command              Description
 
 ## Adding commands to the shell
 
-- Add `shell_commands` module &#x21d2; add default commands (`reboot`)
+- `shell_commands` module &#x21d2; add default commands (`reboot`)
 
 - Include extra modules with predefined commands: `ps`, `random`
 

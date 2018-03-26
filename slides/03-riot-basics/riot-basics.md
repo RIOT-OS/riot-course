@@ -769,7 +769,7 @@ driver_name_init(&dev, &driver_name_params[0]);
     - `thread1` reads the HTS221 sensors values (temperature and humidity) every 2 seconds and prints the values to stdout
     - `thread2` reads the LSM6DSL accelerometer values every 100ms and prints the values to stdout
 
-    - The drivers are initialized in the `main` function after the threads creations
+    - The drivers are initialized in the `main` function **before** the threads
 
 - _Tip_: refer to the online documentation of the device drivers
 

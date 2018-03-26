@@ -256,15 +256,21 @@ The ISR context handles external events and notifies threads using IPC messages
 
 ---
 
-## System libraries
+## Useful system libraries
 
-xtimer
+- **xtimer**
 
-crypto
+  - high-level timer subsystem thet provides full abstraction from the hardware timer
 
-formatting/encoder/decoder
+  - Can set callbacks, put a thread to sleep, etc
 
-shell
+- **shell**
+
+  - provides interactive command line interface
+
+  - useful for interactive debugging or examples
+
+- **Others:** crypto, fmt, math, etc
 
 ---
 
