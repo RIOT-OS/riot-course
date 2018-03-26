@@ -418,3 +418,12 @@ $ make BOARD=b-l072z-lrwan1 -C getting-started/led-app/ flash term
 
 ## Summary
 
+- Setup your environment
+
+- Build & run your first RIOT application, native and on hardware
+
+- Debug your application
+
+- How to extend an application, the `shell`
+
+- Basic interaction with the hardware
