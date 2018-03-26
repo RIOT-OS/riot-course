@@ -321,7 +321,7 @@ The ISR context handles external events and notifies threads using IPC messages
 
 - Tooling and build system
 
-  - hand crafted makefiles for building a RIOT application
+      - hand crafted makefiles for building a RIOT application
 
   - On-Chip debugging with **OpenOCD** and **GDB**
 
@@ -342,3 +342,27 @@ The ISR context handles external events and notifies threads using IPC messages
 ---
 
 ## Summary
+
+- Generalities on RIOT: history, community, users
+
+- A technical overview:
+
+  - OS charactéristics
+
+  - hardware support
+
+  - libraries
+
+  - network stack
+
+  - import external libraries via packages
+
+- The RIOT ecosystem:
+
+  - standard tools
+
+  - CI
+
+  - documentation
+
+  - releases
