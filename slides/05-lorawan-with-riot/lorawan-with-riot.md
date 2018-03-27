@@ -1,15 +1,22 @@
 class: center, middle
 
-# LoRaWAN with RIOT
+# LoRaWAN
 
 ---
 
-# Overview of LoRaWAN
+## IoT protocols
 
+.center[
+  iser  <img src="images/iot-protocols-overview.png" alt="" style="width:800px;"/>
+]
+
+---
+
+## Overview of LoRaWAN
 
 <br/>
 
-- IoT protocol by Semtech and promoted by the LoRa Alliance
+- Designed by Semtech and promoted by the LoRa Alliance
 
 <br/>
 .center[
@@ -390,6 +397,8 @@ An example: Cayenne https://www.mydevices.com
 
   - Generic library in C<br>
   https://github.com/aabadie/cayenne-lpp
+
+---
 
 ---
 
