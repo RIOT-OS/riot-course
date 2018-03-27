@@ -166,7 +166,7 @@ interface created (tap0 and tap1):
 
 ```sh
 $ sudo PORT=tap0 make -C ~/RIOT/examples/gnrc_networking term
-main(): This is RIOT! (Version: 0f03-trek-saclay-workshop-captronic)
+main(): This is RIOT! (Version: workshop-captronic)
 RIOT network stack example application
 All up, running the shell now
 > help
@@ -196,18 +196,100 @@ Iface  6  HWaddr: 0a:46:47:86:27:e8
 12 bytes from fe80::846:47ff:fe86:27e8: id=83 seq=1 hop limit=64 time = 0.340 ms
 ```
 
-tapsetup native gnrc_networking
+---
 
-ping
+## IPv6 networking: practice (2)
 
-udp
+- On one of the RIOT native instance, start an UDP server on port 8888:
+
+```sh
+> udp server start 8888
+Success: started UDP server on port 8888
+```
+
+- Send an UDP packet from the other instance:
+
+```sh
+> udp send fe80::846:47ff:fe86:27e8 8888 HelloWorld!
+```
+
+- Verify that you receive a packet dump on the udp server:
+
+```sh
+ PKTDUMP: data received:
+~~ SNIP  0 - size:  11 byte, type: NETTYPE_UNDEF (0)
+00000000  48  65  6C  6C  6F  57  6F  72  6C  64  21
+~~ SNIP  1 - size:   8 byte, type: NETTYPE_UDP (3)
+   src-port:  8888  dst-port:  8888
+   length: 19  cksum: 0x9e9e
+~~ SNIP  2 - size:  40 byte, type: NETTYPE_IPV6 (1)
+traffic class: 0x00 (ECN: 0x0, DSCP: 0x00)
+[...]
+~~ SNIP  3 - size:  22 byte, type: NETTYPE_NETIF (-1)
+[...]
+~~ PKT    -  4 snips, total size:  81 byte
+```
 
 ---
 
-## CoAP messaging
+## IPv6 networking: practice (3)
 
-gcoap + lib_coap
+Let's communicate between the host and the RIOT instance!
 
+- From the Linux host, verify that ping works:
+
+```sh
+$ ping6 fe80::846:47ff:fe86:27e8%tapbr0
+```
+
+- From the Linux host, send an UDP messag:
+
+```sh
+$ echo -n "hello" >/dev/udp/fe80::846:47ff:fe86:27e8%tapbr0/8888
+```
+
+- Using netcat, connect to the UDP server and start sending messages:
+
+```sh
+$ nc -6uv fe80::846:47ff:fe86:27e8%tapbr0 8888
+Connection to fe80::846:47ff:fe86:27e8%tapbr0 8888 port [udp/*] succeeded!
+HelloWorld!
+```
+
+---
+
+## Using CoAP: practice
+
+- Build the `nanocoap_server` example application for native:
+
+```sh
+$ make -C ~/RIOT/examples/nanocoap_server all
+```
+
+- Start a native instance of RIOT:
+
+```sh
+$ sudo PORT=tap0 make -C ~/RIOT/examples/nanocoap_server term
+main(): This is RIOT! (Version: workshop-captronic)
+RIOT nanocoap example application
+Waiting for address autoconfiguration...
+Configured network interfaces:
+Iface  5  HWaddr: 0a:46:47:86:27:e8 
+          MTU:1500  HL:64  Source address length: 6
+          Link type: wired
+          inet6 addr: fe80::846:47ff:fe86:27e8  scope: local
+```
+
+- From the Linux host, query the CoAP server running on the native instance:
+
+```sh
+$ coap-client -m get coap://[fe80::846:47ff:fe86:27e8%tapbr0]/.well-known/core
+v:1 t:CON c:GET i:b615 {} [ ]
+</.well-known/core>,</riot/board>,</riot/value>
+$ coap-client -m get coap://[fe80::846:47ff:fe86:27e8%tapbr0]/riot/board
+v:1 t:CON c:GET i:c84c {} [ ]
+native
+```
 ---
 
 ## Testing IPv6 on hardware
@@ -233,6 +315,22 @@ See: https://www.iot-lab.info/tutorials/use-samr21-nodes/
 
 ## Public IPv6 networking
 
+See: https://www.iot-lab.info/tutorials/riot-public-ipv66lowpan-network-with-m3-nodes/
+
+Small change:
+
+- Use samr21-xpro instead of iotlab-m3
+
+- Skip border-router related steps
+
 ---
 
 ## CoAP
+
+See: https://www.iot-lab.info/tutorials/coap-using-riot-with-m3-nodes/
+
+Small change:
+
+- Use samr21-xpro instead of iotlab-m3
+
+- Skip border-router related steps
