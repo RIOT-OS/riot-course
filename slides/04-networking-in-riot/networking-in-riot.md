@@ -91,7 +91,7 @@ class: center, middle
       <li>Network are decoupled from the hardware via the <b>netdev</b> API<br><br></li>
       <li>Application are decoupled from network stack via the <b>sock</b> API<br><br></li>
       <li>Each device runs in its <b>own thread</b><br><br></li>
-      <li>Radio drivers are implementing in `drivers`<br><br></li>
+      <li>Radio drivers are implemented in `drivers`<br><br></li>
       <li>Network APIs are defined in `sys/include/net` and implemented in `sys/net`<br><br></li>
     </ul>
   </td>
@@ -111,7 +111,7 @@ class: center, middle
     <img src="images/riot-gnrc-stack.png" alt="" style="width:400px;"/>
 ]
 
-- Radio drivers accessed through the **netdev** API
+- Radio drivers are accessed through the **netdev** API
 
 - All internal components use a single API: **netapi**
 
@@ -127,9 +127,10 @@ class: center, middle
     <img src="images/netdev-rx.png" alt="" style="width:500px;"/>
 ]
 
-- Radio events trigger interrupt
+- Radio events trigger interrupts &#x21d2; ISR context
 
-- RIOT makes a good use of thread to manage them nicely
+- RIOT makes a good use of thread to manage them nicely<br>
+  &#x21d2; move fast from ISR context to netdev thread context
 
 - More information here: <br>
 http://doc.riot-os.org/group__drivers__netdev__api.html
@@ -142,7 +143,58 @@ class: middle, center
 
 ---
 
-## Networking: practice
+## IPv6 networking: practice (1)
+
+- **Objective:** IPv6 networking between 2 RIOT native instances
+
+1. Configure a network bridge with 2 virtual interfaces (`tap`) with the
+   following command (user password is user):
+
+```sh
+$ sudo ~/RIOT/dist/tools/tapsetup/tapsetup -c 2
+$ ifconfig
+```
+
+2. Build the `gnrc_networking` example application for native:
+
+```sh
+$ make -C ~/RIOT/examples/gnrc_networking all
+```
+
+3. In separate terminals, start 2 native instances of RIOT on each `tap`
+interface created (tap0 and tap1):
+
+```sh
+$ sudo PORT=tap0 make -C ~/RIOT/examples/gnrc_networking term
+main(): This is RIOT! (Version: 0f03-trek-saclay-workshop-captronic)
+RIOT network stack example application
+All up, running the shell now
+> help
+```
+---
+
+## IPv6 networking: practice (2)
+
+- Check the link local IPv6 address of each instance using `ifconfig`:
+
+```sh
+> ifconfig
+Iface  6  HWaddr: 0a:46:47:86:27:e8 
+          MTU:1500  HL:64  RTR  
+          RTR_ADV  
+          Source address length: 6
+          Link type: wired
+          inet6 addr: fe80::846:47ff:fe86:27e8  scope: local  THIS ONE!
+          inet6 group: ff02::2
+[...]
+```
+
+- Verify that you can ping them:
+
+```sh
+> ping6 fe80::846:47ff:fe86:27e8
+12 bytes from fe80::846:47ff:fe86:27e8: id=83 seq=1 hop limit=64 time = 0.340 ms
+```
 
 tapsetup native gnrc_networking
 
