@@ -1,6 +1,6 @@
 class: center, middle
 
-# LoRaWAN
+# LoRaWAN with RIOT
 
 ---
 
@@ -98,7 +98,6 @@ class: center, middle
 
 - Public and free **ISM bands** used: EU868 (ETSI), US915, etc
 
-
 - Bands are divided into **channels** of 3 different widths: 125kHz, 250kHz ou 500kHz
 
 - Time constrained access to the physical layer &#x21d2; **Duty Cycle** (1% / channel)
@@ -159,11 +158,54 @@ class: center, middle
 
 ## Structural overview of the network parts
 
-<br/>
-
 .center[
-    <img src="images/lorawan-network.png" alt="" style="width: 750px;"/><br/>
+    <img src="images/lorawan-network.png" alt="" style="width: 700px;"/><br/>
 ]
+
+<table style="width:100%">
+<tr>
+  <td><b>Gateway manufacturers</b>
+  <ul>
+  <li>IMST Lite Gateway https://shop.imst.de</li>
+  <li>Kerlink https://www.kerlink.fr/</li>
+  <li>Multitech: https://www.multitech.com/</li>
+  </ul>
+  </td>
+  <td><b>Network servers implementation</b>
+  <ul>
+  <li>https://www.loraserver.io/ (Opensource)</li>
+  <li>https://www.resiot.io/en/<br><br><br></li>
+  </ul>
+  </td>
+</tr>
+<table>
+
+---
+
+## How to program the end-device
+
+Existing open-source implementations:
+
+- Arduino LMIC https://github.com/matthijskooijman/arduino-lmic
+  &#x21d2; nearly unmaintained
+
+- Arduino LoRa https://github.com/sandeepmistry/arduino-LoRa
+  &#x21d2; active
+
+- Loramac-node https://github.com/Lora-net/LoRaMac-node
+  &#x21d2; reference implementation, used for certification from LoRa Alliance
+
+<br>
+
+End-device high-level support (generally based on Loramac-node):
+
+- ARM mbedOS: https://www.mbed.com/en/platform/mbed-os/
+
+- Mynewt: https://mynewt.apache.org/
+
+- Micropython: https://pycom.io/
+
+- RIOT: https://riot-os.org/
 
 ---
 
@@ -257,7 +299,7 @@ Lots of public network operators:
 
 ---
 
-## First steps with TTN
+## First steps with TTN: practice
 
 1. Create an account<br>
   https://account.thethingsnetwork.org/register
@@ -267,48 +309,17 @@ Lots of public network operators:
 2. Managing your gateways (optional)<br>
   https://www.thethingsnetwork.org/docs/gateways/registration.html
 
-3. Creating an application<br>
-  https://www.thethingsnetwork.org/docs/applications/add.html
-
-4. Register your device(s)<br>
-  https://www.thethingsnetwork.org/docs/devices/registration.html
+3. Register your device in the `captronic-workshop` application<br>
+  https://console.thethingsnetwork.org/applications/captronic-workshop
 
 ---
 
-## How to program the end-device
-
-Existing open-source implementations:
-
-- LoRaMAC-in-C (LMIC) https://github.com/mirakonta/lmic <br>
-  &#x21d2; seems abandonned
-
-- Arduino LMIC https://github.com/matthijskooijman/arduino-lmic
-  &#x21d2; nearly unmaintained
-
-- Arduino LoRa https://github.com/sandeepmistry/arduino-LoRa
-  &#x21d2; active
-
-- Loramac-node https://github.com/Lora-net/LoRaMac-node
-  &#x21d2; reference implementation, used for certification from LoRa Alliance
-
-<br>
-
-End-device OS support (generally based on Loramac-node):
-
-- ARM mbedOS: https://www.mbed.com/en/platform/mbed-os/
-
-- Mynewt: https://mynewt.apache.org/
-
-- RIOT: https://riot-os.org/
-
----
-
-## Example: using RIOT
+## Test TTN with RIOT: practice (1)
 
 - Loramac port documentation <br>
 http://doc.riot-os.org/group__pkg__semtech-loramac.html
 
-- Build and run the test/demo application provided by RIOT
+- Build and run the test/demo application provided by RIOT (in `~/RIOT`)
 
 ```sh
 make -C tests/pkg_semtech-loramac flash term
@@ -335,6 +346,33 @@ Join procedure succeeded!
 > loramac tx HelloWorld!
 Tx done
 ```
+
+---
+
+## Test TTN with RIOT: practice (2)
+
+- **Exercise:** `~/riot-workshop-samples/riot-lorawan/simple`
+
+- **Objective:**
+
+  - Follow the Semtech Loramac package online documentation (in `RIOT
+    Documentation.desktop link`) and write an application that sends "This is
+    RIOT!" every 20 seconds
+
+  - Configure the application for OTAA activation (use your Device EUI,
+    application EUI and application key)
+
+---
+
+## Test TTN with RIOT: practice (3)
+
+- **Exercise:** `~/riot-workshop-samples/riot-lorawan/thread`
+
+- **Objective:** Adapt your previous application as follows:
+
+  1. Join the network from the main application
+
+  2. Start a sender thread that sends messages every 20s
 
 ---
 
@@ -379,9 +417,66 @@ $ mosquitto_pub -h eu.thethings.network -p 1883 -u <username> -P <password>
 
 ---
 
+## TTN with RIOT: practice (1)
+
+- **Exercise:** `~/riot-workshop-samples/riot-lorawan/downlink`
+
+- **Objective:**
+
+  - Use the `mosquitto_sub` command to receive the messages sent by the device
+
+  - Modify the `downlink` application to make LED1 blink when a message is
+    received
+
+  - Use `mosquitto_pub` to send downlink messages to the device and verify
+    that the firmware behaves as expected
+
+_TIP_: base64 payload can be decoded with the command
+```sh
+$ base64 -d <<< dGVzdA==
+```
+
+---
+
+## TTN with RIOT: practice (2)
+
+- **Exercise:** `~/riot-workshop-samples/riot-lorawan/sensor`
+
+- **Objective:**
+
+  - Modify the application in `~/riot-workshop-samples/riot-lorawan/thread` to
+    make it read and send every 20s the HTS221 sensor values. The format of the
+    message will be `T: XX.X°C, H: XX.X%`
+
+_TIP_: Reuse parts of the code from `~/riot-basics/drivers` application
+
+---
+
 ## Integration with external services
 
-An example: Cayenne https://www.mydevices.com
+- Use of TTN http and/or MQTT API to retrieve the IoT data
+
+- Super simple to integrate
+
+- Available services:
+
+  - Customizable dashboards with Cayenne<br>
+    https://mydevices.com/
+
+  - Location service with Collos<br>
+    http://preview.collos.org/
+
+  - Gather and analyze workspace use and sensors with OpenSensors<br>
+    https://opensensors.com/
+
+  - Just store your IoT data with TheThingsIndustries<br>
+    https://www.thethingsindustries.com/
+
+---
+
+## An example: Cayenne
+
+https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
 
 - Create only dashboards in a few clicks from your LoRaWAN data
 
@@ -400,14 +495,43 @@ An example: Cayenne https://www.mydevices.com
 
 ---
 
+## Integration with Cayenne: pratice
+
+- **Exercise:** `~/riot-workshop-samples/riot-lorawan/lpp`
+
+- **Objective:**
+
+  - Modify the application in `~/riot-workshop-samples/riot-lorawan/sensor` to
+    make it compatible with the Cayenne LPP format: use the `cayenne-lpp`
+    package.
+
+_TIP_: see `~/RIOT/tests/pkg_cayenne-lpp` sample application
+
 ---
 
-## Example with RIOT
+## Final application: adding low power
 
-```c
+- **Exercise:** `~/riot-workshop-samples/riot-lorawan/pm`
 
-```
+- **Objective:**
+
+  - Start from application `~/riot-workshop-samples/riot-lorawan/sensor`
+
+  - Modify the sender thread so that it triggers a send only after a message is
+    received
+
+  - After a LoRaWAN send, configure an RTC alarm 20s later
+
+  - In the RTC alarm callback, send a message to the sender thread
+
+  - Test the application
+
+  - Include `pm_layered.h` and use `pm_set(1)` to put the CPU in STOP mode
+    after the RTC alarm is set
+    (check the differences with pm_set(0))
 
 ---
 
-## Summary
+class: center, middle
+
+# The End
