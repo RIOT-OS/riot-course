@@ -192,7 +192,7 @@ kernel_pid_t pid = thread_create(stack,
                                      "thread name");
 ```
 
-- Verify the message is displayed on your input (use native and the board)
+- Verify the message is correctly displayed (use native and the board)
 
 ---
 
@@ -361,15 +361,19 @@ typedef struct {
 - Simple API:
 
   - get current system time in microseconds
+
 ```c
 xtimer_ticks32_t now = xtimer_now();
 ```
 
   - add a `sec` seconds delay
+
 ```c
 xtimer_sleep(sec);
+```
 
   - add a `microsec` mircroseconds delay
+
 ```c
 xtimer_usleep(microsec);
 ```

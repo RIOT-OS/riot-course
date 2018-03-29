@@ -115,7 +115,7 @@ class: center, middle
 
 - All internal components use a single API: **netapi**
 
-- The applications uses the **sock** (previously called `conn`)
+- The applications uses the **sock** API (previously called `conn`)
 
 ---
 
