@@ -129,7 +129,7 @@ http://riot-os.org/files/RIOT-Summit-2017-slides/4-3-Virtualization-Session-Fuji
 
 - Cisco, Huawei: experimental deployment using ICN-IoT
 
-**IoT products**
+**IoT products & services**
 
 - OTAKeys (Continental): On-Board diagnostics for connected cars
 
@@ -260,7 +260,7 @@ The ISR context handles external events and notifies threads using IPC messages
 
 - **xtimer**
 
-  - high-level timer subsystem thet provides full abstraction from the hardware timer
+  - high-level timer subsystem that provides full abstraction from the hardware timer
 
   - Can set callbacks, put a thread to sleep, etc
 
@@ -281,7 +281,7 @@ The ISR context handles external events and notifies threads using IPC messages
 - IP oriented stacks &#x21d2; designed for Ethernet, WiFi, 802.15.4 networks
   - **GNRC**: the in-house 802.15.4/6LowPAN/IPv6 stack of RIOT
 
-  - **Thread**: another 802.15.4 IPv6 stack supported by Nest (Google)
+  - **Thread**: another 802.15.4 IPv6 stack supported by NestLabs (Google)
 .center[
     <img src="images/openthread-logo.png" alt="" style="width:200px;"/>
 ]

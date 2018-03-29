@@ -163,7 +163,7 @@ static char stack[THREAD_STACKSIZE_MAIN];
 
 --
 
-.center[&#x21d2; more usage in `tests/thread_*` test applications]
+.center[&#x21d2; more usage examples in `tests/thread_*` test applications]
 
 ---
 
@@ -237,9 +237,9 @@ while (1) {}
 
 - Threads have their own stack
 
-- But threads can also access to the globally shared memory of the application
+- But threads can also access the global shared memory of the application
 
-    &#x21d2; need for protection and synchronization mechanisms
+    &#x21d2; protection and synchronization mechanisms are required
 
 - RIOT provides:
 
@@ -267,7 +267,7 @@ mutex_unlock(&lock);
 - IPC are **synchronous** by default or **asynchronous**
 
 - The messaging API is defined in `msg.h` (in `core`):
-  - The message type is:
+  - The message type is `msg_t`
   - A message have a `type` and a `content`
 
 ```c
@@ -296,7 +296,7 @@ msg_receive(&msg); /* block until a message is received */
 msg_try_receive(&msg); /* try to receive a message without blocking */
 ```
 
-- Typical use case: a listener thread waiting for messages coming from ISR
+- Typical use case: a thread waiting for messages from another thread or ISR
 
 ```c
 void *thread_handler(void *arg)
@@ -311,7 +311,8 @@ void *thread_handler(void *arg)
 }
 ```
 
-- With asynchronous messaging always initialize a thread message queue in the thread handler:
+- When using synchronous messaging (typically the case with ISR), always
+  initialize a thread message queue in the thread handler:
 
 ```c
 msg_t msg_queue[8];
@@ -440,7 +441,7 @@ US_PER_MS   /* number of milliseconds per seconds */
     <ul>
       <li>the desired low-power mode must be unblocked<br><br></li>
       <li>the lowest possible power mode is selected ("Cascade")<br><br></li>
-      <li>API is defined in system `pm_layered` module</li>
+      <li>API is defined in `pm_layered.h` from system `pm_layered` module</li>
     </ul>
   </td>
   <td>
@@ -507,11 +508,11 @@ CPUs classification follows a hierarchical approach:
 - Each directory in `boards` creates a board module<br>
   &#x21d2; `BOARD=<board module name>`
 
-- Defines the MCU family and model used in `Makefile.include`
+- MCU family and model used are defined in `Makefile.include`
 
-- Defines the list of features provided (e.g MCU peripheral) and configured in `Makefile.features`
+- The list of features provided (e.g MCU peripheral) is defined in `Makefile.features`
 
-- Defines the configurations of each MCU peripherals and clocks in `periph_conf.h`
+- The configurations of clocks and of each MCU peripherals in are defined in `periph_conf.h`
 
 - `board.h` provides specific on-board defines for:
 
@@ -519,11 +520,11 @@ CPUs classification follows a hierarchical approach:
 
   - on-board LEDs and buttons pins
 
-  - on-board high-level device drivers (sensor, actuators)
+  - on-board high-level device drivers (sensor, actuators, radios)
 
 ---
 
-## Peripherals APIs
+## MCU peripherals APIs
 
 - Uniform APIs built on top of heterogeneuous hardwares
 
@@ -531,7 +532,7 @@ CPUs classification follows a hierarchical approach:
 
 - APIs are defined in `drivers/include/periph` and implemented in each cpus `periph` subdirectory
 
-- Explicitely include a peripheral module in your Makefile with the **FEATURES_REQUIRED** variable
+- Explicitly include a peripheral module in your Makefile with the **FEATURES_REQUIRED** variable
 
 - The peripheral drivers are implemented from scratch. This garantees:
 
@@ -586,9 +587,10 @@ int main()
 
   - For each message, the thread toggles the on-board LED1
 
-  - The on-board B1 user button and LED1 are initialied as follows in `main()`:
-    - LED1 is initialized in GPIO_OUT mode
-    - B1 is initialize in GPIO_IN mode with an interrupt callback function, `gpio_cb`: an interrupt is raised each time the button is pressed
+  - The on-board B1 user button and LED1 are initialized as follows in `main()`:
+      - LED1 is initialized in GPIO_OUT mode
+      - B1 is initialized in GPIO_IN mode with an interrupt callback function,
+        `gpio_cb`, an interrupt is raised each time the button is pressed
 
   - For each interrupt, a message is sent from the ISR to the led management thread &#x21d2; it toggles the LED1 status
 
@@ -629,15 +631,19 @@ int main()
 
 - **Objective:**
 
-  - Write an application with one thread, called `printer_thread`, that waits for incoming messages
+  - Write an application with one thread, called `printer_thread`, that waits
+    for incoming messages
 
-  - For each message, the thread prints "received &lt;c&gt;", with &lt;c&gt; the content of the message as a char
+  - For each message, the thread prints "received &lt;c&gt;", with &lt;c&gt;
+    the content of the message as a char
 
   - Initialize `UART_DEV(0)` at 115200 bauds, with `uart_cb` as callback function
 
-  - For each character received on the UART (just press a key + return on your keyboard), send a message containing the character to the printer thread
+  - For each character received on the UART (just press a key + return on your
+    keyboard), send a message containing the character to the printer thread
 
-  - Experiment with long strings &#x21d2; you need a message queue or an external buffer
+  - Experiment with long strings &#x21d2; you need a message queue or an
+    external buffer
 
 ---
 
@@ -645,7 +651,7 @@ int main()
 
 - Provide an accurate and low power access to timings
 
-- Still running even when the CPU is in low-power mode
+- Still running even when the CPU is in low-power/deep-sleep mode
 
 - Use standard lib `tm` struct from `time.h`
 
@@ -668,8 +674,8 @@ static void rtc_alarm_cb(void *)
 }
 
 [...]
-struct tm alarm;
-rtc_set_alarm(&alarm, rtc_alarm_cb, NULL);
+struct tm alarm_time;
+rtc_set_alarm(&alarm_time, rtc_alarm_cb, NULL);
 ```
 
 ---
@@ -682,11 +688,13 @@ rtc_set_alarm(&alarm, rtc_alarm_cb, NULL);
 
 - **Objective:**
 
-  1. Write an application that get the current RTC time and print it to stdout
+  1. Write an application that gets the current RTC time and print it to stdout
 
-  2. Start one thread, called `blink_thread`, that waits for incoming messages. For each message, the thread switch on LED1 during 1 seconds, then switch it off
+  2. Start one thread, called `blink_thread`, that waits for incoming messages.
+     For each message, the thread turns on the LED1 during 1 seconds, then is
+     turns it off
 
-  3. After switching the LED off, the thread get the current time and prints it
+  3. After turning the LED off, the thread gets the current time and prints it
 
   4. Finally, it sets an RTC alarm 5 seconds later
 
@@ -711,6 +719,10 @@ rtc_set_alarm(&alarm, rtc_alarm_cb, NULL);
 - **RTT**: real-time timer, module `periph_adc`, include from `periph/rtt.h`
 
 .center[etc]
+
+--
+
+&#x21d2; good example application provided in `tests/periph_*`
 
 ---
 

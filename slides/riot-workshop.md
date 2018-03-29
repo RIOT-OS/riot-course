@@ -4,8 +4,6 @@ class: center, middle
 
 # RIOT Workshop
 
-### Hands-on tutorial
-
 <br/><br/><br/><br/>
 
 .footnote[
@@ -28,7 +26,7 @@ Alexandre Abadie, Inria
     - Using the native target
     - Debug your application
 
-3. Going further with RIOT
+3. RIOT basics
 
     - Structure and organization of the operating system
     - The build system
@@ -47,7 +45,9 @@ Alexandre Abadie, Inria
 
     - GNRC: Generic Network Stack
 
-    - Practicing on IoT-LAB
+    - Practicing locally with native
+
+    - Practicing on hardware using IoT-LAB
 
 2. Using LoRaWAN with RIOT
 

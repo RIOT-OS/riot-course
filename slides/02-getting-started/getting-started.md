@@ -171,7 +171,7 @@ $ make -C getting-started all term
 
 ---
 
-## Build on hardware
+## Build for a specific hardware
 
 - Use the ST B-L072Z-LRWAN1 board
 
@@ -220,7 +220,7 @@ INFO # Connect to serial port /dev/ttyACM0
 Welcome to pyterm!
 Type '/exit' to exit.
 INFO # main(): This is RIOT! (Version: vm-riot)
-2018-03-23 18:28:48,474 - INFO # My first RIOT application
+INFO # My first RIOT application
 ```
 
 Useful variables:
@@ -240,7 +240,7 @@ TERMFLAGS="-s 115200 -p /dev/ttyACM0 -e" flash term
 
   - Starts a GDB server
 
-  - Starts GDB client, connect to the GDB server and load the application<br><br>
+  - Starts the GDB client, connects to the GDB server and loads the application<br><br>
     &#x21d2; Ready to debug
 
 - **DEVELHELP:** make variable that enables safety checking (get thread names, etc)
@@ -408,9 +408,9 @@ $ make BOARD=b-l072z-lrwan1 -C getting-started/led-app/ flash term
 
 - Build, flash and interact with the following applications:
 
-  - `examples/hello-world`
-
   - `examples/default`
+
+  - `examples/saul`
 
 - Test applications also provides good examples to start the RIOT
 
