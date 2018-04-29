@@ -1,4 +1,4 @@
-# Learning course for RIOT
+# RIOT online course
 
 This project provides a learning course for [RIOT](https://riot-os.org), an
 operating system for constrained IoT devices, i.e. powered by microcontrollers.
