@@ -7,19 +7,20 @@ operating system for constrained IoT devices, i.e. powered by microcontrollers.
 
 The course is split in 5 sections:
 
-- [Introduction](slides/01-introduction) contains generalities around the
-  project
-- [Getting started](slides/02-getting-started) contains the basics to start
-  building and programming basics applications with RIOT
-- [RIOT basics](slides/03-riot-basics) contains information about the internal
-  structure of the OS (source code organization, build system, kernel) but also
-  gives information about the hardware abstraction layer, the drivers and
-  packages
-- [Networking in RIOT](slides/04-networking-in-riot) provides basics on IoT
-  protocols supported by RIOT (6LowPAN/IPv6, LoRa) and list the network stacks
-  provided by the OS
-- [LoRaWAN with RIOT](slides/05-lorawan-with-riot) gives an overview of the
-  LoRaWAN protocol and how to use it with RIOT
+- [Introduction](https://aabadie.github.io/riot-course/slides/01-introduction)
+  contains generalities around the project
+- [Getting started](https://aabadie.github.io/riot-course/slides/02-getting-started)
+  contains the basics to start building and programming basics applications
+  with RIOT
+- [RIOT basics](https://aabadie.github.io/riot-course/slides/03-riot-basics)
+  contains information about the internal structure of the OS (source code
+  organization, build system, kernel) but also gives information about the
+  hardware abstraction layer, the drivers and packages
+- [Networking in RIOT](https://aabadie.github.io/riot-course/slides/04-networking-in-riot)
+  provides basics on IoT protocols supported by RIOT (6LowPAN/IPv6, LoRa) and
+  list the network stacks provided by the OS
+- [LoRaWAN with RIOT](https://aabadie.github.io/riot-course/slides/05-lorawan-with-riot)
+  gives an overview of the LoRaWAN protocol and how to use it with RIOT
 
 The full course is designed to take 2 full days and programming exercises are
 there to illustrate the exposed notions.
