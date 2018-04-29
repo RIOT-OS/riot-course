@@ -22,8 +22,9 @@ The course is split in 5 sections:
 - [LoRaWAN with RIOT](https://aabadie.github.io/riot-course/slides/05-lorawan-with-riot)
   gives an overview of the LoRaWAN protocol and how to use it with RIOT
 
-The full course is designed to take 2 full days and programming exercises are
-there to illustrate the exposed notions.
+The full course is designed for 2 full days of work and
+[programming exercises](https://github.com/aabadie/riot-course-exercises) are
+also provided to illustrate the exposed notions.
 
 ## Using the course
 
