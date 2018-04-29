@@ -34,7 +34,7 @@ there to illustrate the exposed notions.
 
     git clone https://github.com/aabadie/riot-course-exercises
 
-3. Open the html files in `slides/&lt;section&gt;` directories in a web browser
+3. Open the html files in `slides/<section>` directories in a web browser
 
 ## Required setup
 
