@@ -8,7 +8,7 @@ operating system for constrained IoT devices, i.e. powered by microcontrollers.
 The course is split in 5 sections:
 
 - [Introduction](https://aabadie.github.io/riot-course/slides/01-introduction)
-  contains generalities around the project
+  contains generalities about the RIOT project
 - [Getting started](https://aabadie.github.io/riot-course/slides/02-getting-started)
   contains the basics to start building and programming basics applications
   with RIOT
