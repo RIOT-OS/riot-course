@@ -351,7 +351,7 @@ Tx done
 
 ## Test TTN with RIOT: practice (2)
 
-- **Exercise:** `~/riot-workshop-samples/riot-lorawan/simple`
+- **Exercise:** `~/riot-workshop-exercises/riot-lorawan/simple`
 
 - **Objective:**
 
@@ -366,7 +366,7 @@ Tx done
 
 ## Test TTN with RIOT: practice (3)
 
-- **Exercise:** `~/riot-workshop-samples/riot-lorawan/thread`
+- **Exercise:** `~/riot-workshop-exercises/riot-lorawan/thread`
 
 - **Objective:** Adapt your previous application as follows:
 
@@ -419,7 +419,7 @@ $ mosquitto_pub -h eu.thethings.network -p 1883 -u <username> -P <password>
 
 ## TTN with RIOT: practice (1)
 
-- **Exercise:** `~/riot-workshop-samples/riot-lorawan/downlink`
+- **Exercise:** `~/riot-workshop-exercises/riot-lorawan/downlink`
 
 - **Objective:**
 
@@ -440,11 +440,11 @@ $ base64 -d <<< dGVzdA==
 
 ## TTN with RIOT: practice (2)
 
-- **Exercise:** `~/riot-workshop-samples/riot-lorawan/sensor`
+- **Exercise:** `~/riot-workshop-exercises/riot-lorawan/sensor`
 
 - **Objective:**
 
-  - Modify the application in `~/riot-workshop-samples/riot-lorawan/thread` to
+  - Modify the application in `~/riot-workshop-exercises/riot-lorawan/thread` to
     make it read and send every 20s the HTS221 sensor values. The format of the
     message will be `T: XX.X°C, H: XX.X%`
 
@@ -497,11 +497,11 @@ https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
 
 ## Integration with Cayenne: pratice
 
-- **Exercise:** `~/riot-workshop-samples/riot-lorawan/lpp`
+- **Exercise:** `~/riot-workshop-exercises/riot-lorawan/lpp`
 
 - **Objective:**
 
-  - Modify the application in `~/riot-workshop-samples/riot-lorawan/sensor` to
+  - Modify the application in `~/riot-workshop-exercises/riot-lorawan/sensor` to
     make it compatible with the Cayenne LPP format: use the `cayenne-lpp`
     package.
 
@@ -511,11 +511,11 @@ _TIP_: see `~/RIOT/tests/pkg_cayenne-lpp` sample application
 
 ## Final application: adding low power
 
-- **Exercise:** `~/riot-workshop-samples/riot-lorawan/pm`
+- **Exercise:** `~/riot-workshop-exercises/riot-lorawan/pm`
 
 - **Objective:**
 
-  - Start from application `~/riot-workshop-samples/riot-lorawan/sensor`
+  - Start from application `~/riot-workshop-exercises/riot-lorawan/sensor`
 
   - Modify the sender thread so that it triggers a send only after a message is
     received

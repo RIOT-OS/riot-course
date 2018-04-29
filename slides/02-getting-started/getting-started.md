@@ -4,7 +4,7 @@ class: center, middle
 
 ---
 
-## Optional prerequisites: setup a local environment
+## Prerequisites: get RIOT code and exercises
 
 1. Install and setup Git:
 ```bash
@@ -21,19 +21,22 @@ $ git clone --depth=1 https://github.com/RIOT-OS/RIOT.git
 
   - Latest stable branch:
 ```bash
-$ git clone -b 2018.01-branch https://github.com/RIOT-OS/RIOT.git
+$ git clone -b 2018.04-branch https://github.com/RIOT-OS/RIOT.git
 ```
 
 3. Getting the workshop code:
 ```
-$ git clone https://gitlab.inria.fr/riot-workshop-samples.git
+$ git clone https://github.com/aabadie/riot-course-exercises.git
 ```
+
+In the course, we assume that exercise codes are located in
+**~/riot-course-exercises** and RIOT source code is located in **~/RIOT**
 
 ---
 
-## Optional prerequisites: setup your build environment
+## Prerequisites: setup your build environment
 
-First possibility: install a toolchains and development tools locally:
+First possibility: install a toolchains and development tools locally (Linux only):
   - Build essential tools (make, gcc, etc):
 ```bash
 $ sudo apt-get install build-essential g++-multilib python-serial
@@ -66,14 +69,6 @@ $ make BUILD_IN_DOCKER=1
 $ vagrant up
 $ vagrant ssh
 ```
-
-- Using the provided VM in virtualbox &#x21d2; **our choice**
-
-  - Toolchains, debugger, flasher tools already installed
-
-  - RIOT code already downloaded
-
-  - Sample applications provided
 
 - More info on the Wiki:
 
@@ -118,7 +113,7 @@ int main(void)
 Simply run **make** from the application directory:
 
 ```sh
-$ cd ~/riot-workshop-samples/getting-started/first-app
+$ cd ~/riot-workshop-exercises/getting-started/first-app
 $ make
 Building application "example" for "native" with MCU "native".
 
@@ -138,7 +133,7 @@ Building application "example" for "native" with MCU "native".
 
 _Trick:_ use `-C` option with `make`
 ```
-$ cd ~/riot-workshop-samples
+$ cd ~/riot-workshop-exercises
 $ make -C getting-started/first-app
 ```
 
