@@ -169,7 +169,7 @@ static char stack[THREAD_STACKSIZE_MAIN];
 
 ## Thread: practice
 
-- **Exercise:** `~/riot-workshop-exercises/riot-basics/first-thread`
+- **Exercise:** `~/riot-course-exercises/riot-basics/first-thread`
 
 - **Board:** native
 
@@ -323,7 +323,7 @@ msg_init_queue(msg_queue, 8);
 
 ## IPC: practice
 
-- **Exercise:** `~/riot-workshop-exercises/riot-basics/thread-ipc`
+- **Exercise:** `~/riot-course-exercises/riot-basics/thread-ipc`
 
 - **Board:** native and `b-l072z-lrwan1` board
 
@@ -333,7 +333,7 @@ msg_init_queue(msg_queue, 8);
 
   - The receiver thread prints each received message
 
-- **Going further:** `~/riot-workshop-exercises/riot-basics/thread-safe-ipc`:
+- **Going further:** `~/riot-course-exercises/riot-basics/thread-safe-ipc`:
 
   - Modify a global static buffer and send a message to the receiver thread
 
@@ -411,7 +411,7 @@ US_PER_MS   /* number of milliseconds per seconds */
 
 ## Timers: practice
 
-- **Exercise:** `~/riot-workshop-exercises/riot-basics/timers`
+- **Exercise:** `~/riot-course-exercises/riot-basics/timers`
 
 - **Board:** ST `b-l072z-lrwan1` board
 
@@ -579,7 +579,7 @@ int main()
 
 ## GPIO: practice
 
-- **Exercise:** `~/riot-workshop-exercises/riot-basics/gpio`
+- **Exercise:** `~/riot-course-exercises/riot-basics/gpio`
 
 - **Board:** ST `b-l072z-lrwan1`
 
@@ -627,7 +627,7 @@ int main()
 
 ## UART: practice
 
-- **Exercise:** `~/riot-workshop-exercises/riot-basics/uart`
+- **Exercise:** `~/riot-course-exercises/riot-basics/uart`
 
 - **Board:** ST `b-l072z-lrwan1`
 
@@ -686,7 +686,7 @@ rtc_set_alarm(&alarm_time, rtc_alarm_cb, NULL);
 
 ## RTC: practice
 
-- **Exercise:** `~/riot-workshop-exercises/riot-basics/rtc`
+- **Exercise:** `~/riot-course-exercises/riot-basics/rtc`
 
 - **Board:** ST `b-l072z-lrwan1`
 
@@ -776,7 +776,7 @@ driver_name_init(&dev, &driver_name_params[0]);
 
 ## High-level drivers: practice
 
-- **Exercise:** `~/riot-workshop-exercises/riot-basics/drivers`
+- **Exercise:** `~/riot-course-exercises/riot-basics/drivers`
 
 - **Board:** ST `b-l072z-lrwan1` with X-Nucleo extension
 

@@ -113,7 +113,7 @@ int main(void)
 Simply run **make** from the application directory:
 
 ```sh
-$ cd ~/riot-workshop-exercises/getting-started/first-app
+$ cd ~/riot-course-exercises/getting-started/first-app
 $ make
 Building application "example" for "native" with MCU "native".
 
@@ -133,7 +133,7 @@ Building application "example" for "native" with MCU "native".
 
 _Trick:_ use `-C` option with `make`
 ```
-$ cd ~/riot-workshop-exercises
+$ cd ~/riot-course-exercises
 $ make -C getting-started/first-app
 ```
 
