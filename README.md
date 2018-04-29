@@ -28,12 +28,14 @@ there to illustrate the exposed notions.
 ## Using the course
 
 1. Clone this repository:
-
-    git clone https://github.com/aabadie/riot-course
+```
+git clone https://github.com/aabadie/riot-course
+```
 
 2. Clone the repository containing the source code of the exercises
-
-    git clone https://github.com/aabadie/riot-course-exercises
+```
+git clone https://github.com/aabadie/riot-course-exercises
+```
 
 3. Open the html files in `slides/<section>` directories in a web browser
 
