@@ -12,11 +12,13 @@ RIOT is
 
 - a real-time multithreaded operating system
 
-- built with in-house networking capababilities
-
-- designed for microcontroller based devices
+ - built with in-house networking capababilities
+ - designed for microcontroller based devices
 
 - open-source: https://github.com/RIOT-OS/RIOT
+
+ - free software platform
+ - world-wide community of developers
 
 <br><br>
 
@@ -39,19 +41,16 @@ RIOT is
 
 ## History of the project
 
-- 2008: Firekernel, micro-kernel for wireless sensor networks
-
-- 2013: Inria & FU Berlin funded RIOT
+- 2013: Inria, FU Berlin and HAW found RIOT 
+ - stemed from a French-German research project
+ - kernel evolved from FireKernel
 
 - The community today:
 
-  - Almost 180 contributors since the beginning
-
+  - More than 180 contributors to the master branch, so far
   - Academics: Inria, FU Berlin, HAW Hamburg, Berkeley, UCLA, MIT, TZI
-
-  - Industrial: Thalès, Cisco, Samsung, ImgTec
-
-  - SME: Zolertia, OTAKeys, Mesotic, Eisoc, We-sens
+  - Industrial: Cisco, Samsung, ImgTec, Fujitsu, Thalès
+  - SME: Zolertia, OTAKeys, Mesotic, Eistec, We-sens
 
 - Annual RIOT Summit: https://summit.riot-os.org
 
@@ -102,26 +101,22 @@ in the Internet of Things: A survey," IEEE Internet of ThingsJournal, 2016.
 <br>
 <br>
 
-- TinyOS: less active
+- Typically, RIOT compared to other OSes:
+ - requires less memory & adapts to a wider range of architectures;
+ - provides more complete OS functionalities (for instance, in comparison, FreeRTOS is just a scheduler, Arduino is a hardware abstraction layer);
+ - fosters an open-source philosophy more akin to Linux.
 
-- FreeRTOS: widely used RTOS
-
-- Contiki: philosophy most similar to RIOT
-
-- Zephyr: very active and sponsored by Intel
-
-- Mbed OS: very active and sponsored by ARM
 
 ---
 
-## Who is using RIOT
+## Who is using RIOT?
 
-**IoT solutions deployments**
+**Example IoT solutions deployments using RIOT**
 
-- LoRa devices in a Copper mine with Telephonica (Chile)<br>
+- Telefonica: LoRa devices in a mine<br>
 http://summit.riot-os.org/2017/blog/2017/10/06/slides/
 
-- Automatic cereal dispenser with Almagro (Chile)<br>
+- Almagro: Automatic cereal dispenser<br>
 https://www.indiegogo.com/projects/the-venture-algramo-chile#/
 
 - Fujitsu: IoT modules orchestration<br>
@@ -129,17 +124,15 @@ http://riot-os.org/files/RIOT-Summit-2017-slides/4-3-Virtualization-Session-Fuji
 
 - Cisco, Huawei: experimental deployment using ICN-IoT
 
-**IoT products & services**
+**Example IoT products & services using RIOT**
 
-- OTAKeys (Continental): On-Board diagnostics for connected cars
+- Environment monitoring: Hamilton IoT (USA), Unwired Devices (Russia)
 
-- Hamilton IoT (USA), Unwired devices (Russia)
+- On-Board diagnostics for connected cars: OTAKeys (Continental)
 
-- we-sens.com, mesotic
+- Smart House, Smart City: Eistec (Sweeden), Mesotic (France)
 
-- Eistec: http://www.eistec.se/projects/
-
-- Sleeping Beauty:  GPS tracking device with an integrated GSM modem
+- GPS tracking device with GSM modem: Sleeping Beauty (Germany)
 
 ---
 
@@ -148,8 +141,8 @@ class: center, middle
 # Technical overview
 
 <br/>
-Long story short:<br/>
-http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.pdf
+Long story short: paper in IEEE Internet of Things Journal<br/>
+Preprint available: http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.pdf
 
 ---
 
