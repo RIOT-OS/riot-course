@@ -30,12 +30,7 @@ also provided to illustrate the exposed notions.
 
 1. Clone this repository:
 ```
-git clone https://github.com/aabadie/riot-course
-```
-
-2. Clone the repository containing the source code of the exercises
-```
-git clone https://github.com/aabadie/riot-course-exercises
+git clone --recursive https://github.com/aabadie/riot-course
 ```
 
 3. Open the html files in `slides/<section>` directories in a web browser

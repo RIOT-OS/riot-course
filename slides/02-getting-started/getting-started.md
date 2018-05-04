@@ -4,7 +4,7 @@ class: center, middle
 
 ---
 
-## Prerequisites: get RIOT code and exercises
+## Prerequisites: retrieve the course
 
 1. Install and setup Git:
 ```bash
@@ -12,25 +12,16 @@ $ sudo apt-get install git
 $ git config --global user.name "Your name"
 $ git config --global user.email "Your email"
 ```
-2. Get the code:
+2. Clone this course from GitHub:
 
-  - Latest version:
-```bash
-$ git clone --depth=1 https://github.com/RIOT-OS/RIOT.git
 ```
+$ git clone --recursive https://github.com/aabadie/riot-course
+```
+In the next sections, we assume that the sources are located in
+**~/riot-course**
 
-  - Latest stable branch:
-```bash
-$ git clone -b 2018.04-branch https://github.com/RIOT-OS/RIOT.git
-```
-
-3. Getting the workshop code:
-```
-$ git clone https://github.com/aabadie/riot-course-exercises.git
-```
-
-In the course, we assume that exercise codes are located in
-**~/riot-course-exercises** and RIOT source code is located in **~/RIOT**
+The exercises are located in: **~/riot-course/exercises**
+The RIOT code (2018.04) is located in: **~/riot-course/RIOT**
 
 ---
 
@@ -113,7 +104,7 @@ int main(void)
 Simply run **make** from the application directory:
 
 ```sh
-$ cd ~/riot-course-exercises/getting-started/first-app
+$ cd ~/riot-course/exercises/getting-started/first-app
 $ make
 Building application "example" for "native" with MCU "native".
 
@@ -133,7 +124,7 @@ Building application "example" for "native" with MCU "native".
 
 _Trick:_ use `-C` option with `make`
 ```
-$ cd ~/riot-course-exercises
+$ cd ~/riot-course/exercises
 $ make -C getting-started/first-app
 ```
 
