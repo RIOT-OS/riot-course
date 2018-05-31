@@ -311,7 +311,7 @@ void *thread_handler(void *arg)
 }
 ```
 
-- When using synchronous messaging (typically the case with ISR), always
+- When using asynchronous messaging (typically the case with ISR), always
   initialize a thread message queue in the thread handler:
 
 ```c
