@@ -17,6 +17,7 @@ $ git config --global user.email "Your email"
 ```
 $ git clone --recursive https://github.com/aabadie/riot-course
 ```
+
 In the next sections, we assume that the sources are located in
 **~/riot-course**
 
@@ -68,9 +69,9 @@ $ vagrant ssh
 
 ---
 
-## Writing your first application
+## Practice: your first RIOT application
 
-A minimal RIOT application consists in:
+A minimal RIOT application (in `~/riot-course/exercises/getting-started/first-app`) consists in:
 - A `Makefile`
 
 ```mk
@@ -99,7 +100,7 @@ int main(void)
 
 ---
 
-## Build the application (native)
+## Practice: build the application (native)
 
 Simply run **make** from the application directory:
 
@@ -130,7 +131,7 @@ $ make -C getting-started/first-app
 
 ---
 
-## Run the application (native)
+## Practice: run the application (native)
 
 **native** target runs RIOT application as **Linux process**
 
@@ -157,7 +158,7 @@ $ make -C getting-started all term
 
 ---
 
-## Build for a specific hardware
+## Practice: build for a specific hardware
 
 - Use the ST B-L072Z-LRWAN1 board
 
@@ -190,7 +191,7 @@ Building application "example" for "b-l072z-lrwan1" with MCU "stm32l0".
 
 ---
 
-## Run on hardware
+## Practice: run on hardware
 
 Use the **flash** and **term** targets:
 - **flash** calls the flasher tool automatically (OpenOCD)
@@ -263,7 +264,7 @@ FEATURES_REQUIRED += periph_gpio
 
 ---
 
-## Writing an application with a shell
+## Practice: writing an application with a shell
 
 Go into the `getting-started/shell-app` application directory:
 
@@ -360,7 +361,7 @@ $ make BOARD=b-l072z-lrwan1 flash term
 
 ---
 
-## Basic interaction with the hardware
+## Practice: basic interaction with the hardware
 
 - RIOT defines macros for interacting with LEDs:<br>
   &#x21d2; **LEDi_ON**, **LEDi_OFF**, **LEDi_TOGGLE** with i in {0, 1, ..., N}
