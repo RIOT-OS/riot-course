@@ -355,8 +355,8 @@ Tx done
 
 - **Objective:**
 
-  - Follow the Semtech Loramac package online documentation (in `RIOT
-    Documentation.desktop link`) and write an application that sends "This is
+  - Follow the [RIOT Semtech Loramac package online documentation](http://doc.riot-os.org/group__pkg__semtech-loramac.html)
+    and write an application that sends "This is
     RIOT!" every 20 seconds
 
   - Configure the application for OTAA activation (use your Device EUI,
