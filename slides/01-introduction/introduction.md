@@ -41,7 +41,7 @@ RIOT is
 
 ## History of the project
 
-- 2013: Inria, FU Berlin and HAW found RIOT 
+- 2013: Inria, FU Berlin and HAW founded RIOT
  - stemed from a French-German research project
  - kernel evolved from FireKernel
 
