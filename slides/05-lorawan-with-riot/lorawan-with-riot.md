@@ -372,47 +372,6 @@ Tx done
 
 ---
 
-## The TTN MQTT API
-
-- MQTT protocol uses a publish/subscribe approach
-.center[
-    <img src="images/pub-sub-model.png" alt="" style="width: 350px;"/><br/>
-]
-
-- TTN MQTT API documentation<br>
-https://www.thethingsnetwork.org/docs/applications/mqtt/
-
-- Reference implementation provided by the Eclipse Mosquitto project<br>
-https://mosquitto.org/
-
-- Eclipse also provides a python library: _paho_<br>
-https://www.eclipse.org/paho/
-
----
-
-## Using the MQTT API
-
-.center[
-    <img src="images/overview_application.png" alt="" style="width: 350px;"/><br/>
-]
-
-- Listening to uplink messages (device to network):
-
-```sh
-$ mosquitto_sub -h eu.thethings.network -p 1883 -u <username> -P <password>
--t '+/devices/+/up'
-```
-
-- Sending a downlink message (network to device):
-
-```sh
-$ mosquitto_pub -h eu.thethings.network -p 1883 -u <username> -P <password>
--t '<application id>/devices/<device id>/down'
--m '{"port":2, "payload_raw":"dGVzdA=="}'
-```
-
----
-
 ## TTN with RIOT: practice (2)
 
 - **Exercise:** `~/riot-course-exercises/riot-lorawan/sensor`
@@ -504,6 +463,47 @@ _TIP_: see `~/RIOT/tests/pkg_cayenne-lpp` sample application
   - Include `pm_layered.h` and use `pm_set(1)` to put the CPU in STOP mode
     after the RTC alarm is set
     (check the differences with pm_set(0))
+
+---
+
+## The TTN MQTT API
+
+- MQTT protocol uses a publish/subscribe approach
+.center[
+    <img src="images/pub-sub-model.png" alt="" style="width: 350px;"/><br/>
+]
+
+- TTN MQTT API documentation<br>
+https://www.thethingsnetwork.org/docs/applications/mqtt/
+
+- Reference implementation provided by the Eclipse Mosquitto project<br>
+https://mosquitto.org/
+
+- Eclipse also provides a python library: _paho_<br>
+https://www.eclipse.org/paho/
+
+---
+
+## Using the MQTT API
+
+.center[
+    <img src="images/overview_application.png" alt="" style="width: 350px;"/><br/>
+]
+
+- Listening to uplink messages (device to network):
+
+```sh
+$ mosquitto_sub -h eu.thethings.network -p 1883 -u <username> -P <password>
+-t '+/devices/+/up'
+```
+
+- Sending a downlink message (network to device):
+
+```sh
+$ mosquitto_pub -h eu.thethings.network -p 1883 -u <username> -P <password>
+-t '<application id>/devices/<device id>/down'
+-m '{"port":2, "payload_raw":"dGVzdA=="}'
+```
 
 ---
 
