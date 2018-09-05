@@ -443,29 +443,6 @@ _TIP_: see `~/RIOT/tests/pkg_cayenne-lpp` sample application
 
 ---
 
-## Final application: adding low power
-
-- **Exercise:** `~/riot-course-exercises/riot-lorawan/pm`
-
-- **Objective:**
-
-  - Start from application `~/riot-course-exercises/riot-lorawan/sensor`
-
-  - Modify the sender thread so that it triggers a send only after a message is
-    received
-
-  - After a LoRaWAN send, configure an RTC alarm 20s later
-
-  - In the RTC alarm callback, send a message to the sender thread
-
-  - Test the application
-
-  - Include `pm_layered.h` and use `pm_set(1)` to put the CPU in STOP mode
-    after the RTC alarm is set
-    (check the differences with pm_set(0))
-
----
-
 ## The TTN MQTT API
 
 - MQTT protocol uses a publish/subscribe approach
