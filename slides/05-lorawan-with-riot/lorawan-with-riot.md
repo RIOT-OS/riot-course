@@ -413,27 +413,6 @@ $ mosquitto_pub -h eu.thethings.network -p 1883 -u <username> -P <password>
 
 ---
 
-## TTN with RIOT: practice (1)
-
-- **Exercise:** `~/riot-course-exercises/riot-lorawan/downlink`
-
-- **Objective:**
-
-  - Use the `mosquitto_sub` command to receive the messages sent by the device
-
-  - Modify the `downlink` application to make LED1 blink when a message is
-    received
-
-  - Use `mosquitto_pub` to send downlink messages to the device and verify
-    that the firmware behaves as expected
-
-_TIP_: base64 payload can be decoded with the command
-```sh
-$ base64 -d <<< dGVzdA==
-```
-
----
-
 ## TTN with RIOT: practice (2)
 
 - **Exercise:** `~/riot-course-exercises/riot-lorawan/sensor`
