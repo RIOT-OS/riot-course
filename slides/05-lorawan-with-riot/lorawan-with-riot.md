@@ -57,8 +57,8 @@ class: center, middle
         <br/><br/>
             <ul>
                 <li>increases the range (until several kilometers)</li>
-                <li>decreases the bandwidth</li>
                 <li>increases the time on air</li>
+                <li>increases energy consumption</li>
             </ul>
         </li>
     </ul>
