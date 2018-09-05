@@ -400,14 +400,14 @@ https://www.eclipse.org/paho/
     <img src="images/overview_application.png" alt="" style="width: 350px;"/><br/>
 ]
 
-- Listening to upling messages (device to network):
+- Listening to uplink messages (device to network):
 
 ```sh
 $ mosquitto_sub -h eu.thethings.network -p 1883 -u <username> -P <password>
 -t '+/devices/+/up'
 ```
 
-- Sending a downling message (network to device):
+- Sending a downlink message (network to device):
 
 ```sh
 $ mosquitto_pub -h eu.thethings.network -p 1883 -u <username> -P <password>
