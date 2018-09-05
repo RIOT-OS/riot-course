@@ -189,9 +189,6 @@ Existing open-source implementations:
 - Arduino LMIC https://github.com/matthijskooijman/arduino-lmic
   &#x21d2; nearly unmaintained
 
-- Arduino LoRa https://github.com/sandeepmistry/arduino-LoRa
-  &#x21d2; active
-
 - Loramac-node https://github.com/Lora-net/LoRaMac-node
   &#x21d2; reference implementation, used for certification from LoRa Alliance
 
