@@ -44,7 +44,7 @@ class: center, middle
   <td><ul>
   <li>Long range radio technology<br/><br/></li>
   <li>Spread Spectrum modulation: <br/><br/>&#x21d2; "Chirp Spread Spectrum"<br/><br/></li>
-  <li>Very robust to noise</li>
+  <li>Very robust to noise, multipath and Doppler effect</li>
   </ul></td>
   <td>.center[
       <img src="images/lora-chirp.jpg" alt="" style="width: 200px;"/><br/>
