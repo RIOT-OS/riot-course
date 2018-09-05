@@ -372,18 +372,6 @@ Tx done
 
 ---
 
-## Test TTN with RIOT: practice (3)
-
-- **Exercise:** `~/riot-course-exercises/riot-lorawan/thread`
-
-- **Objective:** Adapt your previous application as follows:
-
-  1. Join the network from the main application
-
-  2. Start a sender thread that sends messages every 20s
-
----
-
 ## The TTN MQTT API
 
 - MQTT protocol uses a publish/subscribe approach
