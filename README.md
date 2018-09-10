@@ -30,7 +30,7 @@ also provided to illustrate the exposed notions.
 
 This course and the associated exercices can be used for shorter and more
 oriented tutorials.
-Here is the lectures of these tutorials:
+Here is the list of exiting tutorials:
 
 - [RIOT Summit 2018 - Beginner Tutorial](https://aabadie.github.io/riot-course/slides/tutorials-summit-2018)
 
