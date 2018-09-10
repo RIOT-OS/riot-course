@@ -26,6 +26,14 @@ The full course is designed for 2 full days of work and
 [programming exercises](https://github.com/aabadie/riot-course-exercises) are
 also provided to illustrate the exposed notions.
 
+### Tutorials based on this course
+
+This course and the associated exercices can be used for shorter and more
+oriented tutorials.
+Here is the lectures of these tutorials:
+
+- [RIOT Summit 2018 - Beginner Tutorial](https://aabadie.github.io/riot-course/slides/tutorials-summit-2018)
+
 ## Using the course
 
 1. Clone this repository:
