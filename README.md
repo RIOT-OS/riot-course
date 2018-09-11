@@ -49,7 +49,8 @@ For RIOT applications developped during the practical exercises, you will need:
 
 - A Linux operating system with all build tools installed or VirtualBox with a
   Linux VM running (preferably Ubuntu). Setup details are given in the
-  [Getting started](slides/02-getting-started) section.
+  [prerequisites](https://aabadie.github.io/riot-course/slides/prerequisites)
+  slides.
 
 - An ST board for applications running on hardware: exercises are using the
   [B-L072Z-LRWAN1](http://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html)
