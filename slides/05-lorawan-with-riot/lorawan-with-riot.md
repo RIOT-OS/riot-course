@@ -412,7 +412,7 @@ https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
 
 ---
 
-## Integration with Cayenne: pratice
+## Integration with Cayenne: practice
 
 - **Exercise:** `~/riot-course-exercises/riot-lorawan/lpp`
 
