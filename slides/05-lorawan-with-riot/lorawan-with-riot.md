@@ -461,26 +461,11 @@ https://www.eclipse.org/paho/
 
 ---
 
-## Using the MQTT API
+## The TTN MQTT API
 
 .center[
     <img src="images/overview_application.png" alt="" style="width: 350px;"/><br/>
 ]
-
-- Listening to uplink messages (device to network):
-
-```sh
-$ mosquitto_sub -h eu.thethings.network -p 1883 -u <username> -P <password>
--t '+/devices/+/up'
-```
-
-- Sending a downlink message (network to device):
-
-```sh
-$ mosquitto_pub -h eu.thethings.network -p 1883 -u <username> -P <password>
--t '<application id>/devices/<device id>/down'
--m '{"port":2, "payload_raw":"dGVzdA=="}'
-```
 
 ---
 
