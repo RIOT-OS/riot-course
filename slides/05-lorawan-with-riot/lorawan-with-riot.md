@@ -412,7 +412,7 @@ https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
 
 ---
 
-## Integration with Cayenne: practice
+## Integration with Cayenne LPP: practice
 
 - **Exercise:** `~/riot-course-exercises/riot-lorawan/lpp`
 
@@ -444,13 +444,13 @@ https://www.eclipse.org/paho/
 
 ---
 
-## TTN with RIOT: practice (1)
+## TTN with RIOT: practice (3)
 
 - **Exercise:** `~/riot-course-exercises/riot-lorawan/downlink`
 
 ---
 
-## Final application: adding low power
+## Final application: add low power
 
 - **Exercise:** `~/riot-course-exercises/riot-lorawan/pm`
 
