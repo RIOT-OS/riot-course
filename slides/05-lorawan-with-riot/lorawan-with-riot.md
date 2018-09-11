@@ -484,6 +484,18 @@ $ mosquitto_pub -h eu.thethings.network -p 1883 -u <username> -P <password>
 
 ---
 
+## TTN with RIOT: practice (1)
+
+- **Exercise:** `~/riot-course-exercises/riot-lorawan/downlink`
+
+---
+
+## Final application: adding low power
+
+- **Exercise:** `~/riot-course-exercises/riot-lorawan/pm`
+
+---
+
 class: center, middle
 
 # The End
