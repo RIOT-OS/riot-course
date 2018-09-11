@@ -361,28 +361,11 @@ Tx done
 
 - **Exercise:** `~/riot-course-exercises/riot-lorawan/simple`
 
-- **Objective:**
-
-  - Follow the [RIOT Semtech Loramac package online documentation](http://doc.riot-os.org/group__pkg__semtech-loramac.html)
-    and write an application that sends "This is
-    RIOT!" every 20 seconds
-
-  - Configure the application for OTAA activation (use your Device EUI,
-    application EUI and application key)
-
 ---
 
 ## Sending sensor data to TTN: practice
 
 - **Exercise:** `~/riot-course-exercises/riot-lorawan/sensor`
-
-- **Objective:**
-
-  - Modify the application in `~/riot-course-exercises/riot-lorawan/thread` to
-    make it read and send every 20s the HTS221 sensor values. The format of the
-    message will be `T: XX.X°C, H: XX.X%`
-
-_TIP_: Reuse parts of the code from `~/riot-basics/drivers` application
 
 ---
 
@@ -432,14 +415,6 @@ https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
 ## Integration with Cayenne: pratice
 
 - **Exercise:** `~/riot-course-exercises/riot-lorawan/lpp`
-
-- **Objective:**
-
-  - Modify the application in `~/riot-course-exercises/riot-lorawan/sensor` to
-    make it compatible with the Cayenne LPP format: use the `cayenne-lpp`
-    package.
-
-_TIP_: see `~/RIOT/tests/pkg_cayenne-lpp` sample application
 
 ---
 
