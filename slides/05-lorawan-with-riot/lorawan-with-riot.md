@@ -107,6 +107,17 @@ class: center, middle
 
 ---
 
+## Time On Air
+
+Dependent on several factors: payload, bandwidth, spreading factor, etc.
+
+Calculating the TOA:
+- [LoRa Airtime Calculator spreadsheet](https://docs.google.com/spreadsheets/d/1voGAtQAjC1qBmaVuP1ApNKs1ekgUjavHuVQIXyYSvNc/edit#gid=0)
+- [lorawan_toa package](https://github.com/tanupoo/lorawan_toa)
+- [Equations from LoRa designer's guide](https://www.semtech.com/uploads/documents/LoraDesignGuide_STD.pdf)
+
+---
+
 ## Class A & C devices
 
 <table style="width:100%">
