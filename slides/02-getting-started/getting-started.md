@@ -219,24 +219,6 @@ Useful variables:
 make BOARD=b-l072z-lrwan1 TERMPROG=gtkterm \
 TERMFLAGS="-s 115200 -p /dev/ttyACM0 -e" flash term
 ```
----
-
-## Debugging an application
-
-- Use **debug** target. For example with OpenOCD:
-
-  - Starts a GDB server
-
-  - Starts the GDB client, connects to the GDB server and loads the application<br><br>
-    &#x21d2; Ready to debug
-
-- **DEVELHELP:** make variable that enables safety checking (get thread names, etc)
-
-- Useful `CFLAGS` options:<br>
-
-  - -DLOG_LEVEL=LOG_DEBUG : enable debug output globally
-
-  - -DDEBUG_ASSERT_VERBOSE : catch `FAILED ASSERTION` errors and give the line number
 
 ---
 

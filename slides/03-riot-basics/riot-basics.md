@@ -90,6 +90,25 @@ $ make -C <application_dir> all
 
 ---
 
+## The build system: debugging an application
+
+- Use **debug** target. For example with OpenOCD:
+
+  - Starts a GDB server
+
+  - Starts the GDB client, connects to the GDB server and loads the application<br><br>
+    &#x21d2; Ready to debug
+
+- **DEVELHELP:** make variable that enables safety checking (get thread names, etc)
+
+- Useful `CFLAGS` options:<br>
+
+  - -DLOG_LEVEL=LOG_DEBUG : enable debug output globally
+
+  - -DDEBUG_ASSERT_VERBOSE : catch `FAILED ASSERTION` errors and give the line number
+
+---
+
 ## The RIOT kernel
 
 - Overview of the boot sequence:
