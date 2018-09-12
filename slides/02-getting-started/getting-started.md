@@ -4,72 +4,14 @@ class: center, middle
 
 ---
 
-## Prerequisites: retrieve the course
+class: center, middle
 
-1. Install and setup Git:
-```bash
-$ sudo apt-get install git
-$ git config --global user.name "Your name"
-$ git config --global user.email "Your email"
-```
-2. Clone this course from GitHub:
-
-```
-$ git clone --recursive https://github.com/aabadie/riot-course
-```
-
-In the next sections, we assume that the sources are located in
-**~/riot-course**
-
-The exercises are located in: **~/riot-course/exercises**
-The RIOT code (2018.04) is located in: **~/riot-course/RIOT**
+If not done already, please ensure you followed the
+**[prerequisites](https://aabadie.github.io/riot-course/slides/prerequisites)**
 
 ---
 
-## Prerequisites: setup your build environment
-
-First possibility: install a toolchains and development tools locally (Linux only):
-  - Build essential tools (make, gcc, etc):
-```bash
-$ sudo apt-get install build-essential g++-multilib python-serial
-```
-  - Install toolchains (ARM):
-```bash
-$ sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa
-$ sudo apt-get update
-$ sudo apt-get install gcc-arm-embedded
-```
-  - Install flasher tools, OpenOCD (version >= 0.10 required)
-```bash
-$ sudo apt-get install openocd
-```
-Otherwise, build OpenOCD from sources:<br>https://github.com/RIOT-OS/RIOT/wiki/OpenOCD
-
----
-
-## Prerequisites: setup your build environment
-
-- Using Docker
-```bash
-$ docker pull riot/riotbuild
-$ cd <application directory>
-$ make BUILD_IN_DOCKER=1
-```
-
-- Using a VM, with vagrant
-```bash
-$ vagrant up
-$ vagrant ssh
-```
-
-- More info on the Wiki:
-
-.right[&#x21d2; &nbsp;&nbsp;https://github.com/RIOT-OS/RIOT/wiki/Setup-a-Build-Environment
-]
-
----
-
-## Practice: your first RIOT application
+## Structure of a RIOT application
 
 A minimal RIOT application (in `~/riot-course/exercises/getting-started/first-app`) consists in:
 - A `Makefile`
@@ -100,7 +42,7 @@ int main(void)
 
 ---
 
-## Practice: build the application (native)
+## Exercise: build the application (native)
 
 Simply run **make** from the application directory:
 
@@ -131,7 +73,7 @@ $ make -C getting-started/first-app
 
 ---
 
-## Practice: run the application (native)
+## Exercise: run the application (native)
 
 **native** target runs RIOT application as **Linux process**
 
@@ -158,7 +100,7 @@ $ make -C getting-started all term
 
 ---
 
-## Practice: build for a specific hardware
+## Exercise: build for a specific hardware
 
 - Use the ST B-L072Z-LRWAN1 board
 
@@ -191,7 +133,7 @@ Building application "example" for "b-l072z-lrwan1" with MCU "stm32l0".
 
 ---
 
-## Practice: run on hardware
+## Exercise: run on hardware
 
 Use the **flash** and **term** targets:
 - **flash** calls the flasher tool automatically (OpenOCD)
@@ -222,7 +164,7 @@ TERMFLAGS="-s 115200 -p /dev/ttyACM0 -e" flash term
 
 ---
 
-## Extending the application
+## How to extend the application
 
 In the `Makefile` or from the command line:
 
@@ -246,7 +188,7 @@ FEATURES_REQUIRED += periph_gpio
 
 ---
 
-## Practice: writing an application with a shell
+## Exercise: writing an application with a shell
 
 Go into the `getting-started/shell-app` application directory:
 
@@ -343,7 +285,7 @@ $ make BOARD=b-l072z-lrwan1 flash term
 
 ---
 
-## Practice: basic interaction with the hardware
+## Exercise: basic interaction with the hardware
 
 - RIOT defines macros for interacting with LEDs:<br>
   &#x21d2; **LEDi_ON**, **LEDi_OFF**, **LEDi_TOGGLE** with i in {0, 1, ..., N}
