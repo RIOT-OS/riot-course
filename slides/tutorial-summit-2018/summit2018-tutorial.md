@@ -46,6 +46,9 @@ class: center, middle
 
 ## Tutorial organization
 
+- Follow the RIOT course on github:
+  <a href=https://github.com/aabadie/riot-course>https://github.com/aabadie/riot-course</a>
+
 - Use the preconfigured VM for building applications
 
 - Run the RIOT applications on [IoT-LAB](https://www.iot-lab.info) testbed
@@ -68,7 +71,22 @@ class: center, middle
 
 ## About the VM
 
-- The RIOT course is located in `~/riot-course`
+- Compatible with VirtualBox 5.2 or VMWare Player
+
+--
+
+- Download it from [here](https://filesender.renater.fr/?s=download&token=de9df807-8e44-bec3-0ba8-7c74ac7c8aee)
+  and import it in VirtualBox/VMWare
+
+--
+
+- The full RIOT course is located in **~/riot-course**
+
+  - A local clone of RIOT 2018.07 is in **~/riot-course/RIOT**
+
+  - Exercices are located in **~/riot-course/exercises**
+
+--
 
 - All required developpement tools are already installed:
 
@@ -77,11 +95,6 @@ class: center, middle
   - The IoT-LAB cli-tools are installed
 
   - A list of common editors: Vim, Emacs, VSCode
-
-- Compatible with VirtualBox 5.2 or VMWare Player
-
-- Download it from [here](https://filesender.renater.fr/?s=download&token=de9df807-8e44-bec3-0ba8-7c74ac7c8aee)
-  and import it in VirtualBox/VMWare
 
 ---
 
@@ -111,15 +124,12 @@ IoT-LAB is a large scale experimentation testbed]
 --
 
 - Heterogeneous platforms
-  <br> &#x21d2; iotlab-m3, iotlab-a8, Atmel SAMR21-Xpro, Arduino Zero, ST B-L072Z-LRWAN1, Zolertia Firefly
+  <br> &#x21d2; iotlab-m3, iotlab-a8, Atmel SAMR21-Xpro, Arduino Zero,
+  ST B-L072Z-LRWAN1, Zolertia Firefly
 
 --
 
 - Heterogeneous radios &#x21d2; 802.15.4, 802.15.4g, LoRa, BLE (soon)
-
---
-
-- Start learning IoT with IoT-LAB at <a href=https://www.iot-lab.info/tutorials/>https://www.iot-lab.info/tutorials/</a>
 
 --
 
@@ -128,6 +138,11 @@ IoT-LAB is a large scale experimentation testbed]
 .center[
       <img src="images/use-iotlab.png" alt="" style="width:450px;"/>
   ]
+
+--
+
+- Start learning IoT with IoT-LAB at
+  <a href=https://www.iot-lab.info/tutorials/>https://www.iot-lab.info/tutorials/</a>
 
 ---
 
@@ -144,12 +159,13 @@ IoT-LAB is a large scale experimentation testbed]
 2. Grab one paper with the account credentials (user is riotsummit*X*)
 
 3. Register your IoT-LAB credentials
-   ```
+   ```sh
    $ iotlab-auth -u riotsummitX
    ```
 4. Start an experiment with one ST node on Saclay site:
-   ```
-   $ iotlab-experiment submit -n riotsummit -d 300 -l 1,archi=st-lrwan1:sx1276+site=saclay
+   ```sh
+   $ iotlab-experiment submit -n summit -d 300 \
+                               -l 1,archi=st-lrwan1:sx1276+site=saclay
    Using custom api_url: https://www.iot-lab.info/rest/
    {
       "id": 133XXX
@@ -158,7 +174,7 @@ IoT-LAB is a large scale experimentation testbed]
    The experiment will book one node during 300 minutes on Saclay site
 
 5. Wait for the experiment to be in "Running" state:
-  ```
+  ```sh
   $ iotlab-experiment wait -i 133XXX
   "Running"
   ```
@@ -167,7 +183,7 @@ IoT-LAB is a large scale experimentation testbed]
 ## Setup your IoT-LAB access in the VM (2)
 
 - Check the name of the iotlab node associated to the experiment:
-  ```
+  ```sh
   $ iotlab-experiment get -i 133XXX -r
   {
       "items": [
@@ -187,13 +203,15 @@ IoT-LAB is a large scale experimentation testbed]
   }
   ```
 
-&#x21d2; **st-lrwan1-10.saclay.iot-lab.info** is the node that you will work with
-on IoT-LAB during the tutorial.
+&#x21d2; in this case, **st-lrwan1-10.saclay.iot-lab.info** is the node that
+was selected by the IoT-LAB booking system.
+
+.center[**Remember yours, you will use it during the tutorial**]
 
 ---
 
 ## Let's get started
 
-.center[Follow the
-[getting-started](https://aabadie.github.io/riot-course/slides/02-getting-started)
-instructions]
+<br><br><br><br><br>
+
+###.center[Follow the [getting-started](https://aabadie.github.io/riot-course/slides/02-getting-started) instructions]
