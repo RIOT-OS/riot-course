@@ -6,14 +6,20 @@ class: center, middle
 
 class: center, middle
 
-If not done already, please ensure you followed the
+If you don't use the preconfigured VM or if not done already,<br><br>
+please ensure you followed the
 **[prerequisites](https://aabadie.github.io/riot-course/slides/prerequisites)**
+
+<br><br><br><br>
+
+.right[Otherwise move to next slide]
 
 ---
 
 ## Structure of a RIOT application
 
-A minimal RIOT application (in `~/riot-course/exercises/getting-started/first-app`) consists in:
+A minimal RIOT application consists in:
+
 - A `Makefile`
 
 ```mk
@@ -28,7 +34,7 @@ DEVELHELP ?= 1
 include $(RIOTBASE)/Makefile.include
 ```
 
-- A C-file containing the main function:
+- A C-file containing the main function
 
 ```c
 #include <stdio.h>
@@ -42,9 +48,75 @@ int main(void)
 
 ---
 
-## Exercise: build the application (native)
+## Build a RIOT application
 
-Simply run **make** from the application directory:
+- The build system of RIOT is based on **make** build tool
+
+--
+
+- To build an application, **make** can be called in 2 ways:
+
+  - From the application directory:
+  ```sh
+  $ cd <application_directory>
+  $ make
+  ```
+
+  - From anywhere, by using the `-C` to specify the application directory:
+  ```sh
+  $ make -C <application_directory>
+  ```
+
+--
+
+- Use the **BOARD** variable to specify the target at build time
+```sh
+$ make BOARD=<target> -C <application_directory>
+```
+`BOARD` can be any board supported by RIOT<br>
+&#x21d2; see the **RIOT/boards** directory for the complete list
+
+--
+
+- Use the **RIOTBASE** variable to specify the RIOT source base directory
+
+---
+
+## Run a RIOT application
+
+This depends on the target board:
+
+- Running on **native**: the RIOT application executed is a simple Linux process
+```sh
+$ make BOARD=native -C <application_dir>
+$ <application_dir>/bin/native/application.elf
+```
+
+- Running on **hardware**: the RIOT application must be *flashed* first on the
+  board
+
+--
+
+&#x21d2; use the **flash** and **term** targets with make
+  - **flash**: build and write the firmware on the MCU flash memory
+
+  - **term**: opens a terminal client connected to the serial port of the
+    target
+
+All this can be done in one command:
+
+```sh
+$ make BOARD=<target> -C <application_dir> flash term
+```
+
+*Note:* the last command can also be used with **native** target
+
+---
+
+## Exercise: your first RIOT application
+
+Let's build and run our first RIOT application with this
+[exercise](https://github.com/aabadie/riot-exercices/getting-started/first-app)
 
 ```sh
 $ cd ~/riot-course/exercises/getting-started/first-app
@@ -63,103 +135,6 @@ Building application "example" for "native" with MCU "native".
 "make" -C /home/user/RIOT/sys/auto_init
  text   data  bss    dec    hex   filename
  20206  568   47652  68426  10b4a .../getting-started/first-app/bin/native/example.elf
-```
-
-_Trick:_ use `-C` option with `make`
-```
-$ cd ~/riot-course/exercises
-$ make -C getting-started/first-app
-```
-
----
-
-## Exercise: run the application (native)
-
-**native** target runs RIOT application as **Linux process**
-
-Use the **term** target of `make`:
-
-```sh
-$ make -C getting-started term
-.../getting-started/first-app/bin/native/example.elf
-RIOT native interrupts/signals initialized.
-LED_RED_OFF
-LED_GREEN_ON
-RIOT native board initialized.
-RIOT native hardware initialization complete.
-
-main(): This is RIOT! (Version: vm-riot)
-My first RIOT application
-```
-_Tricks:_<br>
-**term** depends on **all** (build) target. Use the following command to force a rebuild:
-```sh
-$ make -C getting-started all term
-```
-**RIOTBASE** variable can be overriden to use a different RIOT location
-
----
-
-## Exercise: build for a specific hardware
-
-- Use the ST B-L072Z-LRWAN1 board
-
-- Use `BOARD` variable to select the target at build time
-
-```sh
-$ make BOARD=b-l072z-lrwan1 -C getting-started/first-app
-Building application "example" for "b-l072z-lrwan1" with MCU "stm32l0".
-
-"make" -C /home/user/RIOT/boards/b-l072z-lrwan1
-"make" -C /home/user/RIOT/core
-"make" -C /home/user/RIOT/cpu/stm32l0
-"make" -C /home/user/RIOT/cpu/cortexm_common
-"make" -C /home/user/RIOT/cpu/cortexm_common/periph
-"make" -C /home/user/RIOT/cpu/stm32_common
-"make" -C /home/user/RIOT/cpu/stm32_common/periph
-"make" -C /home/user/RIOT/cpu/stm32l0/periph
-"make" -C /home/user/RIOT/drivers
-"make" -C /home/user/RIOT/drivers/periph_common
-"make" -C /home/user/RIOT/sys
-"make" -C /home/user/RIOT/sys/auto_init
-"make" -C /home/user/RIOT/sys/isrpipe
-"make" -C /home/user/RIOT/sys/newlib_syscalls_default
-"make" -C /home/user/RIOT/sys/pm_layered
-"make" -C /home/user/RIOT/sys/tsrb
-"make" -C /home/user/RIOT/sys/uart_stdio
- text   data    bss    dec    hex filename
- 7596    140   2740  10476   28ec .../getting-started/first-app/bin/b-l072z-lrwan1/example.elf
-```
-
----
-
-## Exercise: run on hardware
-
-Use the **flash** and **term** targets:
-- **flash** calls the flasher tool automatically (OpenOCD)
-- **term** opens a serial terminal on the board (using pyterm by default)
-
-```sh
-$ make BOARD=b-l072z-lrwan1 -C getting-started flash term
-[...]
-### Flashing Target ###
-Open On-Chip Debugger 0.10.0+dev-00290-g5a98ff78 (2018-01-31-14:50)
-[...]
-INFO # Connect to serial port /dev/ttyACM0
-Welcome to pyterm!
-Type '/exit' to exit.
-INFO # main(): This is RIOT! (Version: vm-riot)
-INFO # My first RIOT application
-```
-
-Useful variables:
-- **PORT**: specify a specific serial port (`/dev/ttyACM1`)
-- **TERMPROG**: specify another terminal application (`gtkterm`, etc)
-- **TERMFLAGS**: override terminal application parameters
-
-```sh
-make BOARD=b-l072z-lrwan1 TERMPROG=gtkterm \
-TERMFLAGS="-s 115200 -p /dev/ttyACM0 -e" flash term
 ```
 
 ---
