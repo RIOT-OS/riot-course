@@ -116,7 +116,7 @@ $ make BOARD=<target> -C <application_dir> flash term
 ## Exercise: your first RIOT application
 
 Let's build and run our first RIOT application with this
-[exercise](../../exercices/getting-started/first-app)
+[exercise](https://github.com/aabadie/riot-course-exercices/getting-started/first-app)
 
 ```sh
 $ cd ~/riot-course/exercises/getting-started/first-app
