@@ -166,7 +166,7 @@ IoT-LAB is a large scale experimentation testbed]
 
 ## Setup your IoT-LAB access in the VM (2)
 
-- Check the name of iotlab node associated to the experiment:
+- Check the name of the iotlab node associated to the experiment:
   ```
   $ iotlab-experiment get -i 133XXX -r
   {
@@ -195,5 +195,5 @@ on IoT-LAB during the tutorial.
 ## Let's get started
 
 .center[Follow the
-[getting-started]([Getting started](https://aabadie.github.io/riot-course/slides/02-getting-started)
+[getting-started](https://aabadie.github.io/riot-course/slides/02-getting-started)
 instructions]
