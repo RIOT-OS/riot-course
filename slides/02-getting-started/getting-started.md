@@ -141,18 +141,20 @@ Building application "example" for "native" with MCU "native".
 
 ## How to extend the application
 
-In the `Makefile` or from the command line:
+&#x21d2; by adding modules in the application `Makefile` or from the command line:
 
 - Add extra modules with **USEMODULE**<br>
     &#x21d2; `xtimer`, `fmt`, `shell`, `ps`, etc
 
-- Include packages with **USEPKG**<br>
+- Include external packages with **USEPKG**<br>
     &#x21d2; `lwip`, `semtech-loramac`, etc
 
-- Use MCU peripherals with **FEATURES_REQUIRED**:<br>
+- Use MCU peripherals drivers with **FEATURES_REQUIRED**:<br>
     &#x21d2; `periph_gpio`, `periph_uart`, `periph_spi`, `periph_i2c`
 
-Example:
+--
+
+Example in a `Makefile`:
 ```mk
 USEMODULE += xtimer shell
 
@@ -160,103 +162,17 @@ USEPKG += semtech-loramac
 
 FEATURES_REQUIRED += periph_gpio
 ```
-
----
-
-## Exercise: writing an application with a shell
-
-Go into the `getting-started/shell-app` application directory:
-
-- Add the **shell** module to the `Makefile`
-
-```mk
-USEMODULE += shell
-```
-
-- Modify the `main.c`:
-
-```c
-#include "shell.h"
-```
-
-```c
-/* in main */
-char line_buf[SHELL_DEFAULT_BUFSIZE];
-shell_run(NULL, line_buf, SHELL_DEFAULT_BUFSIZE);
-return 0;
-```
-
-Build and run:
+Example from the command line:
 ```sh
-$ make all term
-> help
-help
-Command              Description
----------------------------------------
-> 
+$ USEMODULE=xtimer make BOARD=bl-072z-lrwan1
 ```
 
 ---
 
-## Adding commands to the shell
+## Exercise: write an application with a shell
 
-- `shell_commands` module &#x21d2; add default commands (`reboot`)
-
-- Include extra modules with predefined commands: `ps`, `random`
-
-- Define your own handler:
-
-```c
-int cmd_handler(int argc, char **argv);
-```
-
-- Add it to the shell initialization:
-
-```c
-#include "shell.h"
-
-static int cmd_handler(int argc, char **argv)
-{
-    /* Your code */
-}
-
-static const shell_command_t shell_commands[] = {
-    { "command", "description", cmd_handler },
-    { NULL, NULL, NULL }
-};
-[...]
-shell_run(shell_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
-```
-
----
-
-## An example of command handler
-
-```c
-static int cmd_handler(int argc, char **argv)
-{
-    if (argc < 3) {
-        printf("usage: %s <arg1> <arg2>\n", argv[0]);
-        return 1;
-    }
-
-    printf("Using arguments %s and %s\n", argv[1], argv[2]);
-    return 0;
-}
-```
-
-```c
-$ make all term
-> command
-usage: command <arg1> <arg2>
-> command arg1 arg2
-Using arguments arg1 and arg2
-```
-
-It works the same on hardware without modifications:
-```c
-$ make BOARD=b-l072z-lrwan1 flash term
-```
+Follow the instructions in the following
+[exercise](https://github.com/aabadie/riot-course-exercises/tree/master/getting-started/shell)
 
 ---
 
