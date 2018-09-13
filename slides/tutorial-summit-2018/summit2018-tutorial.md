@@ -84,11 +84,15 @@ class: center, middle
 --
 
 - Download it from [here](https://filesender.renater.fr/?s=download&token=de9df807-8e44-bec3-0ba8-7c74ac7c8aee)
-  and import it in VirtualBox/VMWare
+  and import it in VirtualBox/VMWare. Then start it.
 
 --
 
 - The full RIOT course is located in **~/riot-course**
+
+  - **Important:** Call `git pull` from `~/riot-course` and
+    `~/riot-course/exercises` to get the latest version of the tutorial and
+    exercises
 
   - A local clone of RIOT 2018.07 is in **~/riot-course/RIOT**
 
