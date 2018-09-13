@@ -363,11 +363,15 @@ Tx done
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/simple`
 
+Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-lorawan/simple)
+
 ---
 
 ## Sending sensor data to TTN: practice
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/sensor`
+
+Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-lorawan/sensor)
 
 ---
 
@@ -418,6 +422,8 @@ https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/lpp`
 
+Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-lorawan/lpp)
+
 ---
 
 ## The TTN MQTT API
@@ -450,11 +456,15 @@ https://www.eclipse.org/paho/
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/downlink`
 
+Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-lorawan/downlink)
+
 ---
 
 ## Final application: add low power
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/pm`
+
+Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-lorawan/pm)
 
 ---
 
