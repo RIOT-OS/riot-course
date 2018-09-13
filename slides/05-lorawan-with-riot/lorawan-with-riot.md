@@ -318,8 +318,11 @@ Lots of public network operators:
 2. Managing your gateways (optional)<br>
   https://www.thethingsnetwork.org/docs/gateways/registration.html
 
-3. Register your device in the `captronic-workshop` application<br>
-  https://console.thethingsnetwork.org/applications/captronic-workshop
+3. Add a new application<br>
+  https://console.thethingsnetwork.org/applications
+
+4. Register your device in your application<br>
+  https://console.thethingsnetwork.org/applications/yourapplication
 
 ---
 
