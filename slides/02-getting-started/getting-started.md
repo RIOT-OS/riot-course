@@ -185,15 +185,23 @@ Interaction with the hardware can be performed at 3 levels:
 
 - At board level by using predefined macros for controlling LEDs and buttons
 
-- At cpu level by using the MCU peripheral drivers APIs (periph_gpio,
-  periph_i2c, etc)
+  &#x21d2; just include `board.h` to use them
+
+--
+
+- At cpu level by using the MCU peripheral drivers APIs
+
+  &#x21d2; periph_gpio periph_i2c periph_uart, etc
+
   This level is considered as the **HAL** of RIOT since it provides a common
   API for all types/architectures of CPU
 
+--
+
 - At driver level by using high level driver APIs for specific external
-  sensors/actuators/radios (bmp180, hts221)
+  sensors/actuators/radios
 
-
+  &#x21d2; bmp180, hts221, sx1276, etc
 
 ---
 
