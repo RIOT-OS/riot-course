@@ -100,7 +100,7 @@ class: center, middle
 
 --
 
-- All required developpement tools are already installed:
+- All required development tools are already installed:
 
   - The GNU ARM Embedded 7.3 toolchain is installed
 
