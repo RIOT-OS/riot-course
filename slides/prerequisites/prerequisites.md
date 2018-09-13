@@ -68,3 +68,26 @@ More info on the Wiki:
 
 .center[&#x21d2; &nbsp;&nbsp;https://github.com/RIOT-OS/RIOT/wiki/Setup-a-Build-Environment
 ]
+
+---
+
+## Using IoT-LAB (optional)
+
+- First you need to create an account on IoT-LAB at
+  <a href=https://www.iot-lab.info/testbed-beta/#/signup>
+  https://www.iot-lab.info/testbed-beta/#/signup</a>
+
+- To remotely flash and open a terminal session on IoT-LAB, you'll need to
+  install the IoT-LAB command line tools using `pip`:
+  ```sh
+  $ sudo apt-get install python-pip
+  $ pip install iotlabcli --pre -U
+  ```
+
+- Once installed, register your IoT-LAB login/password locally using:
+  ```sh
+  $ iotlab-auth -u <your login>
+  ```
+
+In any case, it is recommended to play the
+[online IoT-LAB tutorials](https://www.iot-lab.info/tutorials/) first.
