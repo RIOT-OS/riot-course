@@ -115,8 +115,10 @@ $ make BOARD=<target> -C <application_dir> flash term
 
 ## Exercise: your first RIOT application
 
-Let's build and run our first RIOT application with this
-[exercise](https://github.com/aabadie/riot-course-exercises/tree/master/getting-started/first-app)
+Let's build and run our first RIOT application with the exercise in
+`~/riot-course/exercises/getting-started/first-app`.
+Just follow the instruction of the
+[exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/getting-started/first-app)
 
 ```sh
 $ cd ~/riot-course/exercises/getting-started/first-app
@@ -171,61 +173,62 @@ $ USEMODULE=xtimer make BOARD=bl-072z-lrwan1
 
 ## Exercise: write an application with a shell
 
-Follow the instructions in the following
-[exercise](https://github.com/aabadie/riot-course-exercises/tree/master/getting-started/shell)
+Go to `~/riot-course/exercises/getting-started/shell` and follow the
+instructions in the following
+[exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/getting-started/shell)
 
 ---
 
-## Exercise: basic interaction with the hardware
+## Interaction with the hardware
 
-- RIOT defines macros for interacting with LEDs:<br>
-  &#x21d2; **LEDi_ON**, **LEDi_OFF**, **LEDi_TOGGLE** with i in {0, 1, ..., N}
+Interaction with the hardware can be performed at 3 levels:
 
-- The _LEDi_ macros are defined in **board.h** files because they are specific to a board
+- At board level by using predefined macros for controlling LEDs and buttons
 
-- Open `getting-started/led-app/main.c`
+- At cpu level by using the MCU peripheral drivers APIs (periph_gpio,
+  periph_i2c, etc)
+  This level is considered as the **HAL** of RIOT since it provides a common
+  API for all types/architectures of CPU
 
-- Add a shell command that toggles the on-board leds (_LEDi\_TOGGLE_):
-```sh
-$ make -C getting-started/led-app/ all term
-[...]
-> toggle
-Usage: toggle <led num>
-> toggle 0
-LED_RED_TOGGLE
-> toggle 1
-LED_GREEN_TOGGLE
-```
+- At driver level by using high level driver APIs for specific external
+  sensors/actuators/radios (bmp180, hts221)
 
-- Run it on the B-L072Z-LRWAN1 board
-```sh
-$ make BOARD=b-l072z-lrwan1 -C getting-started/led-app/ flash term
-```
+
 
 ---
 
-## Discovering the example applications
+## Exercise: interaction with the hardware
 
-- Go to the RIOT source directory
+- Go to `~/riot-course/exercises/getting-started/led` and follow the
+  instructions of the
+  [led exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/getting-started/led)
+  to toggle LEDs from shell commands
 
-- Build, flash and interact with the following applications:
+- Go to `~/riot-course/exercises/getting-started/sensor` and follow the
+  instructions of the
+  [sensor exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/getting-started/sensor)
+  to read values from a sensor with shell commands
 
-  - `examples/default`
+---
 
-  - `examples/saul`
+## Going further: read existing applications source code
 
-- Test applications also provides good examples to start the RIOT
+The RIOT source directory contains applications that can be used as examples
+for almost all features provided by RIOT.
+
+- See applications in the `examples` directory
+
+- Test applications in `tests` directory also provides good examples to start
+  the RIOT
 
 ---
 
 ## Summary
 
-- Setup your environment
-
 - Build & run your first RIOT application, native and on hardware
-
-- Debug your application
 
 - How to extend an application, the `shell`
 
 - Basic interaction with the hardware
+
+- Read sensor values
