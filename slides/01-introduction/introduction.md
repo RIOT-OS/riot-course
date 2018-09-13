@@ -359,3 +359,9 @@ The ISR context handles external events and notifies threads using IPC messages
   - documentation
 
   - releases
+
+---
+
+class: center, middle
+
+[Back to the course](https://github.com/aabadie/riot-course)

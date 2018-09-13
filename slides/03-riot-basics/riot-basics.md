@@ -859,3 +859,9 @@ driver_name_init(&dev, &driver_name_params[0]);
 - Drivers
 
 - Packages
+
+---
+
+class: center, middle
+
+[Back to the course](https://github.com/aabadie/riot-course)

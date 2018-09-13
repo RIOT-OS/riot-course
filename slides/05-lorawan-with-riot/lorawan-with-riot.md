@@ -459,3 +459,5 @@ https://www.eclipse.org/paho/
 class: center, middle
 
 # The End
+
+[Back to the course](https://github.com/aabadie/riot-course)

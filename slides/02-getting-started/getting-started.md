@@ -240,3 +240,9 @@ for almost all features provided by RIOT.
 - Basic interaction with the hardware
 
 - Read sensor values
+
+---
+
+class: center, middle
+
+[Back to the course](https://github.com/aabadie/riot-course)

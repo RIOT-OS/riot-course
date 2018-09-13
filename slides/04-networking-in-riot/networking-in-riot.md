@@ -334,3 +334,9 @@ Small change:
 - Use samr21-xpro instead of iotlab-m3
 
 - Skip border-router related steps
+
+---
+
+class: center, middle
+
+[Back to the course](https://github.com/aabadie/riot-course)
