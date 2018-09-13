@@ -91,3 +91,9 @@ More info on the Wiki:
 
 In any case, it is recommended to play the
 [online IoT-LAB tutorials](https://www.iot-lab.info/tutorials/) first.
+
+---
+
+class: center, middle
+
+[Back to the course](https://github.com/aabadie/riot-course)
