@@ -255,7 +255,8 @@ End-device high-level support (generally based on Loramac-node):
 - in **OTAA**:
   - Requires Device EUI, Application EUI and Application Key information
 
-  - The device initiates a handshake with the server to get its address and a "nonce" &#x21d2; the device address changes after each activation
+  - The device initiates a handshake with the server to get its address and
+    a "nonce" &#x21d2; the device address changes after each activation
 
   - The 2 session keys are derived from the application key and the nonce
 
@@ -327,7 +328,8 @@ Lots of public network operators:
 - Loramac port documentation <br>
 http://doc.riot-os.org/group__pkg__semtech-loramac.html
 
-- Build and run the test/demo application provided by RIOT (in `~/RIOT`)
+- Build and run the test/demo application provided by RIOT (in
+  `~/riot-course/RIOT`)
 
 ```sh
 make -C tests/pkg_semtech-loramac flash term
@@ -359,13 +361,13 @@ Tx done
 
 ## Test TTN with RIOT: practice (2)
 
-- **Exercise:** `~/riot-course-exercises/riot-lorawan/simple`
+- **Exercise:** `~/riot-course/exercises/riot-lorawan/simple`
 
 ---
 
 ## Sending sensor data to TTN: practice
 
-- **Exercise:** `~/riot-course-exercises/riot-lorawan/sensor`
+- **Exercise:** `~/riot-course/exercises/riot-lorawan/sensor`
 
 ---
 
@@ -414,7 +416,7 @@ https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
 
 ## Integration with Cayenne LPP: practice
 
-- **Exercise:** `~/riot-course-exercises/riot-lorawan/lpp`
+- **Exercise:** `~/riot-course/exercises/riot-lorawan/lpp`
 
 ---
 
@@ -446,13 +448,13 @@ https://www.eclipse.org/paho/
 
 ## TTN with RIOT: practice (3)
 
-- **Exercise:** `~/riot-course-exercises/riot-lorawan/downlink`
+- **Exercise:** `~/riot-course/exercises/riot-lorawan/downlink`
 
 ---
 
 ## Final application: add low power
 
-- **Exercise:** `~/riot-course-exercises/riot-lorawan/pm`
+- **Exercise:** `~/riot-course/exercises/riot-lorawan/pm`
 
 ---
 
