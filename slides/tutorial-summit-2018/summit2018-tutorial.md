@@ -44,7 +44,15 @@ class: center, middle
 
 ---
 
-## Tutorial organization
+## Tutorial overview (1)
+
+.center[
+    <img src="images/tutorial-summary.png" alt="" style="width:720px;"/>
+]
+
+---
+
+## Tutorial overview (2)
 
 - Follow the RIOT course on github:
   <a href=https://github.com/aabadie/riot-course>https://github.com/aabadie/riot-course</a>
@@ -143,12 +151,6 @@ IoT-LAB is a large scale experimentation testbed]
 
 - Start learning IoT with IoT-LAB at
   <a href=https://www.iot-lab.info/tutorials/>https://www.iot-lab.info/tutorials/</a>
-
----
-
-## Tutorial summary
-
-
 
 ---
 
