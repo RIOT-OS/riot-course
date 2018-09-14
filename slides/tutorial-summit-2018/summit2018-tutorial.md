@@ -4,6 +4,8 @@ class: center, middle
 
 ## Summit 2018
 
+<a href=https://github.com/aabadie/riot-course>https://github.com/aabadie/riot-course</a>
+
 ---
 
 ## Objective of the tutorial
