@@ -475,4 +475,4 @@ class: center, middle
 
 # The End
 
-[Back to the course](https://github.com/aabadie/riot-course)
+[Back to the course](https://github.com/aabadie/riot-course#content-of-the-course)

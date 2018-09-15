@@ -864,4 +864,4 @@ driver_name_init(&dev, &driver_name_params[0]);
 
 class: center, middle
 
-[Back to the course](https://github.com/aabadie/riot-course)
+[Back to the course](https://github.com/aabadie/riot-course#content-of-the-course)

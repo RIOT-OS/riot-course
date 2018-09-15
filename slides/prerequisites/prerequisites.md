@@ -96,4 +96,4 @@ In any case, it is recommended to play the
 
 class: center, middle
 
-[Back to the course](https://github.com/aabadie/riot-course)
+[Back to the course](https://github.com/aabadie/riot-course#content-of-the-course)

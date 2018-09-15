@@ -245,4 +245,4 @@ for almost all features provided by RIOT.
 
 class: center, middle
 
-[Back to the course](https://github.com/aabadie/riot-course)
+[Back to the course](https://github.com/aabadie/riot-course#content-of-the-course)
