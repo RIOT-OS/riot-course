@@ -468,6 +468,16 @@ IoT-LAB is a **large scale experimentation testbed**]
 
 ---
 
+background-image: url(images/green-bands.png)
+
+## RIOT on FIT/IoT-LAB large scale testbed
+
+.center[
+      <img src="images/use-iotlab.png" alt="" style="width:700px;"/>
+  ]
+
+---
+
 ## RIOT online demo
 
 .center[<a href="http://riot-demo.inria.fr">http://riot-demo.inria.fr</a>]
@@ -480,3 +490,98 @@ background-image: url(images/qa.png)
 
 ---
 
+class: center, middle
+
+<a href="https://aabadie.github.io/riot-course/slides/techtalk-stationf/#50">
+https://aabadie.github.io/riot-course/slides/techtalk-stationf/#50</a>
+
+---
+
+background-image: url(images/green-bands.png)
+
+## Getting started with RIOT
+
+1. Learn how to write and build a RIOT application
+
+  .center[
+      <img src="images/riot-logo.png" alt="" style="width:100px;"/>
+  ]
+
+--
+
+3. Learn the basics of LoRaWAN networks
+
+  .center[
+      <img src="images/lorawan.png" alt="" style="width:200px;"/>
+  ]
+
+--
+
+4. Write a LoRaWAN application using RIOT and TheThingsNetwork provider
+
+  .center[
+      <img src="images/ttn-logo.png" alt="" style="height:100px;"/>
+  ]
+
+---
+
+background-image: url(images/green-bands.png)
+
+## Tutorial overview
+
+- Use the preconfigured VM for building applications
+
+- Hardware used:
+
+  - [ST B-L072Z-LRWAN1](https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html): STM32L0 + LoRa radio
+
+  .center[
+      <img src="images/en.b-l072z-lrwan1.jpg" alt="" style="width:150px;"/>
+  ]
+
+  - [ST X-NUCLEO-IKS01A2](https://www.st.com/en/ecosystems/x-nucleo-iks01a2.html): extension shield with sensors
+
+  .center[
+      <img src="images/en.x-nucleo-iks01a2_image.jpg" alt="" style="width:100px;"/>
+  ]
+
+---
+
+background-image: url(images/green-bands.png)
+
+## About the VM
+
+- Compatible with VirtualBox 5.2 or VMWare Player
+
+--
+
+- **Download it** from [here](http://demo-fit.saclay.inria.fr/vms/RIOT-LORA-VM.ova)
+  and **import it** in VirtualBox/VMWare. Then **start it**.
+
+--
+
+- The full RIOT course is located in **~/riot-course**
+
+  - A local clone of RIOT (master) is in **~/riot-course/RIOT**
+
+  - Exercices are located in **~/riot-course/exercises**
+
+--
+
+- All required development tools are already installed:
+
+  - The GNU ARM Embedded 7.3 toolchain is installed
+
+  - The IoT-LAB cli-tools are installed
+
+  - A list of common editors: Vim, Emacs, VSCode
+
+---
+
+background-image: url(images/green-bands.png)
+
+## Let's go!
+
+.center[
+    Follow the <a href="https://aabadie.github.io/riot-course/slides/02-getting-started/#1">getting started slides</a>
+]
