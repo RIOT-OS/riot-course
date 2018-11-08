@@ -33,6 +33,7 @@ oriented tutorials.
 Here is the list of exiting tutorials:
 
 - [RIOT Summit 2018 - Beginner Tutorial](https://aabadie.github.io/riot-course/slides/tutorial-summit-2018)
+- [Inria Tech Talk - StationF](https://aabadie.github.io/riot-course/slides/techtalk-stationf)
 
 ## Using the course
 
