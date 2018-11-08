@@ -433,6 +433,20 @@ background-image: url(images/green-bands.png)
 
 background-image: url(images/green-bands.png)
 
+## IoT deployments using RIOT
+
+.center[
+**Home automation using KNX**<br><br>
+<img src="images/knx-element.png" alt="" style="width:400px"/><br>
+<img src="images/knx-element2.png" alt="" style="width:200px"/>
+<img src="images/knx-board.png" alt="" style="width:150px"/><br><br>
+<a href="http://summit.riot-os.org/2018/wp-content/uploads/sites/10/2018/09/2_2-Bas-Stottelaar-KNX.pdf">More information</a>
+]
+
+---
+
+background-image: url(images/green-bands.png)
+
 ## IoT products & services using RIOT
 
 - Environment monitoring: Hamilton IoT (USA), Unwired Devices (Russia)
