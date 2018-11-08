@@ -328,11 +328,9 @@ Lots of public network operators:
 
 ## Test TTN with RIOT: practice (1)
 
-- Loramac port documentation <br>
-http://doc.riot-os.org/group__pkg__semtech-loramac.html
+- <a href="http://doc.riot-os.org/group__pkg__semtech-loramac.html">LoRaWAN port documentation</a>
 
-- Build and run the test/demo application provided by RIOT (in
-  `~/riot-course/RIOT`)
+- Build and run the demo application provided by RIOT (in `~/riot-course/RIOT`)
 
 ```sh
 make -C tests/pkg_semtech-loramac flash term
