@@ -581,6 +581,8 @@ background-image: url(images/green-bands.png)
 
 - The full RIOT course is located in **~/riot-course**
 
+  - **Important:** Start by calling **git pull** in **~/riot-course** to get the latest instructions
+
   - A local clone of RIOT (master) is in **~/riot-course/RIOT**
 
   - Exercices are located in **~/riot-course/exercises**
