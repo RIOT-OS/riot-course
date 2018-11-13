@@ -85,7 +85,7 @@ class: center, middle
 
 --
 
-- Download it from [here](https://filesender.renater.fr/?s=download&token=de9df807-8e44-bec3-0ba8-7c74ac7c8aee)
+- Download it from [here](http://demo-fit.saclay.inria.fr/vms/RIOT-LORA-VM.ova)
   and import it in VirtualBox/VMWare. Then start it.
 
 --
