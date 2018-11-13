@@ -55,7 +55,7 @@ background-image: url(images/green-bands.png)
 
  - Standard programming in C
  - Standard tooling
- - **API is independent** of the hardware
+ - **API is independent** from the hardware
 
 <img src="images/finger-snap.png" alt="" style="width:100px;position:fixed;top:530px;right:320px;"/>
 
@@ -506,14 +506,18 @@ background-image: url(images/qa.png)
 
 class: center, middle
 
-<a href="https://aabadie.github.io/riot-course/slides/techtalk-stationf/#50">
-https://aabadie.github.io/riot-course/slides/techtalk-stationf/#50</a>
+<a href="https://aabadie.github.io/riot-course/slides/techtalk-stationf">
+https://aabadie.github.io/riot-course/slides/techtalk-stationf</a>
 
 ---
 
 background-image: url(images/green-bands.png)
 
 ## Getting started with RIOT
+
+.center[
+<a href="https://github.com/aabadie/riot-course">https://github.com/aabadie/riot-course</a>
+]
 
 1. Learn how to write and build a RIOT application
 
