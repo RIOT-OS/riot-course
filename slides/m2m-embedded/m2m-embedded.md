@@ -77,7 +77,7 @@ Team FIT/IoT-LAB]]
 
 - The community today:
 
-  - So far, 200 different contributors to the master branch
+  - So far, **+200** different contributors to the master branch
   - Academics: Berkeley, UCLA, MIT, AIT, TZI, etc
   - Industrial: Cisco, Samsung, ImgTec, Fujitsu, Thalès
   - SME: Zolertia, OTAKeys, Mesotic, Eistec, We-sens
@@ -115,7 +115,7 @@ in the Internet of Things: A survey," IEEE Internet of ThingsJournal, 2016.
 
 ## The RIOT philosophy & community
 
-- RIOT is free-software, licensed under LGPLv2.1
+- RIOT is free-software, licensed under **LGPLv2.1**
 
 - The community takes inspiration from Linux
 
@@ -126,17 +126,17 @@ in the Internet of Things: A survey," IEEE Internet of ThingsJournal, 2016.
 - Use standards whenever possible <br>
   (C-ANSI, standard tools, standard protocols, standard procedures)
 
-- Follow POSIX standards
+- Follow **POSIX** standards
 
 --
 
-- Avoid code duplication, easy to program, increase portability, modularity
+- Avoid code duplication, easy to program, increase **portability**, modularity
 
-- Vendor & Technology independence
+- Vendor & Technology **independence**
 
 --
 
-- Decisions and orientations are taken by a grass-root community
+- Decisions and orientations are taken by a **grass-root community**
 
 .center[
     <img src="images/riot-contributors.png" alt="" style="width:350px"/>
@@ -189,23 +189,23 @@ Preprint available: http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.pd
 
 ## OS characteristics
 
-- Micro-kernel based architecture: modular approach
+- **Micro-kernel** based architecture: modular approach
 
 <img src="images/riot-architecture.png" alt="" style="width:300px;position:fixed;right:120px;top:120px"/>
 
 --
 
-- Small footprint &#x21d2; 2.8kB RAM, 3.2kB ROM on 32-bit Cortex-M
+- Small footprint &#x21d2; **2.8kB** RAM, **3.2kB** ROM on 32-bit Cortex-M
 
 --
 
-- Real-Time scheduler
+- **Real-Time** scheduler
   - &#x21d2; fixed priorities preemption with O(1) operations
   - &#x21d2; tickless scheduler
 
 --
 
-- Multi-Threading and IPC:
+- **Multi-Threading** and IPC:
   - Separate thread contexts with separate thread memory stack
   - Minimal thread control block (TCB)
   - Thread synchronization using mutexes, semaphores and messaging
@@ -218,7 +218,7 @@ Preprint available: http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.pd
 
 - **Hardware abstraction layer:** support for 8/16/32 bit, ARM, AVR, MIPS
 
-- Supported vendors: Microchip, NXP, STMicroelectronics, Nordic, TI, ESP, etc
+- Supported vendors: Microchip, NXP, STMicroelectronics, Nordic, TI, ESP, RISC-V, etc
 
 - **Large list of sensors and actuators** supported (e.g drivers)
 
@@ -244,7 +244,7 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 - Display drivers, filesystems, etc
 
-<img src="images/riot-ucglib.jpg" alt="" style="width:200px;position:fixed;right:200px;top:250px"/>
+<img src="images/riot-ucglib.jpg" alt="" style="width:200px;position:fixed;right:300px;top:250px"/>
 
 --
 
@@ -254,13 +254,11 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 - High-level network protocols: CoAP, MQTT-SN, etc
 
-<img src="images/riot-802154-stack.png" alt="" style="width:150px;position:fixed;right:200px;top:500px"/>
-
 --
 
 - External packages
 
-<img src="images/packages.png" alt="" style="width:400px;"/>
+<img src="images/packages.png" alt="" style="width:400px;position:fixed;right:400px;top:450px"/>
 
 ---
 
@@ -305,8 +303,8 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 --
 
-- **LoRaWAN** stack: port of <a href="">Semtech loramac-node</a> reference implementation<br>
-&#x21d2; Compliant with LoRaWAN 1.0.2, considered stable
+- **LoRaWAN** stack
+&#x21d2; Compliant with LoRaWAN 1.0.2
 <img src="images/lorawan.png" alt="" style="width:200px;position:fixed;top:300px;right:200px"/>
 <br><br>
 
@@ -321,13 +319,24 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 - NB-IoT support
 
+<img src="images/nb_iot_logo.jpg" alt="" style="width:180px;position:fixed;top:150px;right:400px"/>
+<br><br>
+
 --
 
-- Full features USB stack
+- Full featured USB stack (CDC-ACM, CDC-ECM, etc)
+
+<img src="images/usb-logo.png" alt="" style="width:180px;position:fixed;top:220px;right:400px"/>
+
+<br><br>
 
 --
 
 - Standard and secure software update implementation
+
+.center[https://datatracker.ietf.org/wg/suit/about/]
+
+<br>
 
 --
 
