@@ -81,14 +81,14 @@ Team FIT/IoT-LAB]]
   - Academics: Berkeley, UCLA, MIT, AIT, TZI, etc
   - Industrial: Cisco, Samsung, ImgTec, Fujitsu, Thalès
   - SME: Zolertia, OTAKeys, Mesotic, Eistec, We-sens
+  - Member of the EdgeXFoundry initiative
 
 --
 
 - Annual RIOT Summit: https://summit.riot-os.org
 
-<img src="images/riot-summit.png" alt="" style="width:250px;position:fixed;top:475px;right:650px;"/>
-<img src="images/summit-2018.jpg" alt="" style="width:250px;position:fixed;top:475px;right:300px;"/>
-
+<img src="images/riot-summit.png" alt="" style="width:220px;position:fixed;top:500px;right:650px;"/>
+<img src="images/summit-2018.jpg" alt="" style="width:220px;position:fixed;top:500px;right:300px;"/>
 ---
 
 ## Competitors
