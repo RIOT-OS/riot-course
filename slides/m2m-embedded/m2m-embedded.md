@@ -109,7 +109,7 @@ in the Internet of Things: A survey," IEEE Internet of ThingsJournal, 2016.
 
  - fosters an open-source philosophy more akin to Linux
 
- - provides more complete and stable OS functionalities
+ - provides more integrated high-level functionalities
 
 ---
 
@@ -425,6 +425,26 @@ IoT-LAB is a **large scale experimentation testbed**]
 
 ---
 
+## Learn RIOT
+
+- RIOT Tutorials
+
+.center[<a href="https://github.com/RIOT-OS/Tutorials">https://github.com/RIOT-OS/Tutorials</a>]
+
+<br>
+
+- RIOT online course
+
+.center[<a href="https://github.com/aabadie/riot-course">https://github.com/aabadie/riot-course</a>]
+
+<br>
+
+- Cap'Tronic course: **25th & 26th of April in Angers**
+
+.center[<a href="https://www.captronic.fr/ATELIER-Initiez-vous-a-RIOT-OS-pour-l-IoT.html">https://www.captronic.fr/ATELIER-Initiez-vous-a-RIOT-OS-pour-l-IoT.html</a>]
+
+---
+
 ## Stay tuned!
 
 .center[
@@ -443,3 +463,9 @@ https://github.com/RIOT-OS/RIOT
 https://riot-os.org
 
 ]
+
+---
+
+class: center, middle
+
+# Merci!
