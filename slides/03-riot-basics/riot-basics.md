@@ -489,7 +489,7 @@ US_PER_MS   /* number of milliseconds per seconds */
     <img src="images/riot-architecture.png" alt="" style="width:400px;"/>
 ]
 
-- Reflects IoT devices targetted by RIOT<br><br>
+- Reflects IoT devices targeted by RIOT<br><br>
     &#x21d2; a microcontroller with devices connected together on a board
 
 - One application is built for one board with one device and with potentially multiple devices (sensors, actuators, radios)
@@ -549,7 +549,7 @@ CPUs classification follows a hierarchical approach:
 
 ## MCU peripherals APIs
 
-- Uniform APIs built on top of heterogeneuous hardwares
+- Uniform APIs built on top of heterogeneous hardware
 
 - The same code can run potentially on every hardware
 
@@ -557,7 +557,7 @@ CPUs classification follows a hierarchical approach:
 
 - Explicitly include a peripheral module in your Makefile with the **FEATURES_REQUIRED** variable
 
-- The peripheral drivers are implemented from scratch. This garantees:
+- The peripheral drivers are implemented from scratch. This guarantees:
 
   - Memory efficiency
 
@@ -733,7 +733,7 @@ rtc_set_alarm(&alarm_time, rtc_alarm_cb, NULL);
 
 - **SPI**: module `periph_spi`, include from `periph/spi.h`
 
-- **PWN**: module `periph_pwm`, include from `periph/pwm.h`
+- **PWM**: module `periph_pwm`, include from `periph/pwm.h`
 
 - **ADC**: module `periph_adc`, include from `periph/adc.h`
 
@@ -771,7 +771,7 @@ rtc_set_alarm(&alarm_time, rtc_alarm_cb, NULL);
 
 - Drivers implementations provide default initialization parameters in `drivers/<driver name>/include/<driver name>_params.h`
 
-- Default params can be overriden:
+- Default params can be overridden:
 
   - in application code: add your own `<driver name>_params.h` there
 
