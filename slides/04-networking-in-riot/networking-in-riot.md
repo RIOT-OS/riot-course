@@ -57,7 +57,10 @@ class: center, middle
 
 ---
 
-## Available stacks
+## Available IPv6 stacks
+
+- **GNRC**
+  - Generic in-house network stack
 
 - **LwIP**
   - full featured network stack
@@ -71,11 +74,20 @@ class: center, middle
   - Opensource implementation of the Thread specifications
   - provided as a package in `pkg/openthread`
 
+---
+
+## Other stacks
+
+- **Bluetooth Low Energy** (BLE) stack
+  - based on the [Apache Mynewt NimBLE](https://github.com/apache/mynewt-nimble)
+    library
+
 - **Controller Area Network** (CAN) stack
-  - Native mode (SocketCAN) + driver for TJA1042
+  - Native mode (SocketCAN) + driver for TJA1042 + STM32 peripheral driver
 
 - **LoRaWAN**:
-  - based Semtech Loramac-node reference implementation
+  - based Semtech [Loramac-node](https://github.com/Lora-net/LoRaMac-node)
+    reference implementation
   - provided as a package in `pkg/semtech-loramac`
 
 ---
@@ -88,9 +100,9 @@ class: center, middle
 <tr>
   <td>
     <ul>
-      <li>Network are decoupled from the hardware via the <b>netdev</b> API<br><br></li>
-      <li>Application are decoupled from network stack via the <b>sock</b> API<br><br></li>
-      <li>Each device runs in its <b>own thread</b><br><br></li>
+      <li>Network layer is decoupled from the hardware via the <b>netdev</b> API<br><br></li>
+      <li>Application layer is decoupled from network stack via the <b>sock</b> API<br><br></li>
+      <li>Each device driver runs in its <b>own thread</b><br><br></li>
       <li>Radio drivers are implemented in `drivers`<br><br></li>
       <li>Network APIs are defined in `sys/include/net` and implemented in `sys/net`<br><br></li>
     </ul>
