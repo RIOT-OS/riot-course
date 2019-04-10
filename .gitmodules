@@ -4,4 +4,4 @@
 [submodule "RIOT"]
 	path = RIOT
 	url = https://github.com/RIOT-OS/RIOT
-	branch = 2018.04-branch
+	branch = 2019.04-branch
