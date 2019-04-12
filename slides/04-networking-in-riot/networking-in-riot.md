@@ -149,128 +149,31 @@ http://doc.riot-os.org/group__drivers__netdev__api.html
 
 ---
 
-class: middle, center
+## Basic IPv6 networking using the shell: practice
 
-# Practice
+- **Exercise:** `~/riot-course/exercises/riot-networking/shell-basic-native`
 
----
+Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/shell-basic-native)
 
-## IPv6 networking: practice (1)
+- **Exercise:** `~/riot-course/exercises/riot-networking/shell-udp-native`
 
-- **Objective:** IPv6 networking between 2 RIOT native instances
-
-1. Configure a network bridge with 2 virtual interfaces (`tap`) with the
-   following command (user password is user):
-
-```sh
-$ sudo ~/RIOT/dist/tools/tapsetup/tapsetup -c 2
-$ ifconfig
-```
-
-2. Build the `gnrc_networking` example application for native:
-
-```sh
-$ make -C ~/RIOT/examples/gnrc_networking all
-```
-
-3. In separate terminals, start 2 native instances of RIOT on each `tap`
-interface created (tap0 and tap1):
-
-```sh
-$ sudo PORT=tap0 make -C ~/RIOT/examples/gnrc_networking term
-main(): This is RIOT! (Version: workshop-captronic)
-RIOT network stack example application
-All up, running the shell now
-> help
-```
----
-
-## IPv6 networking: practice (2)
-
-- Check the link local IPv6 address of each instance using `ifconfig`:
-
-```sh
-> ifconfig
-Iface  6  HWaddr: 0a:46:47:86:27:e8 
-          MTU:1500  HL:64  RTR  
-          RTR_ADV  
-          Source address length: 6
-          Link type: wired
-          inet6 addr: fe80::846:47ff:fe86:27e8  scope: local  THIS ONE!
-          inet6 group: ff02::2
-[...]
-```
-
-- Verify that you can ping them:
-
-```sh
-> ping6 fe80::846:47ff:fe86:27e8
-12 bytes from fe80::846:47ff:fe86:27e8: id=83 seq=1 hop limit=64 time = 0.340 ms
-```
+Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/shell-udp-native)
 
 ---
 
-## IPv6 networking: practice (2)
-
-- On one of the RIOT native instance, start an UDP server on port 8888:
-
-```sh
-> udp server start 8888
-Success: started UDP server on port 8888
-```
-
-- Send an UDP packet from the other instance:
-
-```sh
-> udp send fe80::846:47ff:fe86:27e8 8888 HelloWorld!
-```
-
-- Verify that you receive a packet dump on the udp server:
-
-```sh
- PKTDUMP: data received:
-~~ SNIP  0 - size:  11 byte, type: NETTYPE_UNDEF (0)
-00000000  48  65  6C  6C  6F  57  6F  72  6C  64  21
-~~ SNIP  1 - size:   8 byte, type: NETTYPE_UDP (3)
-   src-port:  8888  dst-port:  8888
-   length: 19  cksum: 0x9e9e
-~~ SNIP  2 - size:  40 byte, type: NETTYPE_IPV6 (1)
-traffic class: 0x00 (ECN: 0x0, DSCP: 0x00)
-[...]
-~~ SNIP  3 - size:  22 byte, type: NETTYPE_NETIF (-1)
-[...]
-~~ PKT    -  4 snips, total size:  81 byte
-```
-
----
-
-## IPv6 networking: practice (3)
-
-Let's communicate between the host and the RIOT instance!
-
-- From the Linux host, verify that ping works:
-
-```sh
-$ ping6 fe80::846:47ff:fe86:27e8%tapbr0
-```
-
-- From the Linux host, send an UDP messag:
-
-```sh
-$ echo -n "hello" >/dev/udp/fe80::846:47ff:fe86:27e8%tapbr0/8888
-```
-
-- Using netcat, connect to the UDP server and start sending messages:
-
-```sh
-$ nc -6uv fe80::846:47ff:fe86:27e8%tapbr0 8888
-Connection to fe80::846:47ff:fe86:27e8%tapbr0 8888 port [udp/*] succeeded!
-HelloWorld!
-```
+## The CoAP protocol
 
 ---
 
 ## Using CoAP: practice
+
+- **Exercise:** `~/riot-course/exercises/riot-networking/shell-coap-native`
+
+Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/shell-coap-native)
+
+---
+
+## Using CoAP: practice (old)
 
 - Build the `nanocoap_server` example application for native:
 
