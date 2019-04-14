@@ -739,7 +739,7 @@ rtc_set_alarm(&alarm_time, rtc_alarm_cb, NULL);
 
 - **DAC**: module `periph_dac`, include from `periph/dac.h`
 
-- **RTT**: real-time timer, module `periph_adc`, include from `periph/rtt.h`
+- **RTT**: real-time ticker, include from `periph/rtt.h`
 
 .center[etc]
 
