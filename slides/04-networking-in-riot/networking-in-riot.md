@@ -323,6 +323,48 @@ Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tr
 
 ## The CoAP protocol
 
+- CoAP is an HTTP-like designed for very small devices<br>
+  &#x21d2; built on top of UDP, standard port is **5683**
+
+- Standard from CORE working group at IETF<br>
+  &#x21d2; RFC 7252 https://tools.ietf.org/html/rfc7252<br>
+  &#x21d2; RFC 7959 https://tools.ietf.org/html/rfc7959<br>
+  &#x21d2; RFC 8323 https://tools.ietf.org/html/rfc8323<br>
+
+- 4 types of requests: `GET`, `POST`, `PUT`, `DELETE`
+
+- `.well-known/core` URI describes the list of URIs on a CoAP server
+
+- Others options: `OBSERVE`, Block-wise transfer
+
+.center[
+    <img src="images/coap-header.png" alt="" style="width:500px;"/>
+]
+
+---
+
+## CoAP implementations
+
+- Several implementations exists, in multiple languages:<br><br>
+
+  &#x21d2; See http://coap.technology/impls.html
+
+- RIOT provides support for CoAP:
+
+  - Natively with **nanocoap** and **gcoap** modules
+
+  - Via packages with **microcoap**
+
+- **nanocoap**
+
+  - designed to very memory efficient
+  - limited features
+
+- **gcoap**
+
+  - provides more features: `OBSERVE`, coap client API
+  - less memory efficient
+
 ---
 
 ## Using CoAP: practice
@@ -333,50 +375,61 @@ Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tr
 
 ---
 
-## Using CoAP: practice (old)
+## Using the gcoap API to setup a CoAP server (1)
 
-- Build the `nanocoap_server` example application for native:
+- Include the required header
+```c
+#include "net/gcoap.h"
+```
+- Define a list of resources in an array of `coap_resource_t`:
+```c
+static const coap_resource_t _resources[] = {
+        { "/coap/url", COAP_GET | COAP_PUT, _handler, NULL },
+}
+```
+- The handler function signature is:
+```c
+static ssize_t _handler(coap_pkt_t* pdu, uint8_t *buf,
+                            size_t len, void *ctx);
+```
+- Use other gcoap functions to format the reply:
+```c
+/* Initialize the reply */
+gcoap_resp_init(coap_pkt_t *pdu, uint8_t *buf, size_t len, unsigned code);
+/* Send the reply */
+ssize_t gcoap_response(coap_pkt_t *pdu, uint8_t *buf,
+                           size_t len, unsigned code);
+```
+---
 
-```sh
-$ make -C ~/RIOT/examples/nanocoap_server all
+## Using the gcoap API to setup a CoAP server (2)
+
+- Register your resources in gcoap listener:
+```c
+static gcoap_listener_t _listener = {
+    &_resources[0],
+    sizeof(_resources) / sizeof(_resources[0]),
+    NULL
+};
+```
+- Finally, start the gcoap listener:
+```c
+gcoap_register_listener(&_listener);
 ```
 
-- Start a native instance of RIOT:
-
-```sh
-$ sudo PORT=tap0 make -C ~/RIOT/examples/nanocoap_server term
-main(): This is RIOT! (Version: workshop-captronic)
-RIOT nanocoap example application
-Waiting for address autoconfiguration...
-Configured network interfaces:
-Iface  5  HWaddr: 0a:46:47:86:27:e8 
-          MTU:1500  HL:64  Source address length: 6
-          Link type: wired
-          inet6 addr: fe80::846:47ff:fe86:27e8  scope: local
-```
-
-- From the Linux host, query the CoAP server running on the native instance:
-
-```sh
-$ coap-client -m get coap://[fe80::846:47ff:fe86:27e8%tapbr0]/.well-known/core
-v:1 t:CON c:GET i:b615 {} [ ]
-</.well-known/core>,</riot/board>,</riot/value>
-$ coap-client -m get coap://[fe80::846:47ff:fe86:27e8%tapbr0]/riot/board
-v:1 t:CON c:GET i:c84c {} [ ]
-native
-```
+- Find more details at http://doc.riot-os.org/group__net__gcoap.html
 
 ---
 
-## 
+## Using gcoap: practice
 
-<br>
+- **Exercise:** `~/riot-course/exercises/riot-networking/gcoap`
 
-
+Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/gcoap)
 
 ---
 
-## Testing IPv6 on hardware
+## Testing RIOT networking on hardware: practice
 
 We will use an experiment platform called IoT-LAB: https://www.iot-lab.info
 <br><br>
