@@ -152,7 +152,7 @@ class: center, middle
 ## The GNRC stack of RIOT
 
 .center[
-    <img src="images/riot-gnrc-stack.png" alt="" style="width:400px;"/>
+    <img src="images/riot-gnrc-stack.svg" alt="" style="width:400px;"/>
 ]
 
 - Radio drivers are accessed through the **netdev** API
@@ -229,7 +229,7 @@ char * ipv6_addr_to_str (char *result, const ipv6_addr_t *addr,
 
 ---
 
-## The Sock API
+## The Sock API (1)
 
 - Provides a common abstraction on top of any IP stack
 
@@ -245,7 +245,7 @@ char * ipv6_addr_to_str (char *result, const ipv6_addr_t *addr,
 
 ---
 
-## The Sock API
+## The Sock API (2)
 
 - 3 different types:
 
@@ -429,18 +429,48 @@ Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tr
 
 ---
 
-## Testing RIOT networking on hardware: practice
+## Testing RIOT networking on hardware: use IoT-LAB
 
-We will use an experiment platform called IoT-LAB: https://www.iot-lab.info
-<br><br>
+.center[<a href=https://www.iot-lab.info>https://www.iot-lab.info</a><br><br>
+IoT-LAB is a large scale experimentation testbed]
+
+  - Can be used for testing wireless communication networks on small devices
+
+  - Can be used for learning IoT programming and communication protocols
+
+  - Can be used for testing software platforms
 
 .center[
-    <img src="images/iot-lab-principle.png" alt="" style="width:700px;"/>
-]
+      <img src="images/iotlab-sites.png" alt="" style="width:220px;"/>&nbsp;
+      <img src="images/iotlab-nodes.png" alt="" style="width:220px;"/>&nbsp;
+      <img src="images/iotlab-photo.png" alt="" style="width:220px;"/>
+  ]
 
-.right[
-    <img src="images/iotlab-photo.png" alt="" style="width:250px;margin-top:-60px; margin-right:-20px"/>
-]
+---
+
+## IoT-LAB in short
+
+- **2300** programmable nodes, 4 architectures
+  <br> &#x21d2; Cortex-M, MSP430, Cortex-A8, AVR
+
+- Heterogeneous platforms
+  <br> &#x21d2; RPI3, iotlab-m3, Atmel SAMR21-Xpro, ST B-L072Z-LRWAN1, nrf52, etc
+
+- Heterogeneous radios &#x21d2; 802.15.4, 802.15.4g, LoRa, BLE
+
+- Start learning IoT with IoT-LAB at
+  <a href=https://www.iot-lab.info/tutorials/>https://www.iot-lab.info/tutorials/</a>
+
+.center[
+      <img src="images/use-iotlab.png" alt="" style="width:450px;"/>
+  ]
+
+---
+
+## Testing RIOT networking on hardware: practice
+
+
+
 
 ---
 
