@@ -429,7 +429,7 @@ Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tr
 
 ---
 
-## Testing RIOT networking on hardware: use IoT-LAB
+## RIOT networking on hardware: use IoT-LAB
 
 .center[<a href=https://www.iot-lab.info>https://www.iot-lab.info</a><br><br>
 IoT-LAB is a large scale experimentation testbed]
@@ -467,40 +467,23 @@ IoT-LAB is a large scale experimentation testbed]
 
 ---
 
-## Testing RIOT networking on hardware: practice
+## RIOT networking on hardware: practice
 
+- **Exercise:** `~/riot-course/exercises/riot-networking/networking-iotlab`
 
-
-
----
-
-## Using an Atmel SAMR21 XPlained Pro on IoT-LAB
-
-See: https://www.iot-lab.info/tutorials/use-samr21-nodes/
+Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/networking-iotlab)
 
 ---
 
-## Public IPv6 networking
+## Public IPv6 networking: practice
 
 See: https://www.iot-lab.info/tutorials/riot-public-ipv66lowpan-network-with-m3-nodes/
 
-Small change:
-
-- Use samr21-xpro instead of iotlab-m3
-
-- Skip border-router related steps
-
 ---
 
-## CoAP
+## Public IPv6 networking and CoAP: practice
 
 See: https://www.iot-lab.info/tutorials/coap-using-riot-with-m3-nodes/
-
-Small change:
-
-- Use samr21-xpro instead of iotlab-m3
-
-- Skip border-router related steps
 
 ---
 
