@@ -74,8 +74,8 @@ More info on the Wiki:
 ## Using IoT-LAB (optional)
 
 - First you need to create an account on IoT-LAB at
-  <a href=https://www.iot-lab.info/testbed-beta/#/signup>
-  https://www.iot-lab.info/testbed-beta/#/signup</a>
+  <a href=https://www.iot-lab.info/testbed/#/signup>
+  https://www.iot-lab.info/testbed/#/signup</a>
 
 - To remotely flash and open a terminal session on IoT-LAB, you'll need to
   install the IoT-LAB command line tools using `pip`:
