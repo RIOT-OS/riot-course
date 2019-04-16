@@ -473,6 +473,10 @@ IoT-LAB is a large scale experimentation testbed]
 
 Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/networking-iotlab)
 
+- **Exercise:** `~/riot-course/exercises/riot-networking/gcoap-iotlab`
+
+Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/gcoap-iotlab)
+
 ---
 
 ## Public IPv6 networking: practice
