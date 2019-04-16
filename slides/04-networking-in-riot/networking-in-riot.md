@@ -193,8 +193,7 @@ Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tr
   - Ethernet drivers: <br>
     &#x21d2; **enc28j60**, **w5100**, **esp32**, **esp8266**
 
-  - Also use **auto_init** for automatic initialization of drivers
-
+  - For drivers, use **gnrc_netdev_default** and **auto_init_gnrc_netif**
 
 ---
 
