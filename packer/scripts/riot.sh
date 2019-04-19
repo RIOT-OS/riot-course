@@ -3,7 +3,7 @@
 apt-get -y install cmake curl git build-essential
 apt-get -y install vim emacs
 apt-get -y install python-setuptools
-apt-get -y install python-argparse python3-pip python-pip python3-serial
+apt-get -y install python-argparse python3-pip python-pip
 apt-get -y install mosquitto-clients
 apt-get -y install socat g++-multilib
 DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt-get -y install tshark
@@ -41,11 +41,11 @@ pip3 install iotlabsshcli
 pip3 install iotlabcli
 
 # Python tools
-pip3 install aiocoap paho-mqtt
-pip install pyocd paho-mqtt
+pip3 install aiocoap paho-mqtt pyserial
+pip install pyocd paho-mqtt pyserial
 
 # GNU Radio
-apt-install -y gnuradio gr-osmosdr
+apt install -y gnuradio gr-osmosdr
 
 # OpenOCD
 apt-get install -y build-essential libftdi-dev libhidapi-dev \
