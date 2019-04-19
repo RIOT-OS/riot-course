@@ -25,6 +25,12 @@ sudo -u user dbus-launch gsettings set org.gnome.desktop.screensaver lock-delay 
 sudo -u user dbus-launch gsettings set org.gnome.desktop.screensaver lock-enabled false
 sudo -u user dbus-launch gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
 
+# Disable lock screen
+sudo -u user dbus-launch gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+
+# Disable software-update pop-up
+sudo -u user dbus-launch gsettings set com.ubuntu.update-notifier no-show-notifications true
+
 # Install ARM GNU Embedded toolchain
 ARM_GCC_URL="https://developer.arm.com/-/media/Files/downloads/gnu-rm"
 ARM_GCC_VERSION="7-2018q2"
