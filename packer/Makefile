@@ -1,4 +1,4 @@
-.PHONY: all clean
+.PHONY: all
 
 all: clean
 	@packer build ubuntu-riot.json
