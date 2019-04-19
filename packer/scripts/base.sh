@@ -19,6 +19,8 @@ localectl set-locale LANG="en_US.UTF-8"
 # disable daily apt unattended updates.
 echo 'APT::Periodic::Enable "0";' >> /etc/apt/apt.conf.d/10periodic
 
+echo '%sudo   ALL=(ALL:ALL) NOPASSWD:ALL' >> /etc/sudoers
+
 # autologin
 cp /etc/gdm3/custom.conf /etc/gdm3/custom.conf.bak
 echo "[daemon]" > /etc/gdm3/custom.conf
