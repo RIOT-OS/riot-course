@@ -139,6 +139,16 @@
           "usbfilter", "add", "0", "--target", "{{.Name}}",
           "--name", "DAPLink",
           "--vendorid", "0d28", "--productid", "0204"
+        ],
+        [
+          "usbfilter", "add", "0", "--target", "{{.Name}}",
+          "--name", "IoT-LAB M3",
+          "--vendorid", "0403", "--productid", "6010"
+        ],
+        [
+          "usbfilter", "add", "0", "--target", "{{.Name}}",
+          "--name", "IoT-LAB M3",
+          "--vendorid", "0403", "--productid", "6011"
         ]
       ],
       "export_opts":
