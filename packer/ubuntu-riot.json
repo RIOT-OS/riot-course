@@ -129,6 +129,16 @@
           "usbfilter", "add", "0", "--target", "{{.Name}}",
           "--name", "JLink",
           "--vendorid", "1366", "--productid", "1015"
+        ],
+        [
+          "usbfilter", "add", "0", "--target", "{{.Name}}",
+          "--name", "Arduino Zero",
+          "--vendorid", "03eb", "--productid", "2157"
+        ],
+        [
+          "usbfilter", "add", "0", "--target", "{{.Name}}",
+          "--name", "DAPLink",
+          "--vendorid", "0d28", "--productid", "0204"
         ]
       ],
       "export_opts":
