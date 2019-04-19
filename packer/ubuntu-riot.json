@@ -106,7 +106,7 @@
         [
           "modifyvm",
           "{{.Name}}",
-          "--usbehci",
+          "--usbohci",
           "on"
         ],
         [
