@@ -32,9 +32,7 @@ echo "[chooser]" >> /etc/gdm3/custom.conf
 echo "[debug]" >> /etc/gdm3/custom.conf
 
 # Keyboard layouts
-sed -i 's/XKBLAYOUT=.*/XKBLAYOUT="us,fr"/g' /etc/default/keyboard
-loadkeys fr
-
+sed -i 's/XKBLAYOUT=.*/XKBLAYOUT="fr,us"/g' /etc/default/keyboard
 # sed -i 's/XKBOPTIONS=.*/XKBOPTIONS="grp:ctrl_shift_toggle"/g' /etc/default/keyboard
 
 echo "UseDNS no" >> /etc/ssh/sshd_config
