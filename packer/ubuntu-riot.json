@@ -106,12 +106,6 @@
         [
           "modifyvm",
           "{{.Name}}",
-          "--usbohci",
-          "on"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
           "--accelerate3d",
           "on"
         ],
