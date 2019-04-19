@@ -79,17 +79,22 @@ echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", MODE=
 # CMSIS-DAP
 echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2111", MODE="0664", GROUP="dialout"' \
      >> /etc/udev/rules.d/riot-course.rules
-echo 'KERNEL=="hidraw*", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2111", MODE="664", GROUP="plugdev"' \
+echo 'KERNEL=="hidraw*", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2111", MODE="664", GROUP="dialout"' \
      >> /etc/udev/rules.d/riot-course.rules
 # Arduino Zero
 echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2157", MODE="0664", GROUP="dialout"' \
      >> /etc/udev/rules.d/riot-course.rules
-echo 'KERNEL=="hidraw*", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2157", MODE="664", GROUP="plugdev"' \
+echo 'KERNEL=="hidraw*", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2157", MODE="664", GROUP="dialout"' \
      >> /etc/udev/rules.d/riot-course.rules
 # DAPLink
 echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="0d28", ATTRS{idProduct}=="0204", MODE="0664", GROUP="dialout"' \
      >> /etc/udev/rules.d/riot-course.rules
-echo 'KERNEL=="hidraw*", ATTRS{idVendor}=="0d28", ATTRS{idProduct}=="0204", MODE="664", GROUP="plugdev"' \
+echo 'KERNEL=="hidraw*", ATTRS{idVendor}=="0d28", ATTRS{idProduct}=="0204", MODE="664", GROUP="dialout"' \
+     >> /etc/udev/rules.d/riot-course.rules
+# IoT-LAB M3
+echo 'SUBSYSTEM=="usb", ATTR{idProduct}=="6010", ATTR{idVendor}=="0403", MODE="0664", GROUP="dialout"' \
+     >> /etc/udev/rules.d/riot-course.rules
+echo 'SUBSYSTEM=="usb", ATTR{idProduct}=="6011", ATTR{idVendor}=="0403", MODE="0664", GROUP="dialout"' \
      >> /etc/udev/rules.d/riot-course.rules
 
 # Clone riot-course
