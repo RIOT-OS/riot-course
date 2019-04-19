@@ -25,9 +25,6 @@ sudo -u user dbus-launch gsettings set org.gnome.desktop.screensaver lock-delay 
 sudo -u user dbus-launch gsettings set org.gnome.desktop.screensaver lock-enabled false
 sudo -u user dbus-launch gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
 
-# Create SSH keys
-ssh-keygen -t rsa -N "" -f /home/user/.ssh/id_rsa
-
 # Install ARM GNU Embedded toolchain
 ARM_GCC_URL="https://developer.arm.com/-/media/Files/downloads/gnu-rm"
 ARM_GCC_VERSION="7-2018q2"
@@ -73,13 +70,26 @@ git clone https://github.com/ataradov/edbg && \
     cd .. && rm -rf edbg
 
 # Udev rules
+# JLink
 echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="1366", ATTRS{idProduct}=="1015", MODE="0664", GROUP="dialout"' \
      > /etc/udev/rules.d/riot-course.rules
+# ST-Link
 echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", MODE="0664", GROUP="dialout"' \
      >> /etc/udev/rules.d/riot-course.rules
-echo 'SUBSYSTEM=="usb", ATTR{idProduct}=="2111", ATTR{idVendor}=="03eb", MODE="0664", GROUP="dialout"' \
+# CMSIS-DAP
+echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2111", MODE="0664", GROUP="dialout"' \
      >> /etc/udev/rules.d/riot-course.rules
-echo 'KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0664", GROUP="dialout"' \
+echo 'KERNEL=="hidraw*", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2111", MODE="664", GROUP="plugdev"' \
+     >> /etc/udev/rules.d/riot-course.rules
+# Arduino Zero
+echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2157", MODE="0664", GROUP="dialout"' \
+     >> /etc/udev/rules.d/riot-course.rules
+echo 'KERNEL=="hidraw*", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2157", MODE="664", GROUP="plugdev"' \
+     >> /etc/udev/rules.d/riot-course.rules
+# DAPLink
+echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="0d28", ATTRS{idProduct}=="0204", MODE="0664", GROUP="dialout"' \
+     >> /etc/udev/rules.d/riot-course.rules
+echo 'KERNEL=="hidraw*", ATTRS{idVendor}=="0d28", ATTRS{idProduct}=="0204", MODE="664", GROUP="plugdev"' \
      >> /etc/udev/rules.d/riot-course.rules
 
 # Clone riot-course
