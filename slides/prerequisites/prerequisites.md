@@ -22,75 +22,56 @@ $ git clone --recursive https://github.com/aabadie/riot-course
 
 - Exercises are located in: **~/riot-course/exercises**
 
-- The RIOT code (2018.07) is located in: **~/riot-course/RIOT**
+- The RIOT code (2019.04) is located in: **~/riot-course/RIOT**
 
 ---
 
-## Setup your working environment (1)
+## Setup your working environment
 
-First possibility: install a toolchains and development tools locally (Linux only)
+- All commands of the course are now supposed to be run from the pre-configured
+  virtual machine (VM)
 
-- Build essential tools (make, gcc, etc):
+- This VM is compatible with [Virtualbox](https://www.virtualbox.org/) (>= 5.2)
+  or [VMWare player](https://www.vmware.com/products/workstation-player.html)
+
+- You can install it by 2 means:
+
+  1. Download the VM from [here](http://fit-demo.inria.fr/vms/RIOT-VM.ova)
+     and import it in Virtualbox or VMWare
+
+  2. Setup and start the riot-course VM with
+     [vagrant](https://www.vagrantup.com/)
+  ```sh
+  $ cd ~/riot-course
+  $ vagrant up
+  $ vagrant ssh
+  ```
+
+*Note:* To toggle the keyboard layout, for example to `fr`:
+- From the command line, use
 ```sh
-$ sudo apt-get install build-essential g++-multilib python-serial
+$ setxkbmap fr
 ```
-- Install toolchains (ARM):
-```sh
-$ sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa
-$ sudo apt-get update
-$ sudo apt-get install gcc-arm-embedded
-```
-- Install OpenOCD programming tool (version >= 0.10 required)
-```sh
-$ sudo apt-get install openocd
-```
-
----
-
-## Setup your working environment (2)
-
-- Second possibility: using the RIOT Docker image
-```sh
-$ docker pull riot/riotbuild
-$ cd <application directory>
-$ make BUILD_IN_DOCKER=1
-```
-
-- Second possibility: using a VM, with vagrant
-```sh
-$ cd <riot_base_directory>
-$ vagrant up
-$ vagrant ssh
-```
-
-<br>
-More info on the Wiki:
-
-.center[&#x21d2; &nbsp;&nbsp;https://github.com/RIOT-OS/RIOT/wiki/Setup-a-Build-Environment
-]
+- From the GNOME interface, click on `en` at the top right of the menu bar
 
 ---
 
 ## Using IoT-LAB (optional)
 
-- First you need to create an account on IoT-LAB at
+- First you need to create an account on FIT IoT-LAB at
   <a href=https://www.iot-lab.info/testbed/#/signup>
   https://www.iot-lab.info/testbed/#/signup</a>
 
-- To remotely flash and open a terminal session on IoT-LAB, you'll need to
-  install the IoT-LAB command line tools using `pip`:
-  ```sh
-  $ sudo apt-get install python-pip
-  $ pip install iotlabcli --pre -U
-  ```
+- In the VM, setup your SSH access to the FIT IoT-LAB by following
+  [this tutorial](https://www.iot-lab.info/tutorials/ssh-access/)
 
-- Once installed, register your IoT-LAB login/password locally using:
+- In the VM, register your FIT IoT-LAB login/password locally using:
   ```sh
   $ iotlab-auth -u <your login>
   ```
 
 In any case, it is recommended to play the
-[online IoT-LAB tutorials](https://www.iot-lab.info/tutorials/) first.
+[online FIT IoT-LAB tutorials](https://www.iot-lab.info/tutorials/) first.
 
 ---
 
