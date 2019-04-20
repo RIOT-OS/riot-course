@@ -78,9 +78,9 @@ $ make -C <application_dir> all
 
   - **list-ttys:** return the list of serial ports available with information on the board connected (useful when working with multiple boards)
 
-  - use `<table>` (autocompletion) to get the full list
+  - use `<tab>` (autocompletion) to get the full list
 
-- For every module `xx` imported, a **MODULE_XX** macro is created:
+- For every module **_xx_** imported, a **MODULE_XX** macro is created:
 ```c
 #ifdef MODULE_XX
 /* conditional code when module XX is loaded */
@@ -105,7 +105,8 @@ $ make -C <application_dir> all
 
   - -DLOG_LEVEL=LOG_DEBUG : enable debug output globally
 
-  - -DDEBUG_ASSERT_VERBOSE : catch `FAILED ASSERTION` errors and give the line number
+  - -DDEBUG_ASSERT_VERBOSE : catch `FAILED ASSERTION` errors and give the file
+    and line number
 
 ---
 
@@ -145,7 +146,7 @@ $ make -C <application_dir> all
 
 - If all threads are blocked:
   - Switch to special IDLE thread
-  - Goes into low-power mode
+  - Goes into lowest power possible mode
 
 - A Thread is just a function with signature:
 ```c
@@ -287,7 +288,7 @@ mutex_unlock(&lock);
 
 - The messaging API is defined in `msg.h` (in `core`):
   - The message type is `msg_t`
-  - A message have a `type` and a `content`
+  - Each message has a `type` and a `content`
 
 ```c
 msg_t msg;
