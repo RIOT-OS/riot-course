@@ -6,8 +6,7 @@ class: center, middle
 
 class: center, middle
 
-If you don't use the preconfigured VM or if not done already,<br><br>
-please ensure you followed the
+If not done already, please ensure you followed the
 **[prerequisites](https://aabadie.github.io/riot-course/slides/prerequisites)**
 
 <br><br><br><br>
@@ -115,9 +114,8 @@ $ make BOARD=<target> -C <application_dir> flash term
 
 ## Exercise: your first RIOT application
 
-Let's build and run our first RIOT application with the exercise in
-`~/riot-course/exercises/getting-started/first-app`.
-Just follow the instruction of the
+Let's build and run our first RIOT application !<br><br>
+You just need to follow the instructions in this
 [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/getting-started/first-app)
 
 ```sh
@@ -173,8 +171,7 @@ $ USEMODULE=xtimer make BOARD=bl-072z-lrwan1
 
 ## Exercise: write an application with a shell
 
-Go to `~/riot-course/exercises/getting-started/shell` and follow the
-instructions in the following
+Follow the instructions in the
 [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/getting-started/shell)
 
 ---
@@ -207,13 +204,11 @@ Interaction with the hardware can be performed at 3 levels:
 
 ## Exercise: interaction with the hardware
 
-- Go to `~/riot-course/exercises/getting-started/led` and follow the
-  instructions of the
+- Follow the instructions of the
   [led exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/getting-started/led)
   to toggle LEDs from shell commands
 
-- Go to `~/riot-course/exercises/getting-started/sensor` and follow the
-  instructions of the
+- Follow the instructions of the
   [sensor exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/getting-started/sensor)
   to read values from a sensor with shell commands
 
