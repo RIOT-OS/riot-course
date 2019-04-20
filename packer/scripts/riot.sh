@@ -1,35 +1,9 @@
 #!/bin/bash -eux
 
-apt-get -y install cmake curl git build-essential
-apt-get -y install vim emacs
-apt-get -y install python-setuptools
-apt-get -y install python-argparse python3-pip python-pip
-apt-get -y install mosquitto-clients
-apt-get -y install socat g++-multilib
-DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt-get -y install tshark
+apt install -y cmake curl git build-essential vim emacs python-setuptools \
+    python-argparse python3-pip python-pip mosquitto-clients socat g++-multilib
 
-# Allow usage of 
-adduser user dialout
-
-# Customize launchers
-sudo -u user dbus-launch gsettings set org.gnome.shell favorite-apps \
-    "['firefox.desktop', \
-      'org.gnome.Nautilus.desktop', \
-      'gnome-terminal.desktop', \
-      'gedit.desktop', \
-      'vim.desktop', \
-      'emacs25.desktop']"
-
-# Turn off screensaver
-sudo -u user dbus-launch gsettings set org.gnome.desktop.screensaver lock-delay 3600
-sudo -u user dbus-launch gsettings set org.gnome.desktop.screensaver lock-enabled false
-sudo -u user dbus-launch gsettings set org.gnome.desktop.screensaver idle-activation-enabled false
-
-# Disable lock screen
-sudo -u user dbus-launch gsettings set org.gnome.desktop.lockdown disable-lock-screen true
-
-# Disable software-update pop-up
-sudo -u user dbus-launch gsettings set com.ubuntu.update-notifier no-show-notifications true
+DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt install -y tshark
 
 # Install ARM GNU Embedded toolchain
 ARM_GCC_URL="https://developer.arm.com/-/media/Files/downloads/gnu-rm"
@@ -42,9 +16,7 @@ cd /opt && wget -nv -O - "${ARM_GCC_ARCHIVE_URL}" | tar -jxf -
 echo "export PATH=/opt/gcc-arm-none-eabi-7-2018-q2-update/bin:\$PATH" >> /home/user/.bashrc
 
 # IoT-LAB CLI tools
-pip3 install iotlabwscli
-pip3 install iotlabsshcli
-pip3 install iotlabcli
+pip3 install iotlabwscli iotlabsshcli iotlabcli
 
 # Python tools
 pip3 install aiocoap paho-mqtt pyserial
@@ -54,7 +26,7 @@ pip install pyocd paho-mqtt pyserial
 apt install -y gnuradio gr-osmosdr
 
 # OpenOCD
-apt-get install -y build-essential libftdi-dev libhidapi-dev \
+apt install -y build-essential libftdi-dev libhidapi-dev \
         libusb-1.0-0-dev libudev-dev autoconf libsqlite3-dev \
         libpopt-dev libxml2-dev ruby libtool pkg-config
 
@@ -74,6 +46,12 @@ git clone https://github.com/ataradov/edbg && \
     make all && \
     install -m 755 edbg /usr/bin && \
     cd .. && rm -rf edbg
+
+# JLink
+JLINK_PKG_DEB="JLink_Linux_V644g_x86_64.deb"
+wget -nv http://demo-fit.saclay.inria.fr/vms/utils/${JLINK_PKG_DEB} && \
+dpkg -i ${JLINK_PKG_DEB} && \
+rm -f ${JLINK_PKG_DEB}
 
 # Udev rules
 # JLink
