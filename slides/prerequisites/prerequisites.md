@@ -49,9 +49,9 @@ $ setxkbmap fr
 
 ---
 
-## Retrieve the latest version course
+## Retrieve the latest version of the course
 
-1. Open a terminal in the VM (or use `vagrant ssh`)
+1. In the VM, open a terminal (or use `vagrant ssh`)
 
 2. Update the sources of the riot-course:
 ```sh
