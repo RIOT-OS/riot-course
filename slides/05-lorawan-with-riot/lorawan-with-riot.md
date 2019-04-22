@@ -368,7 +368,7 @@ Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tr
 
 ---
 
-## Sending sensor data to TTN: practice
+## Exercise: Send sensor data to TTN
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/sensor`
 
@@ -419,7 +419,7 @@ https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
 
 ---
 
-## Integration with Cayenne LPP: practice
+## Exercise: Integration with Cayenne LPP
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/lpp`
 
@@ -453,7 +453,7 @@ https://www.eclipse.org/paho/
 
 ---
 
-## TTN with RIOT: practice (3)
+## Exercise: Downlink from a LoRaWAN network
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/downlink`
 
@@ -461,7 +461,7 @@ Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tr
 
 ---
 
-## Final application: add low power
+## Exercise: enable low power
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/pm`
 

@@ -187,7 +187,7 @@ static char stack[THREAD_STACKSIZE_MAIN];
 
 ---
 
-## Thread: practice
+## Exercise: Thread
 
 Follow the instructions of the
 [first thread exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-basics/first-thread)
@@ -221,7 +221,7 @@ mutex_unlock(&lock);
 
 ---
 
-## Thread concurrency: practice
+## Exercise: Thread concurrency
 
 Follow the instructions of the
 [thread concurrency exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-basics/thread-concurrency)
@@ -289,7 +289,7 @@ msg_init_queue(msg_queue, 8);
 
 ---
 
-## IPC: practice
+## Exercise: IPC
 
 Follow the instructions of the
 [thread IPC exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-basics/thread-ipc)
@@ -385,7 +385,7 @@ US_PER_MS   /* number of milliseconds per seconds */
 
 ---
 
-## Timers: practice
+## Exercise: Timers
 
 Follow the instructions of the
 [timers exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-basics/timers)
@@ -509,7 +509,7 @@ int main()
 
 ---
 
-## GPIO: practice
+## Exercise: GPIO
 
 Follow the instructions of the
 [gpio exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-basics/gpio)
@@ -539,7 +539,7 @@ int main()
 
 ---
 
-## UART: practice
+## Exercise: UART
 
 Follow the instructions of the
 [uart exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-basics/uart)
@@ -579,7 +579,7 @@ rtc_set_alarm(&alarm_time, rtc_alarm_cb, NULL);
 
 ---
 
-## RTC: practice
+## Exercise: RTC
 
 Follow the instructions of the
 [rtc exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-basics/rtc)
@@ -654,7 +654,7 @@ driver_name_init(&dev, &driver_name_params[0]);
 
 ---
 
-## High-level drivers: practice
+## Exercise: Use High-level drivers
 
 Follow the instructions of the
 [drivers exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-basics/drivers)

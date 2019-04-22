@@ -275,7 +275,7 @@ void sock_<type>_close(sock_<type>_t *sock);
 
 ---
 
-## UDP client-server application: practice
+## Exercise: UDP client-server application
 
 **Exercise:** `~/riot-course/exercises/riot-networking/sock-udp`
 
@@ -312,7 +312,7 @@ ssize_t sendto(int sockfd, const void *buf, size_t len, int flags,
 
 ---
 
-## UDP client-server application: practice
+## Exercise: UDP client-server application
 
 **Exercise:** `~/riot-course/exercises/riot-networking/posix-udp`
 
@@ -366,7 +366,7 @@ Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tr
 
 ---
 
-## Using CoAP: practice
+## Exercise: Using CoAP
 
 - **Exercise:** `~/riot-course/exercises/riot-networking/shell-coap-native`
 
@@ -420,7 +420,7 @@ gcoap_register_listener(&_listener);
 
 ---
 
-## Using gcoap: practice
+## Exercise: Using gcoap
 
 - **Exercise:** `~/riot-course/exercises/riot-networking/gcoap`
 
@@ -466,7 +466,7 @@ IoT-LAB is a large scale experimentation testbed]
 
 ---
 
-## RIOT networking on hardware: practice
+## Exercise: RIOT networking on hardware
 
 - **Exercise:** `~/riot-course/exercises/riot-networking/networking-iotlab`
 
@@ -478,13 +478,13 @@ Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tr
 
 ---
 
-## Public IPv6 networking: practice
+## Exercise: Public IPv6 networking
 
 See: https://www.iot-lab.info/tutorials/riot-public-ipv66lowpan-network-with-m3-nodes/
 
 ---
 
-## Public IPv6 networking and CoAP: practice
+## Exercise: Public IPv6 networking and CoAP
 
 See: https://www.iot-lab.info/tutorials/coap-using-riot-with-m3-nodes/
 
