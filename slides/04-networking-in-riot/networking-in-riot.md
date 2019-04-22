@@ -163,7 +163,7 @@ class: center, middle
 
 ---
 
-## Basic IPv6 networking using the shell: practice
+## Exercise: Basic IPv6 networking using the shell
 
 - **Exercise:** `~/riot-course/exercises/riot-networking/shell-basic-native`
 
