@@ -17,7 +17,7 @@ locale-gen
 localectl set-locale LANG="en_US.UTF-8"
 
 # Remove default directories in home
-rm -rf /home/user/{Desktop, Documents,Downloads,Music,Pictures,Public,Templates,Videos}
+rm -rf /home/user/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
 
 # Allow usage of serial port
 adduser user dialout
