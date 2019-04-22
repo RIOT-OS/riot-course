@@ -4,45 +4,37 @@ class: center, middle
 
 ---
 
-## Retrieve the course
+## Your working environment
 
-1. Install and setup Git:
-```sh
-$ sudo apt-get install git
-$ git config --global user.name "Your name"
-$ git config --global user.email "Your email"
-```
-2. Clone this course from GitHub:
-```sh
-$ git clone --recursive https://github.com/aabadie/riot-course
-```
-
-- In the next sections, we assume that the sources are located in
-**~/riot-course**
+- In all sections, we assume that this course is located in **~/riot-course**
 
 - Exercises are located in: **~/riot-course/exercises**
 
-- The RIOT code (2019.04) is located in: **~/riot-course/RIOT**
+- The RIOT sources (2019.04) are located in: **~/riot-course/RIOT**
+
+- The [FIT IoT-LAB](https://www.iot-lab.info) testbed can be used to achieve
+  the exercises requiring some hardware (especially in the
+  [riot-networking](https://aabadie.github.io/riot-course/slides/04-networking-in-riot)
+  section)
+
+- For simplicity, all exercises can be done using a pre-configured virtual
+  machine (VM): this VM is compatible with [Virtualbox](https://www.virtualbox.org/)
+  (>= 5.2) or [VMWare player](https://www.vmware.com/products/workstation-player.html)
 
 ---
 
-## Setup your working environment
+## Setup the VM
 
-- All commands of the course are now supposed to be run from the pre-configured
-  virtual machine (VM)
+There are 2 ways to install it:
 
-- This VM is compatible with [Virtualbox](https://www.virtualbox.org/) (>= 5.2)
-  or [VMWare player](https://www.vmware.com/products/workstation-player.html)
+1. Download the VM from [here](http://fit-demo.inria.fr/vms/RIOT-VM.ova)
+   and import it in Virtualbox or VMWare
 
-- You can install it by 2 means:
-
-  1. Download the VM from [here](http://fit-demo.inria.fr/vms/RIOT-VM.ova)
-     and import it in Virtualbox or VMWare
-
-  2. Setup and start the riot-course VM with
-     [vagrant](https://www.vagrantup.com/)
+2. Setup and start the riot-course VM with
+  [vagrant](https://www.vagrantup.com/)
   ```sh
-  $ cd ~/riot-course
+  $ git clone https://github.com/aabadie/riot-course
+  $ cd riot-course
   $ vagrant up
   $ vagrant ssh
   ```
@@ -52,11 +44,26 @@ $ git clone --recursive https://github.com/aabadie/riot-course
 ```sh
 $ setxkbmap fr
 ```
-- From the GNOME interface, click on `en` at the top right of the menu bar
+- From the GNOME interface, click on `en` at the top right of the menu bar and
+  switch to `fr`
 
 ---
 
-## Using IoT-LAB (optional)
+## Retrieve the latest version course
+
+1. Open a terminal in the VM (or use `vagrant ssh`)
+
+2. Update the sources of the riot-course:
+```sh
+$ cd ~/riot-course
+$ git pull
+$ git submodule update --recursive exercises
+$ git submodule update --recursive RIOT
+```
+
+---
+
+## Setup your FIT IoT-LAB access (optional)
 
 - First you need to create an account on FIT IoT-LAB at
   <a href=https://www.iot-lab.info/testbed/#/signup>
