@@ -57,8 +57,7 @@ $ setxkbmap fr
 ```sh
 $ cd ~/riot-course
 $ git pull
-$ git submodule update --recursive exercises
-$ git submodule update --recursive RIOT
+$ git submodule update --recursive
 ```
 
 ---
