@@ -30,8 +30,7 @@ There are 2 ways to install it:
 1. Download the VM from [here](http://fit-demo.inria.fr/vms/RIOT-VM.ova)
    and import it in Virtualbox or VMWare
 
-2. Setup and start the riot-course VM with
-  [vagrant](https://www.vagrantup.com/)
+2. Use [vagrant](https://www.vagrantup.com/):
   ```sh
   $ git clone https://github.com/aabadie/riot-course
   $ cd riot-course
@@ -39,7 +38,8 @@ There are 2 ways to install it:
   $ vagrant ssh
   ```
 
-*Note:* To toggle the keyboard layout, for example to `fr`:
+*Note:* Keyboard layout is `en` by default. To toggle the keyboard layout,
+for example to `fr`:
 - From the command line, use
 ```sh
 $ setxkbmap fr
