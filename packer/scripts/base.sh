@@ -17,6 +17,8 @@ locale-gen
 localectl set-locale LANG="en_US.UTF-8"
 
 # Remove default directories in home
+echo "enabled=false" > /home/user/.config/user-dirs.conf
+echo "" > /home/user/.config/user-dirs.dirs
 rm -rf /home/user/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
 
 # Allow usage of serial port
