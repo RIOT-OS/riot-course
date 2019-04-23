@@ -16,11 +16,6 @@ apt -y purge ubuntu-web-launchers
 locale-gen
 localectl set-locale LANG="en_US.UTF-8"
 
-# Remove default directories in home
-echo "enabled=false" > /home/user/.config/user-dirs.conf
-echo "" > /home/user/.config/user-dirs.dirs
-rm -rf /home/user/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos}
-
 # Allow usage of serial port
 adduser user dialout
 
@@ -67,3 +62,7 @@ sed -i 's/XKBLAYOUT=.*/XKBLAYOUT="us,fr"/g' /etc/default/keyboard
 # sed -i 's/XKBOPTIONS=.*/XKBOPTIONS="grp:ctrl_shift_toggle"/g' /etc/default/keyboard
 
 echo "UseDNS no" >> /etc/ssh/sshd_config
+
+# Remove default directories in home
+echo "" > /etc/xdg/user-dirs.defaults
+echo 'XDG_DESKTOP_DIR="$HOME"' > /home/user/.config/user-dirs.dirs

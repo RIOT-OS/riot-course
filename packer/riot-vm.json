@@ -111,6 +111,12 @@
           "on"
         ],
         [
+          "modifyvm",
+          "{{.Name}}",
+          "--iconfile",
+          "riot-os.png"
+        ],
+        [
           "usbfilter", "add", "0", "--target", "{{.Name}}",
           "--name", "ST-Link",
           "--vendorid", "0483", "--productid", "374b"
