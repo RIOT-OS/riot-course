@@ -18,4 +18,5 @@ upload: all
 	@echo -n Computing SHA256 checksum...
 	@sha256sum $(OUTPUT_DIR)/$(RIOT_VM_FILE) > $(OUTPUT_DIR)/$(RIOT_VM_FILE).SHA256SUM
 	@echo Done
+	@chmod +r $(OUTPUT_DIR)/$(RIOT_VM_FILE)
 	@scp $(OUTPUT_DIR)/$(RIOT_VM_FILE)* srv-http:/var/www/html/vms/.
