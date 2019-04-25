@@ -330,7 +330,7 @@ Follow the instructions of the
 
 - High level timer provided by module `xtimer`
 
-- `xtimer` multiplex hardware timers
+- `xtimer` multiplexes hardware timers
 
 - microseconds accuracy
 
@@ -403,7 +403,7 @@ Follow the instructions of the
 - Reflects IoT devices targeted by RIOT<br><br>
     &#x21d2; a microcontroller with devices connected together on a board
 
-- One application is built for one board with one device and with potentially multiple devices (sensors, actuators, radios)
+- One application is built for one board with one cpu and with potentially multiple devices (sensors, actuators, radios)
 
 ---
 
@@ -446,7 +446,7 @@ CPUs classification follows a hierarchical approach:
 
 - The list of features provided (e.g MCU peripheral) is defined in `Makefile.features`
 
-- The configurations of clocks and of each MCU peripherals in are defined in `periph_conf.h`
+- The configurations of MCU clocks and peripherals are defined in `periph_conf.h`
 
 - `board.h` provides specific on-board defines for:
 
@@ -606,7 +606,7 @@ Follow the instructions of the
 
 --
 
-&#x21d2; good example application provided in `tests/periph_*`
+&#x21d2; good example applications provided in `tests/periph_*`
 
 ---
 
