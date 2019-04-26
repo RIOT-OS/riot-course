@@ -1,7 +1,8 @@
 #!/bin/bash -eux
 
 apt install -y cmake curl git build-essential vim emacs python-setuptools \
-    python-argparse python3-pip python-pip mosquitto-clients socat g++-multilib
+    python-argparse python3-pip python-pip mosquitto-clients socat g++-multilib \
+    net-tools
 
 DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt install -y tshark
 
