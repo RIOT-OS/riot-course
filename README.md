@@ -5,12 +5,12 @@ operating system for constrained IoT devices, i.e. powered by microcontrollers.
 
 ## Content of the course
 
-The course is split in 5 sections:
+The course is divided in 5 sections:
 
 - [Introduction](https://aabadie.github.io/riot-course/slides/01-introduction)
   contains generalities about the RIOT project
 - [Getting started](https://aabadie.github.io/riot-course/slides/02-getting-started)
-  contains the basics to start building and programming basics applications
+  contains the basics to start building and programming basic applications
   with RIOT
 - [RIOT basics](https://aabadie.github.io/riot-course/slides/03-riot-basics)
   contains information about the internal structure of the OS (source code
@@ -18,7 +18,7 @@ The course is split in 5 sections:
   hardware abstraction layer, the drivers and packages
 - [Networking in RIOT](https://aabadie.github.io/riot-course/slides/04-networking-in-riot)
   provides basics on IoT protocols supported by RIOT (6LowPAN/IPv6, LoRa) and
-  list the network stacks provided by the OS
+  lists the network stacks provided by the OS
 - [LoRaWAN with RIOT](https://aabadie.github.io/riot-course/slides/05-lorawan-with-riot)
   gives an overview of the LoRaWAN protocol and how to use it with RIOT
 
@@ -30,7 +30,7 @@ also provided to illustrate the exposed notions.
 
 This course and the associated exercices can be used for shorter and more
 oriented tutorials.
-Here is the list of exiting tutorials:
+Here is the list of existing tutorials:
 
 - [RIOT Summit 2018 - Beginner Tutorial](https://aabadie.github.io/riot-course/slides/tutorial-summit-2018)
 - [Inria Tech Talk - StationF](https://aabadie.github.io/riot-course/slides/techtalk-stationf)
@@ -63,8 +63,9 @@ For RIOT applications developped during the practical exercises, you will need:
   [SAMR21 Xplained Pro](http://www.microchip.com/developmenttools/productdetails.aspx?partno=atsamr21-xpro)
   evaluation board.
 
-The use of the hardware boards is optional since the related manipulations can
-be done with an account on [IoT-LAB](https://www.iot-lab.info).
+The use of the hardware boards is optional since the exercises can
+be run remotely on the hardware provided by the
+[IoT-LAB](https://www.iot-lab.info) testbed.
 
 ## License
 
