@@ -9,7 +9,7 @@ $(OUTPUT_DIR)/$(RIOT_VM_FILE):
 all: $(OUTPUT_DIR)/$(RIOT_VM_FILE)
 
 clean:
-	@rm -rf builds $(OUTPUT_DIR)
+	rm -rf builds $(OUTPUT_DIR)
 
 upload: all
 	@echo -n Computing MD5 checksum...

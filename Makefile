@@ -14,5 +14,8 @@ clean-exercises:
 packer:
 	@make -C packer
 
+packer-clean:
+	@make -C packer clean
+
 packer-upload:
 	@make -C packer upload
