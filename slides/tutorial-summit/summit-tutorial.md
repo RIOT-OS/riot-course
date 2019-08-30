@@ -96,7 +96,7 @@ class: center, middle
     `~/riot-course/exercises` to get the latest version of the tutorial and
     exercises
 
-  - A local clone of RIOT 2018.07 is in **~/riot-course/RIOT**
+  - A local clone of RIOT 2019.07 is in **~/riot-course/RIOT**
 
   - Exercices are located in **~/riot-course/exercises**
 
@@ -139,11 +139,11 @@ IoT-LAB is a large scale experimentation testbed]
 
 - Heterogeneous platforms
   <br> &#x21d2; iotlab-m3, iotlab-a8, Atmel SAMR21-Xpro, Arduino Zero,
-  ST B-L072Z-LRWAN1, Zolertia Firefly
+  ST B-L072Z-LRWAN1, Zolertia Firefly, nRF52DK, nRF52840DK, Pycom (Micropython)
 
 --
 
-- Heterogeneous radios &#x21d2; 802.15.4, 802.15.4g, LoRa, BLE (soon)
+- Heterogeneous radios &#x21d2; 802.15.4, 802.15.4g, LoRa, BLE
 
 --
 
