@@ -2,7 +2,7 @@ class: center, middle
 
 # RIOT Beginner Tutorial
 
-## Summit 2018
+## RIOT Summit
 
 <a href=https://github.com/aabadie/riot-course>https://github.com/aabadie/riot-course</a>
 
