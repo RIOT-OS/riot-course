@@ -54,7 +54,7 @@
       "headless": true,
       "http_directory": "http",
       "iso_urls": [
-        "iso/ubuntu-18.04.2-server-amd64.iso",
+        "iso/ubuntu-18.04.3-server-amd64.iso",
         "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.3-server-amd64.iso"
       ],
       "iso_checksum_type": "sha256",
