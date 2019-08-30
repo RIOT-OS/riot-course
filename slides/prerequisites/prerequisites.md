@@ -10,7 +10,7 @@ class: center, middle
 
 - Exercises are located in: **~/riot-course/exercises**
 
-- The RIOT sources (2019.04) are located in: **~/riot-course/RIOT**
+- The RIOT sources are located in: **~/riot-course/RIOT**
 
 - The [FIT IoT-LAB](https://www.iot-lab.info) testbed can be used to achieve
   the exercises requiring some hardware (especially in the
