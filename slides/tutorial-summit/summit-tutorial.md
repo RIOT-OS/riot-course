@@ -85,20 +85,22 @@ class: center, middle
 
 --
 
-- Download it from [here](http://demo-fit.saclay.inria.fr/vms/RIOT-LORA-VM.ova)
+- Download it from [here](http://demo-fit.saclay.inria.fr/vms/RIOT-VM.ova)
   and import it in VirtualBox/VMWare. Then start it.
 
 --
 
 - The full RIOT course is located in **~/riot-course**
 
-  - **Important:** Call `git pull` from `~/riot-course` and
-    `~/riot-course/exercises` to get the latest version of the tutorial and
-    exercises
-
-  - A local clone of RIOT 2019.07 is in **~/riot-course/RIOT**
+  - A local clone of RIOT is in **~/riot-course/RIOT**
 
   - Exercices are located in **~/riot-course/exercises**
+
+  - **Important:** Update the local copy of this tutorial:
+  ```
+  $ cd ~/riot-course
+  $ git pull --recursive-submodules
+  ```
 
 --
 
@@ -106,7 +108,7 @@ class: center, middle
 
   - The GNU ARM Embedded 7.3 toolchain is installed
 
-  - The IoT-LAB cli-tools are installed
+  - The IoT-LAB [cli-tools](https://github.com/iot-lab/cli-tools) are installed
 
   - A list of common editors: Vim, Emacs, VSCode
 
