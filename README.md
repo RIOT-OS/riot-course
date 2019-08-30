@@ -32,7 +32,7 @@ This course and the associated exercices can be used for shorter and more
 oriented tutorials.
 Here is the list of existing tutorials:
 
-- [RIOT Summit 2018 - Beginner Tutorial](https://aabadie.github.io/riot-course/slides/tutorial-summit-2018)
+- [RIOT Summit - Beginner Tutorial](https://aabadie.github.io/riot-course/slides/tutorial-summit)
 - [Inria Tech Talk - StationF](https://aabadie.github.io/riot-course/slides/techtalk-stationf)
 
 ## Using the course
