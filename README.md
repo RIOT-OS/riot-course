@@ -69,7 +69,10 @@ be run remotely on the hardware provided by the
 
 ## License
 
-This course is licensed under the Creative commons license
+The source code of RIOT applications solutions (in [exercises](exercises)) is
+licensed under the LGPL-v2.1.
+
+All course material (slides) is licensed under the Creative commons license
 [CC-BY-ND](https://creativecommons.org/licenses/by-nd/4.0/)
 
 ![CC-BY-ND](https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by-nd.png)
