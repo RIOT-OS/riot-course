@@ -116,7 +116,7 @@ $ make BOARD=<target> -C <application_dir> flash term
 
 Let's build and run our first RIOT application !<br><br>
 You just need to follow the instructions in this
-[exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/getting-started/first-app)
+[exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/getting-started/first-app)
 
 ```sh
 $ cd ~/riot-course/exercises/getting-started/first-app
@@ -172,7 +172,7 @@ $ USEMODULE=xtimer make BOARD=bl-072z-lrwan1
 ## Exercise: write an application with a shell
 
 Follow the instructions in the
-[exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/getting-started/shell)
+[exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/getting-started/shell)
 
 ---
 
@@ -205,11 +205,11 @@ Interaction with the hardware can be performed at 3 levels:
 ## Exercise: interaction with the hardware
 
 - Follow the instructions of the
-  [led exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/getting-started/led)
+  [led exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/getting-started/led)
   to toggle LEDs from shell commands
 
 - Follow the instructions of the
-  [sensor exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/getting-started/sensor)
+  [sensor exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/getting-started/sensor)
   to read values from a sensor with shell commands
 
 ---

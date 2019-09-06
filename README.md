@@ -23,7 +23,7 @@ The course is divided in 5 sections:
   gives an overview of the LoRaWAN protocol and how to use it with RIOT
 
 The full course is designed for 2 full days of work and
-[programming exercises](https://github.com/riot-os/riot-course-exercises) are
+[programming exercises](https://github.com/riot-os/riot-course/exercises) are
 also provided to illustrate the exposed notions.
 
 ### Tutorials based on this course

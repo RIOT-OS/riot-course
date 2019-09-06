@@ -190,7 +190,7 @@ static char stack[THREAD_STACKSIZE_MAIN];
 ## Exercise: Thread
 
 Follow the instructions of the
-[first thread exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-basics/first-thread)
+[first thread exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/first-thread)
 
 ---
 
@@ -224,7 +224,7 @@ mutex_unlock(&lock);
 ## Exercise: Thread concurrency
 
 Follow the instructions of the
-[thread concurrency exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-basics/thread-concurrency)
+[thread concurrency exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/thread-concurrency)
 
 ---
 
@@ -292,7 +292,7 @@ msg_init_queue(msg_queue, 8);
 ## Exercise: IPC
 
 Follow the instructions of the
-[thread IPC exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-basics/thread-ipc)
+[thread IPC exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/thread-ipc)
 
 ---
 
@@ -388,7 +388,7 @@ US_PER_MS   /* number of milliseconds per seconds */
 ## Exercise: Timers
 
 Follow the instructions of the
-[timers exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-basics/timers)
+[timers exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/timers)
 
 ---
 
@@ -512,7 +512,7 @@ int main()
 ## Exercise: GPIO
 
 Follow the instructions of the
-[gpio exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-basics/gpio)
+[gpio exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/gpio)
 
 ---
 
@@ -542,7 +542,7 @@ int main()
 ## Exercise: UART
 
 Follow the instructions of the
-[uart exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-basics/uart)
+[uart exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/uart)
 
 ---
 
@@ -582,7 +582,7 @@ rtc_set_alarm(&alarm_time, rtc_alarm_cb, NULL);
 ## Exercise: RTC
 
 Follow the instructions of the
-[rtc exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-basics/rtc)
+[rtc exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/rtc)
 
 ---
 
@@ -657,7 +657,7 @@ driver_name_init(&dev, &driver_name_params[0]);
 ## Exercise: Use High-level drivers
 
 Follow the instructions of the
-[drivers exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-basics/drivers)
+[drivers exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/drivers)
 
 ---
 
