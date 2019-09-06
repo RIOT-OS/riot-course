@@ -7,23 +7,23 @@ operating system for constrained IoT devices, i.e. powered by microcontrollers.
 
 The course is divided in 5 sections:
 
-- [Introduction](https://aabadie.github.io/riot-course/slides/01-introduction)
+- [Introduction](https://riot-os.github.io/riot-course/slides/01-introduction)
   contains generalities about the RIOT project
-- [Getting started](https://aabadie.github.io/riot-course/slides/02-getting-started)
+- [Getting started](https://riot-os.github.io/riot-course/slides/02-getting-started)
   contains the basics to start building and programming basic applications
   with RIOT
-- [RIOT basics](https://aabadie.github.io/riot-course/slides/03-riot-basics)
+- [RIOT basics](https://riot-os.github.io/riot-course/slides/03-riot-basics)
   contains information about the internal structure of the OS (source code
   organization, build system, kernel) but also gives information about the
   hardware abstraction layer, the drivers and packages
-- [Networking in RIOT](https://aabadie.github.io/riot-course/slides/04-networking-in-riot)
+- [Networking in RIOT](https://riot-os.github.io/riot-course/slides/04-networking-in-riot)
   provides basics on IoT protocols supported by RIOT (6LowPAN/IPv6, LoRa) and
   lists the network stacks provided by the OS
-- [LoRaWAN with RIOT](https://aabadie.github.io/riot-course/slides/05-lorawan-with-riot)
+- [LoRaWAN with RIOT](https://riot-os.github.io/riot-course/slides/05-lorawan-with-riot)
   gives an overview of the LoRaWAN protocol and how to use it with RIOT
 
 The full course is designed for 2 full days of work and
-[programming exercises](https://github.com/aabadie/riot-course-exercises) are
+[programming exercises](https://github.com/riot-os/riot-course-exercises) are
 also provided to illustrate the exposed notions.
 
 ### Tutorials based on this course
@@ -32,14 +32,14 @@ This course and the associated exercices can be used for shorter and more
 oriented tutorials.
 Here is the list of existing tutorials:
 
-- [RIOT Summit - Beginner Tutorial](https://aabadie.github.io/riot-course/slides/tutorial-summit)
-- [Inria Tech Talk - StationF](https://aabadie.github.io/riot-course/slides/techtalk-stationf)
+- [RIOT Summit - Beginner Tutorial](https://riot-os.github.io/riot-course/slides/tutorial-summit)
+- [Inria Tech Talk - StationF](https://riot-os.github.io/riot-course/slides/techtalk-stationf)
 
 ## Using the course
 
 1. Clone this repository:
 ```
-git clone --recursive https://github.com/aabadie/riot-course
+git clone --recursive https://github.com/riot-os/riot-course
 ```
 
 3. Open the html files in `slides/<section>` directories in a web browser
@@ -50,7 +50,7 @@ For RIOT applications developped during the practical exercises, you will need:
 
 - A Linux operating system with all build tools installed or VirtualBox with a
   Linux VM running (preferably Ubuntu). Setup details are given in the
-  [prerequisites](https://aabadie.github.io/riot-course/slides/prerequisites)
+  [prerequisites](https://riot-os.github.io/riot-course/slides/prerequisites)
   slides.
 
 - An ST board for applications running on hardware: exercises are using the

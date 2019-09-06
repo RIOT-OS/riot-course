@@ -14,7 +14,7 @@ class: center, middle
 
 - The [FIT IoT-LAB](https://www.iot-lab.info) testbed can be used to achieve
   the exercises requiring some hardware (especially in the
-  [riot-networking](https://aabadie.github.io/riot-course/slides/04-networking-in-riot)
+  [riot-networking](https://riot-os.github.io/riot-course/slides/04-networking-in-riot)
   section)
 
 - For simplicity, all exercises can be done using a pre-configured virtual
@@ -32,7 +32,7 @@ There are 2 ways to install it:
 
 2. Use [vagrant](https://www.vagrantup.com/):
   ```sh
-  $ git clone https://github.com/aabadie/riot-course
+  $ git clone https://github.com/riot-os/riot-course
   $ cd riot-course
   $ vagrant up
   $ vagrant ssh
@@ -83,4 +83,4 @@ In any case, it is recommended to play the
 
 class: center, middle
 
-[Back to the course](https://github.com/aabadie/riot-course#content-of-the-course)
+[Back to the course](https://github.com/riot-os/riot-course#content-of-the-course)

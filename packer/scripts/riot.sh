@@ -83,4 +83,4 @@ echo 'SUBSYSTEM=="usb", ATTR{idProduct}=="6011", ATTR{idVendor}=="0403", MODE="0
      >> /etc/udev/rules.d/riot-course.rules
 
 # Clone riot-course
-cd /home/user && git clone --recursive https://github.com/aabadie/riot-course.git
+cd /home/user && git clone --recursive https://github.com/riot-os/riot-course.git

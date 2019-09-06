@@ -435,7 +435,7 @@ IoT-LAB is a **large scale experimentation testbed**]
 
 - RIOT online course
 
-.center[<a href="https://github.com/aabadie/riot-course">https://github.com/aabadie/riot-course</a>]
+.center[<a href="https://github.com/riot-os/riot-course">https://github.com/riot-os/riot-course</a>]
 
 <br>
 

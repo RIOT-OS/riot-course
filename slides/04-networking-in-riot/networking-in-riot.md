@@ -167,11 +167,11 @@ class: center, middle
 
 - **Exercise:** `~/riot-course/exercises/riot-networking/shell-basic-native`
 
-Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/shell-basic-native)
+Follow the [exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-networking/shell-basic-native)
 
 - **Exercise:** `~/riot-course/exercises/riot-networking/shell-udp-native`
 
-Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/shell-udp-native)
+Follow the [exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-networking/shell-udp-native)
 
 ---
 
@@ -279,7 +279,7 @@ void sock_<type>_close(sock_<type>_t *sock);
 
 **Exercise:** `~/riot-course/exercises/riot-networking/sock-udp`
 
-Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/sock-udp)
+Follow the [exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-networking/sock-udp)
 
 ---
 
@@ -316,7 +316,7 @@ ssize_t sendto(int sockfd, const void *buf, size_t len, int flags,
 
 **Exercise:** `~/riot-course/exercises/riot-networking/posix-udp`
 
-Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/posix-udp)
+Follow the [exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-networking/posix-udp)
 
 ---
 
@@ -370,7 +370,7 @@ Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tr
 
 - **Exercise:** `~/riot-course/exercises/riot-networking/shell-coap-native`
 
-Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/shell-coap-native)
+Follow the [exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-networking/shell-coap-native)
 
 ---
 
@@ -424,7 +424,7 @@ gcoap_register_listener(&_listener);
 
 - **Exercise:** `~/riot-course/exercises/riot-networking/gcoap`
 
-Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/gcoap)
+Follow the [exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-networking/gcoap)
 
 ---
 
@@ -470,11 +470,11 @@ IoT-LAB is a large scale experimentation testbed]
 
 - **Exercise:** `~/riot-course/exercises/riot-networking/networking-iotlab`
 
-Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/networking-iotlab)
+Follow the [exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-networking/networking-iotlab)
 
 - **Exercise:** `~/riot-course/exercises/riot-networking/gcoap-iotlab`
 
-Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-networking/gcoap-iotlab)
+Follow the [exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-networking/gcoap-iotlab)
 
 ---
 
@@ -492,4 +492,4 @@ See: https://www.iot-lab.info/tutorials/coap-using-riot-with-m3-nodes/
 
 class: center, middle
 
-[Back to the course](https://github.com/aabadie/riot-course#content-of-the-course)
+[Back to the course](https://github.com/riot-os/riot-course#content-of-the-course)

@@ -4,7 +4,7 @@ class: center, middle
 
 ## Summit 2018
 
-<a href=https://github.com/aabadie/riot-course>https://github.com/aabadie/riot-course</a>
+<a href=https://github.com/riot-os/riot-course>https://github.com/riot-os/riot-course</a>
 
 ---
 
@@ -57,7 +57,7 @@ class: center, middle
 ## Tutorial overview (2)
 
 - Follow the RIOT course on github:
-  <a href=https://github.com/aabadie/riot-course>https://github.com/aabadie/riot-course</a>
+  <a href=https://github.com/riot-os/riot-course>https://github.com/riot-os/riot-course</a>
 
 - Use the preconfigured VM for building applications
 
@@ -222,4 +222,4 @@ was selected by the IoT-LAB booking system.
 
 <br><br><br><br><br>
 
-###.center[Follow the [getting-started](https://aabadie.github.io/riot-course/slides/02-getting-started) instructions]
+###.center[Follow the [getting-started](https://riot-os.github.io/riot-course/slides/02-getting-started) instructions]

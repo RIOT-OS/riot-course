@@ -364,7 +364,7 @@ Tx done
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/simple`
 
-Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-lorawan/simple)
+Follow the [exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-lorawan/simple)
 
 ---
 
@@ -372,7 +372,7 @@ Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tr
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/sensor`
 
-Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-lorawan/sensor)
+Follow the [exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-lorawan/sensor)
 
 ---
 
@@ -415,7 +415,7 @@ https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
   https://github.com/sabas1080/CayenneLPP
 
   - Generic library in C<br>
-  https://github.com/aabadie/cayenne-lpp
+  https://github.com/riot-os/cayenne-lpp
 
 ---
 
@@ -423,7 +423,7 @@ https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/lpp`
 
-Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-lorawan/lpp)
+Follow the [exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-lorawan/lpp)
 
 ---
 
@@ -457,7 +457,7 @@ https://www.eclipse.org/paho/
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/downlink`
 
-Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-lorawan/downlink)
+Follow the [exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-lorawan/downlink)
 
 ---
 
@@ -465,7 +465,7 @@ Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tr
 
 - **Exercise:** `~/riot-course/exercises/riot-lorawan/pm`
 
-Follow the [exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/riot-lorawan/pm)
+Follow the [exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/riot-lorawan/pm)
 
 ---
 
@@ -473,4 +473,4 @@ class: center, middle
 
 # The End
 
-[Back to the course](https://github.com/aabadie/riot-course#content-of-the-course)
+[Back to the course](https://github.com/riot-os/riot-course#content-of-the-course)

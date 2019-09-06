@@ -487,7 +487,7 @@ IoT-LAB is a **large scale experimentation testbed**]
 
 - RIOT online course
 
-.center[<a href="https://github.com/aabadie/riot-course">https://github.com/aabadie/riot-course</a>]
+.center[<a href="https://github.com/riot-os/riot-course">https://github.com/riot-os/riot-course</a>]
 
 <br>
 
@@ -792,4 +792,4 @@ The ISR context handles external events and notifies threads using IPC messages
 
 class: center, middle
 
-[Back to the course](https://github.com/aabadie/riot-course#content-of-the-course)
+[Back to the course](https://github.com/riot-os/riot-course#content-of-the-course)

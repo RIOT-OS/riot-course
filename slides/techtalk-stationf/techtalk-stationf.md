@@ -14,8 +14,8 @@ class: center, middle
 
 ### Inria Tech Talk
 
-<a href="https://aabadie.github.io/riot-course/slides/techtalk-stationf">
-https://aabadie.github.io/riot-course/slides/techtalk-stationf</a>
+<a href="https://riot-os.github.io/riot-course/slides/techtalk-stationf">
+https://riot-os.github.io/riot-course/slides/techtalk-stationf</a>
 
 .right[.footer[
 Alexandre Abadie<br>
@@ -507,8 +507,8 @@ background-image: url(images/qa.png)
 
 class: center, middle
 
-<a href="https://aabadie.github.io/riot-course/slides/techtalk-stationf#52">
-https://aabadie.github.io/riot-course/slides/techtalk-stationf#52</a>
+<a href="https://riot-os.github.io/riot-course/slides/techtalk-stationf#52">
+https://riot-os.github.io/riot-course/slides/techtalk-stationf#52</a>
 
 ---
 
@@ -517,7 +517,7 @@ background-image: url(images/green-bands.png)
 ## Getting started with RIOT
 
 .center[
-<a href="https://github.com/aabadie/riot-course">https://github.com/aabadie/riot-course</a>
+<a href="https://github.com/riot-os/riot-course">https://github.com/riot-os/riot-course</a>
 ]
 
 1. Learn how to write and build a RIOT application
@@ -708,7 +708,7 @@ $ make BOARD=<target> -C <application_dir> flash term
 Let's build and run our first RIOT application with the exercise in
 `~/riot-course/exercises/getting-started/first-app`.
 Just follow the instruction of the
-[exercise README](https://github.com/aabadie/riot-course-exercises/tree/master/getting-started/first-app)
+[exercise README](https://github.com/riot-os/riot-course-exercises/tree/master/getting-started/first-app)
 
 ```sh
 $ cd ~/riot-course/exercises/getting-started/first-app
@@ -818,6 +818,6 @@ for almost all features provided by RIOT.
 ## LoRaWAN with RIOT
 
 .center[
-    <a href="https://aabadie.github.io/riot-course/slides/05-lorawan-with-riot">
-    https://aabadie.github.io/riot-course/slides/05-lorawan-with-riot</a>
+    <a href="https://riot-os.github.io/riot-course/slides/05-lorawan-with-riot">
+    https://riot-os.github.io/riot-course/slides/05-lorawan-with-riot</a>
 ]
