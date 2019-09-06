@@ -6,7 +6,7 @@ In this exercise, we propose to experiment the RTC API.
 
 ### Exercise
 
-1. Go to `~/riot-course-exercises/riot-basics/rtc`
+1. Go to `~/riot-course/exercises/riot-basics/rtc`
 
 2. Write an application that gets the current RTC time and print it to stdout
    (Don't forget to add `periph_rtc` to the list of required features and to

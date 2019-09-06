@@ -13,7 +13,7 @@ the exercise, you will run this same application, unchanged, on real hardware.
 
 ### Exercise
 
-- Go to `~/riot-course-exercises/riot-basics/thread-ipc`
+- Go to `~/riot-course/exercises/riot-basics/thread-ipc`
 
 #### Write the application
 

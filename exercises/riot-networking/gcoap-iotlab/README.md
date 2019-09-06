@@ -11,7 +11,7 @@ we'll use it to read the temperature and atmospheric pressure.
 ### Prerequisites
 
 1. Follow the riot-course [FIT IoT-LAB prerequites](https://riot-os.github.io/riot-course/slides/prerequisites/#4) (if not done already)
-2. [Setup an experiment](https://github.com/riot-os/riot-course-exercises/tree/master/riot-networking/networking-iotlab#setup-an-experiment-on-fit-iot-lab)
+2. [Setup an experiment](https://github.com/riot-os/riot-course/tree/master/exercises/riot-networking/networking-iotlab#setup-an-experiment-on-fit-iot-lab)
 
 In the rest of the exercice, we assume that you have booked 2 `iotlab-m3` boards
 on the `paris` site:
@@ -20,7 +20,7 @@ on the `paris` site:
 
 ### Flash the RIOT gcoap example application
 
-This application is available on GitHub [here](https://github.com/riot-os/riot-course-exercises/tree/master/RIOT/examples/gcoap).
+This application is available on GitHub [here](https://github.com/riot-os/riot-course/tree/master/exercises/RIOT/examples/gcoap).
 On the VM, you can access it at `~/riot-course/RIOT/examples/gcoap`
 
 1. On the first board (here on **m3-10**), build, flash and open a terminal of

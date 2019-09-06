@@ -8,7 +8,7 @@ used to toggle an on-board LED.
 
 ### Exercise
 
-- Go to `~/riot-course-exercises/riot-basics/gpio`
+- Go to `~/riot-course/exercises/riot-basics/gpio`
 
 #### Write the application
 

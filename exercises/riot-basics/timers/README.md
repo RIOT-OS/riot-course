@@ -13,7 +13,7 @@ other board with at least 3 LEDs could be used.
 
 ### Exercise
 
-- Go to `~/riot-course-exercises/riot-basics/timers`
+- Go to `~/riot-course/exercises/riot-basics/timers`
 
 #### Write the application
 

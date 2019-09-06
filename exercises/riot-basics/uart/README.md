@@ -7,7 +7,7 @@ threads to print all characters received on the stdio.
 
 ### Exercise
 
-- Go to `~/riot-course-exercises/riot-basics/uart`
+- Go to `~/riot-course/exercises/riot-basics/uart`
 
 #### Write the application
 

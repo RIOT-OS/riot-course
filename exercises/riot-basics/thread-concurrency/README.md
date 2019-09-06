@@ -16,7 +16,7 @@ the exercise, you will run this same application, unchanged, on real hardware.
 
 ### Exercise
 
-- Go to `~/riot-course-exercises/riot-basics/thread-concurrency`
+- Go to `~/riot-course/exercises/riot-basics/thread-concurrency`
 
 #### Write a non thread-safe application
 

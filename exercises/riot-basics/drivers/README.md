@@ -10,7 +10,7 @@ sensors but can easily be adapted to other sensors supported by RIOT.
 
 ### Exercise
 
-- Go to `~/riot-course-exercises/riot-basics/drivers`
+- Go to `~/riot-course/exercises/riot-basics/drivers`
 
 - Write an application that starts 2 threads
   - `thread1` reads the HTS221 sensors values (temperature and humidity)

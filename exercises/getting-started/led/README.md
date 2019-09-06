@@ -51,4 +51,4 @@ $ make BOARD=b-l072z-lrwan1 flash term
 ```
 
 Now let's continue with the
-[sensor exercise](https://github.com/riot-os/riot-course-exercises/tree/master/getting-started/sensor).
+[sensor exercise](https://github.com/riot-os/riot-course/tree/master/exercises/getting-started/sensor).
