@@ -28,9 +28,8 @@ notions.
 
 ### Tutorials based on this course
 
-This course and the associated exercices can be used for shorter and more
-oriented tutorials.
-Here is the list of existing tutorials:
+This course and exercices can be used for shorter and more oriented tutorials.
+Here is a list of existing tutorials:
 
 - [RIOT Summit - Beginner Tutorial](https://riot-os.github.io/riot-course/slides/tutorial-summit)
 - [Inria Tech Talk - StationF](https://riot-os.github.io/riot-course/slides/techtalk-stationf)
