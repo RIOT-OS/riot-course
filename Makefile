@@ -1,4 +1,4 @@
-.PHONY: all clean init-submodules build-exercises clean-exercises packer packer-upload
+.PHONY: all init-submodules build-exercises clean-exercises packer packer-clean packer-upload
 
 all: init-submodules build-exercises
 
