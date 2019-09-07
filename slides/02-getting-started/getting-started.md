@@ -164,7 +164,7 @@ FEATURES_REQUIRED += periph_gpio
 ```
 Example from the command line:
 ```sh
-$ USEMODULE=xtimer make BOARD=bl-072z-lrwan1
+$ USEMODULE=xtimer make BOARD=b-l072z-lrwan1
 ```
 
 ---
