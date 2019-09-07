@@ -99,7 +99,7 @@ class: center, middle
   - **Important:** Update the local copy of this tutorial:
   ```
   $ cd ~/riot-course
-  $ git pull --recursive-submodules
+  $ git pull --recurse-submodules
   ```
 
 --
