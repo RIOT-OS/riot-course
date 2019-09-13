@@ -56,7 +56,7 @@ $ setxkbmap fr
 2. Update the sources of the riot-course:
 ```sh
 $ cd ~/riot-course
-$ git pull --recurse-submodule
+$ git pull --recurse-submodules
 ```
 
 ---
