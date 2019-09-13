@@ -27,7 +27,7 @@ class: center, middle
 
 There are 2 ways to install it:
 
-1. Download the VM from [here](http://fit-demo.inria.fr/vms/RIOT-VM.ova)
+1. Download the VM from [here](http://demo-fit.saclay.inria.fr/vms/RIOT-VM.ova)
    and import it in Virtualbox or VMWare
 
 2. Use [vagrant](https://www.vagrantup.com/):
