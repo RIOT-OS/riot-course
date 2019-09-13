@@ -107,12 +107,6 @@
         [
           "modifyvm",
           "{{.Name}}",
-          "--accelerate3d",
-          "on"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
           "--iconfile",
           "riot-os.png"
         ],
