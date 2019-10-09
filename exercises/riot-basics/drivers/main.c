@@ -40,7 +40,7 @@ static void *thread2_handler(void *arg)
 
 int main(void)
 {
-    puts("RTC alarm RIOT application");
+    puts("RIOT multi drivers application");
 
     thread_create(stack1, sizeof(stack1),
                   THREAD_PRIORITY_MAIN - 1,

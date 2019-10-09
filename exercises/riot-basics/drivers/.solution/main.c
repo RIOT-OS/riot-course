@@ -66,7 +66,7 @@ static void *thread2_handler(void *arg)
 
 int main(void)
 {
-    puts("RTC alarm RIOT application");
+    puts("RIOT multi drivers application");
 
     hts221_init(&hts221_dev, &hts221_params[0]);
     hts221_power_on(&hts221_dev);
