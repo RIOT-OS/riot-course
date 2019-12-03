@@ -33,7 +33,7 @@ class: center, middle
  - **microkernel architecture** &#x21d2; require very low resources
  - **real-time** and **multi-threaded**
  - comes with **in-house networking stacks**
-<br>
+<br><br>
 
 - **open-source**: <a href="https://github.com/RIOT-OS/RIOT">https://github.com/RIOT-OS/RIOT</a>
 
@@ -94,44 +94,20 @@ class: center, middle
 
 ## General-Purpose OS for IoT (2)
 
-<img src="images/riot-architecture.png" alt="" style="width:250px;position:fixed;right:50px;top:120px"/>
-
-
-- Small footprint <br> &#x21d2; **2.8kB** RAM, **3.2kB** ROM on 32-bit Cortex-M
-<br><br>
-
-
 - **Real-Time** scheduler
   - &#x21d2; fixed priorities preemption with O(1) operations
-  - &#x21d2; tickless scheduler
+  - &#x21d2; tickless scheduler, i.e. no periodic timer event
 <br><br>
 
 - **Multi-Threading** and IPC:
   - Separate thread contexts with separate <br>thread memory stack
   - Minimal thread control block (TCB)
   - Thread synchronization using mutexes, <br>semaphores and messaging
-  - _optional multi-threading_
+  - ISR context handles external events<br>and notifies threads using IPC messages
+  <br><br>
+  - _Note:_ optional multi-threading
 
 <img src="images/riot-application.png" alt="" style="width:300px;position:fixed;right:50px;top:350px"/>
-
----
-
-## Multi-Threading
-
-2 threads by default:
-
-- the `main` thread: running the `main` function
-
-- the `idle` thread:
-
-  - lowest priority <br>&#x21d2; fallback thread when all other threads are blocked or terminated
-  - switches the system to low-power mode
-
-The ISR context handles external events and notifies threads using IPC messages
-
-.center[
-    <img src="images/riot-application.png" alt="" style="width:300px;"/>
-]
 
 ---
 
@@ -328,22 +304,22 @@ IoT-LAB is a large scale experimentation testbed]
 
 1. Start the VM and open a command window
 
-2. Grab one paper with the account credentials (user is riotcc*X*)
+2. Select and account from the pad (user is sparta*X*)
 
 3. Register your IoT-LAB credentials
    ```sh
-   $ iotlab-auth -u riotccX
+   $ iotlab-auth -u spartaX
    ```
 4. Start an experiment with one ST node on Saclay site:
    ```sh
-   $ iotlab-experiment submit -n riotcc -d 300 \
+   $ iotlab-experiment submit -n sparta -d 120 \
                                -l 1,archi=st-lrwan1:sx1276+site=saclay
    Using custom api_url: https://www.iot-lab.info/rest/
    {
       "id": 133XXX
    }
    ```
-   The experiment will book one node during 300 minutes on Saclay site
+   The experiment will book one node during 120 minutes on Saclay site
 
 5. Wait for the experiment to be in "Running" state:
   ```sh
