@@ -18,17 +18,20 @@ class: center, middle
   section)
 
 - For simplicity, all exercises can be done using a pre-configured virtual
-  machine (VM): this VM is compatible with [Virtualbox](https://www.virtualbox.org/)
-  (>= 5.2) or [VMWare player](https://www.vmware.com/products/workstation-player.html)
+  machine (VM). To run the VM, either install:
+  - [Virtualbox](https://www.virtualbox.org/) (>= 5.2) and the corresponding
+    version of the [Virtualbox extention
+    pack](https://www.virtualbox.org/wiki/Downloads)
+  - [VMWare player](https://www.vmware.com/products/workstation-player.html)
 
 ---
 
 ## Setup the VM
 
-There are 2 ways to install it:
+There are 2 ways to setup and start the VM:
 
 1. Download the VM from [here](http://demo-fit.saclay.inria.fr/vms/RIOT-VM.ova)
-   and import it in Virtualbox or VMWare
+   and import it as new appliance in Virtualbox or VMWare. Then launch the VM.
 
 2. Use [vagrant](https://www.vagrantup.com/):
   ```sh
