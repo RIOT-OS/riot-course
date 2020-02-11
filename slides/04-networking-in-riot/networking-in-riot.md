@@ -480,13 +480,13 @@ Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/
 
 ## Exercise: Public IPv6 networking
 
-See: https://www.iot-lab.info/tutorials/riot-public-ipv66lowpan-network-with-m3-nodes/
+See: https://www.iot-lab.info/tutorials/riot-public-ipv6-m3/
 
 ---
 
 ## Exercise: Public IPv6 networking and CoAP
 
-See: https://www.iot-lab.info/tutorials/coap-using-riot-with-m3-nodes/
+See: https://www.iot-lab.info/tutorials/riot-coap-m3/
 
 ---
 
