@@ -20,7 +20,8 @@ echo "export PATH=/opt/gcc-arm-none-eabi-7-2018-q2-update/bin:\$PATH" >> /home/u
 pip3 install iotlabwscli iotlabsshcli iotlabcli
 
 # Python tools
-pip3 install aiocoap paho-mqtt pyserial
+pip3 install paho-mqtt pyserial
+pip3 install "git+https://github.com/chrysn/aiocoap#egg=aiocoap[all]"
 pip install pyocd paho-mqtt pyserial
 
 # GNU Radio
