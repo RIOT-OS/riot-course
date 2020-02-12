@@ -17,8 +17,7 @@ cd /opt && wget -nv -O - "${ARM_GCC_ARCHIVE_URL}" | tar -jxf -
 echo "export PATH=/opt/gcc-arm-none-eabi-7-2018-q2-update/bin:\$PATH" >> /home/user/.bashrc
 
 # Add .local/bin to PATH
-echo "export PATH=$PATH:~/.local/bin" >> /etc/profile
-source /etc/profile
+echo "export PATH=\$PATH:/home/user.local/bin" >> /home/user/.bashrc
 
 # IoT-LAB CLI tools
 pip3 install iotlabwscli iotlabsshcli iotlabcli
