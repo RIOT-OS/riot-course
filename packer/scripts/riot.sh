@@ -1,9 +1,19 @@
 #!/bin/bash -eux
 
+# General helper tools
 apt install -y cmake curl git build-essential vim emacs python-setuptools \
     python-argparse python3-pip python-pip mosquitto-clients socat g++-multilib \
     net-tools
 
+# GNU Radio
+apt install -y gnuradio gr-osmosdr
+
+# OpenOCD dependencies
+apt install -y build-essential libftdi-dev libhidapi-dev \
+        libusb-1.0-0-dev libudev-dev autoconf libsqlite3-dev \
+        libpopt-dev libxml2-dev ruby libtool pkg-config
+
+# Tshark requires a specific handling of debconf
 DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt install -y tshark
 
 # Install ARM GNU Embedded toolchain
@@ -27,14 +37,7 @@ sudo -u user pip3 install iotlabwscli iotlabsshcli iotlabcli
 sudo -u user pip3 install paho-mqtt pyserial pyocd ed25519 pyasn1 cbor
 sudo -u user pip3 install --user "git+https://github.com/chrysn/aiocoap#egg=aiocoap[all]"
 
-# GNU Radio
-apt install -y gnuradio gr-osmosdr
-
 # OpenOCD
-apt install -y build-essential libftdi-dev libhidapi-dev \
-        libusb-1.0-0-dev libudev-dev autoconf libsqlite3-dev \
-        libpopt-dev libxml2-dev ruby libtool pkg-config
-
 git clone https://github.com/ntfreak/openocd openocd && \
     cd openocd && \
     git checkout 05e0d633bad9e8b0bdfaf16fc76ab1f9d9419d8b && \
