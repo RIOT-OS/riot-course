@@ -23,9 +23,8 @@ echo "export PATH=\$PATH:/home/user.local/bin" >> /home/user/.bashrc
 pip3 install iotlabwscli iotlabsshcli iotlabcli
 
 # Python tools
-pip3 install paho-mqtt pyserial
+pip3 install paho-mqtt pyserial pyocd ed25519 pyasn1 cbor
 pip3 install "git+https://github.com/chrysn/aiocoap#egg=aiocoap[all]"
-pip install pyocd paho-mqtt pyserial
 
 # GNU Radio
 apt install -y gnuradio gr-osmosdr
