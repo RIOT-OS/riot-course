@@ -17,14 +17,15 @@ cd /opt && wget -nv -O - "${ARM_GCC_ARCHIVE_URL}" | tar -jxf -
 echo "export PATH=/opt/gcc-arm-none-eabi-7-2018-q2-update/bin:\$PATH" >> /home/user/.bashrc
 
 # Add .local/bin to PATH
-echo "export PATH=\$PATH:/home/user.local/bin" >> /home/user/.bashrc
+# Required for Python packages installed in user home directory
+echo "export PATH=\$PATH:/home/user/.local/bin" >> /home/user/.bashrc
 
 # IoT-LAB CLI tools
-pip3 install iotlabwscli iotlabsshcli iotlabcli
+sudo -u user pip3 install iotlabwscli iotlabsshcli iotlabcli
 
 # Python tools
-pip3 install paho-mqtt pyserial pyocd ed25519 pyasn1 cbor
-pip3 install "git+https://github.com/chrysn/aiocoap#egg=aiocoap[all]"
+sudo -u user pip3 install paho-mqtt pyserial pyocd ed25519 pyasn1 cbor
+sudo -u user pip3 install --user "git+https://github.com/chrysn/aiocoap#egg=aiocoap[all]"
 
 # GNU Radio
 apt install -y gnuradio gr-osmosdr
