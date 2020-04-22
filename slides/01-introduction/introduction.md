@@ -267,7 +267,7 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 --
 
-- Embedded interpretors: Javascript, LUA
+- Embedded interpretors: Javascript, Micropython, LUA
 
 --
 
@@ -309,7 +309,7 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 - Easy to add: just requires 2 `Makefiles`
 
-- Example of packages: lwIP, Openthread, u8g2, loramac, etc
+- Example of packages: lwIP, Openthread, lvgl, loramac, etc
 
 <br><br>
 
@@ -376,18 +376,11 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 ---
 
-## Coming soon
-
-- NB-IoT support
-
-<img src="images/nb_iot_logo.jpg" alt="" style="width:180px;position:fixed;top:120px;right:100px"/>
-<br><br>
-
---
+## Other important features
 
 - Full featured USB stack (CDC-ACM, CDC-ECM, etc)
 
-<img src="images/usb-logo.png" alt="" style="width:180px;position:fixed;top:200px;right:100px"/>
+<img src="images/usb-logo.png" alt="" style="width:180px;position:fixed;top:80px;right:100px"/>
 
 <br><br>
 
@@ -401,7 +394,16 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 --
 
-- And many other cool things !
+## Coming soon
+
+- NB-IoT support
+
+<img src="images/nb_iot_logo.jpg" alt="" style="width:180px;position:fixed;top:450px;right:100px"/>
+<br>
+
+- More advanced configuration with Kconfig
+
+<img src="images/kconfig.jpeg" alt="" style="width:180px;position:fixed;top:525px;right:100px"/>
 
 ---
 
@@ -424,7 +426,7 @@ class: center, middle
 ## IoT deployments using RIOT
 
 .center[
-**Almagro: Automatic cereal dispenser**<br><br>
+**Algramo: Automatic cereal dispenser**<br><br>
 <img src="images/almagro-feeder.png" alt="" style="width:200px"/><br/>
 <a href="https://www.indiegogo.com/projects/the-venture-algramo-chile#/">More information</a>
 ]
