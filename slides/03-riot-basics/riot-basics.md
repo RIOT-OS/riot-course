@@ -57,9 +57,9 @@ $ make -C <application_dir> all
 - Modules:
   - `module name = directory basename`
 
-  - simply include _$(RIOTBASE)Makefile.base_ in the module _Makefile_
+  - simply include _$(RIOTBASE)/Makefile.base_ in the module _Makefile_
 
-  - all `.c` are added to the module
+  - by default, all `.c` are added to the module
 
 - in `drivers`, `sys`, `pkg`
   - _Makefile.include_: add include specific directories to the build system
@@ -80,7 +80,7 @@ $ make -C <application_dir> all
 
   - use `<tab>` (autocompletion) to get the full list
 
-- For every module **_xx_** imported, a **MODULE_XX** macro is created:
+- For every module **_xx_** imported, a **MODULE_XX** constant is defined:
 ```c
 #ifdef MODULE_XX
 /* conditional code when module XX is loaded */
@@ -146,14 +146,14 @@ $ make -C <application_dir> all
 
 - If all threads are blocked:
   - Switch to special IDLE thread
-  - Goes into lowest power possible mode
+  - Goes into lowest possible power mode
 
 - A thread is just a function with signature:
 ```c
 void *thread_handler(void *arg);
 ```
 
-- Threads manage their own memory stack
+- Threads have their own memory stack
 
 ---
 
@@ -177,9 +177,9 @@ pid = thread_create(stack,  /* stack array pointer */
 static char stack[THREAD_STACKSIZE_MAIN];
 ```
 
-- Priority is higher than `main` thread
+- Here, priority is higher than `main` thread (`THREAD_PRIORITY_MAIN - 1`)
 
-- Useful: `thread_getpid()` return the current thread pid
+- Useful: `thread_getpid()` returns the current thread pid
 
 --
 
@@ -236,7 +236,7 @@ Follow the instructions of the
 
 - The messaging API is defined in `msg.h` (in `core`):
   - The message type is `msg_t`
-  - Each message has a `type` and a `content`
+  - Each message is assigned a `type` and a `content`
 
 ```c
 msg_t msg;
