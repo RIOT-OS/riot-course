@@ -11,7 +11,7 @@ for reducing power consumption (using STANDBY low power mode).
 - In the application Makefile, unlock by default the STANDBY low power mode by
   adding before the line `include $(RIOTBASE)/Makefile.include`:
   ```
-  CFLAGS += '-DPM_BLOCKER_INITIAL={ .val_u32 = 0x01010100 }'
+  CFLAGS += -DPM_BLOCKER_INITIAL=0x01010100
   ```
 - Still in the application Makefile, add the required RTC and EEPROM features:
   ```
