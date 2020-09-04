@@ -32,6 +32,7 @@ This course and exercices can be used for shorter and more oriented tutorials.
 Here is a list of existing tutorials:
 
 - [RIOT Summit - Beginner Tutorial on LoRaWAN](https://riot-os.github.io/riot-course/slides/tutorial-summit-lorawan)
+- [RIOT Summit - Beginner Tutorial on Security](https://riot-os.github.io/riot-course/slides/tutorial-summit-security)
 - [Inria Tech Talk - StationF](https://riot-os.github.io/riot-course/slides/techtalk-stationf)
 
 ## Using the course
