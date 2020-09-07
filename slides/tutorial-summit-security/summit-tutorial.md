@@ -8,7 +8,22 @@ class: center, middle
 
 ---
 
-## Goals of the tutorial (1)
+## Agenda
+
+==1. Goals of Tutorial==
+
+2. Tutorial Tooling
+
+3. RIOT: Quick Overview
+
+4. RIOT Hands-on Crash-course
+
+5. IoT Security Hands-on Crash-course
+
+
+---
+
+## Goals of the Tutorial (1)
 
 1. Learn how to write and build a RIOT application
 
@@ -19,7 +34,7 @@ class: center, middle
 --
 
 
-2. Overview the basics of security on IoT device
+2. Some basics of security on IoT devices based on micro-controllers
 
   .right[
       <img src="images/cadenas.png" alt="" style="width:100px;"/>
@@ -27,11 +42,11 @@ class: center, middle
 
 --
 
-3. Hands-on activities towards final goal: secure IoT firmware update over the network!
+3. Hands-on activities: building blocks for secure IoT firmware update over the network
 
 ---
 
-## Goals of the tutorial (2)
+## Goals of the Tutorial (2)
 
 1. Exercise 1: compute hashes using SHA256 and SHA3-256
 
@@ -45,11 +60,11 @@ class: center, middle
 
 --
 
-4. Exercise 4: secure communication using DTLS 1.2
+4. Exercise 4: secure communication using DTLS 1.2 over IPv6 and 6LoWPAN
 
 --
 
-5. Exercise 5: secure firmware update with SUIT 
+5. Exercise 5: secure firmware update over the network with SUIT and CoAP
 
 ---
 
