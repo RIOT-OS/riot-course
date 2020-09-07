@@ -10,7 +10,7 @@ class: center, middle
 
 ## Agenda
 
-1. Goals of Tutorial
+1. _**Goals of Tutorial**_
 
 2. Tutorial Tooling
 
@@ -71,7 +71,7 @@ class: center, middle
 
 1. Goals of Tutorial
 
-2. Tutorial Tooling
+2. _**Tutorial Tooling**_
 
 3. A Quick Overview of RIOT
 
@@ -158,7 +158,7 @@ IoT-LAB is a large scale experimentation testbed]
 
 2. Tutorial Tooling
 
-3. A Quick Overview of RIOT
+3. _**A Quick Overview of RIOT**_
 
 4. First Steps Hands-On with RIOT
 
@@ -332,7 +332,7 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 3. A Quick Overview of RIOT
 
-4. First Steps Hands-On with RIOT
+4. _**First Steps Hands-On with RIOT**_
 
 5. IoT Security Hands-On
 
@@ -504,7 +504,7 @@ Follow the instructions in the notebook **riot/basics/shell/shell.ipynb**
 
 4. First Steps Hands-On with RIOT
 
-5. IoT Security Hands-On
+5. _**IoT Security Hands-On**_
 
 ---
 
