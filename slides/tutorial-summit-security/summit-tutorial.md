@@ -27,7 +27,7 @@ class: center, middle
 1. Learn how to write and build a RIOT application
 
   .right[
-      <img src="images/riot-logo-circular.png" alt="" style="width:200px;"/>
+      <img src="images/riot-logo-circular.png" alt="" style="width:100px;"/>
   ]
 
 --
@@ -514,43 +514,130 @@ class: center, middle
 
 ---
 
-## Why is security difficult on low-end IoT devices ?
+## What Attacks?
 
-To secure IoT devices, one must consider attacks of diverse natures. Let's start by distinguishing
-the main types of attacks.
+To secure IoT devices, one must consider attacks of diverse nature.
 
 .center[
     <img src="images/iot-attack-levels.png" alt="" style="width:720px;"/>
 ]
 
+---
+
+## Security in Practice
+
+IoT security in practice must combine 
+
+- several defense mechanisms, 
+- working at different levels of the system, and 
+- protecting against different types of attacks. 
+
+Each of these defense mechanisms is necessary, but not sufficient to achieve security overall.
+
+Next, we focus on mechanisms applicable on low-end IoT devices to:
+
+- defend against network attacks, and
+- defend against some software attacks based on remote malware installation.
 
 ---
 
-## Exercise: compute a hash
+## Crypto Primitives for IoT Security (1)
+
+Appropriate primitives for basic guarantees on digital data in IoT?
+
+- **Authenticity**: guarantee on the origin of the data;
+- **Integrity**: guarantee that original data has not been tampered with;
+- **Confidentiality**: guarantee that data is intelligible only for intended recipients.
+
+---
+
+## Crypto Primitives for IoT Security (2)
+
+Typical building blocks are:
+
+- **Hash**: function mapping data of arbitrary size to (smaller) fixed-size values;
+- **Encryption**: set of algorithms enabling the originator (resp. recipient) of digital data to encode (resp. decypher) this data using one or more keys.
+- **Digital Signature**: set of algorithms enabling (private/public) key generation, signature generation based on private key and authenticity verification based on public key.
+
+
+---
+
+## Exercise: Compute a Hash with SHA-256 and SHA3-256
 
 Follow the instructions in the notebook **riot/security/hash/hash.ipynb**
 
 ---
 
-## Exercise: sign and verify signature
+## Exercise: Sign / Verify a Digital Signature with ed25519
 
 Follow the instructions in the notebook **riot/security/signature/signature.ipynb**
 
 ---
 
-## Exercise: encrypt and decrypt a message
+## Exercise: Encrypt / Decrypt a Message using AES128 (CTR Mode)
 
 Follow the instructions in the notebook **riot/security/encyption/encyption.ipynb**
 
 ---
 
-## Exercise: secure communication using dtls
+## Network Protocols for IoT Security (1)
+
+Generic protocols for low-power IoT networks?
+
+- wide variety low-power comunication technologies (BLE, Zigbee, LoRa, SigFox... and some wired alternatives too)
+- IP protocols have been adapted to work over these
+
+.center[
+    <img src="images/iot-protocols2.png" alt="" style="width:720px;"/>
+]
+
+---
+
+## Network Protocols for IoT Security (2)
+
+Generic security protocols for low-power IoT networks?
+
+
+.center[
+    <img src="images/iot-protocols3.png" alt="" style="width:720px;"/>
+]
+---
+
+## Exercise: Secure Communication using DTLS over IPv6 and 6LoWPAN
 
 Follow the instructions in the notebook **riot/security/dtls/dtls.ipynb**
 
 ---
 
-## Exercise: standard and secure firmware update
+## Securing IoT Software (1)
+
+What Internet-age software has taught us:
+
+- you can’t secure what you can’t update!
+- software updates are an attack vector!
+
+=> **Enabling (legitimate) software updates is crucial and difficult**
+
+---
+## Securing IoT Software (2)
+
+SUIT standard work-in progress at IETF draft-ietf-suit-manifest-09
+
+.center[
+    <img src="images/suit-slides1.png" alt="" style="width:720px;"/>
+]
+
+---
+## SUIT Workflow
+
+
+.center[
+    <img src="images/suit-slides2.png" alt="" style="width:720px;"/>
+]
+
+---
+
+## Exercise: Secure IoT Firmware Update using SUIT and CoAP
 
 Follow the instructions in the notebook **riot/security/ota/ota.ipynb**
 
