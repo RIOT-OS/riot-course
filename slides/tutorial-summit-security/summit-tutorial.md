@@ -27,7 +27,7 @@ class: center, middle
 1. Learn how to write and build a RIOT application
 
   .right[
-      <img src="images/riot-logo.png" alt="" style="width:100px;"/>
+      <img src="images/riot-logo-circular.png" alt="" style="width:200px;"/>
   ]
 
 --
@@ -516,7 +516,13 @@ class: center, middle
 
 ## Why is security difficult on low-end IoT devices ?
 
-blablabla
+To secure IoT devices, one must consider attacks of diverse natures. Let's start by distinguishing
+the main types of attacks.
+
+.center[
+    <img src="images/iot-attack-levels.png" alt="" style="width:720px;"/>
+]
+
 
 ---
 
