@@ -10,16 +10,15 @@ class: center, middle
 
 ## Agenda
 
-==1. Goals of Tutorial==
+1. Goals of Tutorial
 
 2. Tutorial Tooling
 
-3. RIOT: Quick Overview
+3. A Quick Overview of RIOT
 
-4. RIOT Hands-on Crash-course
+4. First Steps Hands-On with RIOT
 
-5. IoT Security Hands-on Crash-course
-
+5. IoT Security Hands-On
 
 ---
 
@@ -65,6 +64,20 @@ class: center, middle
 --
 
 5. Exercise 5: secure firmware update over the network with SUIT and CoAP
+
+---
+
+## Agenda
+
+1. Goals of Tutorial
+
+2. Tutorial Tooling
+
+3. A Quick Overview of RIOT
+
+4. First Steps Hands-On with RIOT
+
+5. IoT Security Hands-On
 
 ---
 
@@ -136,6 +149,20 @@ IoT-LAB is a large scale experimentation testbed]
 .center[
   **Short demo: in Jupyterlab, read the notebook **start.ipynb**
 ]
+
+---
+
+## Agenda
+
+1. Goals of Tutorial
+
+2. Tutorial Tooling
+
+3. A Quick Overview of RIOT
+
+4. First Steps Hands-On with RIOT
+
+5. IoT Security Hands-On
 
 ---
 
@@ -297,6 +324,20 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 ---
 
+## Agenda
+
+1. Goals of Tutorial
+
+2. Tutorial Tooling
+
+3. A Quick Overview of RIOT
+
+4. First Steps Hands-On with RIOT
+
+5. IoT Security Hands-On
+
+---
+
 class: center, middle
 
 ## Getting started
@@ -450,6 +491,20 @@ Follow the instructions in the notebook **riot/basics/shell/shell.ipynb**
 .center[
     <img src="images/notebook-shell.png" alt="" style="width:600px"/>
 ]
+
+---
+
+## Agenda
+
+1. Goals of Tutorial
+
+2. Tutorial Tooling
+
+3. A Quick Overview of RIOT
+
+4. First Steps Hands-On with RIOT
+
+5. IoT Security Hands-On
 
 ---
 
