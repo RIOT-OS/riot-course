@@ -1,14 +1,14 @@
 class: center, middle
 
-# RIOT Beginner Tutorial
+# RIOT Tutorial
 
-## RIOT Summit
+## IoT Security with Microcontrollers
 
 <a href=https://github.com/riot-os/riot-course>https://github.com/riot-os/riot-course</a>
 
 ---
 
-## Goal of the tutorial
+## Goals of the tutorial (1)
 
 1. Learn how to write and build a RIOT application
 
@@ -18,15 +18,8 @@ class: center, middle
 
 --
 
-2. Use IoT-LAB to run a RIOT application remotely on real hardware
 
-  .right[
-      <img src="images/fit-iotlab-logo.png" alt="" style="width:100px;"/>
-  ]
-
---
-
-3. Learn the basics of security on IoT device
+2. Overview the basics of security on IoT device
 
   .right[
       <img src="images/cadenas.png" alt="" style="width:100px;"/>
@@ -34,11 +27,39 @@ class: center, middle
 
 --
 
-4. Perform a firmware update
+3. Hands-on activities towards final goal: secure IoT firmware update over the network!
 
 ---
 
-## Tutorial overview (1)
+## Goals of the tutorial (2)
+
+1. Exercise 1: compute hashes using SHA256 and SHA3-256
+
+--
+
+2. Exercise 2: sign and verify signature using ed25519
+
+--
+
+3. Exercise 3: encrypt and decrypt a message using AES128 (CTR Mode)
+
+--
+
+4. Exercise 4: secure communication using DTLS 1.2
+
+--
+
+5. Exercise 5: secure firmware update with SUIT 
+
+---
+
+## Tutorial Tooling (1)
+
+1. Embedded software: we use the RIOT code base + ecosystem
+
+--
+
+2. Embedded hardware: we use the open-access testbed IoT-LAB to run RIOT code remotely on micro-controllers
 
 .center[
     <img src="images/tutorial-summary.png" alt="" style="width:720px;"/>
@@ -46,7 +67,7 @@ class: center, middle
 
 ---
 
-## Tutorial overview (2)
+## Tutorial Tooling (2)
 
 - No setup required, all activities are performed online in Jupyter Notebooks
 
