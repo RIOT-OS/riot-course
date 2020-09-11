@@ -152,6 +152,17 @@ IoT-LAB is a large scale experimentation testbed]
 
 ---
 
+## About the Workflow
+
+- for each exercise you will manipulate, compile and run C code extending the RIOT code base, via a Jupyter notebook
+
+- for each exercise, we will follow our typical 2-step process:
+
+1. build for the 'native' target, to run RIOT in a Linux process, typically used for debugging purposes;
+2. build for the microcontroller target, and run RIOT on an IoT device accessed via the testbed.
+
+---
+
 ## Agenda
 
 1. Goals of Tutorial
