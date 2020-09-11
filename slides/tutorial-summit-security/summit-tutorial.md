@@ -535,6 +535,20 @@ To secure IoT devices, one must consider attacks of diverse nature.
 
 ---
 
+## What's special about IoT Security?
+
+Mechanisms must:
+
+- require 10^6 less (RAM and Flash) memory;
+- require 10^6 less (control and user) traffic throughput;
+- support much smaller packet size (very efficiently);
+- function with much weaker CPU, 10^3 slower or less;
+- human factor is different (not 1:1 relationship for humans / machines);
+- secure storage of secrets (e.g. cryptographic keys) is a challenge on
+simplistic low-end IoT device.
+
+---
+
 ## Security in Practice
 
 IoT security in practice must combine 
@@ -575,19 +589,28 @@ Typical building blocks are:
 
 ## Exercise: Compute a Hash with SHA-256 and SHA3-256
 
-Follow the instructions in the notebook **riot/security/hash/hash.ipynb**
+- Some configurations of SHA-3 and SHA-2 are typically used on low-power IoT devices.
+
+- Follow the instructions in the notebook **riot/security/hash/hash.ipynb**
 
 ---
 
 ## Exercise: Sign / Verify a Digital Signature with ed25519
 
-Follow the instructions in the notebook **riot/security/signature/signature.ipynb**
+- Elliptic Curve Crypto is preferred on low-end IoT devices. 
+
+- A popular solution here is the Edwards curve Digital Signature Algorithm (EdDSA), a variant of the
+Schnorr signature scheme, on the ed25519 curve.
+
+- Follow the instructions in the notebook **riot/security/signature/signature.ipynb**
 
 ---
 
 ## Exercise: Encrypt / Decrypt a Message using AES128 (CTR Mode)
 
-Follow the instructions in the notebook **riot/security/encyption/encyption.ipynb**
+- AES is a popular solution for symmetric cryptography on low-end IoT devices.
+
+- Follow the instructions in the notebook **riot/security/encyption/encyption.ipynb**
 
 ---
 
@@ -616,7 +639,13 @@ Generic security protocols for low-power IoT networks?
 
 ## Exercise: Secure Communication using DTLS over IPv6 and 6LoWPAN
 
-Follow the instructions in the notebook **riot/security/dtls/dtls.ipynb**
+- DTLS (Datagram Transport Layer Security) is a protocol standardized by the Internet
+Engineering Task Force (IETF) which secures communications over UDP.
+
+- DTLS guarantees the integrity, authenticity and confidentiality of the data flowing through
+the secure channel it establishes from A to B, over UDP.
+
+- Follow the instructions in the notebook **riot/security/dtls/dtls.ipynb**
 
 ---
 
@@ -630,9 +659,10 @@ What Internet-age software has taught us:
 => **Enabling (legitimate) software updates is crucial and difficult**
 
 ---
+
 ## Securing IoT Software (2)
 
-SUIT standard work-in progress at IETF draft-ietf-suit-manifest-09
+SUIT standard (work-in progress at IETF, see draft-ietf-suit-manifest-09)
 
 .center[
     <img src="images/suit-slides1.png" alt="" style="width:720px;"/>
@@ -650,7 +680,9 @@ SUIT standard work-in progress at IETF draft-ietf-suit-manifest-09
 
 ## Exercise: Secure IoT Firmware Update using SUIT and CoAP
 
-Follow the instructions in the notebook **riot/security/ota/ota.ipynb**
+- This exercise combines building blocks from the previous exercises! Hashing, signature, low-power network protocol stack, and SUIT-compliant RIOT firmware update security.
+
+- Follow the instructions in the notebook **riot/security/ota/ota.ipynb**
 
 ---
 
