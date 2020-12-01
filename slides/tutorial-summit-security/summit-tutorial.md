@@ -610,7 +610,7 @@ Schnorr signature scheme, on the ed25519 curve.
 
 - AES is a popular solution for symmetric cryptography on low-end IoT devices.
 
-- Follow the instructions in the notebook **riot/security/encyption/encyption.ipynb**
+- Follow the instructions in the notebook **riot/security/encryption/encryption.ipynb**
 
 ---
 
