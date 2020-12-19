@@ -460,7 +460,10 @@ In jupyterlab, open the notebook **riot/basics/hello-world/hello-world.ipynb**
 and follow the instructions.
 
 .center[
-    <img src="images/notebook-hello-world.png" alt="" style="width:500px"/>
+<form>
+    <input id="login_hello" type="text" oninput="check_login('login_hello', 'launcher_hello')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_hello" type="button" value="Launch notebook" onclick="open_notebook('login_hello', 'riot/basics/hello-world/hello-world.ipynb')" disabled>
+</form>
 ]
 
 ---
@@ -500,7 +503,10 @@ $ USEMODULE=xtimer make BOARD=b-l072z-lrwan1
 Follow the instructions in the notebook **riot/basics/shell/shell.ipynb**
 
 .center[
-    <img src="images/notebook-shell.png" alt="" style="width:600px"/>
+<form>
+    <input id="login_shell" type="text" oninput="check_login('login_shell', 'launcher_shell')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_shell" type="button" value="Launch notebook" onclick="open_notebook('login_shell', 'riot/basics/shell/shell.ipynb')" disabled>
+</form>
 ]
 
 ---
@@ -593,6 +599,13 @@ Typical building blocks are:
 
 - Follow the instructions in the notebook **riot/security/hash/hash.ipynb**
 
+.center[
+<form>
+    <input id="login_hash" type="text" oninput="check_login('login_hash', 'launcher_hash')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_hash" type="button" value="Launch notebook" onclick="open_notebook('login_hash', 'riot/security/hash/hash.ipynb')" disabled>
+</form>
+]
+
 ---
 
 ## Exercise: Sign / Verify a Digital Signature with ed25519
@@ -604,6 +617,13 @@ Schnorr signature scheme, on the ed25519 curve.
 
 - Follow the instructions in the notebook **riot/security/signature/signature.ipynb**
 
+.center[
+<form>
+    <input id="login_signature" type="text" oninput="check_login('login_signature', 'launcher_signature')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_signature" type="button" value="Launch notebook" onclick="open_notebook('login_signature', 'riot/security/signature/signature.ipynb')" disabled>
+</form>
+]
+
 ---
 
 ## Exercise: Encrypt / Decrypt a Message using AES128 (CTR Mode)
@@ -611,6 +631,13 @@ Schnorr signature scheme, on the ed25519 curve.
 - AES is a popular solution for symmetric cryptography on low-end IoT devices.
 
 - Follow the instructions in the notebook **riot/security/encryption/encryption.ipynb**
+
+.center[
+<form>
+    <input id="login_encrypt" type="text" oninput="check_login('login_encrypt', 'launcher_encrypt')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_encrypt" type="button" value="Launch notebook" onclick="open_notebook('login_encrypt', 'riot/security/encryption/encryption.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -646,6 +673,13 @@ Engineering Task Force (IETF) which secures communications over UDP.
 the secure channel it establishes from A to B, over UDP.
 
 - Follow the instructions in the notebook **riot/security/dtls/dtls.ipynb**
+
+.center[
+<form>
+    <input id="login_dtls" type="text" oninput="check_login('login_dtls', 'launcher_dtls')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_dtls" type="button" value="Launch notebook" onclick="open_notebook('login_dtls', 'riot/security/dtls/dtls.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -683,6 +717,13 @@ SUIT standard (work-in progress at IETF, see draft-ietf-suit-manifest-09)
 - This exercise combines building blocks from the previous exercises! Hashing, signature, low-power network protocol stack, and SUIT-compliant RIOT firmware update security.
 
 - Follow the instructions in the notebook **riot/security/ota/ota.ipynb**
+
+.center[
+<form>
+    <input id="login_ota" type="text" oninput="check_login('login_ota', 'launcher_ota')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_ota" type="button" value="Launch notebook" onclick="open_notebook('login_ota', 'riot/security/ota/ota.ipynb')" disabled>
+</form>
+]
 
 ---
 
