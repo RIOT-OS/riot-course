@@ -6,33 +6,80 @@ class: center, middle
 
 ## Your working environment
 
-- The [FIT IoT-LAB](https://www.iot-lab.info) testbed will be used to perform
-  the exercises that require hardware.
+- In all sections, we assume that this course is located in **~/riot-course**
 
-  Create an account at [https://www.iot-lab.info/testbed/signup](https://www.iot-lab.info/testbed/signup)
+- Exercises are located in: **~/riot-course/exercises**
 
-- For the ease of use, all exercises are performed online in Jupyter Notebooks
+- The RIOT sources are located in: **~/riot-course/RIOT**
 
-.center[
-    <img src="images/jupyter.png" alt="" style="width:600px;"/>
-]
+- The [FIT IoT-LAB](https://www.iot-lab.info) testbed can be used to achieve
+  the exercises requiring some hardware (especially in the
+  [riot-networking](https://riot-os.github.io/riot-course/slides/04-networking-in-riot)
+  section)
+
+- For simplicity, all exercises can be done using a pre-configured virtual
+  machine (VM). To run the VM, either install:
+  - [Virtualbox](https://www.virtualbox.org/) (>= 5.2) and the corresponding
+    version of the [Virtualbox extention
+    pack](https://www.virtualbox.org/wiki/Downloads)
+  - [VMWare player](https://www.vmware.com/products/workstation-player.html)
 
 ---
 
-## About the Jupyter Notebooks
+## Setup the VM
 
-.center[
-Available at **https://labs.iot-lab.info**
+There are 2 ways to setup and start the VM:
 
+1. Download the VM from [here](http://demo-fit.saclay.inria.fr/vms/RIOT-VM.ova)
+   and import it as new appliance in Virtualbox or VMWare. Then launch the VM.
 
-<img src="images/iotlab-jupyterhub.png" alt="" style="width:300px;"/>
+2. Use [vagrant](https://www.vagrantup.com/):
+  ```sh
+  $ git clone https://github.com/riot-os/riot-course
+  $ cd riot-course
+  $ vagrant up
+  $ vagrant ssh
+  ```
 
-**Short demo: discover Jupyterlab notebooks!**
-<form class=notebook>
-    <input class=login id="login_start" type="text" oninput="check_login('login_start', 'launcher_start')" placeholder="Enter your IoT-LAB login">
-    <input class=launcher id="launcher_start" type="button" value="Launch notebook" onclick="open_notebook('login_start', 'start.ipynb')">
-</form>
-]
+*Note:* Keyboard layout is `en` by default. To toggle the keyboard layout,
+for example to `fr`:
+- From the command line, use
+```sh
+$ setxkbmap fr
+```
+- From the GNOME interface, click on `en` at the top right of the menu bar and
+  switch to `fr`
+
+---
+
+## Retrieve the latest version of the course
+
+1. In the VM, open a terminal (or use `vagrant ssh`)
+
+2. Update the sources of the riot-course:
+```sh
+$ cd ~/riot-course
+$ git pull --recurse-submodules
+```
+
+---
+
+## Setup your FIT IoT-LAB access (optional)
+
+- First you need to create an account on FIT IoT-LAB at
+  <a href=https://www.iot-lab.info/testbed/#/signup>
+  https://www.iot-lab.info/testbed/#/signup</a>
+
+- In the VM, setup your SSH access to the FIT IoT-LAB by following
+  [this tutorial](https://www.iot-lab.info/tutorials/ssh-access/)
+
+- In the VM, register your FIT IoT-LAB login/password locally using:
+  ```sh
+  $ iotlab-auth -u <your login>
+  ```
+
+In any case, it is recommended to play the
+[online FIT IoT-LAB tutorials](https://www.iot-lab.info/tutorials/) first.
 
 ---
 
