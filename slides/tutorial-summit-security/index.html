@@ -51,32 +51,14 @@
   <body>
     <!-- <textarea id=source>
     </textarea> -->
-    <script src="../remark-latest.min.js">
-    </script>
+    <script src="../remark-latest.min.js"></script>
     <script>
-      function open_notebook(login_id, notebook_path) {
-        let login = document.getElementById(login_id).value
-        if (login != "") {
-          let notebook_url = `https://labs.iot-lab.info/user/${login}/lab/tree/${notebook_path}`
-          window.open(notebook_url, '_blank')
-        }
-      }
-
-      function check_login(login_id, launcher_id) {
-        console.log("check login")
-        let login = document.getElementById(login_id).value
-        if (login == "") {
-          document.getElementById(launcher_id).disabled = true
-        } else {
-          document.getElementById(launcher_id).disabled = false
-        }
-      }
-
       var slideshow = remark.create({sourceUrl: 'summit-tutorial.md',
                                      highlightStyle: 'zenburn',
                                      highlightLines: true,
                                      countIncrementalSlides: true,
                                      slideNumberFormat: ''});
     </script>
+    <script src="../notebook-iotlab.js"></script>
   </body>
 </html>
