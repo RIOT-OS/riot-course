@@ -44,5 +44,5 @@ slideshow.on('afterShowSlide', function(slide) {
   }
 
   document.getElementById(loginId).value = login
-  document.getElementById(launcherId).disabled = false
+  document.getElementById(launcherId).disabled = (login == "")
 })
