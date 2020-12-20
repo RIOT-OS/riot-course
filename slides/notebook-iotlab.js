@@ -3,9 +3,9 @@ function open_notebook(loginId, notebookPath) {
   if (login == "") {
     return
   }
-  let notebookUrl = `https://labs.iot-lab.info/user/${login}/lab/tree/${notebookPath}`
-  window.open(notebookUrl, '_blank')
   localStorage.setItem("riot_course_iotlab_login", login);
+  let notebookUrl = `https://labs.iot-lab.info/hub/spawn?next=/user/${login}/lab/tree/${notebookPath}`
+  window.open(notebookUrl, 'top')
 }
 
 function check_login(loginId, launcherId) {
