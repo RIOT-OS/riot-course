@@ -33,7 +33,7 @@ Here is a list of existing tutorials:
 
 - [RIOT Summit - Beginner Tutorial on LoRaWAN](https://riot-os.github.io/riot-course/slides/tutorial-summit-lorawan)
 - [RIOT Summit - Beginner Tutorial on Security](https://riot-os.github.io/riot-course/slides/tutorial-summit-security)
-- [Inria Tech Talk - StationF](https://riot-os.github.io/riot-course/slides/techtalk-stationf)
+- [Inria Academy Master Class - Inria Chile](https://riot-os.github.io/riot-course/slides/tutorial-inria-academy)
 
 ## Using the course
 
