@@ -8,7 +8,8 @@
 
 #include <string.h>
 
-#include "xtimer.h"
+#include "timex.h"
+#include "ztimer.h"
 
 #include "net/loramac.h"
 #include "semtech_loramac.h"

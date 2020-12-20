@@ -8,7 +8,8 @@
 
 #include <string.h>
 
-#include "xtimer.h"
+#include "timex.h"
+#include "ztimer.h"
 
 #include "net/loramac.h"
 #include "semtech_loramac.h"
@@ -50,7 +51,7 @@ int main(void)
 
     while (1) {
         /* wait 20 secs */
-        xtimer_sleep(20);
+        ztimer_sleep(ZTIMER_MSEC, 20 * MS_PER_SEC);
 
         /* send the LoRaWAN message */
         printf("Sending message: %s\n", message);

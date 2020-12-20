@@ -6,7 +6,6 @@ BOARD ?= b-l072z-lrwan1
 
 # Default LoRa region is Europe and default band is 868MHz
 
-USEMODULE += xtimer
 
 DEVELHELP ?= 1
 

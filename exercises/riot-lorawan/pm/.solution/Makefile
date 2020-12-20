@@ -8,7 +8,6 @@ DRIVER ?= sx1276
 # Default LoRa region is Europe and default band is 868MHz
 LORA_REGION ?= EU868
 
-USEMODULE += xtimer
 USEMODULE += hts221
 USEMODULE += $(DRIVER) 
 
