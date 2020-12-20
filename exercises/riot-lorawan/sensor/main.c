@@ -8,7 +8,8 @@
 
 #include <string.h>
 
-#include "xtimer.h"
+#include "timex.h"
+#include "ztimer.h"
 
 #include "net/loramac.h"
 #include "semtech_loramac.h"
@@ -30,7 +31,7 @@ static void sender(void)
     while (1) {
         char message[32];
         /* wait 20 secs */
-        xtimer_sleep(20);
+        ztimer_sleep(ZTIMER_MSEC, 20 * MS_PER_SEC);
 
         /* TODO: do some measurements */
 
