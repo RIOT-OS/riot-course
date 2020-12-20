@@ -548,20 +548,16 @@ class: center, middle
 
 ## About the Jupyter Notebooks
 
-- Available at https://labs.iot-lab.info
-
 .center[
-      <img src="images/iotlab-jupyterhub.png" alt="" style="width:300px;"/>
-]
+Available at **https://labs.iot-lab.info**
 
-- No setup required! Just use the provided IoT-LAB credentials
+<img src="images/iotlab-jupyterhub.png" alt="" style="width:300px;"/>
 
-- Source code of the notebooks is available at <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    [https://github.com/iot-lab/iot-lab-training](https://github.com/iot-lab/iot-lab-training)
-
-.center[
-  **Short demo:** in Jupyterlab, read the notebook **start.ipynb**
+**Short demo: discover Jupyterlab notebooks!**
+<form class=notebook>
+    <input class=login id="login_start" type="text" oninput="check_login('login_start', 'launcher_start')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_start" type="button" value="Launch notebook" onclick="open_notebook('login_start', 'start.ipynb')" disabled>
+</form>
 ]
 
 ---
@@ -677,7 +673,10 @@ In jupyterlab, open the notebook **riot/basics/hello-world/hello-world.ipynb**
 and follow the instructions.
 
 .center[
-    <img src="images/notebook-hello-world.png" alt="" style="width:500px"/>
+<form class=notebook>
+    <input class=login id="login_hello" type="text" oninput="check_login('login_hello', 'launcher_hello')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_hello" type="button" value="Launch notebook" onclick="open_notebook('login_hello', 'riot/basics/hello-world/hello-world.ipynb')" disabled>
+</form>
 ]
 
 ---
@@ -717,8 +716,12 @@ $ USEMODULE=xtimer make BOARD=b-l072z-lrwan1
 Follow the instructions in the notebook **riot/basics/shell/shell.ipynb**
 
 .center[
-    <img src="images/notebook-shell.png" alt="" style="width:600px"/>
+<form class=notebook>
+    <input class=login id="login_shell" type="text" oninput="check_login('login_shell', 'launcher_shell')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_shell" type="button" value="Launch notebook" onclick="open_notebook('login_shell', 'riot/basics/shell/shell.ipynb')" disabled>
+</form>
 ]
+
 
 ---
 
@@ -727,7 +730,10 @@ Follow the instructions in the notebook **riot/basics/shell/shell.ipynb**
 Follow the instructions in the notebook **riot/basics/sensors/sensors.ipynb**
 
 .center[
-    <img src="images/notebook-sensors.png" alt="" style="width:600px"/>
+<form class=notebook>
+    <input class=login id="login_sensors" type="text" oninput="check_login('login_sensors', 'launcher_sensors')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_sensors" type="button" value="Launch notebook" onclick="open_notebook('login_sensors', 'riot/basics/sensors/sensors.ipynb')" disabled>
+</form>
 ]
 
 ---
