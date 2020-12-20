@@ -134,20 +134,17 @@ IoT-LAB is a large scale experimentation testbed]
 
 ## About the Jupyter Notebooks
 
-- Available at https://labs.iot-lab.info
-
 .center[
-      <img src="images/iotlab-jupyterhub.png" alt="" style="width:300px;"/>
-]
+Available at **https://labs.iot-lab.info**
 
-- No setup required!
 
-- Source code of the notebooks is available at <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    [https://github.com/iot-lab/iot-lab-training](https://github.com/iot-lab/iot-lab-training)
+<img src="images/iotlab-jupyterhub.png" alt="" style="width:300px;"/>
 
-.center[
-  **Short demo: in Jupyterlab, read the notebook **start.ipynb**
+**Short demo: discover Jupyterlab notebooks!**
+<form class=notebook>
+    <input class=login id="login_start" type="text" oninput="check_login('login_start', 'launcher_start')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_start" type="button" value="Launch notebook" onclick="open_notebook('login_start', 'start.ipynb')" disabled>
+</form>
 ]
 
 ---
