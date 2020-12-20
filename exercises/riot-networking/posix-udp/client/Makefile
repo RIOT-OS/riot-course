@@ -13,7 +13,7 @@ USEMODULE += auto_init_gnrc_netif
 
 # Import network modules
 USEMODULE += gnrc_ipv6_default
-USEMODULE += gnrc_sock_udp
+USEMODULE += sock_udp
 
 # Import posix sockets
 
