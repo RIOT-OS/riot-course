@@ -224,4 +224,4 @@ was selected by the IoT-LAB booking system.
 
 <br><br><br><br><br>
 
-###.center[Follow the [getting-started](https://riot-os.github.io/riot-course/slides/02-getting-started) instructions]
+.center[Follow the [getting-started](https://riot-os.github.io/riot-course/slides/02-getting-started) instructions]
