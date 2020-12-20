@@ -39,7 +39,7 @@ slideshow.on('afterShowSlide', function(slide) {
 
   let login = ""
   let storedLogin = localStorage.riot_course_iotlab_login;
-  if (storedLogin != undefined || storedLogin != login) {
+  if (storedLogin != undefined && storedLogin != login) {
     login = storedLogin
   }
 
