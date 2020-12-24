@@ -326,53 +326,29 @@ Lots of public network operators:
 
 ---
 
-## Test TTN with RIOT: practice (1)
+## Test TTN with RIOT: practice
 
-- <a href="http://doc.riot-os.org/group__pkg__semtech-loramac.html">LoRaWAN port documentation</a>
+Follow the instructions in the notebook **riot/lorawan/ttn-getting-started/ttn-getting-started.ipynb**
 
-- Build and run the demo application provided by RIOT (in `~/riot-course/RIOT`)
-
-```sh
-make -C tests/pkg_semtech-loramac flash term
-```
-
-- Configure the device using the shell of RIOT
-
-```sh
-> loramac set deveui 0000000000000000
-> loramac set appeui 0000000000000000
-> loramac set appkey 00000000000000000000000000000000
-```
-
-- Join the network using OTAA activation procedure
-
-```sh
-> loramac join otaa
-Join procedure succeeded!
-```
-
-- Send (and eventually receive) messages to the network
-
-```sh
-> loramac tx HelloWorld!
-Tx done
-```
-
----
-
-## Test TTN with RIOT: practice (2)
-
-- **Exercise:** `~/riot-course/exercises/riot-lorawan/simple`
-
-Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-lorawan/simple)
+.center[
+<form class=notebook>
+    <input class=login id="login_ttn_getting_started" type="text" oninput="check_login('login_ttn_getting_started', 'launcher_ttn_getting_started')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_ttn_getting_started" type="button" value="Launch notebook" onclick="open_notebook('login_ttn_getting_started', 'riot/lorawan/ttn-getting-started/ttn-getting-started.ipynb')" disabled>
+</form>
+]
 
 ---
 
 ## Exercise: Send sensor data to TTN
 
-- **Exercise:** `~/riot-course/exercises/riot-lorawan/sensor`
+Follow the instructions in the notebook **riot/lorawan/ttn-sensors/ttn-sensors.ipynb**
 
-Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-lorawan/sensor)
+.center[
+<form class=notebook>
+    <input class=login id="login_ttn_sensors" type="text" oninput="check_login('login_ttn_sensors', 'launcher_ttn_sensors')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_ttn_sensors" type="button" value="Launch notebook" onclick="open_notebook('login_ttn_sensors', 'riot/lorawan/ttn-sensors/ttn-sensors.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -421,9 +397,14 @@ https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
 
 ## Exercise: Integration with Cayenne LPP
 
-- **Exercise:** `~/riot-course/exercises/riot-lorawan/lpp`
+Follow the instructions in the notebook **riot/lorawan/ttn-cayenne-lpp/ttn-cayenne-lpp.ipynb**
 
-Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-lorawan/lpp)
+.center[
+<form class=notebook>
+    <input class=login id="login_ttn_cayenne_lpp" type="text" oninput="check_login('login_ttn_cayenne_lpp', 'launcher_ttn_cayenne_lpp')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_ttn_cayenne_lpp" type="button" value="Launch notebook" onclick="open_notebook('login_ttn_cayenne_lpp', 'riot/lorawan/ttn-cayenne-lpp/ttn-cayenne-lpp.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -455,17 +436,14 @@ https://www.eclipse.org/paho/
 
 ## Exercise: Downlink from a LoRaWAN network
 
-- **Exercise:** `~/riot-course/exercises/riot-lorawan/downlink`
+Follow the instructions in the notebook **riot/lorawan/ttn-mqtt/ttn-mqtt.ipynb**
 
-Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-lorawan/downlink)
-
----
-
-## Exercise: enable low power
-
-- **Exercise:** `~/riot-course/exercises/riot-lorawan/pm`
-
-Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-lorawan/pm)
+.center[
+<form class=notebook>
+    <input class=login id="login_ttn_mqtt" type="text" oninput="check_login('login_ttn_mqtt', 'launcher_ttn_mqtt')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_ttn_mqtt" type="button" value="Launch notebook" onclick="open_notebook('login_ttn_mqtt', 'riot/lorawan/ttn-mqtt/ttn-mqtt.ipynb')" disabled>
+</form>
+]
 
 ---
 
