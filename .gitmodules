@@ -1,4 +1,0 @@
-[submodule "RIOT"]
-	path = RIOT
-	url = https://github.com/RIOT-OS/RIOT
-	branch = 2020.10-branch
