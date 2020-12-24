@@ -149,6 +149,19 @@ class: center, middle
 
 ---
 
+## Exercise: Basic 802.15.4 radio manipulations
+
+Follow the instructions in the notebook **riot/networking/802.15.4.ipynb**
+
+.center[
+<form class=notebook>
+    <input class=login id="login_802154" type="text" oninput="check_login('login_802154', 'launcher_802154')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_802154" type="button" value="Launch notebook" onclick="open_notebook('login_802154', 'riot/networking/802.15.4/udp.ipynb')" disabled>
+</form>
+]
+
+---
+
 ## The GNRC stack of RIOT
 
 .center[
@@ -160,18 +173,6 @@ class: center, middle
 - All internal components use a single API: **netapi**
 
 - The applications uses the **sock** API
-
----
-
-## Exercise: Basic IPv6 networking using the shell
-
-- **Exercise:** `~/riot-course/exercises/riot-networking/shell-basic-native`
-
-Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-networking/shell-basic-native)
-
-- **Exercise:** `~/riot-course/exercises/riot-networking/shell-udp-native`
-
-Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-networking/shell-udp-native)
 
 ---
 
@@ -228,6 +229,19 @@ char * ipv6_addr_to_str (char *result, const ipv6_addr_t *addr,
 
 ---
 
+## Exercise: IPv6 networking
+
+Follow the instructions in the notebook **riot/networking/ipv6/ipv6.ipynb**
+
+.center[
+<form class=notebook>
+    <input class=login id="login_ipv6" type="text" oninput="check_login('login_ipv6', 'launcher_ipv6')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_ipv6" type="button" value="Launch notebook" onclick="open_notebook('login_ipv6', 'riot/networking/ipv6/ipv6.ipynb')" disabled>
+</form>
+]
+
+---
+
 ## The Sock API (1)
 
 - Provides a common abstraction on top of any IP stack
@@ -277,9 +291,14 @@ void sock_<type>_close(sock_<type>_t *sock);
 
 ## Exercise: UDP client-server application
 
-**Exercise:** `~/riot-course/exercises/riot-networking/sock-udp`
+Follow the instructions in the notebook **riot/networking/sock-udp/sock-udp.ipynb**
 
-Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-networking/sock-udp)
+.center[
+<form class=notebook>
+    <input class=login id="login_sock_udp" type="text" oninput="check_login('login_sock_udp', 'launcher_sock_udp')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_sock_udp" type="button" value="Launch notebook" onclick="open_notebook('login_sock_udp', 'riot/networking/sock-udp/sock-udp.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -312,11 +331,16 @@ ssize_t sendto(int sockfd, const void *buf, size_t len, int flags,
 
 ---
 
-## Exercise: UDP client-server application
+## Exercise: Posix UDP client-server application
 
-**Exercise:** `~/riot-course/exercises/riot-networking/posix-udp`
+Follow the instructions in the notebook **riot/networking/udp/udp.ipynb**
 
-Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-networking/posix-udp)
+.center[
+<form class=notebook>
+    <input class=login id="login_udp" type="text" oninput="check_login('login_udp', 'launcher_udp')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_udp" type="button" value="Launch notebook" onclick="open_notebook('login_udp', 'riot/networking/udp/udp.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -366,14 +390,6 @@ Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/
 
 ---
 
-## Exercise: Using CoAP
-
-- **Exercise:** `~/riot-course/exercises/riot-networking/shell-coap-native`
-
-Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-networking/shell-coap-native)
-
----
-
 ## Using the gcoap API to setup a CoAP server (1)
 
 - Include the required header
@@ -399,6 +415,7 @@ gcoap_resp_init(coap_pkt_t *pdu, uint8_t *buf, size_t len, unsigned code);
 ssize_t gcoap_response(coap_pkt_t *pdu, uint8_t *buf,
                            size_t len, unsigned code);
 ```
+
 ---
 
 ## Using the gcoap API to setup a CoAP server (2)
@@ -420,73 +437,16 @@ gcoap_register_listener(&_listener);
 
 ---
 
-## Exercise: Using gcoap
+## Exercise: complete CoAP application
 
-- **Exercise:** `~/riot-course/exercises/riot-networking/gcoap`
-
-Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-networking/gcoap)
-
----
-
-## RIOT networking on hardware: use IoT-LAB
-
-.center[<a href=https://www.iot-lab.info>https://www.iot-lab.info</a><br><br>
-IoT-LAB is a large scale experimentation testbed]
-
-  - Can be used for testing wireless communication networks on small devices
-
-  - Can be used for learning IoT programming and communication protocols
-
-  - Can be used for testing software platforms
+Follow the instructions in the notebook **riot/networking/coap/coap.ipynb**
 
 .center[
-      <img src="images/iotlab-sites.png" alt="" style="width:220px;"/>&nbsp;
-      <img src="images/iotlab-nodes.png" alt="" style="width:220px;"/>&nbsp;
-      <img src="images/iotlab-photo.png" alt="" style="width:220px;"/>
-  ]
-
----
-
-## IoT-LAB in short
-
-- **2300** programmable nodes, 4 architectures
-  <br> &#x21d2; Cortex-M, MSP430, Cortex-A8, AVR
-
-- Heterogeneous platforms
-  <br> &#x21d2; RPI3, iotlab-m3, Atmel SAMR21-Xpro, ST B-L072Z-LRWAN1, nrf52, etc
-
-- Heterogeneous radios &#x21d2; 802.15.4, 802.15.4g, LoRa, BLE
-
-- Start learning IoT with IoT-LAB at
-  <a href=https://www.iot-lab.info/tutorials/>https://www.iot-lab.info/tutorials/</a>
-
-.center[
-      <img src="images/use-iotlab.png" alt="" style="width:450px;"/>
-  ]
-
----
-
-## Exercise: RIOT networking on hardware
-
-- **Exercise:** `~/riot-course/exercises/riot-networking/networking-iotlab`
-
-Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-networking/networking-iotlab)
-
-- **Exercise:** `~/riot-course/exercises/riot-networking/gcoap-iotlab`
-
-Follow the [exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-networking/gcoap-iotlab)
-
----
-
-## Exercise: Public IPv6 networking
-
-See: https://www.iot-lab.info/tutorials/riot-public-ipv6-m3/
-
----
-
-## Exercise: Public IPv6 networking and CoAP
-
-See: https://www.iot-lab.info/tutorials/riot-coap-m3/
+<form class=notebook>
+    <input class=login id="login_coap" type="text" oninput="check_login('login_coap', 'launcher_coap')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_coap" type="button" value="Launch notebook" onclick="open_notebook('login_coap', 'riot/networking/coap/coap.ipynb')" disabled>
+</form>
+]
 
 ---
 
