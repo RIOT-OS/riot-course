@@ -49,86 +49,50 @@ class: center, middle
 ## Tutorial overview (1)
 
 .center[
-    <img src="images/tutorial-summary.png" alt="" style="width:720px;"/>
+    <img src="images/tutorial-summary.png" alt="" style="width:700px;"/>
 ]
 
 ---
 
 ## Tutorial overview (2)
 
-- Follow the RIOT course on github:
-  <a href=https://github.com/riot-os/riot-course>https://github.com/riot-os/riot-course</a>
+- No setup required, all activities are performed online in Jupyter Notebooks
 
-- Use the preconfigured VM for building applications
+.center[
+    <img src="images/jupyter.png" alt="" style="width:75px;"/>
+]
 
-- Run the RIOT applications on [IoT-LAB](https://www.iot-lab.info) testbed
+- Run the RIOT applications on the [IoT-LAB](https://www.iot-lab.info) testbed
 
 - Hardware used:
 
   - [ST B-L072Z-LRWAN1](https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html): STM32L0 + LoRa radio
 
   .center[
-      <img src="images/en.b-l072z-lrwan1.jpg" alt="" style="width:150px;"/>
+      <img src="images/en.b-l072z-lrwan1.jpg" alt="" style="width:130px;"/>
   ]
 
   - [ST X-NUCLEO-IKS01A2](https://www.st.com/en/ecosystems/x-nucleo-iks01a2.html): extension shield with sensors
 
   .center[
-      <img src="images/en.x-nucleo-iks01a2_image.jpg" alt="" style="width:100px;"/>
+      <img src="images/en.x-nucleo-iks01a2_image.jpg" alt="" style="width:90px;"/>
   ]
 
 ---
 
-## About the VM
-
-- Compatible with VirtualBox 5.2 or VMWare Player
-
---
-
-- Download it from [here](http://demo-fit.saclay.inria.fr/vms/RIOT-VM.ova)
-  and import it in VirtualBox/VMWare. Then start it.
-
---
-
-- The full RIOT course is located in **~/riot-course**
-
-  - A local clone of RIOT is in **~/riot-course/RIOT**
-
-  - Exercices are located in **~/riot-course/exercises**
-
-  - **Important:** Update the local copy of this tutorial:
-  ```
-  $ cd ~/riot-course
-  $ git pull --recurse-submodules
-  ```
-
---
-
-- All required development tools are already installed:
-
-  - The GNU ARM Embedded 7.3 toolchain is installed
-
-  - The IoT-LAB [cli-tools](https://github.com/iot-lab/cli-tools) are installed
-
-  - A list of common editors: Vim, Emacs, VSCode
-
----
-
-## About IoT-LAB
-
-.center[<a href=https://www.iot-lab.info>https://www.iot-lab.info</a><br><br>
-IoT-LAB is a large scale experimentation testbed]
-
-  - Can be used for testing wireless communication networks on small devices
-
-  - Can be used for learning IoT programming and communication protocols
-
-  - Can be used for testing software platforms
+## About the Jupyter Notebooks
 
 .center[
-      <img src="images/iotlab-nodes.png" alt="" style="width:250px;"/>&nbsp;
-      <img src="images/iotlab-sites.png" alt="" style="width:250px;"/>
-  ]
+Available at **https://labs.iot-lab.info**
+
+<img src="images/iotlab-jupyterhub.png" alt="" style="width:300px;"/>
+
+**Short demo: discover Jupyterlab notebooks!**
+<form class=notebook>
+    <input class=login id="login_start" type="text" oninput="check_login('login_start', 'launcher_start')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_start" type="button" value="Launch notebook" onclick="open_notebook('login_start', 'start.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -158,65 +122,25 @@ IoT-LAB is a large scale experimentation testbed]
 --
 
 - Start learning IoT with IoT-LAB at
-  <a href=https://www.iot-lab.info/tutorials/>https://www.iot-lab.info/tutorials/</a>
+  <a href=https://www.iot-lab.info/tutorials/>https://www.iot-lab.info/learn/</a>
 
 ---
 
-## Setup your IoT-LAB access in the VM (1)
+## About IoT-LAB
 
-1. Start the VM and open a command window
+.center[<a href=https://www.iot-lab.info>https://www.iot-lab.info</a><br><br>
+IoT-LAB is a large scale experimentation testbed]
 
-2. Grab one paper with the account credentials (user is riotsummit*X*)
+  - Can be used for testing wireless communication networks on small devices
 
-3. Register your IoT-LAB credentials
-   ```sh
-   $ iotlab-auth -u riotsummitX
-   ```
-4. Start an experiment with one ST node on Saclay site:
-   ```sh
-   $ iotlab-experiment submit -n summit -d 300 \
-                               -l 1,archi=st-lrwan1:sx1276+site=saclay
-   Using custom api_url: https://www.iot-lab.info/rest/
-   {
-      "id": 133XXX
-   }
-   ```
-   The experiment will book one node during 300 minutes on Saclay site
+  - Can be used for learning IoT programming and communication protocols
 
-5. Wait for the experiment to be in "Running" state:
-  ```sh
-  $ iotlab-experiment wait -i 133XXX
-  "Running"
-  ```
----
+  - Can be used for testing software platforms
 
-## Setup your IoT-LAB access in the VM (2)
-
-- Check the name of the iotlab node associated to the experiment:
-  ```sh
-  $ iotlab-experiment get -i 133XXX -r
-  {
-      "items": [
-          {
-              "archi": "st-lrwan1:sx1276",
-              "mobile": "0",
-              "mobility_type": " ",
-              "network_address": "st-lrwan1-10.saclay.iot-lab.info",
-              "site": "saclay",
-              "state": "Alive",
-              "uid": " ",
-              "x": "5",
-              "y": "67.3",
-              "z": "4"
-          }
-      ]
-  }
-  ```
-
-&#x21d2; in this case, **st-lrwan1-10.saclay.iot-lab.info** is the node that
-was selected by the IoT-LAB booking system.
-
-.center[**Remember yours, you will use it during the tutorial**]
+.center[
+      <img src="images/iotlab-nodes.png" alt="" style="width:250px;"/>&nbsp;
+      <img src="images/iotlab-sites.png" alt="" style="width:250px;"/>
+  ]
 
 ---
 
@@ -225,3 +149,11 @@ was selected by the IoT-LAB booking system.
 <br><br><br><br><br>
 
 .center[Follow the [getting-started](https://riot-os.github.io/riot-course/slides/02-getting-started) instructions]
+
+---
+
+## LoRaWAN
+
+<br><br><br><br><br>
+
+.center[Follow the [lorawan-with-riot](https://riot-os.github.io/riot-course/slides/05-lorawan-with-riot) instructions]
