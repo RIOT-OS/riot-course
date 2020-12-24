@@ -189,8 +189,14 @@ static char stack[THREAD_STACKSIZE_MAIN];
 
 ## Exercise: Thread
 
-Follow the instructions of the
-[first thread exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/first-thread)
+Follow the instructions in the notebook **riot/basics/threading/threading.ipynb**
+
+.center[
+<form class=notebook>
+    <input class=login id="login_threading" type="text" oninput="check_login('login_threading', 'launcher_threading')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_threading" type="button" value="Launch notebook" onclick="open_notebook('login_threading', 'riot/basics/threading/threading.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -223,8 +229,14 @@ mutex_unlock(&lock);
 
 ## Exercise: Thread concurrency
 
-Follow the instructions of the
-[thread concurrency exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/thread-concurrency)
+Follow the instructions in the notebook **riot/basics/threading-concurrency/threading-concurrency.ipynb**
+
+.center[
+<form class=notebook>
+    <input class=login id="login_threading_concurrency" type="text" oninput="check_login('login_threading_concurrency', 'launcher_threading_concurrency')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_threading_concurrency" type="button" value="Launch notebook" onclick="open_notebook('login_threading_concurrency', 'riot/basics/threading-concurrency/threading-concurrency.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -291,38 +303,14 @@ msg_init_queue(msg_queue, 8);
 
 ## Exercise: IPC
 
-Follow the instructions of the
-[thread IPC exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/thread-ipc)
+Follow the instructions in the notebook **riot/basics/threading-ipc/threading-ipc.ipynb**
 
----
-
-## Power management
-
-**Principle:** <br>
-> _when all threads are blocked/terminated, the scheduler switches to the_
-> _idle thread._<br>
-> _The idle thread then goes to lowest possible power mode._
-
-<table>
-<tr>
-  <td>
-    <ul>
-      <li>the desired low-power mode must be unblocked<br><br></li>
-      <li>the lowest possible power mode is selected ("Cascade")<br><br></li>
-      <li>API is defined in `pm_layered.h` from system `pm_layered` module</li>
-    </ul>
-  </td>
-  <td>
 .center[
-    <img src="images/riot-application.png" alt="" style="width:250px;"/>
+<form class=notebook>
+    <input class=login id="login_threading_ipc" type="text" oninput="check_login('login_threading_ipc', 'launcher_threading_ipc')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_threading_ipc" type="button" value="Launch notebook" onclick="open_notebook('login_threading_ipc', 'riot/basics/threading-ipc/threading-ipc.ipynb')" disabled>
+</form>
 ]
-  </td>
-</tr>
-</table>
-
-**Important:**
-- The board MCU must import the `pm_layered` module
-- Still WIP, the design is subject to change in the future
 
 ---
 
@@ -387,14 +375,50 @@ US_PER_MS   /* number of milliseconds per seconds */
 
 ## Exercise: Timers
 
-Follow the instructions of the
-[timers exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/timers)
+Follow the instructions in the notebook **riot/basics/timers/timers.ipynb**
+
+.center[
+<form class=notebook>
+    <input class=login id="login_timers" type="text" oninput="check_login('login_timers', 'launcher_timers')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_timers" type="button" value="Launch notebook" onclick="open_notebook('login_timers', 'riot/basics/timers/timers.ipynb')" disabled>
+</form>
+]
+
+---
+
+## Power management
+
+**Principle:** <br>
+> _when all threads are blocked/terminated, the scheduler switches to the_
+> _idle thread._<br>
+> _The idle thread then goes to the lowest possible power mode._
+
+<table>
+<tr>
+  <td>
+    <ul>
+      <li>the desired low-power mode must be unblocked<br><br></li>
+      <li>the lowest possible power mode is selected ("Cascade")<br><br></li>
+      <li>API is defined in `pm_layered.h` from system `pm_layered` module</li>
+    </ul>
+  </td>
+  <td>
+.center[
+    <img src="images/riot-application.png" alt="" style="width:250px;"/>
+]
+  </td>
+</tr>
+</table>
+
+**Important:**
+- The board MCU must import the `pm_layered` module
+- Still WIP, the design is subject to change in the future
 
 ---
 
 ## The hardware abstraction layer
 
-- Hardware abstraction layer relies on 3 blocks: **cpus**, **boards** and **drivers**
+- Hardware abstraction layer relies on 3 blocks: **cpu**, **boards** and **drivers**
 
 .center[
     <img src="images/riot-architecture.png" alt="" style="width:400px;"/>
@@ -509,13 +533,6 @@ int main()
 
 ---
 
-## Exercise: GPIO
-
-Follow the instructions of the
-[gpio exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/gpio)
-
----
-
 ## UART peripheral API
 
 - Allows to send and receive messages asynchronously from an UART
@@ -541,8 +558,14 @@ int main()
 
 ## Exercise: UART
 
-Follow the instructions of the
-[uart exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/uart)
+Follow the instructions in the notebook **riot/basics/uart/uart.ipynb**
+
+.center[
+<form class=notebook>
+    <input class=login id="login_uart" type="text" oninput="check_login('login_uart', 'launcher_uart')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_uart" type="button" value="Launch notebook" onclick="open_notebook('login_uart', 'riot/basics/uart/uart.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -581,8 +604,14 @@ rtc_set_alarm(&alarm_time, rtc_alarm_cb, NULL);
 
 ## Exercise: RTC
 
-Follow the instructions of the
-[rtc exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/rtc)
+Follow the instructions in the notebook **riot/basics/rtc/rtc.ipynb**
+
+.center[
+<form class=notebook>
+    <input class=login id="login_rtc" type="text" oninput="check_login('login_rtc', 'launcher_rtc')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_rtc" type="button" value="Launch notebook" onclick="open_notebook('login_rtc', 'riot/basics/rtc/rtc.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -656,8 +685,14 @@ driver_name_init(&dev, &driver_name_params[0]);
 
 ## Exercise: Use High-level drivers
 
-Follow the instructions of the
-[drivers exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/riot-basics/drivers)
+Follow the instructions in the notebook **riot/basics/sensors/sensors.ipynb**
+
+.center[
+<form class=notebook>
+    <input class=login id="login_sensors" type="text" oninput="check_login('login_sensors', 'launcher_sensors')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_sensors" type="button" value="Launch notebook" onclick="open_notebook('login_sensors', 'riot/basics/sensors/sensors.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -682,6 +717,18 @@ Follow the instructions of the
   - `Makefile` defines the url, version and commands to build the package
   - `Makefile.include` defines the inclusion directory
   - `Makefile.<package_name>` the RIOT makefile copied to the fetched sources
+
+---
+
+## Going further: read existing applications source code
+
+The RIOT source directory contains applications that can be used as examples
+for almost all features provided by RIOT.
+
+- See applications in the [examples directory](https://github.com/riot-os/riot/examples)
+
+- Test applications in [tests directory](https://github.com/riot-os/riot/tests) also provides good examples to start
+  the RIOT
 
 ---
 
