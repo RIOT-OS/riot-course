@@ -115,27 +115,16 @@ $ make BOARD=<target> -C <application_dir> flash term
 ## Exercise: your first RIOT application
 
 Let's build and run our first RIOT application !<br><br>
-You just need to follow the instructions in this
-[exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/getting-started/first-app)
 
-```sh
-$ cd ~/riot-course/exercises/getting-started/first-app
-$ make
-Building application "example" for "native" with MCU "native".
+In jupyterlab, open the notebook **riot/basics/hello-world/hello-world.ipynb**
+and follow the instructions.
 
-"make" -C /home/user/RIOT/boards/native
-"make" -C /home/user/RIOT/boards/native/drivers
-"make" -C /home/user/RIOT/core
-"make" -C /home/user/RIOT/cpu/native
-"make" -C /home/user/RIOT/cpu/native/periph
-"make" -C /home/user/RIOT/cpu/native/vfs
-"make" -C /home/user/RIOT/drivers
-"make" -C /home/user/RIOT/drivers/periph_common
-"make" -C /home/user/RIOT/sys
-"make" -C /home/user/RIOT/sys/auto_init
- text   data  bss    dec    hex   filename
- 20206  568   47652  68426  10b4a .../getting-started/first-app/bin/native/example.elf
-```
+.center[
+<form class=notebook>
+    <input class=login id="login_hello" type="text" oninput="check_login('login_hello', 'launcher_hello')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_hello" type="button" value="Launch notebook" onclick="open_notebook('login_hello', 'riot/basics/hello-world/hello-world.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -171,58 +160,14 @@ $ USEMODULE=xtimer make BOARD=b-l072z-lrwan1
 
 ## Exercise: write an application with a shell
 
-Follow the instructions in the
-[exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/getting-started/shell)
+Follow the instructions in the notebook **riot/basics/shell/shell.ipynb**
 
----
-
-## Interaction with the hardware
-
-Interaction with the hardware can be performed at 3 levels:
-
-- At board level by using predefined macros for controlling LEDs and buttons
-
-  &#x21d2; just include `board.h` to use them
-
---
-
-- At cpu level by using the MCU peripheral drivers APIs
-
-  &#x21d2; periph_gpio periph_i2c periph_uart, etc
-
-  This level is considered as the **HAL** of RIOT since it provides a common
-  API for all types/architectures of CPU
-
---
-
-- At driver level by using high level driver APIs for specific external
-  sensors/actuators/radios
-
-  &#x21d2; bmp180, hts221, sx1276, etc
-
----
-
-## Exercise: interaction with the hardware
-
-- Follow the instructions of the
-  [led exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/getting-started/led)
-  to toggle LEDs from shell commands
-
-- Follow the instructions of the
-  [sensor exercise README](https://github.com/riot-os/riot-course/tree/master/exercises/getting-started/sensor)
-  to read values from a sensor with shell commands
-
----
-
-## Going further: read existing applications source code
-
-The RIOT source directory contains applications that can be used as examples
-for almost all features provided by RIOT.
-
-- See applications in the `examples` directory
-
-- Test applications in `tests` directory also provides good examples to start
-  the RIOT
+.center[
+<form class=notebook>
+    <input class=login id="login_shell" type="text" oninput="check_login('login_shell', 'launcher_shell')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_shell" type="button" value="Launch notebook" onclick="open_notebook('login_shell', 'riot/basics/shell/shell.ipynb')" disabled>
+</form>
+]
 
 ---
 
@@ -230,11 +175,7 @@ for almost all features provided by RIOT.
 
 - Build & run your first RIOT application, native and on hardware
 
-- How to extend an application, the `shell`
-
-- Basic interaction with the hardware
-
-- Read sensor values
+- How to extend an application using the `shell`
 
 ---
 
