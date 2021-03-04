@@ -133,7 +133,7 @@ in the Internet of Things: A survey," IEEE Internet of ThingsJournal, 2016.
 - Decisions and orientations are taken by a **grass-root community**
 
 .center[
-    <img src="images/Commits-Monthly-RIOT-2012-2020.png" alt="" style="width:300px"/>
+    <img src="images/Commits-Monthly-RIOT-2012-2020.png" alt="" style="width:350px"/>
     <img src="images/riot-contributors.png" alt="" style="width:300px"/>
 
 ]
@@ -185,6 +185,11 @@ class: center, middle
 Long story short: see paper in IEEE Internet of Things Journal<br/>
 Preprint available at http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.pdf
 
+<br>
+<br>
+.center[
+<img src="images/riot-round-logo.png" alt="" style="width:220px;"/>
+]
 ---
 
 ## OS characteristics
@@ -434,6 +439,12 @@ class: center, middle
 
 # RIOT in action
 
+<br>
+<br>
+.center[
+<img src="images/riot-round-logo.png" alt="" style="width:220px;"/>
+]
+
 ---
 
 ## IoT deployments using RIOT
@@ -545,3 +556,9 @@ IoT-LAB is a **large scale experimentation testbed**]
 class: center, middle
 
 [Back to the course](https://github.com/riot-os/riot-course#content-of-the-course)
+
+<br>
+<br>
+.center[
+<img src="images/riot-round-logo.png" alt="" style="width:220px;"/>
+]
