@@ -2,40 +2,51 @@ class: center, middle
 
 # Introduction
 
+<br>
+<br>
+.center[
+<img src="images/riot-round-logo.png" alt="" style="width:220px;"/>
+]
+
+
 ---
 
-## What is RIOT
+## What is RIOT?
 
-- **operating system** for microcontrollers
+- An **operating system** for microcontroller-based IoT devices
 
  - **microkernel architecture** &#x21d2; require very low resources
  - **real-time** and **multi-threaded**
  - comes with **in-house networking stacks**
+ 
 
 --
 
 <br>
 
-- **open-source**: <a href="https://github.com/RIOT-OS/RIOT">https://github.com/RIOT-OS/RIOT</a>
+- An **open-source platform & ecosystem**: <a href="https://github.com/RIOT-OS/RIOT">https://github.com/RIOT-OS/RIOT</a>
 
  - free software platform
- - **world-wide community** of developers
+ - **easy to use** and __reuse__
+ - Standard programming in C, standard tooling
+ - **API is independent** from the hardware
+ 
 
 --
 
 <br>
 
-- **easy to use** and __reuse__
+- A **world-wide community** of developers 
 
- - Standard programming in C
- - Standard tooling
- - **API is independent** from the hardware
+ - lively exchanges on <a href="https://forum.riot-os.org/">Forum</a>, <a href="https://github.com/RIOT-OS/RIOT">GitHub</a> etc.
+ - contributions from hundreds of developers from industry, academia, and makers
+
 
 <br><br>
 
 ---
 
-## RIOT in the IoT world
+## RIOT in the IoT realm
 
 .center[<img src="images/iot-overview.png" alt="" style="width:600px;"/>
 <br/><br/>
@@ -46,26 +57,26 @@ class: center, middle
 
 ---
 
-## History of the project
+## History of RIOT
 
-- 2013: Inria, FU Berlin and HAW founded RIOT
+- 2013: Inria, FU Berlin and HAW co-founded RIOT
 
- - stemed from a French-German research project
+ - stemmed from a French-German research project
  - kernel evolved from FireKernel
 
 --
 
 - The community today:
 
-  - So far, **+200** different contributors to the master branch
+  - So far, **~300** different contributors to the master branch
   - Academics: Berkeley, UCLA, MIT, AIT, TZI, etc
-  - Industrial: Cisco, Samsung, ImgTec, Fujitsu, Thalès
+  - Industrial: Continental, Cisco, Samsung, ImgTec, Fujitsu, Thalès
   - SME: Zolertia, OTAKeys, Mesotic, Eistec, We-sens
   - Member of the EdgeXFoundry initiative
 
 --
 
-- Annual RIOT Summit: https://summit.riot-os.org
+- Annual symposium: the RIOT Summit <a href="https://summit.riot-os.org">https://summit.riot-os.org</a>
 
 .center[
 <img src="images/riot-summit.png" alt="" style="width:220px;"/>&nbsp;
@@ -124,6 +135,11 @@ in the Internet of Things: A survey," IEEE Internet of ThingsJournal, 2016.
 .center[
     <img src="images/riot-contributors.png" alt="" style="width:350px"/>
 ]
+<div style="position: absolute;right: 100px;">
+<span style="font-style: italic;font-size:12px;text-align:right">
+Monthly contributors to the RIOT master branch
+</span>
+</div>
 
 ---
 
@@ -159,8 +175,8 @@ class: center, middle
 # Technical overview
 
 <br/>
-Long story short: paper in IEEE Internet of Things Journal<br/>
-Preprint available: http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.pdf
+Long story short: see paper in IEEE Internet of Things Journal<br/>
+Preprint available at http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.pdf
 
 ---
 
