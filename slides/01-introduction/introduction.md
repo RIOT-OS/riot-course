@@ -133,8 +133,15 @@ in the Internet of Things: A survey," IEEE Internet of ThingsJournal, 2016.
 - Decisions and orientations are taken by a **grass-root community**
 
 .center[
-    <img src="images/riot-contributors.png" alt="" style="width:350px"/>
+    <img src="images/Commits-Monthly-RIOT-2012-2020.png" alt="" style="width:300px"/>
+    <img src="images/riot-contributors.png" alt="" style="width:300px"/>
+
 ]
+<div style="position: absolute;left: 100px;">
+<span style="font-style: italic;font-size:12px;text-align:right">
+Monthly commits to the RIOT master branch
+</span>
+</div>
 <div style="position: absolute;right: 100px;">
 <span style="font-style: italic;font-size:12px;text-align:right">
 Monthly contributors to the RIOT master branch
