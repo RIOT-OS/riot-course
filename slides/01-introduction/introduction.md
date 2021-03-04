@@ -363,19 +363,15 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 --
 
+- **lwIP**: full-featured network stack designed for low memory consumption
+
+--
+
 - **OpenWSN** (experimental): a deterministic MAC layer implementing the <br/>IEEE 802.15.4e TSCH protocol
 
 .center[
     <img src="images/Openwsn_logo.png" alt="" style="width:100px"/>
 ]
-
---
-
-- Other IPv6 stacks:
-
- - **lwIP**: full-featured network stack designed for low memory consumption
-
- - **emb6**: A fork of Contiki network stack that can be used without proto-threads
 
 ---
 
@@ -424,14 +420,16 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 ## Coming soon
 
+
+- More advanced configuration with Kconfig (almost done)
+
+<img src="images/kconfig.jpeg" alt="" style="width:180px;position:fixed;top:525px;right:100px"/>
+
+<br/>
+
 - NB-IoT support
 
 <img src="images/nb_iot_logo.jpg" alt="" style="width:180px;position:fixed;top:450px;right:100px"/>
-<br>
-
-- More advanced configuration with Kconfig
-
-<img src="images/kconfig.jpeg" alt="" style="width:180px;position:fixed;top:525px;right:100px"/>
 
 ---
 
@@ -526,6 +524,10 @@ IoT-LAB is a **large scale experimentation testbed**]
 .center[<a href="https://github.com/riot-os/riot-course">https://github.com/riot-os/riot-course</a>]
 
 <br>
+
+- FUN Mooc IoT
+
+.center[<a href="https://www.fun-mooc.fr/courses/course-v1:inria+41020+session02/about">https://www.fun-mooc.fr/courses/course-v1:inria+41020+session02/about</a>]
 
 
 ---
