@@ -391,7 +391,7 @@ https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
   https://github.com/sabas1080/CayenneLPP
 
   - Generic library in C<br>
-  https://github.com/riot-os/cayenne-lpp
+  https://github.com/aabadie/cayenne-lpp
 
 ---
 
