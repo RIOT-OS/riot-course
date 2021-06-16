@@ -373,6 +373,24 @@ US_PER_MS   /* number of milliseconds per seconds */
 
 ---
 
+## Timers (continued): [Ztimer](https://doc.riot-os.org/group__sys__ztimer.html)
+
+* High level timer abstraction supporting configurable backends:
+  * rtc
+  * rtt
+  * general purpose timers
+  * ptp
+
+* Accuracy will depend on the backend timer
+
+* Highly configurable, offset, sleep compensation, **allows the system to sleep**
+
+* Drop in replacement (in 99% of the cases) for `xtimer`, ongoing migration efforts.
+
+* 32bit design
+
+---
+
 ## Exercise: Timers
 
 Follow the instructions in the notebook **riot/basics/timers/timers.ipynb**
