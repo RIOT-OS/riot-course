@@ -665,9 +665,7 @@ Generic security protocols for low-power IoT networks?
 ## Network Protocols for IoT Security (3)
 
 Goals of protocols standardized by the **Internet Engineering Task Force** (IETF):
-
-=> guarantee the integrity, authenticity and confidentiality of the data flowing through
-a secure channel established from A to B
+=> guarantee the integrity, authenticity and confidentiality of the data sent/received
 
 - **DTLS** (Datagram Transport Layer Security)
   - secures communications over UDP
@@ -681,7 +679,6 @@ a secure channel established from A to B
 - **OSCORE** (Object Security for Constrained RESTful Environments)
   - secures communication over COAP
   - rough equivalent of the TLS record layer 
-  
 - **EDHOC** (Ephemeral Diffie-Hellman Over COSE)
   - rough equivalent of the TLS handshake layer
   - targeting small footprint, using COSE, CBOR etc.
