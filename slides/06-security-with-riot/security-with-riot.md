@@ -166,14 +166,43 @@ Generic security protocols for low-power IoT networks?
 .center[
     <img src="images/iot-protocols3.png" alt="" style="width:720px;"/>
 ]
+
+---
+
+## Transport Layer Security for IoT
+
+- Goals of protocols standardized by the **Internet Engineering Task Force** (IETF):
+  - => guarantee the integrity, authenticity and confidentiality of the data sent/received
+
+- **DTLS** (Datagram Transport Layer Security)
+  - secures communication over UDP (equivalent of TLS which works on TCP)
+    - *handhsake layer*: using public key crypto, Diffie-Hellman to establish shared symmetric key
+    - *record layer*: send/receive data payloads, using symmetric crypto key derived by the handshake
+
+---
+
+## Object Security Protocols for IoT
+
+- Goals of protocols standardized by the **Internet Engineering Task Force** (IETF):
+  - => guarantee the integrity, authenticity and confidentiality of the data sent/received
+  
+- **COSE** ("Constrained" Object Signing and Encryption)
+  - sign/encrypt ”one-shot” payload
+  - payload serialization with CBOR (Concise Binary Object Representation). And atually the "C" in COSE stands for CBOR ;)
+  
+- **OSCORE** (Object Security for Constrained RESTful Environments)
+  - secures communication over COAP
+  - provides a rough equivalent of the TLS record layer 
+
+- **EDHOC** (Ephemeral Diffie-Hellman Over COSE)
+  - provides a rough equivalent of the TLS handshake layer
+  - targeting small footprint, using COSE, CBOR etc.
+
 ---
 
 ## Exercise: Secure Communication using DTLS over IPv6 and 6LoWPAN
 
-- DTLS (Datagram Transport Layer Security) is a protocol standardized by the Internet
-Engineering Task Force (IETF) which secures communications over UDP.
-
-- DTLS guarantees the integrity, authenticity and confidentiality of the data flowing through
+- DTLS (Datagram Transport Layer Security) guarantees the integrity, authenticity and confidentiality of the data flowing through
 the secure channel it establishes from A to B, over UDP.
 
 - Follow the instructions in the notebook **riot/security/dtls/dtls.ipynb**
@@ -218,7 +247,7 @@ SUIT standard (work-in progress at IETF, see draft-ietf-suit-manifest-09)
 
 ## Exercise: Secure IoT Firmware Update using SUIT and CoAP
 
-- This exercise combines building blocks from the previous exercises! Hashing, signature, low-power network protocol stack, and SUIT-compliant RIOT firmware update security.
+- This exercise combines building blocks from the previous exercises! Hashing, signature, low-power network protocol stack, and SUIT-compliant RIOT firmware update security, using COSE.
 
 - Follow the instructions in the notebook **riot/security/ota/ota.ipynb**
 
