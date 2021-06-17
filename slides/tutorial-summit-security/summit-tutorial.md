@@ -659,12 +659,31 @@ Generic security protocols for low-power IoT networks?
 .center[
     <img src="images/iot-protocols3.png" alt="" style="width:720px;"/>
 ]
+
+---
+## Network Protocols for IoT Security (3)
+
+Goals of protocols standardized by the Internet Engineering Task Force (IETF):
+- guarantee the integrity, authenticity and confidentiality of the data flowing through
+a secure channel established from A to B
+
+- DTLS (Datagram Transport Layer Security)
+  - secures communications over UDP
+  - handhsake layer: using public key crypto, Diffie-Hellman to establish shared symmetric key
+  - record layer: send/receive data payloads, using symmetric crypto key derived by the handshake
+- COSE ("Constrained" Object Signing and Encryption)
+  - sign/encrypt ”one-shot” payload
+  - payload serialization with CBOR (Concise Binary Object Representation). Actually the "C" in COSE stands for CBOR.
+- OSCORE (Object Security for Constrained RESTful Environments)
+  - secures communication over COAP
+  - rough equivalent of the TLS record layer 
+- EDHOC (Ephemeral Diffie-Hellman Over COSE)
+  - rough equivalent of the TLS handshake layer
+  - targeting small footprint, using COSE, CBOR etc.
+
 ---
 
 ## Exercise: Secure Communication using DTLS over IPv6 and 6LoWPAN
-
-- DTLS (Datagram Transport Layer Security) is a protocol standardized by the Internet
-Engineering Task Force (IETF) which secures communications over UDP.
 
 - DTLS guarantees the integrity, authenticity and confidentiality of the data flowing through
 the secure channel it establishes from A to B, over UDP.
