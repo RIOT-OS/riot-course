@@ -8,7 +8,6 @@ class: center, middle
 <img src="images/riot-round-logo.png" alt="" style="width:220px;"/>
 ]
 
-
 ---
 
 ## What is RIOT?
@@ -18,9 +17,6 @@ class: center, middle
  - **microkernel architecture** &#x21d2; require very low resources
  - **real-time** and **multi-threaded**
  - comes with **in-house networking stacks**
- 
-
---
 
 <br>
 
@@ -30,29 +26,22 @@ class: center, middle
  - **easy to use** and __reuse__
  - Standard programming in C, standard tooling
  - **API is independent** from the hardware
- 
-
---
 
 <br>
 
-- A **world-wide community** of developers 
+- A **world-wide community** of developers
 
  - lively exchanges on <a href="https://forum.riot-os.org/">Forum</a>, <a href="https://github.com/RIOT-OS/RIOT">GitHub</a> etc.
  - contributions from hundreds of developers from industry, academia, and makers
-
-
 <br><br>
 
 ---
 
 ## RIOT in the IoT realm
 
-.center[<img src="images/iot-overview.png" alt="" style="width:600px;"/>
+.center[<img src="images/iot-overview.svg" alt="" style="width:820px;"/>
 <br/><br/>
-<br/><br/>
-&#x21d2; RIOT is designed for low-end devices
-<br>(kB RAM, MHz, mW)
+&#x21d2; **RIOT is designed for low-end devices**
 ]
 
 ---
@@ -113,7 +102,7 @@ in the Internet of Things: A survey," IEEE Internet of ThingsJournal, 2016.
 
 - The community takes inspiration from Linux
 
-<img src="images/linux.jpg" alt="" style="width:150px;position:fixed;top:120px;right:100px;"/>
+<img src="images/linux.jpg" alt="" style="width:150px;position:fixed;top:80px;right:100px;"/>
 
 --
 
@@ -283,15 +272,13 @@ The ISR context handles external events and notifies threads using IPC messages
 
 Features are provided as modules &#x21d2; **only build what's required**
 
-- System libraries: **xtimer**, **shell**, crypto, etc
+- System libraries: **ztimer**/**xtimer**, **shell**, crypto, etc
 
 --
 
 - Sensors and actuators
 
 - Display drivers, filesystems, etc
-
-<img src="images/riot-ucglib.jpg" alt="" style="width:200px;position:fixed;right:100px;top:250px"/>
 
 --
 
@@ -305,15 +292,11 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 - External packages
 
-.center[
-<img src="images/packages.png" alt="" style="width:400px"/>
-]
-
 ---
 
 ## Useful system libraries
 
-- **xtimer**
+- **xtimer**/**ztimer**
 
   - high-level timer subsystem that provides full abstraction from the hardware timer
 
@@ -337,7 +320,7 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 - Easy to add: just requires 2 `Makefiles`
 
-- Example of packages: lwIP, Openthread, lvgl, loramac, etc
+- Example of packages: lwIP, Openthread, lvgl, loramac, NimBLE, etc
 
 <br><br>
 
@@ -378,12 +361,13 @@ Features are provided as modules &#x21d2; **only build what's required**
 ## Other network support
 
 - In-house Controller Area Network (**CAN**)
+<img src="images/can-logo.jpeg" alt="" style="width:100px;position:fixed;top:90px;right:140px"/>
 <br><br>
 
 --
 
 - **BLE** stack support: <a href="https://github.com/apache/mynewt-nimble">NimBLE</a>
-<img src="images/ble.png" alt="" style="width:180px;position:fixed;top:150px;right:100px"/>
+<img src="images/ble.png" alt="" style="width:180px;position:fixed;top:150px;right:110px"/>
 <br><br>
 
 --
@@ -396,7 +380,10 @@ Features are provided as modules &#x21d2; **only build what's required**
 --
 
 - **SigFox** support for ATA8520e modules
-<img src="images/sigfox.png" alt="" style="width:100px;position:fixed;top:300px;right:125px"/>
+<img src="images/sigfox.png" alt="" style="width:100px;position:fixed;top:320px;right:140px"/>
+
+
+- **UWB (Ultra Wide bBand) & TWR (Two Way Ranging)**
 
 ---
 
@@ -420,16 +407,15 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 ## Coming soon
 
-
 - More advanced configuration with Kconfig (almost done)
 
-<img src="images/kconfig.jpeg" alt="" style="width:180px;position:fixed;top:525px;right:100px"/>
+<img src="images/kconfig.jpeg" alt="" style="width:180px;position:fixed;top:440px;right:100px"/>
 
 <br/>
 
 - NB-IoT support
 
-<img src="images/nb_iot_logo.jpg" alt="" style="width:180px;position:fixed;top:450px;right:100px"/>
+<img src="images/nb_iot_logo.jpg" alt="" style="width:180px;position:fixed;top:580px;right:100px"/>
 
 ---
 
@@ -445,22 +431,31 @@ class: center, middle
 
 ---
 
-## IoT deployments using RIOT
+## IoT products & services using RIOT
+
+- Environment monitoring: Hamilton IoT (USA), Unwired Devices (Russia)
 
 .center[
-    **Telefonica Chile: LoRa devices in a mine**<br><br>
-    <img src="images/drop-watcher.png" alt="" style="width:630px"/><br/>
-    <a href="http://riot-os.org/files/RIOT-Summit-2017-slides/6-2-Network-Session-DropWatcher.pdf">More information</a>
+    <img src="images/hamilton-board.png" alt="" style="width:200px"/>
+    <img src="images/unwired-one-fingers.jpg" alt="" style="width:200px"/>
 ]
+- Design Office: Eistec (Sweeden), Mesotic (France)
+
+- On-Board diagnostics for connected cars: OTAKeys (Continental)
+
+.center[
+    <img src="images/continental.png" alt="" style="width:300px"/>
+]
+-
 
 ---
 
 ## IoT deployments using RIOT
 
 .center[
-**Algramo: Automatic cereal dispenser**<br><br>
-<img src="images/almagro-feeder.png" alt="" style="width:200px"/><br/>
-<a href="https://www.indiegogo.com/projects/the-venture-algramo-chile#/">More information</a>
+    **Telefonica Chile: LoRa devices in a mine**<br><br>
+    <img src="images/drop-watcher.png" alt="" style="width:630px"/><br/>
+    <a href="http://riot-os.org/files/RIOT-Summit-2017-slides/6-2-Network-Session-DropWatcher.pdf"><br>More information</a>
 ]
 
 ---
@@ -477,18 +472,14 @@ class: center, middle
 
 ---
 
-## IoT products & services using RIOT
-
-- Environment monitoring: Hamilton IoT (USA), Unwired Devices (Russia)
+## IoT projects using RIOT
 
 .center[
-    <img src="images/hamilton-board.png" alt="" style="width:200px"/>
-    <img src="images/unwired-one-fingers.jpg" alt="" style="width:200px"/>
+**Locha Mesh: A Decentralized Mesh Network**<br><br><br><br>
+<img src="images/turpial-finished-board.jpg" alt="" style="width:200px"/>
+<img src="images/LogotipoTurpial-Color.20-09-19.svg" alt="" style="width:300px"/><br/>
+<a href="https://locha.io/"><br>More information</a>
 ]
-
-- On-Board diagnostics for connected cars: OTAKeys (Continental)
-
-- Design Office: Eistec (Sweeden), Mesotic (France)
 
 ---
 
