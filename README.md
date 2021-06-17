@@ -21,6 +21,8 @@ The course is divided in 5 sections:
   lists the network stacks provided by the OS
 - [LoRaWAN with RIOT](https://riot-os.github.io/riot-course/slides/05-lorawan-with-riot)
   gives an overview of the LoRaWAN protocol and how to use it with RIOT
+- [Security with RIOT](https://riot-os.github.io/riot-course/slides/06-security-with-riot)
+  gives an overview of the IoT security requirements and tools to address those
 
 The full course is designed for 2 full days of work by mixing lectures and
 exercises to put in practice the exposed notions.
