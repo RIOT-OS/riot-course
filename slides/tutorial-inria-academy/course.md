@@ -9,6 +9,7 @@ class: center, middle
 <br/><br/><br/>
 
 .right[.footer[
+  Alexandre Abadie - alexandre.abadie@inria.fr<br/>
   Emmanuel Baccelli - emmanuel.baccelli@inria.fr<br/>
   Francisco Molina - francois-xavier.molina@inria.fr
 ]]
@@ -31,7 +32,7 @@ class: center, middle
 
 <br>
 
-1. Basics of security on IoT devices
+1. Basics of cybersecurity on IoT devices
 
 <br>
 
