@@ -28,7 +28,7 @@ class: center, middle
 .center[
     <img src="images/iot-stacks.png" alt="" style="width:700px;"/>
     <br><br>
-    &#x21d2; RIOT supports ZigBee (6LowPAN), Thread and soon BLE and WiFi
+    &#x21d2; RIOT supports ZigBee (6LowPAN), Thread, BLE and WiFi (for esp32/8266)
 ]
 
 ---
@@ -65,7 +65,7 @@ class: center, middle
 <tr>
   <td>
     <ul>
-      <li>Network layer is decoupled from the hardware via the <b>netdev</b> API<br><br></li>
+      <li>Network layer is decoupled from the hardware via the <b>netdev</b> API or specific HAL API (e.g: ieee802154_hal)<br><br></li>
       <li>Application layer is decoupled from network stack via the <b>sock</b> API<br><br></li>
       <li>Each device driver runs in its <b>own thread</b><br><br></li>
       <li>Radio drivers are implemented in `drivers`<br><br></li>
@@ -91,13 +91,12 @@ class: center, middle
   - full featured network stack
   - provided as a package in `pkg/lwip`
 
-- **emb6**
-  - port of Contiki stack without protothreads
-  - provided as a package in `pkg/emb6`
-
 - **OpenThread**
   - Opensource implementation of the Thread specifications
   - provided as a package in `pkg/openthread`
+
+- **OpenWSN**
+  - a deterministic MAC layer implementing the <br/>IEEE 802.15.4e TSCH protocol
 
 ---
 
@@ -115,6 +114,8 @@ class: center, middle
     reference implementation
   - provided as a package in `pkg/semtech-loramac`
 
+- **UWB (ultra wide band) & TWR (two way ranging)**:
+  - based on Decawave [uwb-core](https://github.com/decawave/uwb-core) library
 
 ---
 
@@ -141,10 +142,29 @@ class: center, middle
   </td>
   <td>
 .center[
-    <img src="images/riot-network-stack.png" alt="" style="width:200px;"/>
+    <img src="images/netdev.svg" alt="" style="width:200px;"/>
 ]
   </td>
-</tr>
+</tr> </table>
+
+---
+
+## IEEE802154 Hardware Access Layer
+
+<table>
+  <td>
+  <ul style="width: 300px">
+    <li> Hardware Abstraction Layer (HAL) for IEEE802.15.4 radios</li><br></br>
+    <li> Allows direct radio access and configuration</li><br></br>
+    <li> Allows implementing agnostic PHY and MAC layers on top </li><br></br>
+    <li>For more see <a href="https://github.com/RIOT-OS/RIOT/blob/67febcc62bb83d161892915a9bcf4f9c0f4ae2bb/doc/memos/rdm-draft-alamos-ieee802154-radio-hal.md">Radio HAL RDM</a></li>
+  </ul>
+  </td>
+  <td>
+.center[
+    <img src="images/ieee802154_hal.svg" alt="" style="width:400px;"/>
+]
+  </td>
 </table>
 
 ---
@@ -156,7 +176,7 @@ Follow the instructions in the notebook **riot/networking/802.15.4.ipynb**
 .center[
 <form class=notebook>
     <input class=login id="login_802154" type="text" oninput="check_login('login_802154', 'launcher_802154')" placeholder="Enter your IoT-LAB login">
-    <input class=launcher id="launcher_802154" type="button" value="Launch notebook" onclick="open_notebook('login_802154', 'riot/networking/802.15.4/udp.ipynb')" disabled>
+    <input class=launcher id="launcher_802154" type="button" value="Launch notebook" onclick="open_notebook('login_802154', 'riot/networking/802.15.4/802.15.4.ipynb')" disabled>
 </form>
 ]
 
@@ -168,7 +188,7 @@ Follow the instructions in the notebook **riot/networking/802.15.4.ipynb**
     <img src="images/riot-gnrc-stack.svg" alt="" style="width:400px;"/>
 ]
 
-- Radio drivers are accessed through the **netdev** API
+- Radio drivers are accessed through the **netdev** API (or `ieee802154_hal`)
 
 - All internal components use a single API: **netapi**
 
@@ -248,6 +268,8 @@ Follow the instructions in the notebook **riot/networking/ipv6/ipv6.ipynb**
 
 - An application built on top of Sock is portable on any network stack
 
+- Both asynchronous and synchronous access (depending on the implementation)
+
 - 3 kinds of sock types provided:<br><br>
   &#x21d2; **Raw IPv4/IPv6**, **UDP** and **TCP**
 
@@ -291,12 +313,12 @@ void sock_<type>_close(sock_<type>_t *sock);
 
 ## Exercise: UDP client-server application
 
-Follow the instructions in the notebook **riot/networking/sock-udp/sock-udp.ipynb**
+Follow the instructions in the notebook **riot/networking/udp-sock/udp-sock.ipynb**
 
 .center[
 <form class=notebook>
     <input class=login id="login_sock_udp" type="text" oninput="check_login('login_sock_udp', 'launcher_sock_udp')" placeholder="Enter your IoT-LAB login">
-    <input class=launcher id="launcher_sock_udp" type="button" value="Launch notebook" onclick="open_notebook('login_sock_udp', 'riot/networking/sock-udp/sock-udp.ipynb')" disabled>
+    <input class=launcher id="launcher_sock_udp" type="button" value="Launch notebook" onclick="open_notebook('login_sock_udp', 'riot/networking/udp-sock/udp-sock.ipynb')" disabled>
 </form>
 ]
 
@@ -445,6 +467,47 @@ Follow the instructions in the notebook **riot/networking/coap/coap.ipynb**
 <form class=notebook>
     <input class=login id="login_coap" type="text" oninput="check_login('login_coap', 'launcher_coap')" placeholder="Enter your IoT-LAB login">
     <input class=launcher id="launcher_coap" type="button" value="Launch notebook" onclick="open_notebook('login_coap', 'riot/networking/coap/coap.ipynb')" disabled>
+</form>
+]
+
+---
+
+## Bonus: NimBLE BLE
+
+
+<table>
+  <td><br></br>
+<b>NimBLE:</b> Open-source Bluetooth 5.1 stack (both Host & Controller) for Nordic chipsets.
+  <ul>
+  <b>Features highlight:</b><br></br>
+    <li> Support for 251 byte packets</li><br>
+    <li> Support for all 4 roles concurrently - Broadcaster, Observer, Peripheral and Central</li><br>
+    <li> Support for up to 32 simultaneous connections</li><br>
+    <li> Bluetooth Mesh</li><br>
+    <li> Advertising Extensions</li><br>
+    <li> Low Level API Access</li><br>
+  </ul>
+  </td>
+  <td>
+.center[
+    <img src="images/nimble.svg" alt="" style="width:200px;"/>
+]
+  </td>
+</table>
+
+<img src="images/ble.png" alt="" style="width:200px;position:fixed;right:200px;top:30px"/>
+<img src="images/mynewt.png" alt="" style="width:100px;position:fixed;right:100px;top:50px"/>
+
+---
+
+## Exercise: BLE Nimble scan-advertise
+
+Follow the instructions in the notebook **riot/ble/ble_scan/ble_scan.ipynb**
+
+.center[
+<form class=notebook>
+    <input class=login id="login_ble" type="text" oninput="check_login('login_ble', 'launcher_ble')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_ble" type="button" value="Launch notebook" onclick="open_notebook('login_ble', 'riot/ble/ble_scan/ble_scan.ipynb')" disabled>
 </form>
 ]
 
