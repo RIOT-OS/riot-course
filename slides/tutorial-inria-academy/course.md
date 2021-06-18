@@ -9,75 +9,132 @@ class: center, middle
 <br/><br/><br/>
 
 .right[.footer[
-  Alexandre Abadie - alexandre.abadie@inria.fr<br/>
+  Emmanuel Baccelli - emmanuel.baccelli@inria.fr<br/>
   Francisco Molina - francois-xavier.molina@inria.fr
 ]]
+
 ---
 
-## What is RIOT
+## Goals of this Course
 
-<img src="images/riot-logo-circular.png" alt="" style="width:200px;position:fixed;right:20px;top:70px"/>
-
-- **operating system** for microcontrollers
-
- - **microkernel architecture** &#x21d2; require very low resources
- - **real-time** and **multi-threaded**
- - comes with **in-house networking stacks**
-<br><br>
-
-- **open-source**: <a href="https://github.com/RIOT-OS/RIOT">https://github.com/RIOT-OS/RIOT</a>
-
- - free software platform
- - **world-wide community** of developers
-
-<img src="images/github-logo.png" alt="" style="width:150px;position:fixed;right:80px;top:300px"/>
 <br>
 
-- **easy to use** and __reuse__
+1. Learn how to write and build a RIOT application
 
- - Standard programming in C
- - Standard tooling
- - **API is independent** from the hardware
+<br>
 
-<img src="images/c-logo.png" alt="" style="width:120px;position:fixed;right:70px;top:420px"/>
-<img src="images/gnu.png" alt="" style="width:100px;position:fixed;right:200px;top:460px"/>
-<img src="images/linux.jpg" alt="" style="width:120px;position:fixed;right:20px;top:520px"/>
+1. Get a grasp RIOT's core system libraries and building blocks
 
-<br><br>
+<br>
+
+1. Overview IoT Networking protocols with RIOT, 6LoWPAN focus
+
+<br>
+
+1. Basics of security on IoT devices
+
+<br>
+
+1. Use IoT-LAB for testing a RIOT application remotely on real hardware
+
+<img src="images/riot-round-logo.png" alt="" style="width:200px;position:fixed;right:70px;top:100px"/>
+<img src="images/cadenas.png" alt="" style="width:100px;position:fixed;right:370px;top:380px"/>
+<img src="images/fit-iotlab-logo.png" alt="" style="width:200px;position:fixed;right:100px;top:540px"/>
+<img src="images/6lowpan-logo.jpg" alt="" style="width:150px;position:fixed;right:180px;top:340px"/>
+<img src="images/ble-logo.png" alt="" style="width:50px;position:fixed;right:100px;top:320px"/>
+<img src="images/logo-lora.png" alt="" style="width:100px;position:fixed;right:120px;top:400px"/>
+
 
 ---
 
-## RIOT in the IoT world
+## Agenda
 
-.center[<img src="images/iot-overview.png" alt="" style="width:600px;"/>
-<br/><br/>
-<br/><br/>
-&#x21d2; RIOT is designed for low-end devices
-<br>(kB RAM, MHz, mW)
+**Day 1**
+
+1. Introduction to RIOT
+
+1. Course Tooling
+
+1. RIOT basics
+
+1. IoT Networking 1
+
+**Day 2**
+
+1. IoT Networking 2
+
+1. IoT Security
+
+---
+
+class: center, middle
+
+# Introduction
+
+<br>
+<br>
+.center[
+<img src="images/riot-round-logo.png" alt="" style="width:220px;"/>
 ]
 
 ---
 
-## History of the project
+## What is RIOT?
 
-- 2013: Inria, FU Berlin and HAW founded RIOT
+- An **operating system** for microcontroller-based IoT devices
 
- - stemed from a French-German research project
+ - **microkernel architecture** &#x21d2; require very low resources
+ - **real-time** and **multi-threaded**
+ - comes with **in-house networking stacks**
+
+<br>
+
+- An **open-source platform & ecosystem**: <a href="https://github.com/RIOT-OS/RIOT">https://github.com/RIOT-OS/RIOT</a>
+
+ - free software platform
+ - **easy to use** and __reuse__
+ - Standard programming in C, standard tooling
+ - **API is independent** from the hardware
+
+<br>
+
+- A **world-wide community** of developers
+
+ - lively exchanges on <a href="https://forum.riot-os.org/">Forum</a>, <a href="https://github.com/RIOT-OS/RIOT">GitHub</a> etc.
+ - contributions from hundreds of developers from industry, academia, and makers
+<br><br>
+
+---
+
+## RIOT in the IoT realm
+
+.center[<img src="images/iot-overview.svg" alt="" style="width:820px;"/>
+<br/><br/>
+&#x21d2; **RIOT is designed for low-end devices**
+]
+
+---
+
+## History of RIOT
+
+- 2013: Inria, FU Berlin and HAW co-founded RIOT
+
+ - stemmed from a French-German research project
  - kernel evolved from FireKernel
 
 --
 
 - The community today:
 
-  - So far, **+250** different contributors to the master branch
+  - So far, **~300** different contributors to the master branch
   - Academics: Berkeley, UCLA, MIT, AIT, TZI, etc
-  - Industrial: Cisco, Samsung, ImgTec, Fujitsu, Thalès
+  - Industrial: Continental, Cisco, Samsung, ImgTec, Fujitsu, Thalès
   - SME: Zolertia, OTAKeys, Mesotic, Eistec, We-sens
   - Member of the EdgeXFoundry initiative
 
 --
 
-- Annual RIOT Summit: https://summit.riot-os.org
+- Annual symposium: the RIOT Summit <a href="https://summit.riot-os.org">https://summit.riot-os.org</a>
 
 .center[
 <img src="images/riot-summit.png" alt="" style="width:220px;"/>&nbsp;
@@ -114,7 +171,7 @@ in the Internet of Things: A survey," IEEE Internet of ThingsJournal, 2016.
 
 - The community takes inspiration from Linux
 
-<img src="images/linux.jpg" alt="" style="width:150px;position:fixed;top:120px;right:100px;"/>
+<img src="images/linux.jpg" alt="" style="width:150px;position:fixed;top:80px;right:100px;"/>
 
 --
 
@@ -134,8 +191,20 @@ in the Internet of Things: A survey," IEEE Internet of ThingsJournal, 2016.
 - Decisions and orientations are taken by a **grass-root community**
 
 .center[
-    <img src="images/riot-contributors.png" alt="" style="width:350px"/>
+    <img src="images/Commits-Monthly-RIOT-2012-2020.png" alt="" style="width:400px"/>
+    <img src="images/riot-contributors.png" alt="" style="width:300px"/>
+
 ]
+<div style="position: absolute;left: 100px;">
+<span style="font-style: italic;font-size:12px;text-align:right">
+Monthly commits to the RIOT master branch
+</span>
+</div>
+<div style="position: absolute;right: 100px;">
+<span style="font-style: italic;font-size:12px;text-align:right">
+Monthly contributors to the RIOT master branch
+</span>
+</div>
 
 ---
 
@@ -161,7 +230,7 @@ in the Internet of Things: A survey," IEEE Internet of ThingsJournal, 2016.
 
 - In-depth **code reviews**
 
-- Stable **release every 3 months**: &lt;year&gt;.&lt;month&gt; (ex: 2020.04, 2020.07, etc)
+- Stable **release every 3 months**: &lt;year&gt;.&lt;month&gt; (ex: 2018.07, 2018.10, etc)
 
 
 ---
@@ -171,9 +240,14 @@ class: center, middle
 # Technical overview
 
 <br/>
-Long story short: paper in IEEE Internet of Things Journal<br/>
-Preprint available: http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.pdf
+Long story short: see paper in IEEE Internet of Things Journal<br/>
+Preprint available at http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.pdf
 
+<br>
+<br>
+.center[
+<img src="images/riot-round-logo.png" alt="" style="width:220px;"/>
+]
 ---
 
 ## OS characteristics
@@ -255,7 +329,7 @@ The ISR context handles external events and notifies threads using IPC messages
 
 - _native_ board: **run RIOT as process on your computer**
 
-- **~200 boards supported**
+- **+100 boards supported**
 
 .center[
     <img src="images/riot-boards.png" alt="" style="width:620px;"/>
@@ -267,15 +341,13 @@ The ISR context handles external events and notifies threads using IPC messages
 
 Features are provided as modules &#x21d2; **only build what's required**
 
-- System libraries: **xtimer**, **shell**, crypto, etc
+- System libraries: **ztimer**/**xtimer**, **shell**, crypto, etc
 
 --
 
 - Sensors and actuators
 
 - Display drivers, filesystems, etc
-
-<img src="images/riot-ucglib.jpg" alt="" style="width:200px;position:fixed;right:100px;top:250px"/>
 
 --
 
@@ -289,15 +361,11 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 - External packages
 
-.center[
-<img src="images/packages.png" alt="" style="width:400px"/>
-]
-
 ---
 
 ## Useful system libraries
 
-- **xtimer**
+- **xtimer**/**ztimer**
 
   - high-level timer subsystem that provides full abstraction from the hardware timer
 
@@ -321,7 +389,7 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 - Easy to add: just requires 2 `Makefiles`
 
-- Example of packages: lwIP, Openthread, lvgl, loramac, etc
+- Example of packages: lwIP, Openthread, lvgl, loramac, NimBLE, etc
 
 <br><br>
 
@@ -339,15 +407,15 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 --
 
-- **lwIP**: full-featured network stack designed for low memory consumption
-
---
-
 - **Thread**: 802.15.4 IPv6 stack provided by the ThreadGroup
 
 .center[
     <img src="images/openthread-logo.png" alt="" style="width:200px"/>
 ]
+
+--
+
+- **lwIP**: full-featured network stack designed for low memory consumption
 
 --
 
@@ -362,12 +430,13 @@ Features are provided as modules &#x21d2; **only build what's required**
 ## Other network support
 
 - In-house Controller Area Network (**CAN**)
+<img src="images/can-logo.jpeg" alt="" style="width:100px;position:fixed;top:90px;right:140px"/>
 <br><br>
 
 --
 
 - **BLE** stack support: <a href="https://github.com/apache/mynewt-nimble">NimBLE</a>
-<img src="images/ble.png" alt="" style="width:180px;position:fixed;top:150px;right:100px"/>
+<img src="images/ble.png" alt="" style="width:180px;position:fixed;top:150px;right:110px"/>
 <br><br>
 
 --
@@ -380,7 +449,10 @@ Features are provided as modules &#x21d2; **only build what's required**
 --
 
 - **SigFox** support for ATA8520e modules
-<img src="images/sigfox.png" alt="" style="width:100px;position:fixed;top:300px;right:125px"/>
+<img src="images/sigfox.png" alt="" style="width:100px;position:fixed;top:320px;right:140px"/>
+
+
+- **UWB (Ultra Wide bBand) & TWR (Two Way Ranging)**
 
 ---
 
@@ -404,20 +476,46 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 ## Coming soon
 
+- More advanced configuration with Kconfig (almost done)
+
+<img src="images/kconfig.jpeg" alt="" style="width:180px;position:fixed;top:440px;right:100px"/>
+
+<br/>
+
 - NB-IoT support
 
-<img src="images/nb_iot_logo.jpg" alt="" style="width:180px;position:fixed;top:450px;right:100px"/>
-<br>
-
-- Simplified configuration with Kconfig
-
-<img src="images/kconfig.jpeg" alt="" style="width:180px;position:fixed;top:525px;right:100px"/>
+<img src="images/nb_iot_logo.jpg" alt="" style="width:180px;position:fixed;top:580px;right:100px"/>
 
 ---
 
 class: center, middle
 
 # RIOT in action
+
+<br>
+<br>
+.center[
+<img src="images/riot-round-logo.png" alt="" style="width:220px;"/>
+]
+
+---
+
+## IoT products & services using RIOT
+
+- Environment monitoring: Hamilton IoT (USA), Unwired Devices (Russia)
+
+.center[
+    <img src="images/hamilton-board.png" alt="" style="width:200px"/>
+    <img src="images/unwired-one-fingers.jpg" alt="" style="width:200px"/>
+]
+- Design Office: Eistec (Sweeden), Mesotic (France)
+
+- On-Board diagnostics for connected cars: OTAKeys (Continental)
+
+.center[
+    <img src="images/continental.png" alt="" style="width:300px"/>
+]
+
 
 ---
 
@@ -426,17 +524,7 @@ class: center, middle
 .center[
     **Telefonica Chile: LoRa devices in a mine**<br><br>
     <img src="images/drop-watcher.png" alt="" style="width:630px"/><br/>
-    <a href="http://riot-os.org/files/RIOT-Summit-2017-slides/6-2-Network-Session-DropWatcher.pdf">More information</a>
-]
-
----
-
-## IoT deployments using RIOT
-
-.center[
-**Algramo: Automatic cereal dispenser**<br><br>
-<img src="images/almagro-feeder.png" alt="" style="width:200px"/><br/>
-<a href="https://www.indiegogo.com/projects/the-venture-algramo-chile#/">More information</a>
+    <a href="http://riot-os.org/files/RIOT-Summit-2017-slides/6-2-Network-Session-DropWatcher.pdf"><br>More information</a>
 ]
 
 ---
@@ -453,18 +541,14 @@ class: center, middle
 
 ---
 
-## IoT products & services using RIOT
-
-- Environment monitoring: Hamilton IoT (USA), Unwired Devices (Russia)
+## IoT projects using RIOT
 
 .center[
-    <img src="images/hamilton-board.png" alt="" style="width:200px"/>
-    <img src="images/unwired-one-fingers.jpg" alt="" style="width:200px"/>
+**Locha Mesh: A Decentralized Mesh Network**<br><br><br><br>
+<img src="images/turpial-finished-board.jpg" alt="" style="width:200px"/>
+<img src="images/LogotipoTurpial-Color.20-09-19.svg" alt="" style="width:300px"/><br/>
+<a href="https://locha.io/"><br>More information</a>
 ]
-
-- On-Board diagnostics for connected cars: OTAKeys (Continental)
-
-- Design Office: Eistec (Sweeden), Mesotic (France)
 
 ---
 
@@ -501,9 +585,33 @@ IoT-LAB is a **large scale experimentation testbed**]
 
 <br>
 
-- MOOC
+- FUN Mooc IoT
 
-.center[<a href="https://www.fun-mooc.fr/courses/course-v1:inria+41020+session01/about">MOOC "Internet of Things on microcontrollers: a hands-on course"</a>]
+.center[<a href="https://www.fun-mooc.fr/courses/course-v1:inria+41020+session02/about">https://www.fun-mooc.fr/courses/course-v1:inria+41020+session02/about</a>]
+
+
+---
+
+## Summary
+
+- Generalities on RIOT: history, community, users
+
+- A technical overview:
+
+  - OS charactéristics
+
+  - hardware support
+
+  - libraries
+
+  - network stack
+
+  - import external libraries via packages
+
+- The RIOT ecosystem: standard tools, CI, documentation
+
+- Companies using RIOT
+
 
 ---
 
@@ -559,6 +667,17 @@ Available at **https://labs.iot-lab.info**
     <input class=launcher id="launcher_start" type="button" value="Launch notebook" onclick="open_notebook('login_start', 'start.ipynb')" disabled>
 </form>
 ]
+
+---
+
+## About the Workflow
+
+- for each exercise you will manipulate, compile and run C code extending the RIOT code base, via a Jupyter notebook
+
+- for each exercise, we will follow our typical 2-step process:
+
+1. build for the 'native' target, to run RIOT in a Linux process, typically used for debugging purposes;
+2. build for the microcontroller target, and run RIOT on an IoT device accessed via the testbed.
 
 ---
 
@@ -698,7 +817,8 @@ and follow the instructions.
 
 Example in a `Makefile`:
 ```mk
-USEMODULE += xtimer shell
+USEMODULE += xtimer
+USEMODULE += shell
 
 USEPKG += semtech-loramac
 
@@ -722,22 +842,8 @@ Follow the instructions in the notebook **riot/basics/shell/shell.ipynb**
 </form>
 ]
 
-
----
-
-## Exercise: read sensor data
-
-Follow the instructions in the notebook **riot/basics/sensors/sensors.ipynb**
-
-.center[
-<form class=notebook>
-    <input class=login id="login_sensors" type="text" oninput="check_login('login_sensors', 'launcher_sensors')" placeholder="Enter your IoT-LAB login">
-    <input class=launcher id="launcher_sensors" type="button" value="Launch notebook" onclick="open_notebook('login_sensors', 'riot/basics/sensors/sensors.ipynb')" disabled>
-</form>
-]
-
 ---
 
 class: center, middle
 
-## All complete ? Well done!
+[Next: RIOT Basics](https://riot-os.github.io/riot-course/slides/03-riot-basics/#1)
