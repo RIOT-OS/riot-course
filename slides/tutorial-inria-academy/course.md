@@ -20,23 +20,23 @@ class: center, middle
 
 <br>
 
-1. Learn how to write and build a RIOT application
+- Learn how to write and build a RIOT application
 
 <br>
 
-1. Get a grasp RIOT's core system libraries and building blocks
+- Get a grasp RIOT's core system libraries and building blocks
 
 <br>
 
-1. Overview IoT Networking protocols with RIOT, 6LoWPAN focus
+- Overview IoT Networking protocols with RIOT, 6LoWPAN focus
 
 <br>
 
-1. Basics of cybersecurity on IoT devices
+- Basics of cybersecurity on IoT devices
 
 <br>
 
-1. Use IoT-LAB for testing a RIOT application remotely on real hardware
+- Use IoT-LAB for testing a RIOT application remotely on real hardware
 
 <img src="images/riot-round-logo.png" alt="" style="width:200px;position:fixed;right:70px;top:100px"/>
 <img src="images/cadenas.png" alt="" style="width:100px;position:fixed;right:370px;top:380px"/>
