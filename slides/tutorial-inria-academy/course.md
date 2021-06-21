@@ -274,7 +274,6 @@ Preprint available at http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.
   - Minimal thread control block (TCB)
   - Thread synchronization using mutexes, <br>semaphores and messaging
 
-<img src="images/riot-application.png" alt="" style="width:300px;position:fixed;right:50px;top:350px"/>
 
 ---
 
