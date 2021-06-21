@@ -309,7 +309,7 @@ The ISR context handles external events and notifies threads using IPC messages
 
 - Only based on vendor header files (CMSIS) &#x21d2; implementation from scratch
 
-    &#x21d2; less code duplication, more efficient, more work
+    &#x21d2; less code duplication, more efficient, (but it does requires more work ;)
 
 - One application &#x21d2; one board &#x21d2; one cpu model
 
