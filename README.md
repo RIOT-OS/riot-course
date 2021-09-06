@@ -62,6 +62,7 @@ Here is a list of existing tutorials:
 
 - [RIOT Summit - Beginner Tutorial on LoRaWAN](https://riot-os.github.io/riot-course/slides/tutorial-summit-lorawan)
 - [RIOT Summit - Beginner Tutorial on Security](https://riot-os.github.io/riot-course/slides/tutorial-summit-security)
+- [RIOT Summit - Beginner Tutorial on Networking](https://riot-os.github.io/riot-course/slides/tutorial-summit-networking)
 - [Inria Academy Master Class - Inria Chile](https://riot-os.github.io/riot-course/slides/tutorial-inria-academy)
 
 ## License
