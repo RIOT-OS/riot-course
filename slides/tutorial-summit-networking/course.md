@@ -1,18 +1,12 @@
 class: center, middle
 
-## Microcontroller based IoT
+# RIOT Beginner Tutorial
 
-# RIOT Tutorial
-
-### RIOT Summit
+### RIOT Summit 2021
 
 <br/><br/><br/>
 
-.right[.footer[
-  Francisco Molina - francois-xavier.molina@inria.fr
-  Emmanuel Baccelli - emmanuel.baccelli@inria.fr<br/>
-  Alexandre Abadie - alexandre.abadie@inria.fr<br/>
-]]
+<a href=https://github.com/riot-os/riot-course>https://github.com/riot-os/riot-course</a>
 
 ---
 
@@ -35,12 +29,8 @@ class: center, middle
 - Use IoT-LAB for testing a RIOT application remotely on real hardware
 
 <img src="images/riot-round-logo.png" alt="" style="width:200px;position:fixed;right:70px;top:100px"/>
-<img src="images/cadenas.png" alt="" style="width:100px;position:fixed;right:370px;top:380px"/>
-<img src="images/fit-iotlab-logo.png" alt="" style="width:200px;position:fixed;right:100px;top:540px"/>
-<img src="images/6lowpan-logo.jpg" alt="" style="width:150px;position:fixed;right:180px;top:340px"/>
-<img src="images/ble-logo.png" alt="" style="width:50px;position:fixed;right:100px;top:320px"/>
-<img src="images/logo-lora.png" alt="" style="width:100px;position:fixed;right:120px;top:400px"/>
-
+<img src="images/fit-iotlab-logo.png" alt="" style="width:200px;position:fixed;right:200px;top:500px"/>
+<img src="images/6lowpan-logo.jpg" alt="" style="width:150px;position:fixed;right:180px;top:300px"/>
 
 ---
 
