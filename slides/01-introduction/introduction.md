@@ -272,7 +272,7 @@ The ISR context handles external events and notifies threads using IPC messages
 
 Features are provided as modules &#x21d2; **only build what's required**
 
-- System libraries: **ztimer**/**xtimer**, **shell**, crypto, etc
+- System libraries: **ztimer**, **shell**, crypto, etc
 
 --
 
@@ -296,7 +296,7 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 ## Useful system libraries
 
-- **xtimer**/**ztimer**
+- **ztimer**
 
   - high-level timer subsystem that provides full abstraction from the hardware timer
 

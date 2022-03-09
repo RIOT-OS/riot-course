@@ -262,7 +262,7 @@ background-image: url(images/green-bands.png)
 
 Features are provided as modules &#x21d2; **only build what's required**
 
-- System libraries: **xtimer**, **shell**, crypto, etc
+- System libraries: **ztimer**, **shell**, crypto, etc
 
 <br>
 
@@ -736,7 +736,7 @@ Building application "example" for "native" with MCU "native".
 &#x21d2; by adding modules in the application `Makefile` or from the command line:
 
 - Add extra modules with **USEMODULE**<br>
-    &#x21d2; `xtimer`, `fmt`, `shell`, `ps`, etc
+    &#x21d2; `ztimer`, `fmt`, `shell`, `ps`, etc
 
 - Include external packages with **USEPKG**<br>
     &#x21d2; `lwip`, `semtech-loramac`, etc
@@ -748,7 +748,7 @@ Building application "example" for "native" with MCU "native".
 
 Example in a `Makefile`:
 ```mk
-USEMODULE += xtimer shell
+USEMODULE += ztimer shell
 
 USEPKG += semtech-loramac
 
@@ -756,7 +756,7 @@ FEATURES_REQUIRED += periph_gpio
 ```
 Example from the command line:
 ```terminal
-$ USEMODULE=xtimer make BOARD=bl-072z-lrwan1
+$ USEMODULE=ztimer make BOARD=bl-072z-lrwan1
 ```
 
 ---

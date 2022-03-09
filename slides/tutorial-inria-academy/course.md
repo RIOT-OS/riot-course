@@ -341,7 +341,7 @@ The ISR context handles external events and notifies threads using IPC messages
 
 Features are provided as modules &#x21d2; **only build what's required**
 
-- System libraries: **ztimer**/**xtimer**, **shell**, crypto, etc
+- System libraries: **ztimer**, **shell**, crypto, etc
 
 --
 
@@ -365,7 +365,7 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 ## Useful system libraries
 
-- **xtimer**/**ztimer**
+- **ztimer**
 
   - high-level timer subsystem that provides full abstraction from the hardware timer
 
@@ -805,7 +805,7 @@ and follow the instructions.
 &#x21d2; by adding modules in the application `Makefile` or from the command line:
 
 - Add extra modules with **USEMODULE**<br>
-    &#x21d2; `xtimer`, `fmt`, `shell`, `ps`, etc
+    &#x21d2; `ztimer`, `fmt`, `shell`, `ps`, etc
 
 - Include external packages with **USEPKG**<br>
     &#x21d2; `lwip`, `semtech-loramac`, etc
@@ -817,7 +817,8 @@ and follow the instructions.
 
 Example in a `Makefile`:
 ```mk
-USEMODULE += xtimer
+USEMODULE += ztimer
+USEMODULE += ztimer_usec
 USEMODULE += shell
 
 USEPKG += semtech-loramac
@@ -826,7 +827,7 @@ FEATURES_REQUIRED += periph_gpio
 ```
 Example from the command line:
 ```sh
-$ USEMODULE=xtimer make BOARD=b-l072z-lrwan1
+$ USEMODULE=ztimer make BOARD=b-l072z-lrwan1
 ```
 
 ---

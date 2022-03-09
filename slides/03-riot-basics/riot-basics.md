@@ -34,7 +34,7 @@ class: center, middle
 
 - **pkg:** external packages
 
-- **sys:** system libraries, network, shell, xtimer, etc
+- **sys:** system libraries, network, shell, ztimer, etc
 
 - **tests:** unittests, test applications (can be used as examples)
 
@@ -316,53 +316,71 @@ Follow the instructions in the notebook **riot/basics/threading-ipc/threading-ip
 
 ## Timers
 
-- High level timer provided by module `xtimer`
+- High level timer provided by module [ztimer](https://doc.riot-os.org/group__sys__ztimer.html)
 
-- `xtimer` multiplexes hardware timers
+- Accuracy will depend on the backend timer
+  - microseconds with module `ztimer_usec` and `ZTIMER_USEC` clock
+  - milliseconds with module `ztimer_msec` and `ZTIMER_MSEC` clock
+  - seconds with module `ztimer_sec` and `ZTIMER_SEC` clock
 
-- microseconds accuracy
+- Ztimer supports configurable backends:
+  - rtc
+  - rtt
+  - general purpose timers
+  - ptp
 
-- Simple API:
+- Highly configurable, offset, sleep compensation, **allows the system to sleep**
 
-  - get current system time in microseconds
+
+## Timers
+
+Ztimer provides an unified, portable and simple API:
+
+- get current system time in microseconds
 
 ```c
-xtimer_ticks32_t now = xtimer_now();
+uint32_t now = ztimer_now(ZTIMER_USEC);
 ```
 
-  - add a `sec` seconds delay
+- add a `sec` seconds delay
 
 ```c
-xtimer_sleep(sec);
+ztimer_sleep(ZTIMER_SEC, sec);
 ```
 
-  - add a `microsec` mircroseconds delay
+- add a `millisec` milliseconds delay
 
 ```c
-xtimer_usleep(microsec);
+ztimer_sleep(ZTIMER_MSEC, millisec);
+```
+
+- add a `microsec` microseconds delay
+
+```c
+ztimer_sleep(ZTIMER_USEC, microsec);
 ```
 
 ---
 
 ## Timers (continued)
 
-- Use xtimer for periodic wakeups:
+- Use ztimer for periodic wakeups:
 
 ```c
-void xtimer_periodic_wakeup(xtimer_ticks32_t *last_wakeup, uint32_t period);
+void ztimer_periodic_wakeup(ztimer_clock_t *clock, uint32_t *last_wakeup, uint32_t period);
 ```
 
-  - Use an `xtimer_t` variable to send a message at a given time:
+- Use a `ztimer_t` variable to send a message after a given offset:
 
 ```c
-void xtimer_set_msg(xtimer_t *timer, uint32_t offset, msg_t *msg,
+void ztimer_set_msg(ztimer_clock_t *clock, ztimer_t *timer, uint32_t offset, msg_t *msg,
                     kernel_pid_t target_pid);
 ```
 
-  - Use an `xtimer_t` variable to trigger a callback function at a given time:
+- Use a `ztimer_t` variable to trigger a callback function at a given time:
 
 ```c
-xtimer_set(xtimer_t *timer, uint32_t offset);
+ztimer_set(ztimer_clock_t *clock, ztimer_t *timer, uint32_t offset);
 ```
 
 - helper defines are also provided by `timex.h` to convert seconds to us, ms to us, etc:
@@ -370,24 +388,6 @@ xtimer_set(xtimer_t *timer, uint32_t offset);
 US_PER_SEC  /* number of microseconds per seconds */
 US_PER_MS   /* number of milliseconds per seconds */
 ```
-
----
-
-## Timers (continued): [Ztimer](https://doc.riot-os.org/group__sys__ztimer.html)
-
-* High level timer abstraction supporting configurable backends:
-  * rtc
-  * rtt
-  * general purpose timers
-  * ptp
-
-* Accuracy will depend on the backend timer
-
-* Highly configurable, offset, sleep compensation, **allows the system to sleep**
-
-* Drop in replacement (in 99% of the cases) for `xtimer`, ongoing migration efforts.
-
-* 32bit design
 
 ---
 
@@ -491,8 +491,6 @@ CPUs classification follows a hierarchical approach:
 - The configurations of MCU clocks and peripherals are defined in `periph_conf.h`
 
 - `board.h` provides specific on-board defines for:
-
-  - Configurations for the `xtimer` module
 
   - on-board LEDs and buttons pins
 

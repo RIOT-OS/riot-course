@@ -236,7 +236,7 @@ Preprint available: http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.pd
 
 Features are provided as modules &#x21d2; **only build what's required**
 
-- System libraries: **xtimer**, **shell**, crypto, etc
+- System libraries: **ztimer**, **shell**, crypto, etc
 
 --
 
