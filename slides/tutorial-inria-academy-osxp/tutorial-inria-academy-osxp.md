@@ -4,9 +4,9 @@ class: center, middle
 
 ## Microcontroller based IoT
 
-# A hand-on tutorial with RIOT
+# A hands-on tutorial with RIOT
 
-### Inria Academy
+## Inria Academy
 
 .center[
 <img src="images/riot-round-logo.png" alt="" style="width:220px;"/>
