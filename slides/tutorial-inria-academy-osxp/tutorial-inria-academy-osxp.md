@@ -173,6 +173,87 @@ Monthly contributors to the RIOT master branch
 
 - Stable **release every 3 months**: &lt;year&gt;.&lt;month&gt; (ex: 2022.07, 2022.10, etc)
 
+---
+
+class: center, middle
+
+# RIOT in action
+
+<br>
+<br>
+.center[
+<img src="images/riot-round-logo.png" alt="" style="width:220px;"/>
+]
+
+---
+
+## IoT products & services using RIOT
+
+- Environment monitoring: Hamilton IoT (USA), Unwired Devices (Russia)
+
+.center[
+    <img src="images/hamilton-board.png" alt="" style="width:200px"/>
+    <img src="images/unwired-one-fingers.jpg" alt="" style="width:200px"/>
+]
+- Design Office: Eistec (Sweeden), Mesotic (France)
+
+- On-Board diagnostics for connected cars: OTAKeys (Continental)
+
+.center[
+    <img src="images/continental.png" alt="" style="width:300px"/>
+]
+-
+
+---
+
+## IoT deployments using RIOT
+
+.center[
+    **Telefonica Chile: LoRa devices in a mine**<br><br>
+    <img src="images/drop-watcher.png" alt="" style="width:630px"/><br/>
+    <a href="http://riot-os.org/files/RIOT-Summit-2017-slides/6-2-Network-Session-DropWatcher.pdf"><br>More information</a>
+]
+
+---
+
+## IoT deployments using RIOT
+
+.center[
+**Home automation using KNX**<br><br>
+<img src="images/knx-element.png" alt="" style="width:400px"/><br>
+<img src="images/knx-element2.png" alt="" style="width:200px"/>
+<img src="images/knx-board.png" alt="" style="width:150px"/><br><br>
+<a href="http://summit.riot-os.org/2018/wp-content/uploads/sites/10/2018/09/2_2-Bas-Stottelaar-KNX.pdf">More information</a>
+]
+
+---
+
+## IoT projects using RIOT
+
+.center[
+**Locha Mesh: A Decentralized Mesh Network**<br><br><br><br>
+<img src="images/turpial-finished-board.jpg" alt="" style="width:200px"/>
+<img src="images/LogotipoTurpial-Color.20-09-19.svg" alt="" style="width:300px"/><br/>
+<a href="https://locha.io/"><br>More information</a>
+]
+
+---
+
+## RIOT on FIT/IoT-LAB large scale testbed
+
+.center[<a href=https://www.iot-lab.info>https://www.iot-lab.info</a><br><br>
+IoT-LAB is a **large scale experimentation testbed**]
+
+  - Can be used for **testing wireless communication** networks on **small devices**
+
+  - Can be used for **learning** IoT programming and **communication protocols**
+
+  - Can be used for testing software platforms on **heterogeneous hardware**
+
+.center[
+      <img src="images/iotlab-nodes.png" alt="" style="width:250px;"/>&nbsp;
+      <img src="images/iotlab-sites.png" alt="" style="width:250px;"/>
+  ]
 
 ---
 
@@ -372,89 +453,6 @@ Features are provided as modules &#x21d2; **only build what's required**
 - More advanced configuration with Kconfig (almost done)
 
 <img src="images/kconfig.jpeg" alt="" style="width:180px;position:fixed;top:440px;right:100px"/>
-
----
-
-class: center, middle
-
-# RIOT in action
-
-<br>
-<br>
-.center[
-<img src="images/riot-round-logo.png" alt="" style="width:220px;"/>
-]
-
----
-
-## IoT products & services using RIOT
-
-- Environment monitoring: Hamilton IoT (USA), Unwired Devices (Russia)
-
-.center[
-    <img src="images/hamilton-board.png" alt="" style="width:200px"/>
-    <img src="images/unwired-one-fingers.jpg" alt="" style="width:200px"/>
-]
-- Design Office: Eistec (Sweeden), Mesotic (France)
-
-- On-Board diagnostics for connected cars: OTAKeys (Continental)
-
-.center[
-    <img src="images/continental.png" alt="" style="width:300px"/>
-]
--
-
----
-
-## IoT deployments using RIOT
-
-.center[
-    **Telefonica Chile: LoRa devices in a mine**<br><br>
-    <img src="images/drop-watcher.png" alt="" style="width:630px"/><br/>
-    <a href="http://riot-os.org/files/RIOT-Summit-2017-slides/6-2-Network-Session-DropWatcher.pdf"><br>More information</a>
-]
-
----
-
-## IoT deployments using RIOT
-
-.center[
-**Home automation using KNX**<br><br>
-<img src="images/knx-element.png" alt="" style="width:400px"/><br>
-<img src="images/knx-element2.png" alt="" style="width:200px"/>
-<img src="images/knx-board.png" alt="" style="width:150px"/><br><br>
-<a href="http://summit.riot-os.org/2018/wp-content/uploads/sites/10/2018/09/2_2-Bas-Stottelaar-KNX.pdf">More information</a>
-]
-
----
-
-## IoT projects using RIOT
-
-.center[
-**Locha Mesh: A Decentralized Mesh Network**<br><br><br><br>
-<img src="images/turpial-finished-board.jpg" alt="" style="width:200px"/>
-<img src="images/LogotipoTurpial-Color.20-09-19.svg" alt="" style="width:300px"/><br/>
-<a href="https://locha.io/"><br>More information</a>
-]
-
----
-
-## RIOT on FIT/IoT-LAB large scale testbed
-
-.center[<a href=https://www.iot-lab.info>https://www.iot-lab.info</a><br><br>
-IoT-LAB is a **large scale experimentation testbed**]
-
-  - Can be used for **testing wireless communication** networks on **small devices**
-
-  - Can be used for **learning** IoT programming and **communication protocols**
-
-  - Can be used for testing software platforms on **heterogeneous hardware**
-
-.center[
-      <img src="images/iotlab-nodes.png" alt="" style="width:250px;"/>&nbsp;
-      <img src="images/iotlab-sites.png" alt="" style="width:250px;"/>
-  ]
-
 
 ---
 
