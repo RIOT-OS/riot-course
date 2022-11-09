@@ -24,15 +24,17 @@ class: center, middle
 
 - An **operating system** for microcontroller-based IoT devices
 
- - **microkernel architecture** &#x21d2; require very low resources
+ - **microkernel architecture**, **real-time** and **multi-threaded**
+   &#x21d2; require very low resources (2.8KB RAM, 3.2KB ROM on Cortex-M)
  - **real-time** and **multi-threaded**
- - comes with **in-house networking stacks**
+ - entirely **modular** &#x21d2; **only build what's required**
+ - **multi-purpose networking stacks** included
 
 <br>
 
 - An **open-source platform & ecosystem**: <a href="https://github.com/RIOT-OS/RIOT">https://github.com/RIOT-OS/RIOT</a>
 
- - free software platform
+ - free software platform, LGPLv2.1
  - **easy to use** and __reuse__
  - Standard programming in C, standard tooling
  - **API is independent** from the hardware
@@ -106,75 +108,6 @@ in the Internet of Things: A survey," IEEE Internet of ThingsJournal, 2016.
 
 ---
 
-## The RIOT philosophy & community
-
-- RIOT is free-software, licensed under **LGPLv2.1**
-
-- The community takes inspiration from Linux
-
-<img src="images/linux.jpg" alt="" style="width:150px;position:fixed;top:80px;right:100px;"/>
-
---
-
-- Use standards whenever possible <br>
-  (C-ANSI, standard tools, standard protocols, standard procedures)
-
-- Follow **POSIX** standards
-
---
-
-- Avoid code duplication, easy to program, increase **portability**, modularity
-
-- Vendor & Technology **independence**
-
---
-
-- Decisions and orientations are taken by a **grass-root community**
-
-.center[
-    <img src="images/Commits-Monthly-RIOT-2012-2020.png" alt="" style="width:400px"/>
-    <img src="images/riot-contributors.png" alt="" style="width:300px"/>
-
-]
-<div style="position: absolute;left: 100px;">
-<span style="font-style: italic;font-size:12px;text-align:right">
-Monthly commits to the RIOT master branch
-</span>
-</div>
-<div style="position: absolute;right: 100px;">
-<span style="font-style: italic;font-size:12px;text-align:right">
-Monthly contributors to the RIOT master branch
-</span>
-</div>
-
----
-
-## Ecosystem & community processes
-
-- Standard tooling and build system: **Makefiles**, **OpenOCD**, **GDB**
-
---
-
-- Distributed and fast CI, Murdock: https://ci.riot-os.org
-
-    &#x21d2; **Build and run** all test/example applications<br><br>
-    &#x21d2; **Static tests** (Cppcheck, Coccinelle, etc)<br>
-
-.center[
-<img src="images/murdock.png" alt="" style="width:400px"/>
-]
---
-
-- **Online documentation** &#x21d2; https://doc.riot-os.org
-
---
-
-- In-depth **code reviews**
-
-- Stable **release every 3 months**: &lt;year&gt;.&lt;month&gt; (ex: 2022.07, 2022.10, etc)
-
----
-
 class: center, middle
 
 # RIOT in action
@@ -228,17 +161,6 @@ class: center, middle
 
 ---
 
-## IoT projects using RIOT
-
-.center[
-**Locha Mesh: A Decentralized Mesh Network**<br><br><br><br>
-<img src="images/turpial-finished-board.jpg" alt="" style="width:200px"/>
-<img src="images/LogotipoTurpial-Color.20-09-19.svg" alt="" style="width:300px"/><br/>
-<a href="https://locha.io/"><br>More information</a>
-]
-
----
-
 ## RIOT on FIT/IoT-LAB large scale testbed
 
 .center[<a href=https://www.iot-lab.info>https://www.iot-lab.info</a><br><br>
@@ -270,32 +192,6 @@ Preprint available at http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.
 .center[
 <img src="images/riot-round-logo.png" alt="" style="width:220px;"/>
 ]
----
-
-## OS characteristics
-
-- **Micro-kernel** based architecture: modular approach
-
-<img src="images/riot-architecture.png" alt="" style="width:250px;position:fixed;right:50px;top:120px"/>
-
---
-
-- Small footprint <br> &#x21d2; **2.8kB** RAM, **3.2kB** ROM on 32-bit Cortex-M
-
---
-
-- **Real-Time** scheduler
-  - &#x21d2; fixed priorities preemption with O(1) operations
-  - &#x21d2; tickless scheduler
-
---
-
-- **Multi-Threading** and IPC:
-  - Separate thread contexts with separate <br>thread memory stack
-  - Minimal thread control block (TCB)
-  - Thread synchronization using mutexes, <br>semaphores and messaging
-
-<img src="images/riot-application.png" alt="" style="width:300px;position:fixed;right:50px;top:350px"/>
 
 ---
 
@@ -319,8 +215,6 @@ Preprint available at http://riot-os.org/files/2018-IEEE-IoT-Journal-RIOT-Paper.
 
 ## A modular OS
 
-Features are provided as modules &#x21d2; **only build what's required**
-
 - System libraries: **ztimer**, **shell**, crypto, etc
 
 --
@@ -340,24 +234,6 @@ Features are provided as modules &#x21d2; **only build what's required**
 --
 
 - External packages
-
----
-
-## Useful system libraries
-
-- **ztimer**
-
-  - high-level timer subsystem that provides full abstraction from the hardware timer
-
-  - Can set callbacks, put a thread to sleep, etc
-
-- **shell**
-
-  - provides interactive command line interface
-
-  - useful for interactive debugging or examples
-
-- **Others:** crypto, fmt, math, etc
 
 ---
 
@@ -472,7 +348,7 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 - FUN Mooc IoT
 
-.center[<a href="https://www.fun-mooc.fr/courses/course-v1:inria+41020+session02/about">https://www.fun-mooc.fr/courses/course-v1:inria+41020+session02/about</a>]
+.center[<a href="https://www.fun-mooc.fr/courses/course-v1:inria+41020+session03/about">https://www.fun-mooc.fr/courses/course-v1:inria+41020+session03/about</a>]
 
 
 ---
@@ -564,8 +440,6 @@ int main(void)
 ```sh
 $ make BOARD=<target> -C <application_directory>
 ```
-`BOARD` can be any board supported by RIOT<br>
-&#x21d2; see the **RIOT/boards** directory for the complete list
 
 ---
 
@@ -638,10 +512,6 @@ USEMODULE += ztimer shell
 USEPKG += semtech-loramac
 
 FEATURES_REQUIRED += periph_gpio
-```
-Example from the command line:
-```sh
-$ USEMODULE=ztimer make BOARD=b-l072z-lrwan1
 ```
 
 ---
