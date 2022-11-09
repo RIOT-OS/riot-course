@@ -26,7 +26,6 @@ class: center, middle
 
  - **microkernel architecture**, **real-time** and **multi-threaded**
    &#x21d2; require very low resources (2.8KB RAM, 3.2KB ROM on Cortex-M)
- - **real-time** and **multi-threaded**
  - entirely **modular** &#x21d2; **only build what's required**
  - **multi-purpose networking stacks** included
 
