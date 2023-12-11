@@ -39,6 +39,10 @@ Only a web browser with an internet connection is needed:
   [https://github.com/iot-lab/iot-lab-training](https://github.com/iot-lab/iot-lab-training).
 
 
+We highly recommend you to use a laptop or a workstation to follow the tutorial.
+Small screens, e.g on smartphones, are not well supported and make user experience with Jupyter
+Notebooks harder.
+
 ## Hardware used
 
 The boards used during the exercises are all hosted on the
