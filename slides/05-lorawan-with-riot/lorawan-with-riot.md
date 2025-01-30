@@ -41,31 +41,44 @@ class: center, middle
 
 <table style="width:100%;margin-top:-40px">
 <tr>
-  <td><ul>
+  <td>
+  <ul>
   <li>Long range radio technology<br/><br/></li>
-  <li>Spread Spectrum modulation: <br/><br/>&#x21d2; "Chirp Spread Spectrum"<br/><br/></li>
   <li>Very robust to noise, multipath and Doppler effect</li>
-  </ul></td>
+  <li>Spread Spectrum modulation: <br/><br/>&#x21d2; "Chirp Spread Spectrum"<br/><br/></li>
+  <li>The binary data is coded by shifting the symbol<br/><br/></li>
+  <li>Bandwidth can be 125, 250 or even 500kHz</li>
+  </ul>
+  </td>
   <td>.center[
-      <img src="images/lora-chirp.jpg" alt="" style="width: 200px;"/><br/>
-      <img src="images/lora-css.jpg" alt="" style="width: 280px;"/>
+      <img src="images/LPWAN_chirps.png" alt="" style="width: 250px;"/>
     ]
 </tr>
-<tr>
-  <td><ul>
-        <li>Raising the spreading factor:
-        <br/><br/>
-            <ul>
-                <li>increases the range (until several kilometers)</li>
-                <li>increases the time on air</li>
-                <li>increases energy consumption</li>
-            </ul>
-        </li>
-    </ul>
-  </td>
-  <td><img src="images/lorawan-datarate-sf.png" alt="" style="width: 300px;"/></td>
-</tr>
 </table>
+.center[
+  <img src="images/LPWAN_Physical.png" alt="" width="400">
+]
+
+---
+
+## The spreading factor
+
+* Spreading factor (SF) = duration of a chirp &#x21d2; increase SF by 1 = duration x 2
+
+* SF7 reprensents 7 bits in 1 symbol
+
+* Signals using different SF don't interfere &#x21d2; they are orthogonal
+
+* In short, raising the spreading factor:
+    * increases the range (up to several kilometers)
+    * reduce the throughput
+    * increase the time on air
+    * increases energy consumption
+
+.center[
+  <img src="images/LPWAN_SF.png" alt="" style="width: 350px;height: 170px;"/>
+  <img src="images/lorawan-datarate-sf.png" alt="" style="width: 350px;"/>
+]
 
 ---
 
@@ -112,9 +125,9 @@ class: center, middle
 Dependent on several factors: payload, bandwidth, spreading factor, etc.
 
 Calculating the TOA:
+- [TTN Airtime Calculator](https://www.thethingsnetwork.org/airtime-calculator)
 - [LoRa Airtime Calculator spreadsheet](https://docs.google.com/spreadsheets/d/1voGAtQAjC1qBmaVuP1ApNKs1ekgUjavHuVQIXyYSvNc/edit#gid=0)
 - [lorawan_toa package](https://github.com/tanupoo/lorawan_toa)
-- [Equations from LoRa designer's guide](https://www.semtech.com/uploads/documents/LoraDesignGuide_STD.pdf)
 
 ---
 
@@ -167,56 +180,6 @@ Calculating the TOA:
 
 ---
 
-## Structural overview of the network parts
-
-.center[
-    <img src="images/lorawan-network.png" alt="" style="width: 700px;"/><br/>
-]
-
-<table style="width:100%">
-<tr>
-  <td><b>Gateway manufacturers</b>
-  <ul>
-  <li>IMST Lite Gateway https://shop.imst.de</li>
-  <li>Kerlink https://www.kerlink.fr/</li>
-  <li>Multitech: https://www.multitech.com/</li>
-  </ul>
-  </td>
-  <td><b>Network servers implementation</b>
-  <ul>
-  <li>https://www.loraserver.io/ (Opensource)</li>
-  <li>https://www.resiot.io/en/<br><br><br></li>
-  </ul>
-  </td>
-</tr>
-<table>
-
----
-
-## How to program the end-device
-
-Existing open-source implementations:
-
-- Arduino LMIC https://github.com/matthijskooijman/arduino-lmic
-  &#x21d2; nearly unmaintained
-
-- Loramac-node https://github.com/Lora-net/LoRaMac-node
-  &#x21d2; reference implementation, used for certification from LoRa Alliance
-
-<br>
-
-End-device high-level support (generally based on Loramac-node):
-
-- ARM mbedOS: https://www.mbed.com/en/platform/mbed-os/
-
-- Mynewt: https://mynewt.apache.org/
-
-- Micropython: https://pycom.io/
-
-- RIOT: https://riot-os.org/
-
----
-
 ## Device communication on the network
 
 .center[
@@ -241,42 +204,22 @@ End-device high-level support (generally based on Loramac-node):
 
 - Over-The-Air Activation(OTAA)
 
-- Activation By Personnalization (ABP)
-
 .center[
     <img src="images/loraotaa.jpg" alt="" style="width: 600px;"/><br/>
 ]
 
----
-
-## Activation procedures
-
-
-- in **OTAA**:
-  - Requires Device EUI, Application EUI and Application Key information
-
-  - The device initiates a handshake with the server to get its address and
-    a "nonce" &#x21d2; the device address changes after each activation
-
-  - The 2 session keys are derived from the application key and the nonce
-
-- in **ABP**
-
-  - Requires Application session key, Network session key and device address
-
-  - No handshake required
+- Activation By Personnalization (ABP):<br/>
+  &#x21d2; No handshake, only requires APPSKEY, NWKSKEY and DEVADDR
 
 ---
 
 ## Network operators
 
-Lots of public network operators:
+Some LoRaWAN operators:
+
+- Orange https://www.orange-business.com/en/products/iot-connect-anywhere
 
 - Actility https://www.actility.com/
-
-- Loriot https://www.loriot.io/
-
-- Objenious (Bouygues Telecom) http://objenious.com/
 
 - Orbiwise  https://www.orbiwise.com/
 
@@ -302,27 +245,46 @@ Lots of public network operators:
 
   - no device limit
 
-  - no message limit (with respect to the duty-cycle)
+  - no strong message limit (with respect to the duty-cycle)
 
   - friendly API (MQTT)
 
 ---
 
-## First steps with TTN: practice
+## The TTN MQTT API
 
-1. Create an account<br>
-  https://account.thethingsnetwork.org/register
+- MQTT protocol uses a publish/subscribe approach
+.center[
+    <img src="images/pub-sub-model.png" alt="" style="width: 350px;"/><br/>
+]
 
-  Manage your gateways and application from your web console: https://console.thethingsnetwork.org/
+- TTN MQTT API documentation<br>
+https://www.thethingsindustries.com/docs/integrations/mqtt/
 
-2. Managing your gateways (optional)<br>
-  https://www.thethingsnetwork.org/docs/gateways/registration.html
+- Open-source MQTT broker provided by the Eclipse Mosquitto project<br>
+https://mosquitto.org/
 
-3. Add a new application<br>
-  https://console.thethingsnetwork.org/applications
+- Eclipse python library: _paho_<br>
+https://www.eclipse.org/paho/
 
-4. Register your device in your application<br>
-  https://console.thethingsnetwork.org/applications/yourapplication
+---
+
+## Payload formatter: Cayenne
+
+https://www.thethingsindustries.com/docs/integrations/payload-formatters/cayenne/
+
+- Minimal footprint Payload format: Low Power Payload (LPP)
+
+- Some open-source implementations:
+
+  - Generic C++ library:<br>
+  https://github.com/myDevicesIoT/CayenneLPP
+
+  - Generic C library<br>
+  https://github.com/aabadie/cayenne-lpp
+
+  - Library available for Arduino (C++):<br>
+  https://github.com/sabas1080/CayenneLPP
 
 ---
 
@@ -374,40 +336,6 @@ Follow the instructions in the notebook **riot/lorawan/ttn-sensors/ttn-sensors.i
 
 ---
 
-## An example: Cayenne
-
-https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
-
-- Create only dashboards in a few clicks from your LoRaWAN data
-
-- Access your sensor data from anywhere
-
-- Payload format requirement: Low Power Payload (LPP)
-
-  - Library available for python/micropython:<br>
-  https://github.com/jojo-/py-cayenne-lpp
-
-  - Library available for Arduino (C++):<br>
-  https://github.com/sabas1080/CayenneLPP
-
-  - Generic library in C<br>
-  https://github.com/aabadie/cayenne-lpp
-
----
-
-## Exercise: Integration with Cayenne LPP
-
-Follow the instructions in the notebook **riot/lorawan/ttn-cayenne-lpp/ttn-cayenne-lpp.ipynb**
-
-.center[
-<form class=notebook>
-    <input class=login id="login_ttn_cayenne_lpp" type="text" oninput="check_login('login_ttn_cayenne_lpp', 'launcher_ttn_cayenne_lpp')" placeholder="Enter your IoT-LAB login">
-    <input class=launcher id="launcher_ttn_cayenne_lpp" type="button" value="Launch notebook" onclick="open_notebook('login_ttn_cayenne_lpp', 'riot/lorawan/ttn-cayenne-lpp/ttn-cayenne-lpp.ipynb')" disabled>
-</form>
-]
-
----
-
 ## The TTN MQTT API
 
 - MQTT protocol uses a publish/subscribe approach
@@ -442,6 +370,40 @@ Follow the instructions in the notebook **riot/lorawan/ttn-mqtt/ttn-mqtt.ipynb**
 <form class=notebook>
     <input class=login id="login_ttn_mqtt" type="text" oninput="check_login('login_ttn_mqtt', 'launcher_ttn_mqtt')" placeholder="Enter your IoT-LAB login">
     <input class=launcher id="launcher_ttn_mqtt" type="button" value="Launch notebook" onclick="open_notebook('login_ttn_mqtt', 'riot/lorawan/ttn-mqtt/ttn-mqtt.ipynb')" disabled>
+</form>
+]
+
+---
+
+## An example: Cayenne
+
+https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
+
+- Create only dashboards in a few clicks from your LoRaWAN data
+
+- Access your sensor data from anywhere
+
+- Payload format requirement: Low Power Payload (LPP)
+
+  - Library available for python/micropython:<br>
+  https://github.com/jojo-/py-cayenne-lpp
+
+  - Library available for Arduino (C++):<br>
+  https://github.com/sabas1080/CayenneLPP
+
+  - Generic library in C<br>
+  https://github.com/aabadie/cayenne-lpp
+
+---
+
+## Exercise: Integration with Cayenne LPP
+
+Follow the instructions in the notebook **riot/lorawan/ttn-cayenne-lpp/ttn-cayenne-lpp.ipynb**
+
+.center[
+<form class=notebook>
+    <input class=login id="login_ttn_cayenne_lpp" type="text" oninput="check_login('login_ttn_cayenne_lpp', 'launcher_ttn_cayenne_lpp')" placeholder="Enter your IoT-LAB login">
+    <input class=launcher id="launcher_ttn_cayenne_lpp" type="button" value="Launch notebook" onclick="open_notebook('login_ttn_cayenne_lpp', 'riot/lorawan/ttn-cayenne-lpp/ttn-cayenne-lpp.ipynb')" disabled>
 </form>
 ]
 
