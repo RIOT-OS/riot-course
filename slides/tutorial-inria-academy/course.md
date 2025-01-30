@@ -10,8 +10,7 @@ class: center, middle
 
 .right[.footer[
   Alexandre Abadie - alexandre.abadie@inria.fr<br/>
-  Emmanuel Baccelli - emmanuel.baccelli@inria.fr<br/>
-  Francisco Molina - francois-xavier.molina@inria.fr
+  Emmanuel Baccelli - emmanuel.baccelli@inria.fr
 ]]
 
 ---
@@ -28,7 +27,7 @@ class: center, middle
 
 <br>
 
-- Overview IoT Networking protocols with RIOT, 6LoWPAN focus
+- Overview IoT Networking protocols with RIOT, LoRa focus
 
 <br>
 
@@ -41,30 +40,20 @@ class: center, middle
 <img src="images/riot-round-logo.png" alt="" style="width:200px;position:fixed;right:70px;top:100px"/>
 <img src="images/cadenas.png" alt="" style="width:100px;position:fixed;right:370px;top:380px"/>
 <img src="images/fit-iotlab-logo.png" alt="" style="width:200px;position:fixed;right:100px;top:540px"/>
-<img src="images/6lowpan-logo.jpg" alt="" style="width:150px;position:fixed;right:180px;top:340px"/>
 <img src="images/ble-logo.png" alt="" style="width:50px;position:fixed;right:100px;top:320px"/>
 <img src="images/logo-lora.png" alt="" style="width:100px;position:fixed;right:120px;top:400px"/>
-
 
 ---
 
 ## Agenda
 
-**Day 1**
-
 1. Introduction to RIOT
 
-1. Course Tooling
+2. Course Tooling
 
-1. RIOT basics
+3. RIOT basics
 
-1. IoT Networking 1
-
-**Day 2**
-
-1. IoT Networking 2
-
-1. IoT Security
+4. Communication with LoRaWAN
 
 ---
 
@@ -598,7 +587,7 @@ IoT-LAB is a **large scale experimentation testbed**]
 
 - A technical overview:
 
-  - OS charactéristics
+  - OS characteristics
 
   - hardware support
 
