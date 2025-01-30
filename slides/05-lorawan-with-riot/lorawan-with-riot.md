@@ -317,7 +317,7 @@ https://www.eclipse.org/paho/
 
 ---
 
-## Exercise: Downlink from a LoRaWAN network
+## Exercise: Downlink from a LoRaWAN network over MQTT
 
 Follow the instructions in the notebook **riot/lorawan/ttn-mqtt/ttn-mqtt.ipynb**
 
@@ -330,15 +330,17 @@ Follow the instructions in the notebook **riot/lorawan/ttn-mqtt/ttn-mqtt.ipynb**
 
 ---
 
-## An example: Cayenne
+## Cayenne LPP format
 
-https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
+https://docs.mydevices.com/docs/lorawan/cayenne-lpp
 
-- Create only dashboards in a few clicks from your LoRaWAN data
+- Designed to send data over LPWAN Networks:
 
-- Access your sensor data from anywhere
+  - Binary format
 
-- Payload format requirement: Low Power Payload (LPP)
+  - Very small payload size
+
+- Payload format: Low Power Payload (LPP)
 
   - Library available for python/micropython:<br>
   https://github.com/jojo-/py-cayenne-lpp
@@ -351,7 +353,7 @@ https://mydevices.com/cayenne/docs/lora/#lora-the-things-network
 
 ---
 
-## Exercise: Integration with Cayenne LPP
+## Exercise: Receive LPP encoded messages over MQTT
 
 Follow the instructions in the notebook **riot/lorawan/ttn-cayenne-lpp/ttn-cayenne-lpp.ipynb**
 
