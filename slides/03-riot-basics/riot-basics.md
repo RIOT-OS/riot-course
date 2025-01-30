@@ -331,6 +331,7 @@ Follow the instructions in the notebook **riot/basics/threading-ipc/threading-ip
 
 - Highly configurable, offset, sleep compensation, **allows the system to sleep**
 
+---
 
 ## Timers
 
