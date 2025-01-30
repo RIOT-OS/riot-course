@@ -251,43 +251,6 @@ Some LoRaWAN operators:
 
 ---
 
-## The TTN MQTT API
-
-- MQTT protocol uses a publish/subscribe approach
-.center[
-    <img src="images/pub-sub-model.png" alt="" style="width: 350px;"/><br/>
-]
-
-- TTN MQTT API documentation<br>
-https://www.thethingsindustries.com/docs/integrations/mqtt/
-
-- Open-source MQTT broker provided by the Eclipse Mosquitto project<br>
-https://mosquitto.org/
-
-- Eclipse python library: _paho_<br>
-https://www.eclipse.org/paho/
-
----
-
-## Payload formatter: Cayenne
-
-https://www.thethingsindustries.com/docs/integrations/payload-formatters/cayenne/
-
-- Minimal footprint Payload format: Low Power Payload (LPP)
-
-- Some open-source implementations:
-
-  - Generic C++ library:<br>
-  https://github.com/myDevicesIoT/CayenneLPP
-
-  - Generic C library<br>
-  https://github.com/aabadie/cayenne-lpp
-
-  - Library available for Arduino (C++):<br>
-  https://github.com/sabas1080/CayenneLPP
-
----
-
 ## Test TTN with RIOT: practice
 
 Follow the instructions in the notebook **riot/lorawan/ttn-getting-started/ttn-getting-started.ipynb**
@@ -351,14 +314,6 @@ https://mosquitto.org/
 
 - Eclipse also provides a python library: _paho_<br>
 https://www.eclipse.org/paho/
-
----
-
-## The TTN MQTT API
-
-.center[
-    <img src="images/overview_application.png" alt="" style="width: 350px;"/><br/>
-]
 
 ---
 
