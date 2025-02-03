@@ -220,7 +220,7 @@ Monthly contributors to the RIOT master branch
 
 - In-depth **code reviews**
 
-- Stable **release every 3 months**: &lt;year&gt;.&lt;month&gt; (ex: 2018.07, 2018.10, etc)
+- Stable **release every 3 months**: &lt;year&gt;.&lt;month&gt; (ex: 2023.07, 2023.10, etc)
 
 
 ---
@@ -463,17 +463,11 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 --
 
-## Coming soon
-
 - More advanced configuration with Kconfig (almost done)
 
 <img src="images/kconfig.jpeg" alt="" style="width:180px;position:fixed;top:440px;right:100px"/>
 
 <br/>
-
-- NB-IoT support
-
-<img src="images/nb_iot_logo.jpg" alt="" style="width:180px;position:fixed;top:580px;right:100px"/>
 
 ---
 
@@ -526,17 +520,6 @@ class: center, middle
 <img src="images/knx-element2.png" alt="" style="width:200px"/>
 <img src="images/knx-board.png" alt="" style="width:150px"/><br><br>
 <a href="http://summit.riot-os.org/2018/wp-content/uploads/sites/10/2018/09/2_2-Bas-Stottelaar-KNX.pdf">More information</a>
-]
-
----
-
-## IoT projects using RIOT
-
-.center[
-**Locha Mesh: A Decentralized Mesh Network**<br><br><br><br>
-<img src="images/turpial-finished-board.jpg" alt="" style="width:200px"/>
-<img src="images/LogotipoTurpial-Color.20-09-19.svg" alt="" style="width:300px"/><br/>
-<a href="https://locha.io/"><br>More information</a>
 ]
 
 ---
@@ -599,7 +582,7 @@ IoT-LAB is a **large scale experimentation testbed**]
 
 - The RIOT ecosystem: standard tools, CI, documentation
 
-- Companies using RIOT
+- Projects and companies using RIOT
 
 
 ---
