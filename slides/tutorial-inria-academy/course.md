@@ -597,12 +597,10 @@ class: center, middle
 
 1. Embedded software: we use the RIOT code base + ecosystem
 
---
-
 2. Embedded hardware: we use the open-access testbed IoT-LAB to run RIOT code remotely on micro-controllers
 
 .center[
-    <img src="images/tutorial-summary.png" alt="" style="width:720px;"/>
+    <img src="images/tutorial-summary.png" alt="" style="width:550px;"/>
 ]
 
 ---
