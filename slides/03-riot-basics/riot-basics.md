@@ -693,9 +693,9 @@ Follow the instructions in the notebook **riot/basics/sensors/sensors.ipynb**
 The RIOT source directory contains applications that can be used as examples
 for almost all features provided by RIOT.
 
-- See applications in the [examples directory](https://github.com/riot-os/riot/examples)
+- See applications in the [examples directory](https://github.com/RIOT-OS/RIOT/tree/master/examples)
 
-- Test applications in [tests directory](https://github.com/riot-os/riot/tests) also provides good examples to start
+- Test applications in [tests directory](https://github.com/RIOT-OS/RIOT/tree/master/tests) also provides good examples to start
   the RIOT
 
 ---
