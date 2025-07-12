@@ -282,7 +282,7 @@ Features are provided as modules &#x21d2; **only build what's required**
 
 --
 
-- Embedded interpretors: Javascript, Micropython, LUA
+- Embedded interpreters: Javascript, MicroPython, Lua
 
 --
 
